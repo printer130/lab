@@ -1,17 +1,17 @@
 import 'styles/globals.css'
-import Context from 'hooks/useUserContext'
+import { UserProvider } from 'hooks/useUserContext'
 import { Layout } from 'container/Layout'
 import { Nav } from 'components'
 
 function MyApp ({ Component, pageProps }) {
   return (
     <>
-      <Context.UserProvider>
+      <UserProvider>
         <Nav />
         <Layout>
           <Component {...pageProps} />
         </Layout>
-      </Context.UserProvider>
+      </UserProvider>
     </>
   )
 }
