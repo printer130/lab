@@ -1,148 +1,153 @@
 /* eslint-disable react/jsx-closing-tag-location */
-import { useContext } from 'react'
-import { UserContext } from 'hooks/useUserContext'
 import { useForm } from 'react-hook-form'
+import { useState, useEffect } from 'react'
 import { zodResolver } from '@hookform/resolvers/zod/dist/zod'
-import { z } from 'zod'
+import { ctxUser } from 'hooks/ctxUser'
 import { USER_STATES } from 'const/user_states'
-
-const schema = z.object({
-  ci: z.number().int(),
-  fullName: z.string(),
-  birth: z.date(),
-  phone: z.number(),
-  nit: z.number({
-    description: 'Se espera un número',
-    invalid_type_error: 'Numero inválido',
-    required_error: 'Campo requerido'
-  }).int({ message: 'Numero mal' }),
-  socialReason: z.string().min(3, {
-    message: 'Campo requerido'
-  })
-})
-
-const defaultValues = {
-  ci: '',
-  fullName: '',
-  birth: '',
-  phone: '',
-  nit: '',
-  socialReason: ''
-}
+import { DEFAULT_REGISTER_VALUES } from 'const/register_default_values'
+import { registerSchema } from 'helpers/zod/RegisterSchema'
+import { Button, ErrorMessage, Input } from 'components'
+import { Loading } from 'components/Loading'
+import { addNewOrder } from 'db/firebase/firestore'
 
 export default function Registro () {
+  const [loading, setLoading] = useState(false)
   const {
     register,
     handleSubmit,
-    formState: { errors, isValid, isDirty },
-    isSubmitSuccessful,
-    isSubmitting
+    reset,
+    formState
   } = useForm({
     mode: 'onChange',
-    resolver: zodResolver(schema),
-    defaultValues,
+    resolver: zodResolver(registerSchema),
+    defaultValues: DEFAULT_REGISTER_VALUES,
     reValidateMode: 'onChange'
   })
 
-  const { user } = useContext(UserContext)
+  const { errors, isValid, isDirty, isSubmitSuccessful } = formState
+  const { user } = ctxUser()
 
   const onSubmit = data => {
-    console.log(errors)
-    console.log(data)
+    // const values = {
+    //   ...data,
+    //   creationDate: Date.now() / 1000,
+    //   ordenNumber: 1
+    // }
+    setLoading(true)
+    const values = {
+      ...data,
+      creationDate: Date.now() / 1000,
+      ordenNumber: 1
+    }
+    addNewOrder(values)
+      .then(() => {
+        setLoading(false)
+        reset()
+      })
+      .catch(err => console.log(err))
+    console.log(values)
   }
+
+  useEffect(() => {
+    console.log({ isSubmitSuccessful })
+  }, [formState])
 
   return (
     <>
       {
         user !== USER_STATES.NOT_KNOW
           ? <div>
-            <h1>{user?.email}</h1>
+            <h2>{user?.email}</h2>
           </div>
-          : <div> Loading...</div>
+          : <Loading />
       }
-      <div>
 
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <input
-            className={errors.ci ? 'input-error' : ''}
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+      >
+        <fieldset disabled={!!loading}>
+          <legend>Ordenes: </legend>
+          <Input
             type='number'
+            errors={errors.ci}
             placeholder='C.I.'
             {...register('ci', {
               valueAsNumber: true
             })}
           />
-          <small>{errors.ci?.message}</small>
+          <ErrorMessage>{errors.ci?.message}</ErrorMessage>
 
-          <input
-            className={errors.fullName ? 'input-error' : ''}
+          <Input
             type='text'
+            errors={errors.fullName}
             placeholder='Nombre Completo...'
             {...register('fullName')}
           />
-          <small>{errors.fullName?.message}</small>
+          <ErrorMessage>{errors.fullName?.message}</ErrorMessage>
 
-          <input
-            className={errors.birth ? 'input-error' : ''}
+          <Input
             type='date'
             placeholder='Fecha de Nacimiento...'
             {...register('birth', {
               valueAsDate: true
             })}
           />
-          <small>{errors.birth?.message}</small>
+          <ErrorMessage>{errors.birth?.message}</ErrorMessage>
 
-          <input
-            className={errors.phone ? 'input-error' : ''}
+          <Input
             type='number'
             placeholder='Celular...'
             {...register('phone', {
               valueAsNumber: true
             })}
           />
-          <small>{errors.phone?.message}</small>
+          <ErrorMessage>{errors.phone?.message}</ErrorMessage>
 
-          <input
-            className={errors.nit ? 'input-error' : ''}
+          <Input
             type='number'
             placeholder='NIT...'
             {...register('nit', {
               valueAsNumber: true
             })}
           />
-          <small>{errors.nit?.message}</small>
+          <ErrorMessage>{errors.nit?.message}</ErrorMessage>
 
-          <input
-            className={errors.socialReason ? 'input-error' : ''}
+          <Input
             type='text'
             placeholder='Razon Social...'
             {...register('socialReason')}
           />
-          <small>{errors.socialReason?.message}</small>
+          <ErrorMessage>{errors.socialReason?.message}</ErrorMessage>
 
-          <button
-            disabled={!isDirty || !isValid}
+          <Button
+            isDirty={isDirty}
+            isValid={isValid}
           >
             Guardar
-          </button>
-        </form>
+          </Button>
+        </fieldset>
 
-        <p> ID </p>
-        <p> Nro de Orden </p>
-        <p> Fecha de nacimiento </p>
-        <style jsx>{`
-        input {
-          display: block;
-        }
+      </form>
+      {
+        isSubmitSuccessful && <div> Orden Registrada</div>
+      }
+
+      <p> ID </p>
+      <p> Nro de Orden </p>
+
+      <style jsx>{`
         .input-error {
           border: 1px solid #f00;
+        }
+        fieldset {
+          opacity: ${loading ? '.4' : '1'};
         }
         small {
           color: #f00;
           font-size: 12px;
         }
      `}
-        </style>
-      </div>
+      </style>
     </>
   )
 }
