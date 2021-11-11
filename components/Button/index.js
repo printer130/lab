@@ -1,5 +1,11 @@
 
-export const Button = ({ isValid = !false, isDirty = !false, children, onChange }) => {
+export const Button = ({
+  isValid = !false,
+  isDirty = !false,
+  isSubmitting,
+  children,
+  onChange
+}) => {
   return (
     <>
       <button
