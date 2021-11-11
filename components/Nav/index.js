@@ -4,8 +4,8 @@ import { Button } from 'components'
 import { onSignOut } from 'db/firebase/auth'
 
 export const Nav = () => {
-  const user = useContext(UserContext)
-
+  const { user } = useContext(UserContext)
+  console.log(user)
   const handleButton = () => {
     onSignOut()
   }
