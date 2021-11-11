@@ -55,6 +55,12 @@ export function LoginCredential () {
         errors.auth && <ErrorMessage>{errors.auth?.message}</ErrorMessage>
         }
       </form>
+      <style jsx>{`
+        form {
+
+        }
+      `}
+      </style>
     </>
   )
 }
