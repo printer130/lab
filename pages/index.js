@@ -1,19 +1,18 @@
-import { useContext, useEffect } from 'react'
+import { useEffect } from 'react'
 import Head from 'next/head'
-import styles from 'styles/Home.module.css'
 import { useRouter } from 'next/router'
 import { LoginCredential } from 'container/LoginCredential'
-import { UserContext } from 'hooks/useUserContext'
+import { ctxUser } from 'hooks/ctxUser'
 
 export default function Home () {
-  const { user, loading } = useContext(UserContext)
+  const { user } = ctxUser()
   const router = useRouter()
 
   useEffect(() => {
     user && router.push('/registro')
   }, [user])
   return (
-    <div className={styles.container}>
+    <>
       <Head>
         <title>Farmacias</title>
         <meta name='description' content='Para laboratorios y pacientes con recetas|orden' />
@@ -21,7 +20,6 @@ export default function Home () {
       </Head>
 
       <LoginCredential />
-
-    </div>
+    </>
   )
 }
