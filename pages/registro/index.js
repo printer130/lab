@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-closing-tag-location */
 import { useForm } from 'react-hook-form'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { zodResolver } from '@hookform/resolvers/zod/dist/zod'
 import { ctxUser } from 'hooks/ctxUser'
 import { USER_STATES } from 'const/user_states'
@@ -9,9 +9,11 @@ import { registerSchema } from 'helpers/zod/RegisterSchema'
 import { Button, ErrorMessage, Input } from 'components'
 import { Loading } from 'components/Loading'
 import { addNewOrder } from 'db/firebase/firestore'
+import { useRouter } from 'next/router'
 
 export default function Registro () {
   const [loading, setLoading] = useState(false)
+  const router = useRouter()
   const {
     register,
     handleSubmit,
@@ -43,14 +45,10 @@ export default function Registro () {
       .then(() => {
         setLoading(false)
         reset()
+        router.push(`/registro/${data.ci}`)
       })
       .catch(err => console.log(err))
-    console.log(values)
   }
-
-  useEffect(() => {
-    console.log({ isSubmitSuccessful })
-  }, [formState])
 
   return (
     <>
