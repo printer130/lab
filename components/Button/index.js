@@ -17,6 +17,7 @@ export const Button = ({
       <style jsx>{`
         button {
           width: 100%;
+          cursor: pointer;
           max-width: 167px;
         }
      `}
