@@ -17,8 +17,8 @@ export default function Registro () {
   const {
     register,
     handleSubmit,
-    reset,
-    formState
+    formState,
+    setError
   } = useForm({
     mode: 'onChange',
     resolver: zodResolver(registerSchema),
@@ -30,24 +30,13 @@ export default function Registro () {
   const { user } = ctxUser()
 
   const onSubmit = data => {
-    // const values = {
-    //   ...data,
-    //   creationDate: Date.now() / 1000,
-    //   ordenNumber: 1
-    // }
     setLoading(true)
-    const values = {
-      ...data,
-      creationDate: Date.now() / 1000,
-      ordenNumber: 1
-    }
-    addNewOrder(values)
+    addNewOrder(data)
       .then(() => {
         setLoading(false)
-        reset()
-        router.push(`/registro/${data.ci}`)
+        router.push(`/registro/${data?.ci}`)
       })
-      .catch(err => console.log(err))
+      .catch(setError)
   }
 
   return (
@@ -59,7 +48,6 @@ export default function Registro () {
           </div>
           : <Loading />
       }
-
       <form
         onSubmit={handleSubmit(onSubmit)}
       >
