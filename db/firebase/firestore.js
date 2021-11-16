@@ -2,16 +2,29 @@ import {
   getFirestore,
   doc,
   setDoc,
-  getDoc
+  getDoc,
+  serverTimestamp
 } from 'firebase/firestore'
 
 const db = getFirestore()
 
-export async function addNewOrder (data) {
-  const { ci, creationDate } = data
-  const docRefByCI = await doc(db, `${ci}`, `${creationDate}`)
+const normalizedOrder = (data) => {
+  const values = {
+    ...data,
+    createdAt: Date.now()
+  }
+  return { values }
+}
 
-  return await setDoc(docRefByCI, data, { merge: true })
+const getRefFromOrder = async (values) => {
+  const { ci, createdAt } = values
+  return await doc(db, `${ci}`, `${createdAt}`)
+}
+
+export async function addNewOrder (data) {
+  const { values } = normalizedOrder(data)
+  const docRefByCI = await getRefFromOrder(values)
+  return await setDoc(docRefByCI, values, { merge: true })
 }
 
 export async function getDocByCI ({ ci }) {
@@ -23,5 +36,6 @@ export async function getDocByCI ({ ci }) {
     return docSnap.data()
   }
 
-  return 'No hay data'
+  console.log('No document found:')
+  return null
 }
