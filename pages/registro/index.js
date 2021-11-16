@@ -2,12 +2,9 @@
 import { useForm } from 'react-hook-form'
 import { useState } from 'react'
 import { zodResolver } from '@hookform/resolvers/zod/dist/zod'
-import { ctxUser } from 'hooks/ctxUser'
-import { USER_STATES } from 'const/user_states'
 import { DEFAULT_REGISTER_VALUES } from 'const/register_default_values'
 import { registerSchema } from 'helpers/zod/RegisterSchema'
 import { Button, ErrorMessage, Input } from 'components'
-import { Loading } from 'components/Loading'
 import { addNewOrder } from 'db/firebase/firestore'
 import { useRouter } from 'next/router'
 
@@ -27,7 +24,6 @@ export default function Registro () {
   })
 
   const { errors, isValid, isDirty, isSubmitSuccessful } = formState
-  const { user } = ctxUser()
 
   const onSubmit = data => {
     setLoading(true)
@@ -41,13 +37,6 @@ export default function Registro () {
 
   return (
     <>
-      {
-        user !== USER_STATES.NOT_KNOW
-          ? <div>
-            <h2>{user?.email}</h2>
-          </div>
-          : <Loading />
-      }
       <form
         onSubmit={handleSubmit(onSubmit)}
       >
