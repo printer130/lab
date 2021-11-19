@@ -4,6 +4,7 @@ import { emailAndPassword } from 'db/firebase/auth'
 import { LoginSchema } from 'helpers/zod/LoginSchema'
 import { DEFAULT_VALUES } from 'const/login_default_values'
 import { Select, Input, ErrorMessage, Button } from 'components'
+import { ctxUser } from 'hooks/ctxUser'
 
 export function LoginCredential () {
   const {
@@ -17,9 +18,11 @@ export function LoginCredential () {
     defaultValues: DEFAULT_VALUES
   })
   const { isValid, isDirty, errors } = formState
+  const { onLab } = ctxUser()
   const onSubmit = data => {
     const { email, password, laboratory } = data
-    emailAndPassword({ email, password, laboratory, setError })
+    onLab(laboratory)
+    emailAndPassword({ email, password, setError })
   }
 
   return (
@@ -32,15 +35,15 @@ export function LoginCredential () {
           errors={errors.email}
           placeholder='Email...'
           {...register('email')}
-        />
-        <ErrorMessage>{errors.email?.message}</ErrorMessage>
+        >Correo Electronico
+        </Input>
         <Input
           type='password'
           errors={errors.password}
           placeholder='Contraseña...'
           {...register('password')}
-        />
-        <ErrorMessage>{errors.password?.message}</ErrorMessage>
+        >Contraseña
+        </Input>
         <Select
           label='Laboratorio: '
           {...register('laboratory')}
@@ -57,7 +60,6 @@ export function LoginCredential () {
       </form>
       <style jsx>{`
         form {
-
         }
       `}
       </style>
