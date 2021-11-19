@@ -1,11 +1,10 @@
-import { useContext } from 'react'
-import { UserContext } from 'hooks/useUserContext'
 import { Button } from 'components'
 import { onSignOut } from 'db/firebase/auth'
+import { ctxUser } from 'hooks/ctxUser'
+import Link from 'next/link'
 
 export const Nav = () => {
-  const { user } = useContext(UserContext)
-  console.log(user)
+  const { user, lab } = ctxUser()
   const handleButton = () => {
     onSignOut()
   }
@@ -15,10 +14,28 @@ export const Nav = () => {
         <div>logo</div>
         {
           user &&
-            <Button onChange={handleButton}>
-              Cerrar Session
-            </Button>
-          }
+            <>
+              <div>
+                {lab}
+              </div>
+              <div>
+                {user.email}
+              </div>
+              <Link href='/arqueo'>
+                <a>
+                  Arqueo
+                </a>
+              </Link>
+              <Link href='/registro'>
+                <a>
+                  Registro
+                </a>
+              </Link>
+              <Button onChange={handleButton}>
+                Cerrar Session
+              </Button>
+            </>
+        }
       </nav>
       <style jsx>{`
       nav {
