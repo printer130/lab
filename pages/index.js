@@ -11,10 +11,11 @@ export default function Home () {
   useEffect(() => {
     user && router.push('/registro')
   }, [user])
+
   return (
     <>
       <Head>
-        <title>Farmacias</title>
+        <title>Laboratorio</title>
         <meta name='description' content='Para laboratorios y pacientes con recetas|orden' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
