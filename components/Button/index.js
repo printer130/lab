@@ -16,9 +16,14 @@ export const Button = ({
       </button>
       <style jsx>{`
         button {
+          pointer-events: ${!isValid || !isDirty ? 'none' : ''};
+          border: none;
+          margin: .55rem 0;
+          border-radius: 7px;
           width: 100%;
           cursor: pointer;
-          max-width: 167px;
+          max-width: 227px;
+          padding: .45rem .75rem;
         }
      `}
       </style>
