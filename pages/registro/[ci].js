@@ -1,32 +1,17 @@
 /* eslint-disable react/jsx-indent */
-import { useRouter } from 'next/router'
+import router, { useRouter } from 'next/router'
 import { getDocByCI } from 'db/firebase/firestore'
-import { useEffect, useMemo, useState } from 'react'
-import { Button } from 'components'
-import {
-  ELECTROLITOS,
-  ELECTROLITOS2,
-  ELECTROLITOS3,
-  ELECTROLITOS4,
-  MICROBIOLOGIA,
-  CROPOLOGIA,
-  ELECTROLITOS5,
-  EMBARAZO,
-  LIQUIDOS_BIOLOGICOS,
-  MARCADORES_TUMORALES,
-  SEROLOGIA,
-  ENSAYO_EN_HECES,
-  DROGAS_DE_ABUSO,
-  PANEL_DE_ALERGIAS,
-  MEDIO_INTERNO
-} from 'utils/orderDicc'
-import { ListOfAnalisys } from 'components/ListOfAnalisys'
+import { useEffect, useState } from 'react'
+import { Button, Input } from 'components'
+import { DicList } from 'components/DicList'
+import { OrderProfile } from 'components/OrderProfile'
 
 export default function RegisterNewCI () {
-  const [search, setSearch] = useState('')
   const [checkboxes, setCheckboxes] = useState({})
+  const [filteredBox, setFilteredBox] = useState([])
   const { query } = useRouter()
-  const router = useRouter()
+  const [verify, setVerify] = useState(false)
+  // const router = useRouter()
   const [byCI, setByCI] = useState(null)
   const { ci } = query
   // Error Handler !important
@@ -37,21 +22,19 @@ export default function RegisterNewCI () {
 
   const handleOrder = (e) => {
     e.preventDefault()
-    //
-    router.push('/registro')
+    // Register Completed
+    setVerify(true)
   }
+  useEffect(() => {
+    filter()
+  }, [checkboxes, verify])
 
-  const handleSearch = e => {
-    console.log(e.target)
-    setSearch(e.target.value)
-    // setSearch(e.target)
+  function filter () {
+    const arr = Object.entries(checkboxes)
+    const filtered = arr.filter(item => item[1] !== false)
+
+    setFilteredBox(filtered)
   }
-
-  // const filterChecked = ELECTROLITOS.filter(w => checkboxes[w] === true)
-  const filtered = ELECTROLITOS.filter(w =>
-    w.toLowerCase().includes(search.toLowerCase())
-  )
-  const memoizationList = useMemo(() => filtered, [search])
 
   const handleCheckbox = ({ target }) => {
     const checked = target.checked
@@ -62,108 +45,61 @@ export default function RegisterNewCI () {
     })
   }
 
+  const handleSave = () => {
+    console.log('SAVED!')
+    router.replace('/registro')
+  }
+
   return (
     <section>
       {
         byCI?.fullName
-          ? <>
-            <h3>Nuevo registro con CI: {ci} </h3>
-            <h5>Nombre: {byCI.fullName}</h5>
-            <h5>NIT: {byCI.nit}</h5>
-            <h5>Nro: {byCI.ordenNumber}</h5>
-            <h5>Telefono: {byCI.phone}</h5>
-            <h5>Razon Social: {byCI.socialReason}</h5>
-            </>
+          ? <OrderProfile
+              {...byCI}
+              ci={ci}
+            />
           : <h1>Cargando... </h1>
       }
-      <input
-        placeholder='Buscar...'
-        type='search'
-        value={search}
-        onChange={handleSearch}
-      />
-      <form
-        onSubmit={handleOrder}
-      >
-        <main>
-          <ListOfAnalisys
-            onChange={handleCheckbox}
-            listOfAnalisys={memoizationList}
-            title='ELECTROLITOS'
-          />
-          <ListOfAnalisys
-            onChange={handleCheckbox}
-            listOfAnalisys={ELECTROLITOS2}
-            title='ELECTROLITOS2'
-          />
-          <ListOfAnalisys
-            onChange={handleCheckbox}
-            listOfAnalisys={ELECTROLITOS3}
-            title='ELECTROLITOS3'
-          />
-          <ListOfAnalisys
-            onChange={handleCheckbox}
-            listOfAnalisys={ELECTROLITOS4}
-            title='ELECTROLITOS4'
-          />
-          <ListOfAnalisys
-            onChange={handleCheckbox}
-            listOfAnalisys={ELECTROLITOS5}
-            title='ELECTROLITOS5'
-          />
-          <ListOfAnalisys
-            onChange={handleCheckbox}
-            listOfAnalisys={CROPOLOGIA}
-            title='Cropologia'
-          />
-          <ListOfAnalisys
-            onChange={handleCheckbox}
-            listOfAnalisys={MICROBIOLOGIA}
-            title='Microbiologia'
-          />
-          <ListOfAnalisys
-            onChange={handleCheckbox}
-            listOfAnalisys={EMBARAZO}
-            title='Embarazo'
-          />
-          <ListOfAnalisys
-            onChange={handleCheckbox}
-            listOfAnalisys={LIQUIDOS_BIOLOGICOS}
-            title='Liquidos Biologicos'
-          />
-          <ListOfAnalisys
-            onChange={handleCheckbox}
-            listOfAnalisys={MARCADORES_TUMORALES}
-            title='Marcadores Tumorales'
-          />
-          <ListOfAnalisys
-            onChange={handleCheckbox}
-            listOfAnalisys={SEROLOGIA}
-            title='SEROLOGIA'
-          />
-          <ListOfAnalisys
-            onChange={handleCheckbox}
-            listOfAnalisys={ENSAYO_EN_HECES}
-            title='ENSAYO EN HECES'
-          />
-          <ListOfAnalisys
-            onChange={handleCheckbox}
-            listOfAnalisys={DROGAS_DE_ABUSO}
-            title='DROGAS_DE_ABUSO'
-          />
-          <ListOfAnalisys
-            onChange={handleCheckbox}
-            listOfAnalisys={PANEL_DE_ALERGIAS}
-            title='Panel de alergias'
-          />
-          <ListOfAnalisys
-            onChange={handleCheckbox}
-            listOfAnalisys={MEDIO_INTERNO}
-            title='Medio Interno'
-          />
-        </main>
-        <Button>Guardar</Button>
-      </form>
+      {
+        verify
+          ? <main>
+            <nav>
+              <h3>Tipo: </h3>
+              <Button onChange={() => setVerify(false)}> Ir atras</Button>
+            </nav>
+            <div>
+          {
+            filteredBox.map((item) => {
+              console.log(item[1])
+              return (
+                <Input
+                  key={item[0]}
+                  name={item.name}
+                  onChange={handleCheckbox}
+                  type='checkbox'
+                  checked={item[1]}
+                >{item[0]}
+                </Input>
+              )
+            }
+            )
+              }
+            </div>
+            <Button
+              onChange={handleSave}
+            >Guardar Datos
+            </Button>
+            </main>
+          : <form
+              onSubmit={handleOrder}
+            >
+              <DicList
+                checked={checkboxes}
+                onChange={handleCheckbox}
+              />
+              <Button>Continuar</Button>
+            </form>
+      }
       <style jsx>{`
         form {
           display:flex;
@@ -172,10 +108,19 @@ export default function RegisterNewCI () {
         section {
           width: 100%;
         }
-        main {
+        nav {
+          display: flex;
+          width: 100%;
+          justify-content: space-between;
+        }
+        div {
           display: grid;
-          place-content: center;
-          grid-template-columns: repeat(auto-fit, 250px);
+          width: 100%;
+          grid-template-columns: repeat(auto-fill, minmax(150px, 1fr))
+        }
+        p {
+          place-self: center;
+          text-align: center;
         }
       `}
       </style>
