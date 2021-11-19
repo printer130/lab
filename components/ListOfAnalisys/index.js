@@ -6,9 +6,10 @@ export const ListOfAnalisys = ({
   title
 }) => {
   return (
-    <div>
-      <h3> {title} </h3>
-      {
+    <>
+      <div>
+        <h3> {title} </h3>
+        {
       listOfAnalisys.map(word =>
         <Input
           name={word}
@@ -18,6 +19,13 @@ export const ListOfAnalisys = ({
         > {word}
         </Input>)
      }
-    </div>
+      </div>
+      <style jsx>{`
+      div {
+        height: fit-content;
+      }
+    `}
+      </style>
+    </>
   )
 }
