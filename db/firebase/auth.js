@@ -5,16 +5,18 @@ import { initializeApp } from '@firebase/app'
 app ?? initializeApp(firebaseConfig)
 export const auth = getAuth()
 
-export const emailAndPassword = ({ email, password, laboratory, setError }) => {
-  console.log({ email, password, laboratory })
+export const emailAndPassword = ({ email, password, setError }) => {
   return signInWithEmailAndPassword(auth, email, password)
-    .then(user => mapUserFromFirebase(user, laboratory))
-    .catch((error) => {
-      setError('auth', {
-        message: 'Contraseña incorrecta',
-        error
-      })
+    .then(user => {
+      return mapUserFromFirebase(user)
     })
+    .catch(error => {
+      return setError('auth', {
+        message: 'Contraseña incorrecta',
+        error: error.message
+      })
+    }
+    )
 }
 
 export const onAuthStateChange = (onChange) => {
@@ -24,14 +26,14 @@ export const onAuthStateChange = (onChange) => {
   })
 }
 
-const mapUserFromFirebase = (user, laboratory) => {
+const mapUserFromFirebase = (user) => {
   const { email, accessToken, displayName } = user
-  return {
+  const userNormalized = {
     email,
     accessToken,
-    laboratory,
     displayName
   }
+  return userNormalized
 }
 
 export const onSignOut = () => {
