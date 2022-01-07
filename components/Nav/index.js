@@ -6,8 +6,6 @@ import Link from 'next/link'
 import { SIGN_OUT } from 'const/config'
 import { Logo } from 'components/Logo'
 import { useRouter } from 'next/router'
-import { motion, useCycle } from 'framer-motion'
-import { MenuToggle } from './MenuToggle'
 
 // Naive implementation - in reality would want to attach
 // a window or resize listener. Also use state/layoutEffect instead of ref/effect
