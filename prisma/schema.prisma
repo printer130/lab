@@ -24,7 +24,7 @@ model User {
   name      String?
   password  String?  @db.VarChar(255)
   labId     String
-  lab       Lab      @relation(fields: [labId], references: [name], onDelete: Cascade)
+  lab       Lab      @relation(fields: [labId], references: [name], onDelete: SetNull)
   orders    Order[]
 }
 
