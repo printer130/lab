@@ -1,4 +1,4 @@
-import { prisma } from '../../../db/prisma'
+import { prisma } from 'db/prisma'
 import { getSession } from 'next-auth/react'
 
 export default async function (req, res) {
