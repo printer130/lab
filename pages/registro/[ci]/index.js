@@ -10,7 +10,6 @@ import { useSession } from 'next-auth/react'
 import { prisma } from 'db/prisma'
 import { getAge } from 'hooks/dateTime/getAge'
 import { saveReceipt } from 'lib/db'
-import { Popover } from '@headlessui/react'
 import Link from 'next/link'
 
 export default function RegisterNewCI ({ order = '' }) {
