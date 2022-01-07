@@ -1,5 +1,5 @@
 import { getSession } from 'next-auth/react'
-import { prisma } from '../../../db/prisma'
+import { prisma } from 'db/prisma'
 
 export default async function (req, res) {
   if (req.method !== 'POST') {
