@@ -37,9 +37,9 @@ export default async function (req, res) {
         updatedAt: false
       }
     })
-    res.json({ data: findedUniqueId })
+    return res.status(200).json({ data: findedUniqueId })
   } catch (error) {
     console.log(error)
   }
-  res.json({ data: null })
+  return res.json({ data: null })
 }

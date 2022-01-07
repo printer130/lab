@@ -1,15 +1,13 @@
+// @ts-check
 const { PrismaClient } = require('@prisma/client')
-// const url = process.env.DATABASE_URL
-let prisma
 
-if (process.env.NODE_ENV === 'production') {
-  prisma = new PrismaClient()
-  // console.log('[PRISMA]', prisma)
-} else {
-  if (!global.prisma) {
-    global.prisma = new PrismaClient()
-  }
-  prisma = global.prisma
-}
+let prisma = PrismaClient || undefined
 
-module.exports = { prisma }
+prisma =
+  global.prisma ||
+  new PrismaClient({
+    log: ['error']
+  })
+if (process.env.NODE_ENV !== 'production') global.prisma = prisma
+
+exports.default = { prisma }
