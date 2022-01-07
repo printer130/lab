@@ -189,7 +189,7 @@ async function main () {
       indebtList: { indebt: 75 },
       owner: {
         connect: {
-          ci: 564523
+          ci: 3234
         }
       },
       lab: {

@@ -41,5 +41,5 @@ export default async function (req, res) {
   } catch (error) {
     console.log(error)
   }
-  return res.json({ data: null })
+  return res.status(501).json({ data: null })
 }
