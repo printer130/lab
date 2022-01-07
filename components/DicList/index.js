@@ -1,28 +1,30 @@
 import { ListOfAnalisys } from 'components/ListOfAnalisys'
-import { DICTIONARY } from 'const/DICTIONARY'
+import jsonData from 'const/data.json'
 
 export const DicList = ({ onChange }) => {
   return (
     <>
-      <main>
+      <section>
         {
-       DICTIONARY.map(({ title, values }) =>
-         <ListOfAnalisys
-           key={title}
-           onChange={onChange}
-           listOfAnalisys={values}
-           title={title}
-         />)
+        jsonData.map(({ title, list }) => {
+          return (
+            <ListOfAnalisys
+              key={title}
+              onChange={onChange}
+              list={list}
+              title={title}
+            />
+          )
+        })
        }
-      </main>
+      </section>
       <style jsx>{`
-        main {
-         display: grid;
-         place-content: center;
-         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-         grid-auto-rows: minmax(20px, auto);
-       }
-      `}
+        section { 
+              columns: 5 270px;
+              column-gap: 0.5rem;
+              margin-bottom: 2rem;
+            }
+        `}
       </style>
     </>
   )

@@ -13,54 +13,65 @@ export const Form = ({
   const zzz = loading ? '.4' : '1'
   return (
     <>
-      <form
-        onSubmit={handleSubmit(onSubmit)}
-      >
+      <form onSubmit={handleSubmit(onSubmit)}>
         <fieldset disabled={!!loading}>
-          <legend>Orden: </legend>
-          {
-            formInputs.map(({
-              error,
-              name,
-              type,
-              placeholder,
-              options,
-              label
-            }) => (
-              <Input
-                errors={error}
-                key={name}
-                type={type}
-                placeholder={placeholder}
-                {
-                 ...register(name, options)
-                }
-              >
-                {label}
-              </Input>
-            ))
-          }
-          <Button
-            isValid={isValid}
-            isDirty={isDirty}
-          >
-            Guardar
-          </Button>
+          <legend>
+            <h1>Orden:</h1>
+          </legend>
+          <div>
+            <strong>Sexo:</strong>
+            <select {...register('sex')} required>
+              <option value='female'>Mujer</option>
+              <option value='male'>Varon</option>
+              <option value='other'>Otro</option>
+            </select>
+            {formInputs.map(
+              ({ error, name, type, placeholder, options, label }) => (
+                <Input
+                  errors={error}
+                  key={name + label}
+                  type={type}
+                  placeholder={placeholder}
+                  {...register(name, options)}
+                >
+                  {label}
+                </Input>
+              )
+            )}
+            <Button isValid={isValid} isDirty={isDirty}>
+              Guardar
+            </Button>
+          </div>
         </fieldset>
-
       </form>
-      <style jsx>{`
-        fieldset {
-         display: flex;
-         min-width: 220px;
-         flex-wrap: wrap;
-         margin: 0 auto;
-         max-width: 650px;
-         opacity: ${zzz};
-         user-select: ${zzz};
-         pointer-events: ${zzz}
-       }
-     `}
+      <style jsx>
+        {`
+          form {
+            max-width: 900px;
+            margin: 0 auto;
+          }
+          div {
+            display: flex;
+            min-width: 220px;
+            width: 220px;
+            flex-wrap: wrap;
+            opacity: ${zzz};
+            user-select: ${zzz};
+            margin: 0 auto;
+            pointer-events: ${zzz};
+          }
+          select {
+            width: 100%;
+            margin: 0 auto;
+            padding: 0.35rem;
+            margin-bottom: 15px;
+          }
+          strong {
+            margin-bottom:  12px;
+            font-weight: 600;
+            align-items: center;
+          }
+        `}
       </style>
     </>
   )

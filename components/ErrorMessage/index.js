@@ -8,6 +8,7 @@ export const ErrorMessage = ({ children }) => {
         small {
          display: block;
          color: #f00;
+         margin:0 auto;
         }
       `}
       </style>

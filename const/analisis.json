@@ -1,0 +1,1417 @@
+[
+    {
+        "title": "HEMATOLOGÍA",
+        "list": [
+            {
+                "value": "Hemograma",
+                "price": 23,
+                "map": "hemograma"
+            },
+            {
+                "value": "VES",
+                "price": 234
+            },
+            {
+                "value": "Reticulocitos",
+                "price": 234
+            },
+            {
+                "value": "Grupo y Rh",
+                "price": 234
+            },
+            {
+                "value": "Gota Gruesa",
+                "price": 234
+            },
+            {
+                "value": "Resistencia Osmotica",
+                "price": 234
+            },
+            {
+                "value": "COOMBS Directo",
+                "price": 234
+            },
+            {
+                "value": "COOMBS Indirecto",
+                "price": 234
+            },
+            {
+                "value": "Fe Sérico",
+                "price": 234
+            },
+            {
+                "value": "TIBC",
+                "price": 234
+            },
+            {
+                "value": "Ferritina",
+                "price": 234
+            },
+            {
+                "value": "Transferrina",
+                "price": 234
+            },
+            {
+                "value": "Inv. T. Cruzi",
+                "price": 234
+            },
+            {
+                "value": "Crioglobulina",
+                "price": 234
+            },
+            {
+                "value": "Plasma Rico en Plaq.",
+                "price": 234
+            },
+            {
+                "value": "Micrométodo Chagas",
+                "price": 234
+            },
+            {
+                "value": "HLB",
+                "price": 234
+            }
+        ]
+    },
+    {
+        "title": "HEMOSTASIA",
+        "list": [
+            {
+                "value": "TP-INR",
+                "price": 5
+            },
+            {
+                "value": "APTT",
+                "price": 5
+            },
+            {
+                "value": "T. Trombina",
+                "price": 5
+            },
+            {
+                "value": "T. Coagulación",
+                "price": 5
+            },
+            {
+                "value": "T. Sangría",
+                "price": 5
+            },
+            {
+                "value": "Fibrinógeno",
+                "price": 5
+            },
+            {
+                "value": "Dos. Factor Intriseco",
+                "price": 5
+            },
+            {
+                "value": "Dos. Factor Extrinseco",
+                "price": 5
+            },
+            {
+                "value": "Factor XIII",
+                "price": 5
+            },
+            {
+                "value": "Inhibidor Lupidico",
+                "price": 5
+            },
+            {
+                "value": "Dímeros D",
+                "price": 5
+            },
+            {
+                "value": "Anti Factor Xa",
+                "price": 5
+            },
+            {
+                "value": "Prueba de Lazo",
+                "price": 5
+            }
+        ]
+    },
+    {
+        "title": "ORINAS",
+        "list": [
+            {
+                "value": "General de Orina",
+                "price": 2
+            },
+            {
+                "value": "Depuración de Creatinina",
+                "price": 2
+            },
+            {
+                "value": "Proteinuria de 24 hrs.",
+                "price": 2
+            },
+            {
+                "value": "Na en Orina",
+                "price": 2
+            },
+            {
+                "value": "K en Orina",
+                "price": 2
+            },
+            {
+                "value": "Ca en Orina",
+                "price": 2
+            },
+            {
+                "value": "Cl en Orina",
+                "price": 2
+            },
+            {
+                "value": "Catecolaminas de 24 hrs.",
+                "price": 2
+            },
+            {
+                "value": "Microalbuminuria",
+                "price": 2
+            },
+            {
+                "value": "Proteinuria Matinal",
+                "price": 2
+            },
+            {
+                "value": "Creatinuria Matinal",
+                "price": 2
+            },
+            {
+                "value": "Chlamydia en Orina",
+                "price": 2
+            },
+            {
+                "value": "Amilasa en Orina",
+                "price": 2
+            },
+            {
+                "value": "Proteína de Bence-Jonce",
+                "price": 2
+            },
+            {
+                "value": "Cortisol en Orina",
+                "price": 2
+            },
+            {
+                "value": "P en Orina",
+                "price": 2
+            },
+            {
+                "value": "Mg en Orina",
+                "price": 2
+            },
+            {
+                "value": "Ac. Úrico en Orina",
+                "price": 2
+            },
+            {
+                "value": "Creatinuria de 24 hrs.",
+                "price": 2
+            },
+            {
+                "value": "pH de 24 hrs.",
+                "price": 2
+            },
+            {
+                "value": "Urea en Orina",
+                "price": 2
+            },
+            {
+                "value": "Li en Orina",
+                "price": 2
+            },
+            {
+                "value": "B2 Microalb.",
+                "price": 2
+            },
+            {
+                "value": "Test Indicam",
+                "price": 2
+            },
+            {
+                "value": "Vitamina C",
+                "price": 2
+            },
+            {
+                "value": "Epinefrina",
+                "price": 2
+            },
+            {
+                "value": "Norepinefrina",
+                "price": 2
+            },
+            {
+                "value": "Vitamina D",
+                "price": 2
+            }
+        ]
+    },
+    {
+        "title": "COPROLOGÍA",
+        "list": [
+            {
+                "value": "Coproparasitológico x1",
+                "price": 2
+            },
+            {
+                "value": "Coproparasitológico x2",
+                "price": 2
+            },
+            {
+                "value": "Coproparasitológico x3",
+                "price": 2
+            },
+            {
+                "value": "Parasitológico Concentrado",
+                "price": 2
+            },
+            {
+                "value": "Oxiuros",
+                "price": 2
+            },
+            {
+                "value": "Lientería",
+                "price": 2
+            },
+            {
+                "value": "Moco Fecal",
+                "price": 2
+            },
+            {
+                "value": "Calprotecnina",
+                "price": 2
+            }
+        ]
+    },
+    {
+        "title": "EMBARAZO",
+        "list": [
+            {
+                "value": "BHCG Cualitativa",
+                "price": 2
+            },
+            {
+                "value": "BHCG Cuantitativa",
+                "price": 2
+            },
+            {
+                "value": "PAPP-A",
+                "price": 2
+            },
+            {
+                "value": "HCG Beta Libre",
+                "price": 2
+            }
+        ]
+    },
+    {
+        "title": "MARCADORES TUMORALES",
+        "list": [
+            {
+                "value": "CEA",
+                "price": 2
+            },
+            {
+                "value": "AFP",
+                "price": 2
+            },
+            {
+                "value": "CA - 19.9",
+                "price": 2
+            },
+            {
+                "value": "CA - 125",
+                "price": 2
+            },
+            {
+                "value": "CA - 15.3",
+                "price": 2
+            },
+            {
+                "value": "PSA Total",
+                "price": 2
+            },
+            {
+                "value": "PSA Libre",
+                "price": 2
+            },
+            {
+                "value": "Beta 2 MicroAlb",
+                "price": 2
+            },
+            {
+                "value": "BHCG Cuantitativo",
+                "price": 3
+            }
+        ]
+    },
+    {
+        "title": "ENSAYO EN HECES",
+        "list": [
+            {
+                "value": "ELISA AMEBAS",
+                "price": 2
+            },
+            {
+                "value": "ELISA Giardia",
+                "price": 2
+            },
+            {
+                "value": "Azucares Reductores",
+                "price": 2
+            },
+            {
+                "value": "Rotavirus",
+                "price": 2
+            },
+            {
+                "value": "Adenovirus",
+                "price": 2
+            },
+            {
+                "value": "Sangre Oculta",
+                "price": 2
+            },
+            {
+                "value": "H. Pylori Ag.",
+                "price": 2
+            },
+            {
+                "value": "Verotoxina + E.Coli 0157",
+                "price": 2
+            },
+            {
+                "value": "Sudam III",
+                "price": 2
+            },
+            {
+                "value": "Clostridium Difficile Tox. A y B",
+                "price": 2
+            },
+            {
+                "value": "Criptosporidium",
+                "price": 2
+            }
+        ]
+    },
+    {
+        "title": "PANEL DE ALERGIAS",
+        "list": [
+            {
+                "value": "Respiratorio",
+                "price": 2
+            },
+            {
+                "value": "Alimenticio",
+                "price": 2
+            },
+            {
+                "value": "Pediátrico",
+                "price": 2
+            }
+        ]
+    },
+    {
+        "title": "MICROBIOLOGÍA",
+        "list": [
+            {
+                "value": "Urocultivo",
+                "price": 2
+            },
+            {
+                "value": "Coprocultivo",
+                "price": 2
+            },
+            {
+                "value": "Cultivo de Secrecion",
+                "price": 2
+            },
+            {
+                "value": "Hemocultivo x1",
+                "price": 2
+            },
+            {
+                "value": "Hemocultivo x2",
+                "price": 2
+            },
+            {
+                "value": "Hemocultivo x3",
+                "price": 2
+            },
+            {
+                "value": "Cultivo de Hongos",
+                "price": 2
+            },
+            {
+                "value": "BK Simple",
+                "price": 2
+            },
+            {
+                "value": "BK Seriado",
+                "price": 2
+            },
+            {
+                "value": "Estudio Directo",
+                "price": 2
+            },
+            {
+                "value": "Tinción de Gram",
+                "price": 2
+            },
+            {
+                "value": "Tinción de Zhiel Neelsen",
+                "price": 2
+            },
+            {
+                "value": "Cultivo de Esputo",
+                "price": 2
+            },
+            {
+                "value": "Cultivo de Sec. Vaginal",
+                "price": 2
+            },
+            {
+                "value": "Espermocultivo",
+                "price": 2
+            },
+            {
+                "value": "Tinta China",
+                "price": 2
+            },
+            {
+                "value": "Cultivo Sec. Faríngea o Traqueal",
+                "price": 2
+            }
+        ]
+    },
+    {
+        "title": "INMUNOLOGÍA",
+        "list": [
+            {
+                "value": "Toxoplasmosis IgG",
+                "price": 2
+            },
+            {
+                "value": "Toxoplasmosis IgM",
+                "price": 2
+            },
+            {
+                "value": "Toxoplasmosis HAI",
+                "price": 2
+            },
+            {
+                "value": "Chagas ELISA",
+                "price": 2
+            },
+            {
+                "value": "Chagas HAI",
+                "price": 2
+            },
+            {
+                "value": "Chagas IF",
+                "price": 2
+            },
+            {
+                "value": "Chlamydia Trachomatis IgG",
+                "price": 2
+            },
+            {
+                "value": "Chlamydia Trachomatis IgM",
+                "price": 2
+            },
+            {
+                "value": "Cisticercosis Elisa",
+                "price": 2
+            },
+            {
+                "value": "Cisticercosis Western Blot",
+                "price": 2
+            },
+            {
+                "value": "Citomegalovirus - IgG",
+                "price": 2
+            },
+            {
+                "value": "Citomegalovirus - IgM",
+                "price": 2
+            },
+            {
+                "value": "Herpes tipo 1 (HSV1) - IgG",
+                "price": 2
+            },
+            {
+                "value": "Herpes tipo 1 (HSV1) - IgM",
+                "price": 2
+            },
+            {
+                "value": "Herpes tipo 2 (HSV2) - IgG",
+                "price": 2
+            },
+            {
+                "value": "Herpes tipo 2 (HSV2) - IgM",
+                "price": 2
+            },
+            {
+                "value": "Epstein Baar Virus - IgG",
+                "price": 2
+            },
+            {
+                "value": "Epstein Baar Virus - IgM",
+                "price": 2
+            },
+            {
+                "value": "Rubeola - IgG",
+                "price": 2
+            },
+            {
+                "value": "Rubeola - IgM",
+                "price": 2
+            },
+            {
+                "value": "Hepatitis A (HAV) - IgG",
+                "price": 2
+            },
+            {
+                "value": "Hepatitis A (HAV) - IgM",
+                "price": 2
+            },
+            {
+                "value": "Hepatitis B (HBs Ag)",
+                "price": 2
+            },
+            {
+                "value": "Hepatitis B (HBs Ac) Anti HBs",
+                "price": 2
+            },
+            {
+                "value": "Hepatitis B (HBc Ac) Anticore",
+                "price": 2
+            },
+            {
+                "value": "Hepatitis B (HBc Ag) IgG",
+                "price": 2
+            },
+            {
+                "value": "Hepatitis B (HBc Ag) IgM",
+                "price": 2
+            },
+            {
+                "value": "Hepatitis B (HBe Ag) AG E",
+                "price": 2
+            },
+            {
+                "value": "Hepatitis B (HBe Ag) Anti HBe",
+                "price": 2
+            },
+            {
+                "value": "Hepatitis C (HCV) West. Blot",
+                "price": 2
+            },
+            {
+                "value": "Hepatitis C (HCV) ELISA",
+                "price": 2
+            },
+            {
+                "value": "HIV Ac 1-2",
+                "price": 2
+            },
+            {
+                "value": "HIV ELISA",
+                "price": 2
+            },
+            {
+                "value": "HIV Ag P24",
+                "price": 2
+            },
+            {
+                "value": "HIV West. Blot",
+                "price": 2
+            },
+            {
+                "value": "H. Pylori IgG",
+                "price": 2
+            },
+            {
+                "value": "H. Pylori IgA",
+                "price": 2
+            },
+            {
+                "value": "H. Pylori IgM",
+                "price": 2
+            },
+            {
+                "value": "IgA",
+                "price": 2
+            },
+            {
+                "value": "IgG",
+                "price": 2
+            },
+            {
+                "value": "IgM",
+                "price": 2
+            },
+            {
+                "value": "IgE",
+                "price": 2
+            },
+            {
+                "value": "Dengue - IgG (ELISA)",
+                "price": 2
+            },
+            {
+                "value": "Dengue - IgM (ELISA)",
+                "price": 2
+            },
+            {
+                "value": "FTA-ABS (Sifilis) - IgG",
+                "price": 2
+            },
+            {
+                "value": "FTA-ABS (Sifilis) - IgM",
+                "price": 2
+            },
+            {
+                "value": "Hidatidosis Elisa",
+                "price": 2
+            },
+            {
+                "value": "Hidatidosis Western Blot",
+                "price": 2
+            },
+            {
+                "value": "Influenza A+B",
+                "price": 2
+            },
+            {
+                "value": "Micoplasma - IgG",
+                "price": 2
+            },
+            {
+                "value": "Micoplasma - IgM",
+                "price": 2
+            },
+            {
+                "value": "Brucelosis IgG",
+                "price": 2
+            },
+            {
+                "value": "Brucelosis IgM",
+                "price": 2
+            },
+            {
+                "value": "COVID 19 (Flujo lateral)",
+                "price": 2
+            },
+            {
+                "value": "COVID 19 (ELISA)",
+                "price": 2
+            },
+            {
+                "value": "COVID 19 (Ac. Neutralizantes)",
+                "price": 2
+            },
+            {
+                "value": "COVID 19 (Ag. Nasal)",
+                "price": 2
+            },
+            {
+                "value": "IL - 6",
+                "price": 2
+            }
+        ]
+    },
+    {
+        "title": " AUTOINMUNIDAD",
+        "list": [
+            {
+                "value": "Anti ds DNA",
+                "price": 2
+            },
+            {
+                "value": "ANA (ELISA)",
+                "price": 2
+            },
+            {
+                "value": "ANA IF",
+                "price": 2
+            },
+            {
+                "value": "Células LE",
+                "price": 2
+            },
+            {
+                "value": "Anca-P (ELISA)",
+                "price": 2
+            },
+            {
+                "value": "Anca-C (ELISA)",
+                "price": 2
+            },
+            {
+                "value": "ASMA",
+                "price": 2
+            },
+            {
+                "value": "AMA",
+                "price": 2
+            },
+            {
+                "value": "LKM1",
+                "price": 2
+            },
+            {
+                "value": "C3",
+                "price": 2
+            },
+            {
+                "value": "C4",
+                "price": 2
+            },
+            {
+                "value": "Ac. Anticitrulina",
+                "price": 2
+            },
+            {
+                "value": "Ac. Antivimetina",
+                "price": 2
+            },
+            {
+                "value": "ENA Profile",
+                "price": 2
+            },
+            {
+                "value": "Panel Digestivo",
+                "price": 2
+            },
+            {
+                "value": "Panel Hepático",
+                "price": 2
+            },
+            {
+                "value": "Anticardiolipina screening",
+                "price": 2
+            },
+            {
+                "value": "Anticardiolipina IgG",
+                "price": 2
+            },
+            {
+                "value": "Anticardiolipina IgM",
+                "price": 2
+            },
+            {
+                "value": "Ac. Antifosfolípidos - IgG",
+                "price": 2
+            },
+            {
+                "value": "Ac. Antifosfolípidos - IgM",
+                "price": 2
+            },
+            {
+                "value": "Anti DNP",
+                "price": 2
+            },
+            {
+                "value": "Anti Endomisio IgA (IF)",
+                "price": 2
+            },
+            {
+                "value": "Anti Transglutaminasa IgA",
+                "price": 2
+            },
+            {
+                "value": "Anti Gliadina IgA (Elisa)",
+                "price": 2
+            },
+            {
+                "value": "ANCA 3 LINE",
+                "price": 2
+            },
+            {
+                "value": "B2-Glicoproteina I",
+                "price": 2
+            },
+            {
+                "value": "B2-Glicoproteina IgG",
+                "price": 2
+            },
+            {
+                "value": "B2-Glicoproteina IgM",
+                "price": 2
+            },
+            {
+                "value": "Anti dsDNA IFI",
+                "price": 2
+            },
+            {
+                "value": "Anca-C ELISA",
+                "price": 2
+            },
+            {
+                "value": "Anca-P ELISA",
+                "price": 2
+            },
+            {
+                "value": "Anti-DPG IgG",
+                "price": 2
+            },
+            {
+                "value": "Anti Endomisio IgG (IF)",
+                "price": 2
+            },
+            {
+                "value": "Anti Gliadina IgG (Elisa)",
+                "price": 2
+            },
+            {
+                "value": "Anti Transglutaminasa IgG",
+                "price": 5
+            }
+        ]
+    },
+    {
+        "title": "LÍQUIDOS BIOLÓGICOS",
+        "list": [
+            {
+                "value": "Citoqui. LCR",
+                "price": 2
+            },
+            {
+                "value": "Citoqui. Liq. Pleural",
+                "price": 2
+            },
+            {
+                "value": "Citoqui. Liq. Ascitico",
+                "price": 2
+            },
+            {
+                "value": "Citoqui. Liq. Sinovial",
+                "price": 2
+            },
+            {
+                "value": "Citoqui. Liq. Pericardio",
+                "price": 2
+            },
+            {
+                "value": "Citoqui. Liq. Peritoneal",
+                "price": 2
+            },
+            {
+                "value": "ADA",
+                "price": 2
+            },
+            {
+                "value": "Amonio LCR",
+                "price": 2
+            },
+            {
+                "value": "Espermograma",
+                "price": 2
+            }
+        ]
+    },
+    {
+        "title": "SEROLOGÍA",
+        "list": [
+            {
+                "value": "PCR Cuantitativo",
+                "price": 2
+            },
+            {
+                "value": "ASTO Cuantitativo",
+                "price": 2
+            },
+            {
+                "value": "RF Cuantitativo",
+                "price": 2
+            },
+            {
+                "value": "RPR",
+                "price": 2
+            },
+            {
+                "value": "Reacción Widal",
+                "price": 2
+            },
+            {
+                "value": "Mononucleosis",
+                "price": 2
+            },
+            {
+                "value": "Brucelosis",
+                "price": 5
+            }
+        ]
+    },
+    {
+        "title": "DROGAS DE ABUSO",
+        "list": [
+            {
+                "value": "Cocaína",
+                "price": 2
+            },
+            {
+                "value": "THC",
+                "price": 2
+            },
+            {
+                "value": "Benzodiazepinas",
+                "price": 2
+            }
+        ]
+    },
+    {
+        "title": "QUÍMICA METABÓLICA",
+        "list": [
+            {
+                "value": "Glicemia",
+                "price": 2
+            },
+            {
+                "value": "Glicemia Post Estimulo",
+                "price": 2
+            },
+            {
+                "value": "Tolerancia a la Glucosa",
+                "price": 2
+            },
+            {
+                "value": "Hb Glicosilada A1",
+                "price": 2
+            },
+            {
+                "value": "Hb Glicosilada A1C",
+                "price": 2
+            },
+            {
+                "value": "Urea/BUN",
+                "price": 2
+            },
+            {
+                "value": "Creatinina",
+                "price": 2
+            },
+            {
+                "value": "Acido Úrico",
+                "price": 2
+            },
+            {
+                "value": "Colesterol",
+                "price": 2
+            },
+            {
+                "value": "Colesterol HDL",
+                "price": 2
+            },
+            {
+                "value": "Colesterol LDL",
+                "price": 2
+            },
+            {
+                "value": "Triglicéridos",
+                "price": 2
+            },
+            {
+                "value": "Lípidos Totales",
+                "price": 2
+            },
+            {
+                "value": "VLDL",
+                "price": 2
+            },
+            {
+                "value": "CPK",
+                "price": 2
+            },
+            {
+                "value": "CPK MB",
+                "price": 2
+            },
+            {
+                "value": "CK MM",
+                "price": 2
+            },
+            {
+                "value": "Lact. Desh Hidrogenasa",
+                "price": 2
+            },
+            {
+                "value": "Troponina I",
+                "price": 2
+            },
+            {
+                "value": "Amilasa",
+                "price": 2
+            },
+            {
+                "value": "Lipasa",
+                "price": 2
+            },
+            {
+                "value": "Amonio",
+                "price": 2
+            },
+            {
+                "value": "Lactato",
+                "price": 2
+            },
+            {
+                "value": "Fenilalanina",
+                "price": 2
+            },
+            {
+                "value": "Homocisteína",
+                "price": 2
+            },
+            {
+                "value": "Vitamina B12",
+                "price": 2
+            },
+            {
+                "value": "Acido Fólico",
+                "price": 2
+            },
+            {
+                "value": "Péptido B Natriurético",
+                "price": 2
+            },
+            {
+                "value": "Procalcitonina",
+                "price": 2
+            },
+            {
+                "value": "Serotonina",
+                "price": 2
+            },
+            {
+                "value": "Dopamina",
+                "price": 2
+            },
+            {
+                "value": "Bilirrubinas D, T, I.",
+                "price": 2
+            },
+            {
+                "value": "GOT",
+                "price": 2
+            },
+            {
+                "value": "GPT",
+                "price": 2
+            },
+            {
+                "value": "GGT",
+                "price": 2
+            },
+            {
+                "value": "Fosfatasa Alcalina",
+                "price": 2
+            },
+            {
+                "value": "Fosfatasa Acida",
+                "price": 2
+            },
+            {
+                "value": "Fosfatasa Acida Prostática",
+                "price": 2
+            },
+            {
+                "value": "Proteínas Totales",
+                "price": 2
+            },
+            {
+                "value": "Albumina",
+                "price": 2
+            },
+            {
+                "value": "Globulina",
+                "price": 2
+            },
+            {
+                "value": "Electroforesis de Proteínas",
+                "price": 2
+            }
+        ]
+    },
+    {
+        "title": "ELECTROLITOS",
+        "list": [
+            {
+                "value": "Sodio Na",
+                "price": 2
+            },
+            {
+                "value": "Potasio K",
+                "price": 2
+            },
+            {
+                "value": "Cloro Cl",
+                "price": 2
+            },
+            {
+                "value": "Calcio Ca",
+                "price": 2
+            },
+            {
+                "value": "Calcio Iónico Ca++",
+                "price": 2
+            },
+            {
+                "value": "Magnesio Mg",
+                "price": 2
+            },
+            {
+                "value": "Fosforo P",
+                "price": 2
+            },
+            {
+                "value": "Litio Li",
+                "price": 2
+            }
+        ]
+    },
+    {
+        "title": "ENDOCRINOLOGÍA",
+        "list": [
+            {
+                "value": "Estradiol",
+                "price": 2
+            },
+            {
+                "value": "FSH",
+                "price": 2
+            },
+            {
+                "value": "LH",
+                "price": 2
+            },
+            {
+                "value": "Progesterona",
+                "price": 2
+            },
+            {
+                "value": "Prolactina",
+                "price": 2
+            },
+            {
+                "value": "T3",
+                "price": 2
+            },
+            {
+                "value": "T4",
+                "price": 2
+            },
+            {
+                "value": "T4 Libre",
+                "price": 2
+            },
+            {
+                "value": "TSH",
+                "price": 2
+            },
+            {
+                "value": "TG",
+                "price": 2
+            },
+            {
+                "value": "a-TG",
+                "price": 2
+            },
+            {
+                "value": "a-TPO",
+                "price": 2
+            },
+            {
+                "value": "Testosterona",
+                "price": 2
+            },
+            {
+                "value": "Testosterona Libre",
+                "price": 2
+            },
+            {
+                "value": "Insulina Basal",
+                "price": 2
+            },
+            {
+                "value": "Insulina 30 min",
+                "price": 2
+            },
+            {
+                "value": "Insulina 60 min",
+                "price": 2
+            },
+            {
+                "value": "Insulina 90 min",
+                "price": 2
+            },
+            {
+                "value": "Insulina 120 min",
+                "price": 2
+            },
+            {
+                "value": "Cortisol AM",
+                "price": 2
+            },
+            {
+                "value": "cortisol PM",
+                "price": 2
+            },
+            {
+                "value": "PTH 2a Generación",
+                "price": 2
+            },
+            {
+                "value": "ACTH",
+                "price": 2
+            },
+            {
+                "value": "ACTH AM - PM",
+                "price": 2
+            },
+            {
+                "value": "Horm. de crecimiento (HGH)",
+                "price": 2
+            },
+            {
+                "value": "HGH Post Estimulo",
+                "price": 2
+            },
+            {
+                "value": "HGH de 4 Tiempos",
+                "price": 2
+            },
+            {
+                "value": "Delta 4-Androstenediona",
+                "price": 2
+            },
+            {
+                "value": "DHEAS",
+                "price": 2
+            },
+            {
+                "value": "17-OH Progesterona",
+                "price": 2
+            },
+            {
+                "value": "Calcitonina",
+                "price": 2
+            },
+            {
+                "value": "Osteocalcina",
+                "price": 2
+            },
+            {
+                "value": "Cross Lap",
+                "price": 2
+            },
+            {
+                "value": "Perfil Metabólico Neonatal",
+                "price": 2
+            },
+            {
+                "value": "Renina",
+                "price": 2
+            },
+            {
+                "value": "Aldosterona",
+                "price": 2
+            },
+            {
+                "value": "Prueba de Reserva Testicular",
+                "price": 2
+            },
+            {
+                "value": "Péptido C",
+                "price": 2
+            },
+            {
+                "value": "Índice HOMA",
+                "price": 2
+            },
+            {
+                "value": "IGF - 1",
+                "price": 2
+            },
+            {
+                "value": "Vitamina D 25(OH)",
+                "price": 2
+            },
+            {
+                "value": "Hormona Antimulleriana",
+                "price": 2
+            },
+            {
+                "value": "T3 libre",
+                "price": 2
+            },
+            {
+                "value": "Anti r-TSH",
+                "price": 2
+            },
+            {
+                "value": "DHT",
+                "price": 2
+            },
+            {
+                "value": "Eritropoyetina",
+                "price": 2
+            },
+            {
+                "value": "Anticuerpos ICA",
+                "price": 2
+            },
+            {
+                "value": "Anticuerpos GAD",
+                "price": 2
+            },
+            {
+                "value": "Índice de Tiroxina Libre",
+                "price": 2
+            },
+            {
+                "value": "SHBG",
+                "price": 2
+            },
+            {
+                "value": "SHBG (Glob. Fijadora)",
+                "price": 2
+            },
+            {
+                "value": "Estrona",
+                "price": 2
+            },
+            {
+                "value": "Anti M.B.G.",
+                "price": 2
+            },
+            {
+                "value": "IGFBP-3",
+                "price": 2
+            }
+        ]
+    },
+    {
+        "title": "MEDIO INTERNO",
+        "list": [
+            {
+                "value": "Gasometría",
+                "price": 2
+            },
+            {
+                "value": "Osmolaridad Urinaria",
+                "price": 2
+            },
+            {
+                "value": "Osmolaridad Plasmática",
+                "price": 2
+            },
+            {
+                "value": "Oximetría",
+                "price": 2
+            }
+        ]
+    }
+]

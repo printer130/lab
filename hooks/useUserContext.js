@@ -1,28 +1,20 @@
-import { USER_STATES } from 'const/user_states'
-import { createContext, useEffect, useState } from 'react'
-import { useUser } from './useUser'
+// import { USER_STATES } from 'const/user_states'
+import { createContext } from 'react'
 import { useRouter } from 'next/router'
+import { useSession } from 'next-auth/react'
 
 export const UserContext = createContext()
 
 export function UserProvider ({ children }) {
-  const { user } = useUser()
-  const [lab, setLab] = useState()
-  const router = useRouter()
+  const session = useSession()
 
   const value = {
-    user,
-    onLab: setLab,
-    lab
+    user: session
   }
 
-  useEffect(() => {
-    user === USER_STATES.NOT_LOGGED && router.replace('/')
-  }, [user])
+  // useEffect(() => {
+  //   user === USER_STATES.NOT_LOGGED && router.replace('/')
+  // }, [user])
 
-  return (
-    <UserContext.Provider value={value}>
-      {children}
-    </UserContext.Provider>
-  )
+  return <UserContext.Provider value={value}>{children}</UserContext.Provider>
 }

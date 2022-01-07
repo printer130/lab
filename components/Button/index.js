@@ -4,7 +4,8 @@ export const Button = ({
   isDirty = !false,
   isSubmitting,
   children,
-  onChange
+  onChange,
+  className
 }) => {
   return (
     <>
@@ -16,14 +17,22 @@ export const Button = ({
       </button>
       <style jsx>{`
         button {
-          pointer-events: ${!isValid || !isDirty ? 'none' : ''};
-          border: none;
+          display:${className ? 'none' : 'block'};
+          pointer-events: ${!isValid || !isDirty ? 'none' : 'auto'};
+          border: .5px solid black;
           margin: .55rem 0;
           border-radius: 7px;
+          background: #d2f2ff;
           width: 100%;
+          font-weight: bold;
           cursor: pointer;
-          max-width: 227px;
+          letter-spacing: .5px;
+          max-width: 270px;
+          min-width: 189px;
           padding: .45rem .75rem;
+        }
+        button:disabled {
+          border: .5px solid #ccc;
         }
      `}
       </style>

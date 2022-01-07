@@ -1,0 +1,167 @@
+[
+  {
+    "map": "amoxicilina",
+    "name": "Amoxicilina",
+    "type": "text"
+  },
+  {
+    "map": "dicloxacilina",
+    "name": "Dicloxacilina",
+    "type": "text"
+  },
+  {
+    "map": "gentamicina",
+    "name": "Gentamicina",
+    "type": "text"
+  },
+  {
+    "map": "nitro_furantoina",
+    "name": "Nitro Furantoina",
+    "type": "text"
+  },
+  {
+    "map": "sulfametoxazol_trimetropin",
+    "name": "Sulfametoxazol/trimetropin",
+    "type": "text"
+  },
+  {
+    "map": "ceftriaxona",
+    "name": "Ceftriaxona",
+    "type": "text"
+  },
+  {
+    "map": "tetraciclina",
+    "name": "Tetraciclina",
+    "type": "text"
+  },
+  {
+    "map": "amikacina",
+    "name": "Amikacina",
+    "type": "text"
+  },
+  {
+    "map": "cefotaxima",
+    "name": "Cefotaxima",
+    "type": "text"
+  },
+  {
+    "map": "ciprofloxacina",
+    "name": "Ciprofloxacina",
+    "type": "text"
+  },
+  {
+    "map": "acido_nalidixico",
+    "name": "Acido nalidixico",
+    "type": "text"
+  },
+  {
+    "map": "acido_pipemidico",
+    "name": "Acido Pipemidico",
+    "type": "text"
+  },
+  {
+    "map": "norfloxacina",
+    "name": "Norfloxacina",
+    "type": "text"
+  },
+  {
+    "map": "cefalexina",
+    "name": "Cefalexina",
+    "type": "text"
+  },
+  {
+    "map": "ampicilina",
+    "name": "Ampicilina",
+    "type": "text"
+  },
+  {
+    "map": "cloramfenicol",
+    "name": "Cloramfenicol",
+    "type": "text"
+  },
+  {
+    "map": "aztreonam",
+    "name": "Aztreonam",
+    "type": "text"
+  },
+  {
+    "map": "imipenen",
+    "name": "Imipenen",
+    "type": "text"
+  },
+  {
+    "map": "levofloxacina",
+    "name": "Levofloxacina",
+    "type": "text"
+  },
+  {
+    "map": "piperacilina",
+    "name": "Piperacilina",
+    "type": "text"
+  },
+  {
+    "map": "penicilina",
+    "name": "Penicilina",
+    "type": "text"
+  },
+  {
+    "map": "cefepime",
+    "name": "Cefepime",
+    "type": "text"
+  },
+  {
+    "map": "ceftazidima",
+    "name": "Ceftazidima",
+    "type": "text"
+  },
+  {
+    "map": "cefradina",
+    "name": "Cefradina",
+    "type": "text"
+  },
+  {
+    "map": "vancomicina",
+    "name": "Vancomicina",
+    "type": "text"
+  },
+  {
+    "map": "ticarcilina",
+    "name": "Ticarcilina",
+    "type": "text"
+  },
+  {
+    "map": "moxifloxacino",
+    "name": "Moxifloxacino",
+    "type": "text"
+  },
+  {
+    "map": "cefixima",
+    "name": "Cefixima",
+    "type": "text"
+  },
+  {
+    "map": "amoxicilina_ac_Clavulanico",
+    "name": "Amoxicilina/Ac.Clavulanico",
+    "type": "text"
+  },
+  {
+    "map": "meropenem",
+    "name": "Meropenem",
+    "type": "text"
+  },
+  {
+    "map": "ampicilina_sulbactam",
+    "name": "Ampicilina/Sulbactam",
+    "type": "text"
+  },
+  {
+    "map": "piperacilina_tazobactam",
+    "name": "Piperacilina/Tazobactam",
+    "type": "text"
+  },
+  {
+    "map": "cefazolina",
+    "name": "Cefazolina",
+    "type": "text"
+  }
+]

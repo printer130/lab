@@ -1,0 +1,492 @@
+[
+ {
+  "brand": "Human",
+  "name": "Albumin (ALB)",
+  "method": "Espectrometria"
+ },
+ {
+  "brand": "Human",
+  "name": "Alkaline Phosphatase (ALP, AP)",
+  "method": "Espectrometria"
+ },
+ {
+  "brand": "Human",
+  "name": "alpha-Amylase (AMY, AMS)",
+  "method": "Espectrometria"
+ },
+ {
+  "brand": "Human",
+  "name": "anti-Streptolysin-O (ASL, ASO)",
+  "method": "Espectrometria"
+ },
+ {
+  "brand": "Human",
+  "name": "Apolipoprotein A1 (Apo A1)",
+  "method": "Turbidimetria"
+ },
+ {
+  "brand": "Human",
+  "name": "Apolipoprotein B (Apo B)",
+  "method": "Turbidimetria"
+ },
+ {
+  "brand": "Human",
+  "name": "Bilirubin direct (DBIL)",
+  "method": "Espectrometria"
+ },
+ {
+  "brand": "Human",
+  "name": "Bilirubin total (TBIL)",
+  "method": "Espectrometria"
+ },
+ {
+  "brand": "Human",
+  "name": "Calcium (Ca)",
+  "method": "Espectrometria"
+ },
+ {
+  "brand": "Human",
+  "name": "Cholinesterase (CHE)",
+  "method": "Espectrometria"
+ },
+ {
+  "brand": "Human",
+  "name": "Chloride (Cl)",
+  "method": "Espectrometria"
+ },
+ {
+  "brand": "Human",
+  "name": "Cholesterol (CHOL)",
+  "method": "Espectrometria"
+ },
+ {
+  "brand": "Human",
+  "name": "CK-MB (CK-MB)",
+  "method": "Espectrometria"
+ },
+ {
+  "brand": "Human",
+  "name": "Complement C3 (C3)",
+  "method": "Turbidimetria"
+ },
+ {
+  "brand": "Human",
+  "name": "Complement C4 (C4)",
+  "method": "Turbidimetria"
+ },
+ {
+  "brand": "Human",
+  "name": "C-reactive Protein (CRP)",
+  "method": "Turbidimetria"
+ },
+ {
+  "brand": "Human",
+  "name": "Creatin Kinase (CK)",
+  "method": "Turbidimetria"
+ },
+ {
+  "brand": "Human",
+  "name": "Creatinine (CREA)",
+  "method": "Turbidimetria"
+ },
+ {
+  "brand": "Human",
+  "name": "Cystatin-C (CYSTC)",
+  "method": "Turbidimetria"
+ },
+ {
+  "brand": "Human",
+  "name": "Ferritin (FER)",
+  "method": "Turbidimetria"
+ },
+ {
+  "brand": "Human",
+  "name": "gamma-GT",
+  "method": "Espectrometria"
+ },
+ {
+  "brand": "Human",
+  "name": "Glucose (GLUC)",
+  "method": "Espectrometria"
+ },
+ {
+  "brand": "Human",
+  "name": "GOT/ASAT (AST, SGOT)",
+  "method": "Espectrometria"
+ },
+ {
+  "brand": "Human",
+  "name": "GPT/ALAT (ALT, SGPT)",
+  "method": "Espectrometria"
+ },
+ {
+  "brand": "Human",
+  "name": "HbA1c (HbA1c, HbA1)",
+  "method": "Espectrometria"
+ },
+ {
+  "brand": "Human",
+  "name": "HDL Cholesterol (HDL-c)",
+  "method": "Espectrometria"
+ },
+ {
+  "brand": "Human",
+  "name": "Hemoglobin (Hb)",
+  "method": "Espectrometria"
+ },
+ {
+  "brand": "Human",
+  "name": "Homocysteine (HCY)",
+  "method": "Espectrometria"
+ },
+ {
+  "brand": "Human",
+  "name": "Immunoglobin A (IgA)",
+  "method": "Turbidimetria"
+ },
+ {
+  "brand": "Human",
+  "name": "Immunoglobin G (IgG)",
+  "method": "Turbidimetria"
+ },
+ {
+  "brand": "Human",
+  "name": "Immunoglobin M (IgM)",
+  "method": "Turbidimetria"
+ },
+ {
+  "brand": "Human",
+  "name": "Inorganic Phosphorus (PO3, PHOS)",
+  "method": "Espectrometria"
+ },
+ {
+  "brand": "Human",
+  "name": "Iron (Fe)",
+  "method": "Espectrometria"
+ },
+ {
+  "brand": "Human",
+  "name": "LDH (LDP-P)",
+  "method": "Espectrometria"
+ },
+ {
+  "brand": "Human",
+  "name": "LDL Cholesterol (LDL-c)",
+  "method": "Espectrometria"
+ },
+ {
+  "brand": "Human",
+  "name": "Lipase (LIP, LPS)",
+  "method": "Turbidimetria"
+ },
+ {
+  "brand": "Human",
+  "name": "Lipoprotein (a) (Lp(a))",
+  "method": "Turbidimetria"
+ },
+ {
+  "brand": "Human",
+  "name": "Lithium (Li)",
+  "method": "Espectrometria"
+ },
+ {
+  "brand": "Human",
+  "name": "Magnesium (Mg)",
+  "method": "Espectrometria"
+ },
+ {
+  "brand": "Human",
+  "name": "Microalbumin (MALB)",
+  "method": "Espectrometria"
+ },
+ {
+  "brand": "Human",
+  "name": "Pancreatic Amylase (PAMY)",
+  "method": "Espectrometria"
+ },
+ {
+  "brand": "Human",
+  "name": "Potassium (K)",
+  "method": "Espectrometria"
+ },
+ {
+  "brand": "Human",
+  "name": "Rheumatoid Factor (RF)",
+  "method": "Turbidimetria"
+ },
+ {
+  "brand": "Human",
+  "name": "Sodium (Na)",
+  "method": "Turbidimetria"
+ },
+ {
+  "brand": "Human",
+  "name": "Total Iron Binding Capacity (TIBC)",
+  "method": "Espectrometria"
+ },
+ {
+  "brand": "Human",
+  "name": "Total Protein (TP)",
+  "method": "Espectrometria"
+ },
+ {
+  "brand": "Human",
+  "name": "Transferrin (TRF)",
+  "method": "Espectrometria"
+ },
+ {
+  "brand": "Human",
+  "name": "Triglycerides (TG)",
+  "method": "Espectrometria"
+ },
+ {
+  "brand": "Human",
+  "name": "Urea (UREA, BUN)",
+  "method": "Espectrometria"
+ },
+ {
+  "brand": "Human",
+  "name": "Urinary Total Protein (UTP)",
+  "method": "Espectrometria"
+ },
+ {
+  "brand": "Human",
+  "name": "Uric Acid (UA)",
+  "method": "Espectrometria"
+ },
+ {
+  "brand": "Cromatest Linear",
+  "name": "\"ACI URICO MR\",",
+  "method": "Espectrometria"
+ },
+ {
+  "brand": "Cromatest Linear",
+  "name": "\"ALBUMINA\",",
+  "method": "Espectrometria"
+ },
+ {
+  "brand": "Cromatest Linear",
+  "name": "\"ALT GPT BR\",",
+  "method": "Espectrometria"
+ },
+ {
+  "brand": "Cromatest Linear",
+  "name": "ANT�GENOS FEBRILES\",",
+  "method": "Espectrometria"
+ },
+ {
+  "brand": "Cromatest Linear",
+  "name": "\"APTT\",",
+  "method": "Espectrometria"
+ },
+ {
+  "brand": "Cromatest Linear",
+  "name": "\"AST GOT BR\",",
+  "method": "Espectrometria"
+ },
+ {
+  "brand": "Cromatest Linear",
+  "name": "\"BILIRRUBINA Total y Directa\",",
+  "method": "Espectrometria"
+ },
+ {
+  "brand": "Cromatest Linear",
+  "name": "\"C3\",",
+  "method": "Turbidimetria"
+ },
+ {
+  "brand": "Cromatest Linear",
+  "name": "\"C4\",",
+  "method": "Turbidimetria"
+ },
+ {
+  "brand": "Cromatest Linear",
+  "name": "\"CALCIO ARSENAZO\",",
+  "method": "Espectrometria"
+ },
+ {
+  "brand": "Cromatest Linear",
+  "name": "\"CALCIO OCC\",",
+  "method": "Espectrometria"
+ },
+ {
+  "brand": "Cromatest Linear",
+  "name": "\"CLORUROS\",",
+  "method": "Espectrometria"
+ },
+ {
+  "brand": "Cromatest Linear",
+  "name": "\"COLESTEROL MR\",",
+  "method": "Espectrometria"
+ },
+ {
+  "brand": "Cromatest Linear",
+  "name": "\"COLESTEROL-HDL\",",
+  "method": "Espectrometria"
+ },
+ {
+  "brand": "Cromatest Linear",
+  "name": "\"COLESTEROL-LDL\",",
+  "method": "Espectrometria"
+ },
+ {
+  "brand": "Cromatest Linear",
+  "name": "\"COLINESTERASA\",",
+  "method": "Espectrometria"
+ },
+ {
+  "brand": "Cromatest Linear",
+  "name": "\"CREATINA QUINASA BR\",",
+  "method": "Espectrometria"
+ },
+ {
+  "brand": "Cromatest Linear",
+  "name": "\"CREATINA QUINASA MB\",",
+  "method": "Espectrometria"
+ },
+ {
+  "brand": "Cromatest Linear",
+  "name": "\"CREATININA\",",
+  "method": "Espectrometria"
+ },
+ {
+  "brand": "Cromatest Linear",
+  "name": "\"FOSFATASA ACIDA\",",
+  "method": "Espectrometria"
+ },
+ {
+  "brand": "Cromatest Linear",
+  "name": "\"FOSFATASA ALCALINA BR\",",
+  "method": "Espectrometria"
+ },
+ {
+  "brand": "Cromatest Linear",
+  "name": "\"FOSFORO\",",
+  "method": "Espectrometria"
+ },
+ {
+  "brand": "Cromatest Linear",
+  "name": "\"GLUCOSA MR\",",
+  "method": "Espectrometria"
+ },
+ {
+  "brand": "Cromatest Linear",
+  "name": "\"GOT GPT color\",",
+  "method": "Espectrometria"
+ },
+ {
+  "brand": "Cromatest Linear",
+  "name": "\"HEMOGLOBINA\",",
+  "method": "Espectrometria"
+ },
+ {
+  "brand": "Cromatest Linear",
+  "name": "\"HEMOGLOBINA MR\",",
+  "method": "Espectrometria"
+ },
+ {
+  "brand": "Cromatest Linear",
+  "name": "\"HIERRO\",",
+  "method": "Espectrometria"
+ },
+ {
+  "brand": "Cromatest Linear",
+  "name": "\"HIERRO CAPACIDAD DE FIJACION\",",
+  "method": "Espectrometria"
+ },
+ {
+  "brand": "Cromatest Linear",
+  "name": "\"IgA\",",
+  "method": "Turbidimetria"
+ },
+ {
+  "brand": "Cromatest Linear",
+  "name": "\"IgG\",",
+  "method": "Turbidimetria"
+ },
+ {
+  "brand": "Cromatest Linear",
+  "name": "\"IgG, IgM, IgA\",",
+  "method": "Turbidimetria"
+ },
+ {
+  "brand": "Cromatest Linear",
+  "name": "\"IgM\",",
+  "method": "Turbidimetria"
+ },
+ {
+  "brand": "Cromatest Linear",
+  "name": "\"LDH BR\",",
+  "method": "Espectrometria"
+ },
+ {
+  "brand": "Cromatest Linear",
+  "name": "\"LIPASA\",",
+  "method": "Turbidimetria"
+ },
+ {
+  "brand": "Cromatest Linear",
+  "name": "\"MAGNESIO MR\",",
+  "method": "Espectrometria"
+ },
+ {
+  "brand": "Cromatest Linear",
+  "name": "\"POTASIO\",",
+  "method": "Espectrometria"
+ },
+ {
+  "brand": "Cromatest Linear",
+  "name": "\"PROTEINAS\",",
+  "method": "Espectrometria"
+ },
+ {
+  "brand": "Cromatest Linear",
+  "name": "\"PROTEINAS ORINA Y LCR\",",
+  "method": "Espectrometria"
+ },
+ {
+  "brand": "Cromatest Linear",
+  "name": "\"SODIO\",",
+  "method": "Espectrometria"
+ },
+ {
+  "brand": "Cromatest Linear",
+  "name": "\"TP\",",
+  "method": "Coagulometria"
+ },
+ {
+  "brand": "Cromatest Linear",
+  "name": "\"Transferrina\",",
+  "method": "Espectrometria"
+ },
+ {
+  "brand": "Cromatest Linear",
+  "name": "\"TRIGLICERIDOS MR\",",
+  "method": "Espectrometria"
+ },
+ {
+  "brand": "Cromatest Linear",
+  "name": "\"UREA\",",
+  "method": "Espectrometria"
+ },
+ {
+  "brand": "Cromatest Linear",
+  "name": "\"UREA BUN BR\",",
+  "method": "Espectrometria"
+ },
+ {
+  "brand": "Cromatest Linear",
+  "name": "\"VDRL MR\",",
+  "method": "Espectrometria"
+ },
+ {
+  "brand": "Cromatest Linear",
+  "name": "\"?-AMILASA MR\",",
+  "method": "Espectrometria"
+ },
+ {
+  "brand": "Cromatest Linear",
+  "name": "\"?-GT BR\",",
+  "method": "Espectrometria"
+ }
+]

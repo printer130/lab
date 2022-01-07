@@ -1,26 +1,72 @@
 import { useEffect } from 'react'
-import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { LoginCredential } from 'container/LoginCredential'
-import { ctxUser } from 'hooks/ctxUser'
+import {
+  getCsrfToken,
+  getProviders,
+  getSession,
+  useSession
+} from 'next-auth/react'
+import { URL_CALLBACK } from 'const/config'
+import { Logo } from 'components/Logo'
 
-export default function Home () {
-  const { user } = ctxUser()
+export default function Home ({ providers, csrfToken = {} }) {
+  const session = useSession()
   const router = useRouter()
+  console.log('sessjion', session, URL_CALLBACK)
 
   useEffect(() => {
-    user && router.push('/registro')
-  }, [user])
+    session?.data && router.push(`${URL_CALLBACK}`)
+  }, [session?.data])
 
   return (
-    <>
-      <Head>
-        <title>Laboratorio</title>
-        <meta name='description' content='Para laboratorios y pacientes con recetas|orden' />
-        <link rel='icon' href='/favicon.ico' />
-      </Head>
+    <main>
+      <Logo login a='#000' innerB='#fff' />
+      {providers |
+        (session?.status === 'unauthenticated') |
+        (session === null) &&
+        Object.values(providers).map(provider => {
+          return (
+            <LoginCredential
+              csrfToken={csrfToken}
+              provider={provider}
+              key={provider.name}
+            />
+          )
+        })}
+      <style jsx>
+        {`
+          main {
+            display: flex;
+            height: 100%;
+            min-height: 95vh;
+            margin: 0 auto;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+          }
 
-      <LoginCredential />
-    </>
+          img {
+            width: 270px;
+            margin-bottom: 3rem;
+          }
+        `}
+      </style>
+    </main>
   )
+}
+
+Home.auth = false
+
+export async function getServerSideProps (ctx) {
+  const providers = await getProviders()
+  const csrfToken = await getCsrfToken(ctx)
+  const session = await getSession(ctx)
+  return {
+    props: {
+      providers,
+      csrfToken,
+      session
+    }
+  }
 }

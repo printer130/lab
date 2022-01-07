@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-export function useOrder (data = null) {
+export function useOrder (data) {
   const [order, setOrder] = useState(null)
 
   useEffect(() => {

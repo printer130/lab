@@ -4,6 +4,7 @@ export default function Arqueo () {
   const handleClic = () => {
     console.log('clic')
   }
+
   return (
     <>
       <section>
@@ -13,32 +14,38 @@ export default function Arqueo () {
             onChange={handleClic}
             placeholder='Total de caja'
             type='number'
-          >Caja
+          >
+            Caja
           </Input>
           <Input type='number'>Pagos Realizados</Input>
           <Input type='number'>Total Del Dia</Input>
         </div>
         <Button>No hace nada este boton</Button>
       </section>
-      <style jsx>{`
-       section {
-        text-align: right;
-       }
-        div {
-         display: flex;
-         justify-content: center;
-         align-items: center;
-        }
-        @media (max-width: 600px) {
-         section {
-          text-align: center;
-         }
-         div {
-           flex-direction: column;
+      <style jsx>
+        {`
+          section {
+            width: 270px;
+            margin: 0 auto;
           }
-        }
-      `}
+          div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+          }
+          @media (max-width: 600px) {
+            section {
+              text-align: center;
+            }
+            div {
+              flex-direction: column;
+            }
+          }
+        `}
       </style>
     </>
   )
 }
+
+Arqueo.auth = true
