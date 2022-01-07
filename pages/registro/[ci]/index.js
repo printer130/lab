@@ -10,14 +10,14 @@ import { useSession } from 'next-auth/react'
 import { prisma } from 'db/prisma'
 import { getAge } from 'hooks/dateTime/getAge'
 import { saveReceipt } from 'lib/db'
-import { Button } from 'components'
+import { Popover } from '@headlessui/react'
+import Link from 'next/link'
 
 export default function RegisterNewCI ({ order = '' }) {
   const router = useRouter()
   const [loading, setLoading] = useState(false)
   const [verify, setVerify] = useState(false)
   const [modal, setModal] = useState(false)
-  const [inputsChecked, setInputsChecked] = useState([])
   const [receipt, setReceipt] = useState(null)
 
   const [total, setTotal] = useState(0)
@@ -32,24 +32,12 @@ export default function RegisterNewCI ({ order = '' }) {
   const { setCheckboxes, checkboxes, filteredBox } = useInputs({ verify })
 
   useEffect(() => {
-    const getInputs = window.localStorage.getItem('in')
-    const parsedInputs = JSON.parse(getInputs)
-    setInputsChecked(parsedInputs)
-  }, [verify, filteredBox, checkboxes])
-
-  useEffect(() => {
     for (const i of filteredBox) {
       t += i.price
     }
     setTotal(t)
   }, [filteredBox])
 
-  useEffect(() => {
-    modal & receipt?.id &&
-      window.fetch(`/api/getUniqueId/${receipt.id}/${order.ci}`)
-  }, [modal, receipt])
-
-  console.log('[order]', order)
   const handleOrder = e => {
     e.preventDefault()
     setVerify(false)
@@ -61,7 +49,6 @@ export default function RegisterNewCI ({ order = '' }) {
         setLoading(false)
         setModal(c => !c)
         // if (!res.ok) return new Error('No se pudo guardar el recibo')
-        setInputsChecked([])
         setCheckboxes({})
       })
       .catch(err => console.log('ERR', err, err.message))
@@ -104,17 +91,13 @@ export default function RegisterNewCI ({ order = '' }) {
     setChange(valueIn)
   }
 
-  const handleOk = () => {
-    // window.localStorage.removeItem('in')
-    router.replace('/registro')
-  }
-
   if (router.isFallback) return <div>Cargando...</div>
 
   if (!session) return <div />
 
   if (loading) return <div>Revisando...</div>
 
+  console.log('[RECEIPT]', receipt)
   return (
     <section>
       <div id='modal'>
@@ -124,15 +107,32 @@ export default function RegisterNewCI ({ order = '' }) {
           <div>
             <fieldset>
               <legend>Codigo de recibo</legend>
+              {/* {receipt.cuiid} */}
               <p id='id'>
                 {receipt.id}
                 {receipt.labName.replace(/ /g, '').slice(0, 4)}
                 {receipt.ownerCi}
               </p>
             </fieldset>
+            <Popover className='relative'>
+              <Popover.Button>Solutions</Popover.Button>
+
+              <Popover.Panel className='absolute z-10'>
+                <div className='grid grid-cols-2'>
+                  <a href='/analytics'>Analytics</a>
+                  <a href='/engagement'>Engagement</a>
+                  <a href='/security'>Security</a>
+                  <a href='/integrations'>Integrations</a>
+                </div>
+
+                <img src='/solutions.jpg' alt='' />
+              </Popover.Panel>
+            </Popover>
           </div>
         )}
-        <Button onChange={handleOk}>Ok</Button>
+        <Link href='/registro'>
+          <a>Regresar</a>
+        </Link>
       </div>
       {order?.fullName ? (
         <OrderProfile
@@ -190,23 +190,7 @@ export default function RegisterNewCI ({ order = '' }) {
   )
 }
 
-export async function getStaticPaths () {
-  const orders = await prisma.order.findMany({})
-  const paths = orders.map(({ ci }) => {
-    return {
-      params: {
-        ci: ci.toString()
-      }
-    }
-  })
-
-  return {
-    paths,
-    fallback: true
-  }
-}
-
-export async function getStaticProps ({ params }) {
+export async function getServerSideProps ({ params }) {
   const ci = params.ci
 
   const res = await prisma.order.findUnique({
