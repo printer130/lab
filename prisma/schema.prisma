@@ -12,7 +12,7 @@ generator client {
 model Lab {
   id      Int      @id @default(autoincrement())
   name    String?  @unique
-  receipt Receipt?
+  receipt Receipt[]
   User    User[]
 }
 
@@ -53,7 +53,7 @@ model Receipt {
   itotal     Int      @default(0)
   total      Int
   updatedAt  DateTime @updatedAt
-  labName    String   @unique
+  labName    String
   ownerCi    Int
   indebtList Json[]
   lab        Lab      @relation(fields: [labName], references: [name], onDelete: Cascade)

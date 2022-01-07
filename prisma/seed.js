@@ -110,7 +110,7 @@ async function main () {
   // })
 
   // FIND USER
-  const res = await prisma.user.findMany()
+  // const res = await prisma.user.findMany()
   // FIND ORDER
   // const res = await prisma.order.findMany({
   //   where: {
@@ -180,25 +180,25 @@ async function main () {
 
   // CREATE RECEIPT TO OWNER
   // const r = Object.keys(d)
-  // const res = await prisma.receipt.create({
-  //   data: {
-  //     json: ['15', '15'],
-  //     total: 250,
-  //     itotal: 75,
-  //     saldo: 175,
-  //     indebtList: { indebt: 75 },
-  //     owner: {
-  //       connect: {
-  //         ci: 4234234
-  //       }
-  //     },
-  //     lab: {
-  //       connect: {
-  //         name: 'lableo'
-  //       }
-  //     }
-  //   }
-  // })
+  const res = await prisma.receipt.create({
+    data: {
+      json: ['15', '15'],
+      total: 250,
+      itotal: 75,
+      saldo: 175,
+      indebtList: { indebt: 75 },
+      owner: {
+        connect: {
+          ci: 564523
+        }
+      },
+      lab: {
+        connect: {
+          name: 'laboooo'
+        }
+      }
+    }
+  })
 
   // const res = await prisma.receipt.create({
   //   data: {
