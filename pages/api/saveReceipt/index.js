@@ -38,6 +38,8 @@ export default async function (req, res) {
     })
     return res.status(201).json({ data: savedReceipt })
   } catch (error) {
-    return res.status(500).json({ message: 'Ups algo salio mal', data: null })
+    return res
+      .status(500)
+      .json({ message: 'Ups algo salio mal', data: null, error })
   }
 }
