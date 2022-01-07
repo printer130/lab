@@ -109,7 +109,6 @@ export async function getServerSideProps ({ req }) {
   // if (!session) return { props: { orders: {}, result: [] } }
   // console.log('SESSIOn', session)
   const { labId } = session.token.user
-  console.log('TOKEN', session.token)
   const receipts = await prisma.receipt.findMany({
     where: {
       labName: {

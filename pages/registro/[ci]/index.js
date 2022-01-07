@@ -49,6 +49,7 @@ export default function RegisterNewCI ({ order = '' }) {
       window.fetch(`/api/getUniqueId/${receipt.id}/${order.ci}`)
   }, [modal, receipt])
 
+  console.log('[order]', order)
   const handleOrder = e => {
     e.preventDefault()
     setVerify(false)
@@ -76,7 +77,6 @@ export default function RegisterNewCI ({ order = '' }) {
       const checked = target.checked
       const name = target.name
       const dataPrice = +target.attributes['data-price'].value
-      console.log('[REST]', rest)
       setCheckboxes({
         ...checkboxes,
         [name]: {
@@ -112,8 +112,6 @@ export default function RegisterNewCI ({ order = '' }) {
   if (router.isFallback) return <div>Cargando...</div>
 
   if (!session) return <div />
-
-  console.log(order)
 
   if (loading) return <div>Revisando...</div>
 

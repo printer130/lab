@@ -53,13 +53,12 @@ model Receipt {
   itotal     Int      @default(0)
   total      Int
   updatedAt  DateTime @updatedAt
-  labName    String
-  ownerCi    Int
+  labName    String?
+  ownerCi    Int?
   indebtList Json[]
-  lab        Lab      @relation(fields: [labName], references: [name], onDelete: Cascade)
-  owner      Order    @relation(fields: [ownerCi], references: [ci], onDelete: Cascade)
+  lab        Lab?      @relation(fields: [labName], references: [name], onDelete: SetNull)
+  owner      Order?    @relation(fields: [ownerCi], references: [ci], onDelete: SetNull)
 
-  @@id([id, labName, ownerCi], name: "receipt_id")
   @@index([labName, ownerCi], map: "receipt_lab_owner")
 }
 

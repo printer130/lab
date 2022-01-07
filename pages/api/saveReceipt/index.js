@@ -9,33 +9,38 @@ export default async function (req, res) {
   }
 
   const session = await getSession({ req })
-  const { id, role, email, labId } = session.token.user
+  const { labId } = session.token.user
   if (!session) {
     return res.status(401).json({ message: 'No session', data: null })
   }
   const data = JSON.parse(req.body)
+
   console.log('data', data, labId, session)
   const { filteredBox, total, indebt, change, find } = data
-  try {
-    const savedReceipt = await prisma.receipt.create({
-      data: {
-        json: filteredBox,
-        total: +total,
-        itotal: +indebt,
-        saldo: +change,
-        indebtList: { indebt: +indebt },
-        owner: {
-          connect: {
-            ci: +find
-          }
-        },
-        lab: {
-          connect: {
-            name: labId
-          }
-        }
+
+  if (!filteredBox | !total | !indebt | !change | !find | !labId) {
+    return res.status(502).json({ message: 'Ups algo salio mal', data: null })
+  }
+  const receipt = {
+    json: filteredBox,
+    total: +total,
+    itotal: +indebt,
+    saldo: +change,
+    indebtList: { indebt: +indebt },
+    owner: {
+      connect: {
+        ci: +find
       }
-    })
+    },
+    lab: {
+      connect: {
+        name: labId
+      }
+    }
+  }
+
+  try {
+    const savedReceipt = await prisma.receipt.create({ data: receipt })
     return res.status(201).json({ data: savedReceipt })
   } catch (error) {
     return res

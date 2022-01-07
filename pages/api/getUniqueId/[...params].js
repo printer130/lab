@@ -7,7 +7,7 @@ export default async function (req, res) {
   }
 
   const session = await getSession({ req })
-  const { email, labName } = session.token.user
+  const { email, labId } = session.token.user
   const { params } = req.query
 
   const [id, ci] = params.join(',')
@@ -20,7 +20,7 @@ export default async function (req, res) {
       where: {
         receipt_id: {
           id: id,
-          labName: labName,
+          labName: labId,
           ownerCi: ci
         }
       },
