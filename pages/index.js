@@ -13,7 +13,7 @@ import { Logo } from 'components/Logo'
 export default function Home ({ providers, csrfToken = {} }) {
   const session = useSession()
   const router = useRouter()
-  console.log('sessjion', session, URL_CALLBACK)
+  console.log(process.env.DATABASE_URL, session, URL_CALLBACK)
 
   useEffect(() => {
     session?.data && router.push(`${URL_CALLBACK}`)

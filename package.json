@@ -5,7 +5,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "prisma-deploy": "npx prisma generate && npx prisma migrate deploy && npm next build"
+    "ver-build": "npx prisma generate && npm run build",
+    "prisma-deploy": "npx prisma generate && npx prisma migrate deploy && npm run build"
   },
   "dependencies": {
     "@hookform/resolvers": "2.8.3",
