@@ -1,5 +1,5 @@
-import { prisma } from 'db/prisma'
 import { getSession } from 'next-auth/react'
+import { prisma } from 'db/prisma'
 
 export default async function (req, res) {
   if (req.method !== 'POST') {
@@ -7,20 +7,17 @@ export default async function (req, res) {
       message: 'Method not allowed'
     })
   }
-
   const session = await getSession({ req })
-  const { labId } = session.token.user
   if (!session) {
     return res.status(401).json({ message: 'No session', data: null })
   }
   const data = JSON.parse(req.body)
 
-  console.log('data', data, labId, session)
   const { filteredBox, total, indebt, change, find } = data
 
-  if (!filteredBox | !total | !indebt | !change | !find | !labId) {
-    return res.status(502).json({ message: 'Ups algo salio mal', data: null })
-  }
+  // if (!filteredBox | !total | !indebt | !change | !find | !labId) {
+  //   return res.status(502).json({ message: 'Ups algo salio mal', data: null })
+  // }
   const receipt = {
     json: filteredBox,
     total: +total,
@@ -30,11 +27,6 @@ export default async function (req, res) {
     owner: {
       connect: {
         ci: +find
-      }
-    },
-    lab: {
-      connect: {
-        name: labId
       }
     }
   }

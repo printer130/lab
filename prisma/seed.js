@@ -191,11 +191,6 @@ async function main () {
         connect: {
           ci: 3234
         }
-      },
-      lab: {
-        connect: {
-          name: 'laboooo'
-        }
       }
     }
   })

@@ -12,7 +12,7 @@ generator client {
 model Lab {
   id      Int      @id @default(autoincrement())
   name    String?  @unique
-  receipt Receipt[]
+  //TODO: Esto esta mal
   User    User[]
 }
 
@@ -56,7 +56,6 @@ model Receipt {
   labName    String?
   ownerCi    Int?
   indebtList Json[]
-  lab        Lab?      @relation(fields: [labName], references: [name], onDelete: SetNull)
   owner      Order?    @relation(fields: [ownerCi], references: [ci], onDelete: SetNull)
 
   @@index([labName, ownerCi], map: "receipt_lab_owner")
