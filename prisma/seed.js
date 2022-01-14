@@ -1,7 +1,7 @@
-const { prisma } = require('../db/prisma')
-// const { PrismaClient } = require('@prisma/client')
+// const { prisma } = require('../db/prisma')
+const { PrismaClient } = require('@prisma/client')
 
-// const prisma = new PrismaClient()
+const prisma = new PrismaClient()
 
 const d = {
   'Ac. Antifosfolípidos - IgG': {
@@ -93,7 +93,7 @@ async function main () {
   // CREATE ORDER
   // const res = await prisma.order.create({
   //   data: {
-  //     fullName: 'Test1',
+  //     fullName: 'Test21',
   //     ci: 331332,
   //     phone: 444314,
   //     nit: 22122232,
@@ -108,6 +108,20 @@ async function main () {
   //     }
   //   }
   // })
+
+  const res = await prisma.user.create({
+    data: {
+      role: 'BIOCHEMICAL',
+      email: 'prisma@gmail.com',
+      name: 'prisma',
+      password: 'prisma',
+      lab: {
+        connect: {
+          name: 'lab'
+        }
+      }
+    }
+  })
 
   // FIND USER
   // const res = await prisma.user.findMany()
@@ -180,21 +194,21 @@ async function main () {
 
   // CREATE RECEIPT TO OWNER
   // const r = Object.keys(d)
-  const res = await prisma.receipt.create({
-    data: {
-      json: ['15', '15'],
-      total: 250,
-      itotal: 75,
-      labName: 'El labooo',
-      saldo: 175,
-      indebtList: { indebt: 75 },
-      owner: {
-        connect: {
-          ci: 3234
-        }
-      }
-    }
-  })
+  // const res = await prisma.receipt.create({
+  //   data: {
+  //     json: ['15', '15'],
+  //     total: 250,
+  //     itotal: 75,
+  //     labName: 'El labooo',
+  //     saldo: 175,
+  //     indebtList: { indebt: 75 },
+  //     owner: {
+  //       connect: {
+  //         ci: 3234
+  //       }
+  //     }
+  //   }
+  // })
 
   // const res = await prisma.receipt.create({
   //   data: {

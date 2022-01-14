@@ -62,7 +62,7 @@ export default function Bio ({ receiptByCu = {} }) {
           filename={`${receiptByCu.cuiid}.pdf`}
           title='Descargar en pdf'
         >
-          Descargar
+          Descargar PDF
         </a>
       </section>
     </>

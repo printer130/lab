@@ -1,19 +1,18 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["extendedIndexes", "referentialIntegrity"]
+}
+
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider             = "postgresql"
+  url                  = env("DATABASE_URL")
   referentialIntegrity = "prisma"
 }
 
-generator client {
-  provider        = "prisma-client-js"
-  previewFeatures = ["extendedIndexes","referentialIntegrity"]
-}
-
 model Lab {
-  id      Int      @id @default(autoincrement())
-  name    String?  @unique
-  //TODO: Esto esta mal
-  User    User[]
+  id   Int     @id @default(autoincrement())
+  name String? @unique
+  User User[]
 }
 
 model User {
@@ -23,8 +22,8 @@ model User {
   email     String   @unique
   name      String?
   password  String?  @db.VarChar(255)
-  labId     String
-  lab       Lab      @relation(fields: [labId], references: [name], onDelete: SetNull)
+  labId     String?
+  lab       Lab?      @relation(fields: [labId], references: [name], onDelete: SetNull)
   orders    Order[]
 }
 
@@ -56,11 +55,10 @@ model Receipt {
   labName    String?
   ownerCi    Int?
   indebtList Json[]
-  owner      Order?    @relation(fields: [ownerCi], references: [ci], onDelete: SetNull)
+  owner      Order?   @relation(fields: [ownerCi], references: [ci])
 
   @@index([labName, ownerCi], map: "receipt_lab_owner")
 }
-
 
 enum Role {
   ADMIN
