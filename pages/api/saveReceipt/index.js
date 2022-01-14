@@ -12,6 +12,7 @@ export default async function (req, res) {
     return res.status(401).json({ message: 'No session', data: null })
   }
   const data = JSON.parse(req.body)
+  const { labId } = session.token.user
 
   const { filteredBox, total, indebt, change, find } = data
 
@@ -24,6 +25,7 @@ export default async function (req, res) {
     itotal: +indebt,
     saldo: +change,
     indebtList: { indebt: +indebt },
+    labName: labId,
     owner: {
       connect: {
         ci: +find
