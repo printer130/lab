@@ -97,6 +97,7 @@ export default function RegisterNewCI ({ order = '' }) {
   if (loading) return <div>Revisando...</div>
 
   console.log('[RECEIPT]', receipt)
+  console.log('[order]', order)
   return (
     <section>
       <div id='modal'>
@@ -109,7 +110,7 @@ export default function RegisterNewCI ({ order = '' }) {
               {/* {receipt.cuiid} */}
               <p id='id'>
                 {receipt.id}
-                {receipt.labName.replace(/ /g, '').slice(0, 4)}
+                {order.labName.replace(/ /g, '').slice(0, 4)}
                 {receipt.ownerCi}
               </p>
             </fieldset>
@@ -196,6 +197,7 @@ export async function getServerSideProps ({ params }) {
       }
     }
   })
+  console.log('res', res)
   const order = {
     id: res.id,
     fullName: res.fullName,
@@ -206,7 +208,8 @@ export async function getServerSideProps ({ params }) {
     sex: res.sex,
     doctor: res.doctor,
     authorId: res.authorEmail,
-    birth: getAge(res.birth)
+    birth: getAge(res.birth),
+    labName: res.author.labId
   }
 
   return {

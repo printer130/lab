@@ -94,16 +94,16 @@ async function main () {
   // const res = await prisma.order.create({
   //   data: {
   //     fullName: 'Test1',
-  //     ci: 33133,
-  //     phone: 4444,
-  //     nit: 22122,
+  //     ci: 331332,
+  //     phone: 444314,
+  //     nit: 22122232,
   //     birth: new Date('Tuesday, November 27, 2018, 20:00:00 GMT-4'),
   //     reason: 'asdasdasd',
   //     sex: 'hola',
   //     doctor: 'doctor',
   //     author: {
   //       connect: {
-  //         email: 'leonardo@gmail.com'
+  //         email: 'llaves@gmail.com'
   //       }
   //     }
   //   }
@@ -185,6 +185,7 @@ async function main () {
       json: ['15', '15'],
       total: 250,
       itotal: 75,
+      labName: 'El labooo',
       saldo: 175,
       indebtList: { indebt: 75 },
       owner: {
