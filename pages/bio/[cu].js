@@ -2,6 +2,7 @@ import { prisma } from 'db/prisma'
 import { getAge } from 'hooks/dateTime/getAge'
 import { useForm } from 'react-hook-form'
 import { LazyBio } from 'components/LazyBio'
+import { getSession } from 'next-auth/react'
 
 export default function Bio ({ receiptByCu = {} }) {
   const {
@@ -58,6 +59,7 @@ export default function Bio ({ receiptByCu = {} }) {
           <button>CLiCK ME please</button>
         </form>
         <a
+          download={`/bio/${receiptByCu.cuiid}`}
           href={`/bio/${receiptByCu.cuiid}`}
           filename={`${receiptByCu.cuiid}.pdf`}
           title='Descargar en pdf'
@@ -69,12 +71,13 @@ export default function Bio ({ receiptByCu = {} }) {
   )
 }
 
-export async function getServerSideProps (req, res) {
-  //   if (!session.user) return { props: { orders: {}, result: [] } }
+export async function getServerSideProps ({ req, query }) {
+  const session = await getSession({ req })
+  const { labId } = session.token.user
 
-  const receiptFinded = await prisma.receipt.findUnique({
+  const receiptFinded = await prisma[`${'receipt' + labId}`].findUnique({
     where: {
-      cuiid: req.query.cu
+      cuiid: query.cu
     },
     include: {
       owner: true

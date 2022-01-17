@@ -56,8 +56,8 @@ export default function Ordenes ({ orders = {}, result = {} }) {
               <strong>Codigo</strong>
               <strong>Nombre</strong>
               <strong>Total</strong>
-              <strong>A cuenta</strong>
               <strong>Saldo</strong>
+              <strong>A cuenta</strong>
             </nav>
             <ListOfOrders data={data} />
           </main>
@@ -109,12 +109,8 @@ export async function getServerSideProps ({ req }) {
   // if (!session) return { props: { orders: {}, result: [] } }
   // console.log('SESSIOn', session)
   const { labId } = session.token.user
-  const receipts = await prisma.receipt.findMany({
-    where: {
-      labName: {
-        contains: labId
-      }
-    },
+  const receipts = await prisma[`receipt${labId}`].findMany({
+    where: {},
     include: {
       owner: true
     }

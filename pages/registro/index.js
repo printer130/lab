@@ -1,6 +1,7 @@
+import useSWR from 'swr'
 /* eslint-disable react/jsx-closing-tag-location */
 import { useForm } from 'react-hook-form'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Head from 'next/head'
 import { zodResolver } from '@hookform/resolvers/zod/dist/zod'
 import { DEFAULT_REGISTER_VALUES } from 'const/register_default_values'
@@ -9,6 +10,8 @@ import { useRouter } from 'next/router'
 import { Form } from 'components/Form'
 import { useSession } from 'next-auth/react'
 import { saveOrder, normalizedOrder } from 'lib/db'
+import { onCi } from 'components/Form/onCi'
+import { useDebounce } from 'hooks/useDebounce'
 
 export default function Registro ({ fallback }) {
   const session = useSession()
@@ -20,6 +23,15 @@ export default function Registro ({ fallback }) {
     defaultValues: DEFAULT_REGISTER_VALUES,
     reValidateMode: 'onChange'
   })
+
+  const [search] = useState('')
+
+  const debouncedSearch = useDebounce(search, 1000)
+
+  const { data, isValidating } = useSWR(() =>
+    debouncedSearch ? `/api/getBySearchVal/${debouncedSearch}` : null
+  )
+  console.log('data', debouncedSearch)
 
   const { errors, isValid, isDirty } = formState
   const onSubmit = data => {

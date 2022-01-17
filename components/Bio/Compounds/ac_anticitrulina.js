@@ -9,7 +9,7 @@ export default function AcCitrulina ({
 }) {
   return (
     <>
-      <h2>Anticuerpos Anticitrulina</h2>
+      <h2>ANTICUERPOS ANTICITRULINA</h2>
       <Input
         type='number'
         measure='U/mL'

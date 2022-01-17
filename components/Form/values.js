@@ -1,3 +1,5 @@
+import { onCi } from './onCi'
+
 export const REGISTER_VALUES = ({ errors }) => [
   {
     type: 'number',
@@ -6,7 +8,8 @@ export const REGISTER_VALUES = ({ errors }) => [
     placeholder: 'C.I',
     name: 'ci',
     options: {
-      valueAsNumber: true
+      valueAsNumber: true,
+      onChange: e => onCi(e.target.value)
     }
   },
   {

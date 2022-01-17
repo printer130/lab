@@ -1,6 +1,7 @@
 import { NegativePositive } from '../NegativePositive'
 
 export default function CoombsIndirecto ({ register, values }) {
+  console.log('values', values)
   return (
     <>
       <section>

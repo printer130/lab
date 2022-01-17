@@ -1,6 +1,6 @@
 generator client {
   provider        = "prisma-client-js"
-  previewFeatures = ["extendedIndexes", "referentialIntegrity"]
+  previewFeatures = ["extendedIndexes", "referentialIntegrity", "fullTextSearch", "fullTextIndex"]
 }
 
 datasource db {
@@ -23,7 +23,7 @@ model User {
   name      String?
   password  String?  @db.VarChar(255)
   labId     String?
-  lab       Lab?      @relation(fields: [labId], references: [name], onDelete: SetNull)
+  lab       Lab?     @relation(fields: [labId], references: [name], onUpdate: Cascade)
   orders    Order[]
 }
 
@@ -31,7 +31,7 @@ model Order {
   id          Int       @id @default(autoincrement())
   createdAt   DateTime  @default(now())
   fullName    String    @db.VarChar(35)
-  ci          Int       @unique
+  ci          String    @unique
   nit         Int
   birth       DateTime
   phone       Int
@@ -39,11 +39,12 @@ model Order {
   sex         String
   doctor      String
   authorEmail String?
-  author      User?     @relation(fields: [authorEmail], references: [email], onDelete: Cascade)
-  receipt     Receipt[]
+  author      User?     @relation(fields: [authorEmail], references: [email], onDelete: NoAction, onUpdate: NoAction)
+  receiptlabo     Receiptlabo[]
+  Receiptlabo0    Receiptlabo0[]
 }
 
-model Receipt {
+model Receiptlabo0 {
   cuiid      String   @unique @default(cuid())
   id         Int      @default(autoincrement())
   json       Json     @db.Json
@@ -53,11 +54,27 @@ model Receipt {
   total      Int
   updatedAt  DateTime @updatedAt
   labName    String?
-  ownerCi    Int?
+  ownerCi    String?
   indebtList Json[]
-  owner      Order?   @relation(fields: [ownerCi], references: [ci])
+  owner      Order?   @relation(fields: [ownerCi], references: [ci], onUpdate: NoAction)
 
   @@index([labName, ownerCi], map: "receipt_lab_owner")
+}
+model Receiptlabo {
+  cuiid      String   @unique @default(cuid())
+  id         Int      @default(autoincrement())
+  json       Json     @db.Json
+  createdAt  DateTime @default(now())
+  saldo      Int
+  itotal     Int      @default(0)
+  total      Int
+  updatedAt  DateTime @updatedAt
+  labName    String?
+  ownerCi    String?
+  indebtList Json[]
+  owner      Order?   @relation(fields: [ownerCi], references: [ci], onUpdate: NoAction)
+
+  @@index([labName, ownerCi], map: "labo_receipt")
 }
 
 enum Role {

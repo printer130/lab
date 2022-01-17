@@ -1,4 +1,5 @@
 import { prisma } from 'db/prisma'
+import { getSession } from 'next-auth/react'
 
 export default function CU ({ data }) {
   return (
@@ -19,9 +20,11 @@ export default function CU ({ data }) {
   )
 }
 
-export async function getServerSideProps (req, res) {
+export async function getServerSideProps ({ req }) {
   const cu = req.query.cu
-  const data = await prisma.receipt.findUnique({
+  const session = await getSession({ req })
+  const { labId } = session.token.user
+  const data = await prisma[`${'receipt' + labId}`].findUnique({
     where: {
       cuiid: cu
     }

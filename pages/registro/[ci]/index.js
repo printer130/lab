@@ -181,7 +181,7 @@ export async function getServerSideProps ({ params }) {
 
   const res = await prisma.order.findUnique({
     where: {
-      ci: +ci
+      ci: ci
     },
     include: {
       author: {
@@ -197,7 +197,6 @@ export async function getServerSideProps ({ params }) {
       }
     }
   })
-  console.log('res', res)
   const order = {
     id: res.id,
     fullName: res.fullName,

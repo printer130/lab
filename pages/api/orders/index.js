@@ -8,11 +8,22 @@ export default async function (req, res) {
 
   const session = await getSession({ req })
 
-  const order = JSON.parse(req.body)
+  const { fullName, ci, birth, phone, nit, reason, sex, doctor } = JSON.parse(
+    req.body
+  )
   const { email } = session.token.user
 
+  // console.log('order', order)
+
   const q = {
-    ...order,
+    fullName,
+    ci: String(ci),
+    birth,
+    phone,
+    nit,
+    reason,
+    sex,
+    doctor,
     author: {
       connect: {
         email: email

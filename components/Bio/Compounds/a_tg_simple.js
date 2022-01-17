@@ -4,7 +4,7 @@ export default function ATG ({ values, value, onChange, register }) {
   return (
     <>
       <section>
-        <h2>a-TG</h2>
+        <h2>A-TG</h2>
         <Input
           value={!values ? value : values}
           onChange={onChange}

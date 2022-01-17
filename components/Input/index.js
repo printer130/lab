@@ -42,7 +42,7 @@ export const Input = forwardRef(
             placeholder={placeholder}
           />
           {image && <span onClick={() => console.log('a')} />}
-          <ErrorMessage>{error?.message}</ErrorMessage>
+          {/* <ErrorMessage>{error?.message}</ErrorMessage> */}
         </label>
         <style jsx>
           {`

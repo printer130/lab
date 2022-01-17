@@ -8,24 +8,35 @@ import { useRouter } from 'next/router'
 import Index from 'pages/index'
 
 import ErrorBoundary from 'errorBoundary'
+import { SWRConfig } from 'swr'
+const fetcher = (...args) => window.fetch(...args).then(res => res.json())
 
 function MyApp ({ Component, pageProps }) {
   return (
     <ErrorBoundary>
-      <SessionProvider session={pageProps.session}>
-        <UserProvider>
-          <Nav />
-          <Layout>
-            <Component {...pageProps} />
-            {/* <Auth>
+      <SWRConfig
+        value={{
+          fetcher,
+          dedupingInterval: 1000,
+          refreshInterval: 1000,
+          revalidateOnFocus: false
+        }}
+      >
+        <SessionProvider session={pageProps.session}>
+          <UserProvider>
+            <Nav />
+            <Layout>
+              <Component {...pageProps} />
+              {/* <Auth>
               {Component.auth === true ? (
-              ) : (
-                <Index />
-              )}
-            </Auth> */}
-          </Layout>
-        </UserProvider>
-      </SessionProvider>
+                ) : (
+                  <Index />
+                  )}
+                </Auth> */}
+            </Layout>
+          </UserProvider>
+        </SessionProvider>
+      </SWRConfig>
     </ErrorBoundary>
   )
 }

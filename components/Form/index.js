@@ -9,6 +9,7 @@ export const Form = ({
   errors,
   register
 }) => {
+  // const { onChange } = register()
   const formInputs = REGISTER_VALUES({ errors })
   const zzz = loading ? '.4' : '1'
   return (
@@ -21,22 +22,23 @@ export const Form = ({
           <div>
             <strong>Sexo:</strong>
             <select {...register('sex')} required>
-              <option value='female'>Mujer</option>
-              <option value='male'>Varon</option>
-              <option value='other'>Otro</option>
+              <option value='female'>Femenino</option>
+              <option value='male'>Masculino</option>
             </select>
             {formInputs.map(
-              ({ error, name, type, placeholder, options, label }) => (
-                <Input
-                  errors={error}
-                  key={name + label}
-                  type={type}
-                  placeholder={placeholder}
-                  {...register(name, options)}
-                >
-                  {label}
-                </Input>
-              )
+              ({ error, name, type, placeholder, options, label }) => {
+                return (
+                  <Input
+                    errors={error}
+                    key={name + label}
+                    type={type}
+                    placeholder={placeholder}
+                    {...register(name, options)}
+                  >
+                    {label}
+                  </Input>
+                )
+              }
             )}
             <Button isValid={isValid} isDirty={isDirty}>
               Guardar
@@ -67,7 +69,7 @@ export const Form = ({
             margin-bottom: 15px;
           }
           strong {
-            margin-bottom:  12px;
+            margin-bottom: 12px;
             font-weight: 600;
             align-items: center;
           }

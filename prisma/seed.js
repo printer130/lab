@@ -3,58 +3,6 @@ const { PrismaClient } = require('@prisma/client')
 
 const prisma = new PrismaClient()
 
-const d = {
-  'Ac. Antifosfolípidos - IgG': {
-    name: 'Ac. Antifosfolípidos - IgG',
-    isChecked: true,
-    price: 2
-  },
-  'Ac. Antifosfolípidos - IgM': {
-    name: 'Ac. Antifosfolípidos - IgM',
-    isChecked: true,
-    price: 2
-  },
-  'Anti Endomisio IgA (IF)': {
-    name: 'Anti Endomisio IgA (IF)',
-    isChecked: true,
-    price: 2
-  },
-  'Anti Transglutaminasa IgA': {
-    name: 'Anti Transglutaminasa IgA',
-    isChecked: true,
-    price: 2
-  },
-  'B2-Glicoproteina I': {
-    name: 'B2-Glicoproteina I',
-    isChecked: true,
-    price: 2
-  },
-  'Brucellosis IgM': {
-    name: 'Brucellosis IgM',
-    isChecked: true,
-    price: 2
-  },
-  'COVID 19 (Ag. Nasal)': {
-    name: 'COVID 19 (Ag. Nasal)',
-    isChecked: true,
-    price: 2
-  },
-  Fibrinogeno: {
-    name: 'Fibrinogeno',
-    isChecked: true,
-    price: 5
-  },
-  'Micoplasma - IgM': {
-    name: 'Micoplasma - IgM',
-    isChecked: true,
-    price: 2
-  },
-  'T. Sangria': {
-    name: 'T. Sangria',
-    isChecked: true,
-    price: 5
-  }
-}
 // const res = 1 || null
 async function main () {
   // const res = {}
@@ -65,13 +13,32 @@ async function main () {
   // await prisma.receipt.deleteMany({})
   // await prisma.lab.deleteMany({})
 
-  // CREATE USER
-  // const res = await prisma.user.create({
+  // CREATE LAB
+  const labId = 'labo0'
+
+  // const res = await prisma.lab.create({
   //   data: {
-  //     name: 'John bio',
-  //     email: 'bio2@gmail.com',
-  //     password: 'meduelelamuela',
-  //     role: 'BIOCHEMICAL'
+  //     name: 'labo0'
+  //   }
+  // })
+
+  const res = await prisma.user.create({
+    data: {
+      role: 'BIOCHEMICAL',
+      email: 'prisma@gmail.com',
+      name: 'prisma0',
+      password: 'prisma',
+      lab: {
+        connect: {
+          name: 'labo0'
+        }
+      }
+    }
+  })
+  // const res = await await prisma[`receipt${labId}`].findMany({
+  //   where: {},
+  //   include: {
+  //     owner: true
   //   }
   // })
 
@@ -93,42 +60,41 @@ async function main () {
   // CREATE ORDER
   // const res = await prisma.order.create({
   //   data: {
-  //     fullName: 'Test21',
-  //     ci: 331332,
-  //     phone: 444314,
-  //     nit: 22122232,
+  //     fullName: 'la pizza del año nuevo',
+  //     ci: 4861198,
+  //     phone: 864591,
+  //     nit: 9438561,
   //     birth: new Date('Tuesday, November 27, 2018, 20:00:00 GMT-4'),
   //     reason: 'asdasdasd',
-  //     sex: 'hola',
-  //     doctor: 'doctor',
+  //     sex: 'mujer',
+  //     doctor: 'docasdasdtor',
   //     author: {
   //       connect: {
-  //         email: 'llaves@gmail.com'
+  //         email: 'prisma@gmail.com'
   //       }
   //     }
   //   }
   // })
 
-  const res = await prisma.user.create({
-    data: {
-      role: 'BIOCHEMICAL',
-      email: 'prisma@gmail.com',
-      name: 'prisma',
-      password: 'prisma',
-      lab: {
-        connect: {
-          name: 'lab'
-        }
-      }
-    }
-  })
-
   // FIND USER
   // const res = await prisma.user.findMany()
   // FIND ORDER
+  // const res = await prisma.order.findMany({})
+
+  // SEACH ORDER
   // const res = await prisma.order.findMany({
   //   where: {
-  //     ci: 333333
+  //     ci: {
+  //       search: 'cat dog'
+  //     }
+  //   }
+  // })
+
+  // const res = await prisma.order.findMany({
+  //   where: {
+  //     ci: {
+  //       contains: 'evo'
+  //     }
   //   }
   // })
 
@@ -194,17 +160,19 @@ async function main () {
 
   // CREATE RECEIPT TO OWNER
   // const r = Object.keys(d)
-  // const res = await prisma.receipt.create({
+  // const receiptTarget = 'Receiptlabo'
+
+  // const res = await prisma[`receipt${labId}`].create({
   //   data: {
   //     json: ['15', '15'],
   //     total: 250,
   //     itotal: 75,
-  //     labName: 'El labooo',
+  //     labName: labId,
   //     saldo: 175,
   //     indebtList: { indebt: 75 },
   //     owner: {
   //       connect: {
-  //         ci: 3234
+  //         ci: '123123'
   //       }
   //     }
   //   }

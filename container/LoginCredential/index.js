@@ -24,22 +24,20 @@ export function LoginCredential ({ csrfToken, provider }) {
     })
       .then(res => {
         if (res.ok) return router.push(res.url)
+        if (!res.ok) {
+          return setError('password', {
+            message: 'Contraseña incorrecta',
+            error: '401'
+          })
+        }
       })
-      .catch(e =>
-        setError('password', {
+      .catch(e => {
+        return setError('password', {
           message: 'Contraseña incorrecta',
-          error: e.message
+          error: '401'
         })
-      )
+      })
   }
-
-  // const onSubmit = (data) => {
-  //   const { email, password } = data
-  //   loginWithCredentials({ email, password, setError })
-  //     .then((res) => {
-  //       router.replace(`${URL_CALLBACK}`)
-  //     })
-  // }
 
   return (
     <>
@@ -69,7 +67,7 @@ export function LoginCredential ({ csrfToken, provider }) {
         <Button isValid={isValid} isDirty={isDirty}>
           Ingresar con {provider.name}
         </Button>
-        <ErrorMessage>{errors?.auth?.message}</ErrorMessage>
+        <ErrorMessage>{errors?.password?.message}</ErrorMessage>
       </form>
       <style jsx>
         {`

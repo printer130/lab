@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { prisma } from 'db/prisma'
 import { getAge } from 'hooks/dateTime/getAge'
 import { unique } from 'utils/unique'
+import { getSession } from 'next-auth/react'
 
 export default function OrderToEdit ({ result }) {
   const {
@@ -63,9 +64,7 @@ export default function OrderToEdit ({ result }) {
               return (
                 <tr key={index}>
                   <td>{indebt}</td>
-                  <td>
-                    {res <= 0 ? 'Completado!' : res}
-                  </td>
+                  <td>{res <= 0 ? 'Completado!' : res}</td>
                 </tr>
               )
             })}
@@ -126,9 +125,11 @@ export default function OrderToEdit ({ result }) {
   )
 }
 
-export async function getServerSideProps ({ params }) {
+export async function getServerSideProps ({ params, req }) {
   const cu = params.cu
-  const orderToEdit = await prisma.receipt.findUnique({
+  const session = await getSession({ req })
+  const { labId } = session.token.user
+  const orderToEdit = await prisma[`${'receipt' + labId}`].findUnique({
     where: {
       cuiid: cu
     },

@@ -9,7 +9,7 @@ export default function OHProgesterona17 ({
   return (
     <>
       <section>
-        <h2>17-OH Progesterona</h2>
+        <h2>17-OH PROGESTERONA</h2>
         <Input
           value={!values ? value : values}
           onChange={onChange}
