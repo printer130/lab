@@ -153,18 +153,10 @@ export async function getServerSideProps ({ req }) {
       owner: true
     }
   })
-  // const receipts = await getAllReceipts()
   const result = normalizedReceipts({ receipts })
 
   return {
     props: { result }
   }
-  // return {
-  //   props: {
-  //     fallback: {
-  //       "/api/receipt/getALl": result
-  //      }
-  //   }
-  // }
 }
 Ordenes.auth = true

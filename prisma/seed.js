@@ -1,7 +1,7 @@
-// const { prisma } = require('../db/prisma')
-const { PrismaClient } = require('@prisma/client')
+const { prisma } = require('../db/prisma')
+// const { PrismaClient } = require('@prisma/client')
 
-const prisma = new PrismaClient()
+// const prisma = new PrismaClient()
 
 // const res = 1 || null
 async function main () {
@@ -91,7 +91,10 @@ async function main () {
   // FIND USER
   // const res = await prisma.user.findMany()
   // FIND ORDER
-  const res = await prisma[`receipt${labId}`].findMany({})
+  const res = await prisma[`receipt${labId}`].findMany({
+    where: {},
+    include: { owner: true }
+  })
 
   // SEACH ORDER
   // const res = await prisma.order.findMany({
