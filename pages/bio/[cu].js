@@ -6,6 +6,7 @@ import { normalizedReceiptByCu } from 'utils/normalize/receiptByCu'
 import { getAge } from 'hooks/dateTime/getAge'
 import Link from 'next/link'
 import { LazyBio } from 'components/LazyBio'
+import { receiptBio } from 'lib/db/receiptBio'
 
  export default function Bio ({ receiptByCu = {} }) {
    const [loading, setLoading] = useState(false)
