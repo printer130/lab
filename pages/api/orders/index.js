@@ -13,8 +13,6 @@ export default async function (req, res) {
   )
   const { email } = session.token.user
 
-  // console.log('order', order)
-
   const q = {
     fullName,
     ci: String(ci),
@@ -30,7 +28,6 @@ export default async function (req, res) {
       }
     }
   }
-
   try {
     const orderCreated = await prisma.order.create({ data: q })
     res.status(201).json({ ok: true, data: orderCreated })

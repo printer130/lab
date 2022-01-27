@@ -21,9 +21,7 @@ export default function ChagasIFI ({
           name='chagas_ifi.chagas_ifi'
           type='number'
           placeholder='Chagas IFI...'
-        >
-          Chagas IF
-        </Input>
+        />
         <Remarks
           value={!values?.remarks ? value : values.remarks}
           name='chagas_ifi.remarks'

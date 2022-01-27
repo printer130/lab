@@ -30,7 +30,7 @@ model User {
 model Order {
   id          Int       @id @default(autoincrement())
   createdAt   DateTime  @default(now())
-  fullName    String    @db.VarChar(35)
+  fullName    String    @db.VarChar(70)
   ci          String    @unique
   nit         Int
   birth       DateTime

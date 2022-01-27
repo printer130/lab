@@ -11,7 +11,7 @@ export default function Calprotectina ({
   return (
     <>
       <section>
-        <h2>CALPROTECTINA</h2>
+        <h2>CALPROTECTINA Fecal</h2>
         <Input
           value={!values ? value : values}
           register={register}
@@ -20,9 +20,7 @@ export default function Calprotectina ({
           name='calprotectina'
           type='text'
           placeholder='Calprotectina Fecal...'
-        >
-          Calprotectina Fecal
-        </Input>
+        />
       </section>
     </>
   )

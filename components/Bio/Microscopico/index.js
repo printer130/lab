@@ -9,7 +9,7 @@ export const Microscopico = ({
   day = ''
 }) => {
   return (
-    <>
+    <section className='section'>
       <Input
         value={!values ? value : values?.protozooarios}
         register={register}
@@ -75,6 +75,6 @@ export const Microscopico = ({
       >
         Flora Microbiana:
       </Input>
-    </>
+    </section>
   )
 }

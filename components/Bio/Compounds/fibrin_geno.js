@@ -6,6 +6,7 @@ export default function Fibrinogeno ({
   value,
   values,
   register,
+  pdf,
   required
 }) {
   return (
@@ -13,6 +14,7 @@ export default function Fibrinogeno ({
       <section>
         <h2>Fibrinogeno</h2>
         <Input
+          pdf={pdf}
           value={!values?.fibrinogeno ? value : values.fibrinogeno}
           register={register}
           onChange={onChange}
@@ -20,11 +22,10 @@ export default function Fibrinogeno ({
           name='fibrin_geno.fibrinogeno'
           placeholder='muestra...'
           type='number'
-        >
-          Fibrinogeno
-        </Input>
+        />
         <Remarks
-          value={!values.remarks ? value : values.remarks}
+          pdf={pdf}
+          value={!values?.remarks ? value : values?.remarks}
           name='fibrin_geno.remarks'
           register={register}
         />

@@ -4,29 +4,37 @@ export default function InhibidorLupidico ({
   onChange,
   value,
   values,
+  pdf,
   register
 }) {
   return (
     <>
       <h2>Inhibidor Lúpidico</h2>
 
-      <strong>dVVRT (Veneno de Russell): </strong>
+      <p>
+        <strong>DVVRT (Veneno de Russell): </strong>
+      </p>
       <NegativePositive
-        values={values}
+        pdf={pdf}
+        values={!values?.dvvrt ? values : values.dvvrt}
         register={register}
         name='inhibidor_l_pidico.dvvrt'
       />
-
-      <strong>dPT: </strong>
+      <p>
+        <strong>dPT: </strong>
+      </p>
       <NegativePositive
-        values={values}
+        pdf={pdf}
+        values={!values?.dpt ? values : values.dpt}
         register={register}
         name='inhibidor_l_pidico.dpt'
       />
-
-      <strong>aPTT Sensible: </strong>
+      <p>
+        <strong>aPTT Sensible: </strong>
+      </p>
       <NegativePositive
-        values={values}
+        pdf={pdf}
+        values={!values?.aptt ? values : values.aptt}
         register={register}
         name='inhibidor_l_pidico.aptt'
       />

@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-closing-tag-location */
-import { useState, useRef, useEffect } from 'react'
+import { useState } from 'react'
 import { signOut, useSession } from 'next-auth/react'
 import { Button } from 'components'
 import Link from 'next/link'
@@ -7,48 +7,9 @@ import { SIGN_OUT } from 'const/config'
 import { Logo } from 'components/Logo'
 import { useRouter } from 'next/router'
 
-// Naive implementation - in reality would want to attach
-// a window or resize listener. Also use state/layoutEffect instead of ref/effect
-// if this is important to know on initial client render.
-// It would be safer to  return null for unmeasured states.
-// export const useDimensions = ref => {
-//   const dimensions = useRef({ width: 0, height: 0 })
-
-//   useEffect(() => {
-//     dimensions.current.width = ref.current.offsetWidth
-//     dimensions.current.height = ref.current.offsetHeight
-//   }, [])
-
-//   return dimensions.current
-// }
-
-// const sidebar = {
-//   open: (height = 1000) => ({
-//     clipPath: `circle(${height * 2 + 200}px at 40px 40px)`,
-//     transition: {
-//       type: 'spring',
-//       stiffness: 20,
-//       restDelta: 2
-//     }
-//   }),
-//   closed: {
-//     clipPath: 'circle(30px at 40px 40px)',
-//     transition: {
-//       delay: 0.5,
-//       type: 'spring',
-//       stiffness: 400,
-//       damping: 40
-//     }
-//   }
-// }
 export const Nav = () => {
-  // const { user } = useUser()
-  // const [isOpen, toggleOpen] = useCycle(false, true)
-  // const containerRef = useRef(null)
-  // const { height } = useDimensions(containerRef)
   const [checked, setChecked] = useState(false)
   const session = useSession()
-  const email = session?.data?.token?.email
   const { push } = useRouter()
 
   const handleButton = () => {
@@ -72,9 +33,9 @@ export const Nav = () => {
       />
       <header className='header'>
         <Logo white='#fff' blue='#1A90C0' innerB='#252525' a='#fff' />
-        {email && (
+        {session.data !== null && (
           <>
-            <small>{email}</small>
+            <small>{session.data?.token?.email}</small>
 
             <div className='header-content'>
               <label htmlFor='open' className='menu-open' />
@@ -107,7 +68,7 @@ export const Nav = () => {
             display: flex;
             top: 0;
             width: 100%;
-            z-index: 1;
+            z-index: 99;
             background-color: #252525;
             color: #d2f2ff;
             font-size: 1.2rem;

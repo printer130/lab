@@ -1,34 +1,50 @@
 import { Button, Input } from 'components'
 import { REGISTER_VALUES } from './values'
+import { MenuSearch } from 'components/MenuSearch'
+
 export const Form = ({
   handleSubmit,
   onSubmit,
   loading,
+  onClick,
   isDirty,
+  onDebounce,
+  debouncedSearch,
   isValid,
   errors,
   register
 }) => {
-  // const { onChange } = register()
-  const formInputs = REGISTER_VALUES({ errors })
+  const formInputs = REGISTER_VALUES({ errors, onDebounce })
+
   const zzz = loading ? '.4' : '1'
+
   return (
     <>
       <form onSubmit={handleSubmit(onSubmit)}>
         <fieldset disabled={!!loading}>
           <legend>
-            <h1>Orden:</h1>
+            <strong className='text-2xl'>Nueva Orden:</strong>
           </legend>
-          <div>
-            <strong>Sexo:</strong>
-            <select {...register('sex')} required>
-              <option value='female'>Femenino</option>
-              <option value='male'>Masculino</option>
-            </select>
+          <div className='relative pt-6'>
+            {debouncedSearch?.data?.length > 0 && (
+              <MenuSearch data={debouncedSearch} onClick={onClick} />
+            )}
+            <label className='w-full flex flex-col mb-6'>
+              <strong>Sexo:</strong>
+              <select
+                className='w-100 p-1 border-zinc-900 border-solid border cursor-pointer rounded '
+                {...register('sex')}
+                required
+              >
+                <option value='female'>Femenino</option>
+                <option value='male'>Masculino</option>
+              </select>
+            </label>
             {formInputs.map(
-              ({ error, name, type, placeholder, options, label }) => {
+              ({ error, name, type, placeholder, options, label, v }) => {
                 return (
                   <Input
+                    v={v}
                     errors={error}
                     key={name + label}
                     type={type}
@@ -41,7 +57,7 @@ export const Form = ({
               }
             )}
             <Button isValid={isValid} isDirty={isDirty}>
-              Guardar
+              {loading ? 'Guardando...' : 'Guardar'}
             </Button>
           </div>
         </fieldset>
@@ -61,17 +77,6 @@ export const Form = ({
             user-select: ${zzz};
             margin: 0 auto;
             pointer-events: ${zzz};
-          }
-          select {
-            width: 100%;
-            margin: 0 auto;
-            padding: 0.35rem;
-            margin-bottom: 15px;
-          }
-          strong {
-            margin-bottom: 12px;
-            font-weight: 600;
-            align-items: center;
           }
         `}
       </style>

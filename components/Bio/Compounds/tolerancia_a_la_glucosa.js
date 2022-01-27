@@ -9,8 +9,8 @@ export default function CurvaToleranciaALaGlucosa ({
 }) {
   return (
     <>
-      <section>
-        <h2>Curva Tolerancia a la Glucosa</h2>
+      <h2>Curva Tolerancia a la Glucosa</h2>
+      <section className='section'>
         <Input
           register={register}
           onChange={onChange}
@@ -70,13 +70,13 @@ export default function CurvaToleranciaALaGlucosa ({
         >
           Glucosa Estímulo de 180 min.:
         </Input>
-
-        <Remarks
-          value={!values?.remarks ? value : values.remarks}
-          register={register}
-          name='tolerancia_a_la_glucosa.remarks'
-        />
       </section>
+
+      <Remarks
+        value={!values?.remarks ? value : values.remarks}
+        register={register}
+        name='tolerancia_a_la_glucosa.remarks'
+      />
     </>
   )
 }

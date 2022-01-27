@@ -22,7 +22,6 @@ export default async function (req, res) {
   // const { email, labName } = session.token.user
   const receiptData = JSON.parse(req.body)
 
-  console.log('receiptData', receiptData)
   const { cuiid, saldo, indebtList, sal } = receiptData
 
   indebtList.push({ indebt: +sal })
@@ -35,14 +34,13 @@ export default async function (req, res) {
       },
       data: {
         indebtList: indebtList,
-        saldo: saldo,
+        saldo: saldo - sal,
         itotal: indebtList.reduce((acc, cur) => acc + cur.indebt, 0)
       }
     })
 
     res.status(200).json({ message: 'Receipt Saved!', data: receiptUpdated })
   } catch (error) {
-    console.error(error)
     res.status(500).json({ message: 'Error saving receipt', data: null })
   }
 }

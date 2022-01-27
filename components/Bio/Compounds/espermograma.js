@@ -4,9 +4,9 @@ import { Remarks } from '../Remarks'
 export default function Espermograma ({ onChange, register, value, values }) {
   return (
     <>
-      <section>
-        <h2>Espermograma</h2>
-        <h3>Examen Físico</h3>
+      <h2>Espermograma</h2>
+      <h3>Examen Físico</h3>
+      <section className='section'>
         <Input
           register={register}
           onChange={onChange}
@@ -52,9 +52,9 @@ export default function Espermograma ({ onChange, register, value, values }) {
         >
           pH:
         </Input>
-
-        <h3>Recuento y Citología</h3>
-
+      </section>
+      <h3>Recuento y Citología</h3>
+      <section className='section'>
         <Input
           value={!values?.vitalidad ? value : values.vitalidad}
           name='espermograma.vitalidad'
@@ -92,9 +92,9 @@ export default function Espermograma ({ onChange, register, value, values }) {
         >
           Inmovil (IM):
         </Input>
-
-        <h3>Movilidad</h3>
-
+      </section>
+      <h3>Movilidad</h3>
+      <section className='section'>
         <Input
           value={!values?.mov_progresivo ? value : values.mov_progresivo}
           name='espermograma.mov_progresivo'
@@ -142,14 +142,13 @@ export default function Espermograma ({ onChange, register, value, values }) {
         >
           Movilidad Total (PR+NP):
         </Input>
-
-        <h3>Morfologia</h3>
-        <Remarks
-          value={!values?.remarks ? value : values.remarks}
-          name='espermograma.remarks'
-          register={register}
-        />
       </section>
+      <h3>Morfologia</h3>
+      <Remarks
+        value={!values?.remarks ? value : values.remarks}
+        name='espermograma.remarks'
+        register={register}
+      />
     </>
   )
 }

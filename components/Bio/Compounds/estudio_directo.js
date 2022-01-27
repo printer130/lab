@@ -5,10 +5,10 @@ import { IdentificacionDelGermen } from '../Identificacion'
 export default function EstudioDirecto ({ onChange, register, value, values }) {
   return (
     <>
-      <section>
-        <h2>Estudio Directo</h2>
-        <h3>Identificación del Germen</h3>
+      <h2>Estudio Directo</h2>
+      <h3>Identificación del Germen</h3>
 
+      <section className='section'>
         <Input
           value={!values?.muestra ? value : values.muestra}
           register={register}
@@ -31,13 +31,12 @@ export default function EstudioDirecto ({ onChange, register, value, values }) {
           onChange={onChange}
           name='estudio_directo.identificacion_del_germen'
         />
-
-        <Remarks
-          value={!values?.remarks ? value : values.remarks}
-          name='estudio_directo.remarks'
-          register={register}
-        />
       </section>
+      <Remarks
+        value={!values?.remarks ? value : values.remarks}
+        name='estudio_directo.remarks'
+        register={register}
+      />
     </>
   )
 }

@@ -1711,31 +1711,31 @@
       {
         "value": "Estradiol",
         "values": null,
-        "price": 2,
+        "price": 100,
         "map": "estradiol_simple"
       },
       {
         "value": "FSH",
         "values": null,
-        "price": 2,
+        "price": 100,
         "map": "fsh_simple"
       },
       {
         "value": "LH",
         "values": null,
-        "price": 2,
+        "price": 100,
         "map": "lh_simple"
       },
       {
         "value": "Progesterona",
         "values": null,
-        "price": 2,
+        "price": 100,
         "map": "progesterona_simple"
       },
       {
         "value": "Prolactina",
         "values": null,
-        "price": 2,
+        "price": 100,
         "map": "prolactina_simple"
       },
       {

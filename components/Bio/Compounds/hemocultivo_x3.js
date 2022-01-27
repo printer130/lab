@@ -8,10 +8,9 @@ export default function Hemocultivox3 ({ onChange, register, value, values }) {
 
   return (
     <>
-      <section>
-        <h2>Hemocultivo x3</h2>
-        <h3>1° Muestra Identificación del Germen</h3>
-
+      <h2>Hemocultivo x3</h2>
+      <h3>1° Muestra Identificación del Germen</h3>
+      <section className='section'>
         <IdentificacionDelGermen
           register={register}
           value={value}
@@ -20,15 +19,16 @@ export default function Hemocultivox3 ({ onChange, register, value, values }) {
           values={!values?.identificacion ? value : values.identificacion}
           name='hemocultivo_x3.identificacion'
         />
+      </section>
 
-        <Remarks
-          value={!values?.remarks ? value : values.remarks}
-          name='hemocultivo_x3.remarks'
-          register={register}
-        />
+      <Remarks
+        value={!values?.remarks ? value : values.remarks}
+        name='hemocultivo_x3.remarks'
+        register={register}
+      />
 
-        <h3>Antibiograma</h3>
-
+      <h3>Antibiograma</h3>
+      <section className='section'>
         {antibiograma.map(({ name, type, placeholder, map }) => {
           return (
             <Input
@@ -44,14 +44,16 @@ export default function Hemocultivox3 ({ onChange, register, value, values }) {
             </Input>
           )
         })}
-        <Remarks
-          value={!values?.remarks2 ? value : values.remarks2}
-          name='hemocultivo_x3.remarks2'
-          register={register}
-        />
+      </section>
 
-        <h3>2° Muestra Identificación del Germen</h3>
+      <Remarks
+        value={!values?.remarks2 ? value : values.remarks2}
+        name='hemocultivo_x3.remarks2'
+        register={register}
+      />
 
+      <h3>2° Muestra Identificación del Germen</h3>
+      <section className='section'>
         <IdentificacionDelGermen
           register={register}
           value={value}
@@ -60,13 +62,15 @@ export default function Hemocultivox3 ({ onChange, register, value, values }) {
           values={!values?.identificacion2 ? value : values.identificacion2}
           name='hemocultivo_x3.identificacion2'
         />
-        <Remarks
-          value={!values?.remarks3 ? value : values.remarks3}
-          name='hemocultivo_x3.remarks3'
-          register={register}
-        />
-        <h3>Antibiograma</h3>
+      </section>
 
+      <Remarks
+        value={!values?.remarks3 ? value : values.remarks3}
+        name='hemocultivo_x3.remarks3'
+        register={register}
+      />
+      <h3>Antibiograma</h3>
+      <section className='section'>
         {antibiograma.map(({ name, type, placeholder, map }) => {
           return (
             <Input
@@ -82,13 +86,15 @@ export default function Hemocultivox3 ({ onChange, register, value, values }) {
             </Input>
           )
         })}
-        <Remarks
-          value={!values?.remarks4 ? value : values.remarks4}
-          name='hemocultivo_x3.remarks4'
-          register={register}
-        />
-        <h3>3° Muestra Identificación del Germen</h3>
+      </section>
 
+      <Remarks
+        value={!values?.remarks4 ? value : values.remarks4}
+        name='hemocultivo_x3.remarks4'
+        register={register}
+      />
+      <h3>3° Muestra Identificación del Germen</h3>
+      <section className='section'>
         <IdentificacionDelGermen
           register={register}
           value={value}
@@ -97,13 +103,15 @@ export default function Hemocultivox3 ({ onChange, register, value, values }) {
           values={!values?.identificacion3 ? value : values.identificacion3}
           name='hemocultivo_x3.identificacion3'
         />
-        <Remarks
-          value={!values?.remarks5 ? value : values.remarks5}
-          name='hemocultivo_x3.remarks5'
-          register={register}
-        />
-        <h3>Antibiograma</h3>
+      </section>
 
+      <Remarks
+        value={!values?.remarks5 ? value : values.remarks5}
+        name='hemocultivo_x3.remarks5'
+        register={register}
+      />
+      <h3>Antibiograma</h3>
+      <section className='section'>
         {antibiograma.map(({ name, type, placeholder, map }) => {
           return (
             <Input
@@ -119,12 +127,13 @@ export default function Hemocultivox3 ({ onChange, register, value, values }) {
             </Input>
           )
         })}
-        <Remarks
-          value={!values?.remarks6 ? value : values.remarks6}
-          name='hemocultivo_x3.remarks6'
-          register={register}
-        />
       </section>
+
+      <Remarks
+        value={!values?.remarks6 ? value : values.remarks6}
+        name='hemocultivo_x3.remarks6'
+        register={register}
+      />
     </>
   )
 }

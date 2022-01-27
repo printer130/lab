@@ -1,7 +1,6 @@
 import { Input } from '../Input'
 
 export default function AcidoFolico ({ values, value, onChange, register }) {
-  console.log(values)
   return (
     <>
       <section>

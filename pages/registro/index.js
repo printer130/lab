@@ -1,7 +1,7 @@
-import useSWR from 'swr'
 /* eslint-disable react/jsx-closing-tag-location */
+import useSWR from 'swr'
 import { useForm } from 'react-hook-form'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import Head from 'next/head'
 import { zodResolver } from '@hookform/resolvers/zod/dist/zod'
 import { DEFAULT_REGISTER_VALUES } from 'const/register_default_values'
@@ -10,12 +10,12 @@ import { useRouter } from 'next/router'
 import { Form } from 'components/Form'
 import { useSession } from 'next-auth/react'
 import { saveOrder, normalizedOrder } from 'lib/db'
-import { onCi } from 'components/Form/onCi'
 import { useDebounce } from 'hooks/useDebounce'
-
-export default function Registro ({ fallback }) {
+export default function Registro () {
   const session = useSession()
   const [loading, setLoading] = useState(false)
+  const [search, setSearch] = useState(null)
+
   const router = useRouter()
   const { register, handleSubmit, formState, setError } = useForm({
     resolver: zodResolver(registerSchema),
@@ -24,15 +24,13 @@ export default function Registro ({ fallback }) {
     reValidateMode: 'onChange'
   })
 
-  const [search] = useState('')
+  const debouncedSearch = useDebounce({ search, delay: 3000 })
 
-  const debouncedSearch = useDebounce(search, 1000)
-
-  const { data, isValidating } = useSWR(() =>
-    debouncedSearch ? `/api/getBySearchVal/${debouncedSearch}` : null
+  const { data } = useSWR(() =>
+    (debouncedSearch !== null) & (search.length > 3)
+      ? `/api/getBySearchVal/${search}`
+      : null
   )
-  console.log('data', debouncedSearch)
-
   const { errors, isValid, isDirty } = formState
   const onSubmit = data => {
     setLoading(true)
@@ -40,12 +38,18 @@ export default function Registro ({ fallback }) {
       .then(res => {
         if (!res.ok) return new Error('No se pudo guardar la orden')
         setLoading(false)
-        router.push(`/registro/${data.ci}`)
+        return router.push(`/registro/${data.ci}`)
       })
       .catch(e => {
-        setError(e)
-        router.push('/')
+        if (e.message) {
+          return router.replace('/')
+        }
+        // setError(e)
       })
+  }
+  const handleFill = ({ ci }) => {
+    setLoading(true)
+    router.push(`/registro/${ci}`)
   }
 
   return (
@@ -57,10 +61,12 @@ export default function Registro ({ fallback }) {
           content='Para laboratorios y pacientes con recetas|orden'
         />
       </Head>
-      {!session?.data ? (
-        <div>Nada que ver aki</div>
-      ) : (
+      {session.data && (
         <Form
+          onClick={handleFill}
+          onLoading={setLoading}
+          debouncedSearch={data ?? null}
+          onDebounce={setSearch}
           handleSubmit={handleSubmit}
           onSubmit={onSubmit}
           loading={loading}

@@ -6,11 +6,7 @@ export default function DengueIgGELISA ({ value, values, onChange, register }) {
       <section>
         <h2>Dengue - IgG (ELISA)</h2>
         <Input
-          value={
-            !values?.dengue_ig_g_elisa_simple
-              ? value
-              : values.dengue_ig_g_elisa_simple
-          }
+          value={!values ? value : values}
           onChange={onChange}
           register={register}
           type='number'

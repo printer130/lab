@@ -11,9 +11,8 @@ export default function BKSimple ({
   return (
     <>
       <h2>BK Simple</h2>
-
-      <section>
-        <h3>Identificación del Germen</h3>
+      <h3>Identificación del Germen</h3>
+      <section className='section'>
         <Input
           value={
             !values?.muestra_identificacion_germen_simple

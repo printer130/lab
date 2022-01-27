@@ -5,6 +5,6 @@ export const DEFAULT_REGISTER_VALUES = {
   birth: '',
   phone: '',
   nit: '',
-  socialReason: '',
+  reason: '',
   doctor: ''
 }

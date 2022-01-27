@@ -11,7 +11,9 @@ export default function TestIndicam ({ register, values }) {
         name='test_indicam'
         n='Grado 0'
         p='Grado 1'
+        checked
       />
+
       <NegativePositive
         values={values}
         register={register}

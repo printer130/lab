@@ -17,6 +17,14 @@ export const Select = forwardRef(({ name, register, values }, ref) => {
           <option value='positivo 1/150'>Positivo 1/150</option>
         </select>
       )}
+      <style jsx>
+        {`
+          select {
+            margin-top: .35rem;
+            padding: 0.25rem 0.15rem;
+          }
+        `}
+      </style>
     </>
   )
 })

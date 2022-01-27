@@ -1,146 +1,163 @@
-import { prisma } from 'db/prisma'
-import { getAge } from 'hooks/dateTime/getAge'
 import { useForm } from 'react-hook-form'
-import { LazyBio } from 'components/LazyBio'
+import { useState } from 'react'
+import { prisma } from 'db/prisma'
 import { getSession } from 'next-auth/react'
+import { normalizedReceiptByCu } from 'utils/normalize/receiptByCu'
+import { getAge } from 'hooks/dateTime/getAge'
+import Link from 'next/link'
+import { LazyBio } from 'components/LazyBio'
 
-export default function Bio ({ receiptByCu = {} }) {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors }
-  } = useForm()
+ export default function Bio ({ receiptByCu = {} }) {
+   const [loading, setLoading] = useState(false)
+  
+    // const { data } = useSWR(`/api/receipt/${cuiid}`)
+   const {
+     register,
+     handleSubmit,
+     formState: { errors }
+   } = useForm()
 
-  const onSubmit = data => {
-    const culo = {
-      json: receiptByCu.json,
-      data,
-      cuiid: receiptByCu.cuiid
+    const onSubmit = data => {
+      const culo = {
+        json: receiptByCu.json,
+        data,
+        cuiid: receiptByCu.cuiid
+      }
+      receiptBio({ culo, onLoading: setLoading })
     }
+    const handlePDF = () => {
+      console.log('clic')
+      return null
+    }
+   return (
+     <>
+       <section>
+         <nav>
+           <p>
+             <span>
+               Nombre: <strong>{receiptByCu?.owner?.fullName}</strong>
+             </span>
+             <span>
+               Edad: <strong>{getAge(receiptByCu?.owner?.birth)}</strong>
+             </span>
+             <span>
+               Sexo: <strong>{receiptByCu?.owner?.sex}</strong>
+             </span>
+           </p>
+           <Link href='/ordenes'>
+             <a className='atras'>Ir Atras</a>
+           </Link>
+         </nav>
+         <form onSubmit={handleSubmit(onSubmit)}>
+           {receiptByCu?.json?.length > 0 &&
+             receiptByCu.json.map(({ name, values = null }) => {
+               return (
+                 <div key={name}>
+                   <LazyBio name={name} values={values} register={register} />
+                 </div>
+               )
+             })}
+           <button>{loading ? 'Guardando...' : 'Guardar'}</button>
+         </form>
+         <a onClick={handlePDF} title='Descargar en pdf'>
+           Descargar PDF
+         </a>
+       </section>
+       <style jsx>
+         {`
+           div {
+             max-width: 900px;
+             margin: 0 auto;
+           }
 
-    window
-      .fetch('/api/receiptBio', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/text'
-        },
-        body: JSON.stringify(culo)
-      })
-      .then(res => {
-        console.log(res)
-        return res.json()
-      })
-      .then(data => console.log('UPDATED [BIO]', data))
-      .catch(err => console.log('ERROR [BIO]', err))
-  }
+           nav {
+             display: flex;
+             justify-content: space-between;
+           }
+           p {
+             display: flex;
+             flex-direction: column;
+           }
+           .atras {
+             display: block;
+             width: 270px;
+             background-color: #1a90c0;
+             height: 28.4px;
+             padding: 0.25rem 0.45rem;
+             color: #eee;
+             text-align: center;
+             font-size: 1rem;
+             border-radius: 7px;
+           }
 
-  return (
-    <>
-      <section>
-        <p>
-          Nombre: <strong>{receiptByCu.owner.fullName}</strong>
-        </p>
-        <p>
-          Edad: <strong>{getAge(receiptByCu.owner.birth)}</strong>
-        </p>
-        <p>
-          Sexo: <strong>{receiptByCu.owner.sex}</strong>
-        </p>
-        <form onSubmit={handleSubmit(onSubmit)}>
-          {receiptByCu.json.length > 0 &&
-            receiptByCu.json.map(({ name, values = null, ...rest }) => {
-              console.log('[REST]', rest, name)
-              return (
-                <div key={name}>
-                  <LazyBio name={name} values={values} register={register} />
-                </div>
-              )
-            })}
-          <button>CLiCK ME please</button>
-        </form>
-        <a
-          download={`/bio/${receiptByCu.cuiid}`}
-          href={`/bio/${receiptByCu.cuiid}`}
-          filename={`${receiptByCu.cuiid}.pdf`}
-          title='Descargar en pdf'
-        >
-          Descargar PDF
-        </a>
-      </section>
-    </>
-  )
-}
+           button {
+             pointer-events: ${loading ? 'none' : 'auto'};
+             width: 100%;
+             margin-top: 2rem;
+             background-color: #1a90c0;
+             opacity: ${loading ? '.55' : '1'};
+             padding: 0.25rem 0.45rem;
+             color: #eee;
+             font-size: 1rem;
+             cursor: pointer;
+             border-radius: 7px;
+             border: 1px solid #ddd;
+           }
+         `}
+       </style>
+     </>
+   )
+ }
 
-export async function getServerSideProps ({ req, query }) {
-  const session = await getSession({ req })
+ export async function getServerSideProps ({ req, query }) {
+ const session = await getSession({ req })
   const { labId } = session.token.user
 
-  const receiptFinded = await prisma[`${'receipt' + labId}`].findUnique({
-    where: {
-      cuiid: query.cu
-    },
-    include: {
-      owner: true
-    }
-  })
-
-  // console.log('[receiptFinded]', receiptFinded)
-
-  // const test = [
-  //   { name: 'aptt', values: 50, price: 5 },
-  //   { name: 'ca_en_orina_simple', values: 33, price: 2 },
-  //   {
-  //     name: 'parasitol_gico_concentrado',
-  //     values: {
-  //       fisico_quimico: {
-  //         consistencia: 'sólido',
-  //         color: 'azul',
-  //         ph: 7.5,
-  //         aspecto: 'limpio'
-  //       },
-  //       microscopico: {
-  //         protozooarios: 'el protooooo',
-  //         vermes: 'el vermes',
-  //         leucocitos: 'la leucocitos',
-  //         eritrocitos: 'la eritrocitos',
-  //         levaduras: 'la levaduras',
-  //         flora_microbiana: 'la flora microbiana'
-  //       }
-  //     },
-  //     price: 2
-  //   },
-  //   { name: 'azucares_reductores_simple', values: {}, price: 2 },
-  //   { name: 'toxoplasmosis_hai_simple', values: {}, price: 2 },
-  //   { name: 'anti_m_b_g_simple', values: {}, price: 2 },
-  //   {
-  //     name: 'covid_19_ac_neutralizantes_simple',
-  //     values: {},
-  //     price: 2
-  //   },
-  //   { name: 'covid_19_ag_nasal_simple', values: {}, price: 2 }
-  // ]
-
-  const receiptByCu = {
-    cuiid: receiptFinded.cuiid,
-    id: receiptFinded.id,
-    json: receiptFinded.json,
-    createdAt: +new Date(receiptFinded.createdAt),
-    saldo: receiptFinded.saldo,
-    itotal: receiptFinded.itotal,
-    total: receiptFinded.total,
-    updatedAt: +new Date(receiptFinded.updatedAt),
-    labName: receiptFinded.labName,
-    ownerCi: receiptFinded.ownerCi,
-    indebtList: receiptFinded.indebtList,
-    owner: {
-      id: receiptFinded.owner.id,
-      fullName: receiptFinded.owner.fullName,
-      birth: +new Date(receiptFinded.owner.birth),
-      sex: receiptFinded.owner.sex
-    }
-  }
+   const receiptFinded = await prisma[`receipt${labId}`].findUnique({
+     where: {
+       cuiid: query.cu
+     },
+     include: {
+       owner: true
+     }
+   })
+   console.log({ receiptFinded })
 
   return {
-    props: { receiptByCu }
+    props: {
+      receiptByCu: normalizedReceiptByCu({ receiptFinded })
+    }
   }
-}
+ }
+
+// function ReceiptByCu () {
+//   const router = useRouter()
+
+//   return <h1>hola {JSON.stringify(router.query.cu)}</h1>
+// }
+
+// export default function Bio ({ fallback }) {
+//   return <SWRConfig value={{ fallback }}>
+//       <ReceiptByCu />
+//    </SWRConfig>
+// }
+
+// export async function getServerSideProps ({ req, query}) {
+//   const session = await getSession({ req })
+//   const { labId } = session.token.user
+
+//    const receiptFinded = await prisma[`receipt${labId}`].findUnique({
+//      where: {
+//        cuiid: query.cu
+//      },
+//      include: {
+//        owner: true
+//      }
+//    })
+
+//   return {
+//     props: {
+//         receipt: normalizedReceiptByCu({ receiptFinded })
+//     }
+//   }
+// }

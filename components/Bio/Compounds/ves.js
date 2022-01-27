@@ -3,8 +3,8 @@ import { Input } from '../Input'
 export default function Ves ({ onChange, values, register, value }) {
   return (
     <>
-      <section>
-        <h2>V.E.S.</h2>
+      <h2>V.E.S.</h2>
+      <section className='section'>
         <Input
           value={!values?.una_hora ? value : values.una_hora}
           name='ves.una_hora'

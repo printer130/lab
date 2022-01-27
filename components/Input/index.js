@@ -1,4 +1,3 @@
-import { ErrorMessage } from 'components'
 import { forwardRef } from 'react'
 
 export const Input = forwardRef(
@@ -7,6 +6,7 @@ export const Input = forwardRef(
       errors: error,
       onChange,
       type,
+      v,
       name,
       checked,
       price,
@@ -36,7 +36,7 @@ export const Input = forwardRef(
             max={max}
             checked={checked}
             ref={ref}
-            defaultValue={defaultValue}
+            value={(type === 'date') & !v ? defaultValue : v}
             type={type}
             required={type === 'date'}
             placeholder={placeholder}

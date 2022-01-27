@@ -2,8 +2,6 @@ import { NegativePositive } from '../NegativePositive'
 
 export default function ChalamydiaEnOrina ({
   values,
-  value,
-  onChange,
   register
 }) {
   return (

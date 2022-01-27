@@ -10,22 +10,15 @@ export function Order ({
   fullname,
   total,
   acuenta,
+  onDelete,
   saldo,
-  cu
+  cuiid
 }) {
   const session = useSession()
   const { role } = session?.data?.token?.user
-  const handleDelete = () => {
-    window
-      .fetch(`/api/deleteReceipt/${cu}`, {
-        method: 'DELETE',
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      })
-      .then(res => res.json())
-      .then(data => console.log('DELETED', data))
-  }
+
+  const diff = total - itotal
+
   return (
     <>
       <div>
@@ -34,22 +27,22 @@ export function Order ({
         <p>{fullname}</p>
         <p>{total} </p>
         <p>{itotal}</p>
-        <p>{total - itotal}</p>
+        <p>{diff <= 0 ? '✅' : diff}</p>
         {role && role === ROLE_TYPE_BIOCHEMICAL && (
-          <Link href={`/bio/${cu}`}>
+          <Link href={`/bio/${cuiid}`}>
             <a title='Bio' />
           </Link>
         )}
-        <Link href={`/ordenes/${cu}`}>
+        <Link href={`/ordenes/${cuiid}`}>
           <a title='Editar' />
         </Link>
         <a
           download
-          href={`/bio/${cu}`}
-          filename={`${cu}.pdf`}
+          href={`/bio/${cuiid}`}
+          filename={`${cuiid}.pdf`}
           title='Descargar en pdf'
         />
-        <a onClick={handleDelete} title='Borrar' />
+        <a onClick={onDelete} title='Borrar' />
       </div>
       <style jsx>
         {`
@@ -57,9 +50,9 @@ export function Order ({
             background-color: #d2f2ff;
           }
           div {
-            border: ${total - itotal === 0
-              ? '2px solid #008f00'
-              : '2px solid transparent'};
+            height: auto;
+            min-height: 55px;
+            border: 2px solid transparent;
             min-width: 320px;
             max-width: 100%;
             width: 100%;
@@ -97,6 +90,14 @@ export function Order ({
             background-image: url('/miniLogo.svg');
             background-position: center;
             background-repeat: no-repeat;
+          }
+          @media (max-width: 600px) {
+            div {
+              grid-template-columns: 105px 145px 1fr repeat(3, 80px) ${role ===
+                ROLE_TYPE_BIOCHEMICAL
+                  ? 'repeat(4, 35px)'
+                  : 'repeat(3, 35px)'};
+            }
           }
         `}
       </style>

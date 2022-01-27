@@ -1,3 +1,7 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
 html,
 body {
   padding: 0;
@@ -13,4 +17,15 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+h3, h2 { 
+  width: -webkit-fill-available;
+}
+
+.section {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
 }

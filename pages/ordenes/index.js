@@ -2,21 +2,27 @@
 import { ListOfOrders } from 'components/ListOrders'
 import { Search } from 'components/Search'
 import { prisma } from 'db/prisma'
-import { useSession, getSession } from 'next-auth/react'
+import { getAllReceipts } from 'lib/db'
+import { getSession, useSession } from 'next-auth/react'
 import { useCallback, useMemo, useState } from 'react'
-import { unique } from 'utils/unique'
+import { normalizedReceipts } from 'utils/normalize/receipts'
 
 const ROLE_TYPE_BIOCHEMICAL = 'BIOCHEMICAL'
-export default function Ordenes ({ orders = {}, result = {} }) {
+
+export default function Ordenes ({ result, fallback }) {
+  // const { data: result } = useSWR('/api/receipt/getAll')
+  // const [result, setResult] = useState({})
+
+  // useEffect(() => {
+  //   if (!result.length) {
+  //     getAllReceipts().then(res => {
+  //       setResult(res)
+  //     })
+  //   }
+  // }, [])
   const [value, setValue] = useState('')
-  // const session = useUser()
   const session = useSession()
   const token = session?.data?.token
-  // const { role } = session.data.user.token
-
-  // const role = 'BIOCHEMICAL'
-  // const { user: { role } } = session?.data?.token
-  // const role = session.data ? session.data.user.token.role : 'RECEPTIONIST'
 
   const handleChange = useCallback(
     e => {
@@ -24,45 +30,57 @@ export default function Ordenes ({ orders = {}, result = {} }) {
     },
     [value]
   )
+  const v = String(value.toLowerCase())
 
-  const resFiltered = result.filter(({ fullName, unique }) => {
-    return (
-      fullName.toLowerCase().includes(value.toLowerCase()) ||
-      unique.toLowerCase().includes(value.toLowerCase())
-    )
-  })
+  const resFiltered =
+    result.length &&
+    result?.filter(({ fullName, unique }) => {
+      return (
+        fullName.toLowerCase().includes(v) || unique.toLowerCase().includes(v)
+      )
+    })
 
   const data = useMemo(() => {
     return resFiltered
   }, [resFiltered])
 
+  const handleDelete = ({ cuiid }) => {
+    window
+      .fetch(`/api/deleteReceipt/${cuiid}`, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+      .then(res => res.json())
+  }
+
+  if (!session?.data) return <div />
   return (
     <>
-      {!session.data ? (
-        <div />
-      ) : (
-        <section>
-          <header>
-            <h1>Lista de Ordenes</h1>
-            <Search
-              value={value}
-              onChange={handleChange}
-              placeholder='Buscar por: nombre - número de orden'
-            />
-          </header>
-          <main>
-            <nav>
-              <strong>Creado</strong>
-              <strong>Codigo</strong>
-              <strong>Nombre</strong>
-              <strong>Total</strong>
-              <strong>Saldo</strong>
-              <strong>A cuenta</strong>
-            </nav>
-            <ListOfOrders data={data} />
-          </main>
-        </section>
-      )}
+      <header>
+        <strong className='block text-2xl mb-4'>Lista de Ordenes</strong>
+        <Search
+          value={value}
+          onChange={handleChange}
+          placeholder='Buscar por: nombre - número de orden'
+        />
+      </header>
+      <section>
+        <main>
+          <nav>
+            <strong>Creado</strong>
+            <strong>Codigo</strong>
+            <strong>Nombre</strong>
+            <strong>Total</strong>
+            <strong>Saldo</strong>
+            <strong>A cuenta</strong>
+          </nav>
+          {/* <SWRConfig value={{fallback}} > */}
+          <ListOfOrders data={data} onDelete={handleDelete} />
+          {/* </SWRConfig > */}
+        </main>
+      </section>
       <style jsx>
         {`
           input {
@@ -78,9 +96,9 @@ export default function Ordenes ({ orders = {}, result = {} }) {
 
           section {
             margin: 0 auto;
-            max-width: 100%;
-            min-width: 520px;
             width: 100%;
+            overflow-x: scroll;
+            scroll-behavior: smooth;
           }
 
           nav {
@@ -96,7 +114,9 @@ export default function Ordenes ({ orders = {}, result = {} }) {
 
           main {
             display: grid;
-            grid-template-rows: repeat(auto-fit, 55px);
+
+            width: 900px;
+            grid-template-rows: repeat(auto-fill, 55px);
           }
         `}
       </style>
@@ -106,8 +126,6 @@ export default function Ordenes ({ orders = {}, result = {} }) {
 
 export async function getServerSideProps ({ req }) {
   const session = await getSession({ req })
-  // if (!session) return { props: { orders: {}, result: [] } }
-  // console.log('SESSIOn', session)
   const { labId } = session.token.user
   const receipts = await prisma[`receipt${labId}`].findMany({
     where: {},
@@ -115,38 +133,18 @@ export async function getServerSideProps ({ req }) {
       owner: true
     }
   })
-  console.log('receipts', receipts)
-
-  const result = receipts.map(item => {
-    return {
-      id: item.id,
-      createdAt: +new Date(item.createdAt),
-
-      itotal: item.itotal,
-      total: item.total,
-      indebt: item.indebtList,
-      saldo: item.saldo,
-      unique: unique({
-        labName: item.labName,
-        ownerCi: item.ownerCi,
-        id: item.id
-      }),
-
-      labName: item.labName,
-      ownerCi: item.owner.ci,
-
-      cu: item.cuiid,
-      fullName: item.owner.fullName,
-      birth: +new Date(item.owner.birth),
-      nit: item.owner.nit,
-      phone: item.owner.phone,
-      sex: item.owner.sex,
-      doctor: item.owner.doctor
-    }
-  })
+  // const receipts = await getAllReceipts()
+  const result = normalizedReceipts({ receipts })
 
   return {
     props: { result }
   }
+  // return {
+  //   props: {
+  //     fallback: {
+  //       "/api/receipt/getALl": result
+  //      }
+  //   }
+  // }
 }
 Ordenes.auth = true

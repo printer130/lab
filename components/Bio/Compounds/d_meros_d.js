@@ -1,12 +1,13 @@
 import { Input } from '../Input'
 import { Remarks } from '../Remarks'
 
-export default function DDimeros ({ onChange, register, value, values }) {
+export default function DDimeros ({ onChange, register, value, values, pdf }) {
   return (
     <>
       <section>
         <h2>D-Dimeros</h2>
         <Input
+          pdf={pdf}
           value={!values?.d_dimeros ? value : values.d_dimeros}
           register={register}
           onChange={onChange}
@@ -19,6 +20,7 @@ export default function DDimeros ({ onChange, register, value, values }) {
         </Input>
 
         <Remarks
+          pdf={pdf}
           value={!values?.remarks ? value : values.remarks}
           name='d_meros_d.remarks'
           register={register}

@@ -13,9 +13,9 @@ export default function CultivoDeEsputo ({
   const antibio = values?.antibiograma ?? false
   return (
     <>
-      <section>
-        <h2>Cultivo de Esputo</h2>
-        <h3>Identificación del Germen</h3>
+      <h2>Cultivo de Esputo</h2>
+      <h3>Identificación del Germen</h3>
+      <section className='section'>
         <GramZielhlTinciones
           register={register}
           value={value}
@@ -47,14 +47,16 @@ export default function CultivoDeEsputo ({
           onChange={onChange}
           name='cultivo_de_esputo.identificacion_del_germen_2'
         />
+      </section>
 
-        <Remarks
-          value={!values?.remarks ? value : values.remarks}
-          name='cultivo_de_esputo.remarks'
-          register={register}
-        />
+      <Remarks
+        value={!values?.remarks ? value : values.remarks}
+        name='cultivo_de_esputo.remarks'
+        register={register}
+      />
 
-        <h3>Antibiograma</h3>
+      <h3>Antibiograma</h3>
+      <section className='section'>
         {antibiograma.map(({ name, type, placeholder, map }) => {
           return (
             <Input
@@ -70,13 +72,12 @@ export default function CultivoDeEsputo ({
             </Input>
           )
         })}
-
-        <Remarks
-          value={!values?.remarks2 ? value : values.remarks2}
-          name='cultivo_de_esputo.remarks2'
-          register={register}
-        />
       </section>
+      <Remarks
+        value={!values?.remarks2 ? value : values.remarks2}
+        name='cultivo_de_esputo.remarks2'
+        register={register}
+      />
     </>
   )
 }

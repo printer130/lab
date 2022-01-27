@@ -13,32 +13,32 @@ export default function CultivoDeHongos ({
       <section>
         <h2>Cultivo de Hongos</h2>
         <h3>Identificación del Germen</h3>
-        <Input
-          value={
-            !values?.muestra_de_hongos
-              ? value
-              : values.muestra_de_hongos
-          }
-          register={register}
-          onChange={onChange}
-          name='cultivo_de_hongos.muestra_de_hongos'
-          placeholder='muestra...'
-          type='text'
-        >
-          Muestra:
-        </Input>
+        <section className='section'>
+          <Input
+            value={
+              !values?.muestra_de_hongos ? value : values.muestra_de_hongos
+            }
+            register={register}
+            onChange={onChange}
+            name='cultivo_de_hongos.muestra_de_hongos'
+            placeholder='muestra...'
+            type='text'
+          >
+            Muestra:
+          </Input>
 
-        <IdentificacionDelGermen
-          register={register}
-          value={value}
-          values={
-            !values?.identificacion_del_germen
-              ? value
-              : values.identificacion_del_germen
-          }
-          onChange={onChange}
-          name='cultivo_de_hongos.identificacion_del_germen'
-        />
+          <IdentificacionDelGermen
+            register={register}
+            value={value}
+            values={
+              !values?.identificacion_del_germen
+                ? value
+                : values.identificacion_del_germen
+            }
+            onChange={onChange}
+            name='cultivo_de_hongos.identificacion_del_germen'
+          />
+        </section>
 
         <Remarks
           value={!values?.remarks ? value : values.remarks}

@@ -13,8 +13,8 @@ export default function BKSeriado ({
     <>
       <h2>BK Seriado</h2>
 
-      <section>
-        <h3>1° Muestra Identificación del Germen</h3>
+      <h3>1° Muestra Identificación del Germen</h3>
+      <section className='section'>
         <Input
           value={
             !values?.muestra_identificacion_germen_1
@@ -43,14 +43,14 @@ export default function BKSeriado ({
         >
           Germen Identificado
         </Input>
-        <Remarks
-          value={!values?.remarks1 ? value : values.remarks1}
-          name='bk_seriado.remarks1'
-          register={register}
-        />
       </section>
-      <section>
-        <h3>2° Muestra Identificación del Germen</h3>
+      <Remarks
+        value={!values?.remarks1 ? value : values.remarks1}
+        name='bk_seriado.remarks1'
+        register={register}
+      />
+      <h3>2° Muestra Identificación del Germen</h3>
+      <section className='section'>
         <Input
           value={
             !values?.muestra_identificacion_germen_2
@@ -79,14 +79,14 @@ export default function BKSeriado ({
         >
           Germen Identificado
         </Input>
-        <Remarks
-          value={!values?.remarks2 ? value : values.remarks2}
-          name='bk_seriado.remarks2'
-          register={register}
-        />
       </section>
-      <section>
-        <h3>3° Muestra Identificación del Germen</h3>
+      <Remarks
+        value={!values?.remarks2 ? value : values.remarks2}
+        name='bk_seriado.remarks2'
+        register={register}
+      />
+      <h3>3° Muestra Identificación del Germen</h3>
+      <section className='section'>
         <Input
           value={
             !values?.muestra_identificacion_germen_3
@@ -115,12 +115,12 @@ export default function BKSeriado ({
         >
           Germen Identificado
         </Input>
-        <Remarks
-          value={!values?.remarks3 ? value : values.remarks3}
-          name='bk_seriado.remarks3'
-          register={register}
-        />
       </section>
+      <Remarks
+        value={!values?.remarks3 ? value : values.remarks3}
+        name='bk_seriado.remarks3'
+        register={register}
+      />
     </>
   )
 }

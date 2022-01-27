@@ -19,9 +19,7 @@ export default function AnticuerpoAntifosfolipidosIgM ({
         measure='MPL'
         type='number'
         placeholder='Anticuerpo Antifosfolípidos - IgM'
-      >
-        Anticuerpo Antifosfolípidos - IgM
-      </Input>
+      />
     </>
   )
 }

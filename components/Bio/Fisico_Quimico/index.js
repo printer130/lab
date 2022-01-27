@@ -2,7 +2,7 @@ import { Input } from '../Input'
 
 export function FisicoQuimico ({ onChange, value, register, name, values }) {
   return (
-    <>
+    <section className='section'>
       <Input
         value={!values ? value : values.consistencia}
         register={register}
@@ -46,6 +46,6 @@ export function FisicoQuimico ({ onChange, value, register, name, values }) {
       >
         pH:
       </Input>
-    </>
+    </section>
   )
 }

@@ -18,9 +18,7 @@ export default function HemoglobinaGlicosiladaA1C ({
         type='number'
         measure='%'
         placeholder='Hemoglobina Glicosilada A1C...'
-      >
-        Hemoglobina Glicosilada a1C
-      </Input>
+      />
       <Remarks
         value={!values?.remarks ? value : values.remarks}
         register={register}

@@ -28,7 +28,7 @@ export const registerSchema = z.object({
       required_error: 'Campo requerido'
     })
     .int({ message: 'Numero debe ser entero' }),
-  socialReason: z
+  reason: z
     .string({
       invalid_type_error: 'Campo inválido',
       required_error: 'Campo obligatorio',

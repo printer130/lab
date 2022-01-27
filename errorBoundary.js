@@ -1,6 +1,5 @@
 /* eslint-disable node/handle-callback-err */
 import React from 'react'
-
 export default class ErrorBoundary extends React.Component {
   constructor (props) {
     super(props)
@@ -8,18 +7,18 @@ export default class ErrorBoundary extends React.Component {
   }
 
   static getDerivedStateFromError (error) {
-    // Update state so the next render will show the fallback UI.
+    // Actualiza el estado para que el siguiente renderizado muestre la interfaz de repuesto
     return { hasError: true }
   }
 
   // componentDidCatch (error, errorInfo) {
-  //   // You can also log the error to an error reporting service
+  //   // También puedes registrar el error en un servicio de reporte de errores
   //   logErrorToMyService(error, errorInfo)
   // }
 
   render () {
     if (this.state.hasError) {
-      // You can render any custom fallback UI
+      // Puedes renderizar cualquier interfaz de repuesto
       return <h1>Something went wrong.</h1>
     }
 

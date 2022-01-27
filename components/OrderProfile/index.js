@@ -2,11 +2,8 @@ import { Input } from 'components'
 
 export const OrderProfile = ({
   fullName,
-  nit,
   total,
-  phone,
   birth,
-  socialReason,
   onIndebtChecked,
   onIndebtChange,
   ci,
@@ -14,21 +11,22 @@ export const OrderProfile = ({
   indebt
 }) => {
   return (
-    <fieldset>
+    <fieldset className='mb-7 mt-5'>
       <legend>
-        <h2> {fullName} </h2>
+        <strong className='text-xl'> {fullName} </strong>
       </legend>
-      <div>
+      <div className='mt-6'>
         <p>
-          <strong>Carnet de identidad:</strong> {ci}
+          <strong>Carnet de identidad:</strong> <span>{ci}</span>
         </p>
         <p>
           <strong>Edad: </strong>
-          {birth}
+          <span>{birth}</span>
         </p>
         <p>
           <strong>A Cuenta:</strong>
           <input
+            className='w-auto'
             type='number'
             min={0}
             onChange={onIndebtChange}
@@ -40,7 +38,7 @@ export const OrderProfile = ({
         </p>
         <p>
           <strong>Total: </strong>
-          {total} Bs.
+          <span>{total} Bs.</span>
         </p>
         <p>
           <strong>Saldo: </strong> {!checked ? total : indebt}
@@ -68,21 +66,25 @@ export const OrderProfile = ({
           background-color: #eee;
           border-radius: 7px;
         }
+
+        p {
+          width: 320px;
+          min-width: 220px;
+        }
+
         p:nth-child(3) {
           display: flex;
           width: fit-content;
           align-items: center;
         }
+
         p:nth-child(3) > strong {
           margin-right: 10px;
         }
+
         input:disabled {
           border: 1px solid #ccc;
           opacity: .85;
-        }
-        p {
-          width: 295px;
-          height: fit-content;
         }
       `}
       </style>

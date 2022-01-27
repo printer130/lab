@@ -11,6 +11,8 @@ import { prisma } from 'db/prisma'
 import { getAge } from 'hooks/dateTime/getAge'
 import { saveReceipt } from 'lib/db'
 import Link from 'next/link'
+import { MyModal } from 'components/Dialog'
+import { unique } from 'utils/unique'
 
 export default function RegisterNewCI ({ order = '' }) {
   const router = useRouter()
@@ -63,6 +65,8 @@ export default function RegisterNewCI ({ order = '' }) {
       const checked = target.checked
       const name = target.name
       const dataPrice = +target.attributes['data-price'].value
+      console.log('rest', rest)
+
       setCheckboxes({
         ...checkboxes,
         [name]: {
@@ -96,30 +100,26 @@ export default function RegisterNewCI ({ order = '' }) {
 
   if (loading) return <div>Revisando...</div>
 
-  console.log('[RECEIPT]', receipt)
-  console.log('[order]', order)
   return (
     <section>
-      <div id='modal'>
-        <h1>Resumen</h1>
-        <h2>{order.fullName}</h2>
-        {receipt && (
-          <div>
-            <fieldset>
-              <legend>Codigo de recibo</legend>
-              {/* {receipt.cuiid} */}
-              <p id='id'>
-                {receipt.id}
-                {order.labName.replace(/ /g, '').slice(0, 4)}
-                {receipt.ownerCi}
-              </p>
-            </fieldset>
-          </div>
-        )}
+      {receipt && (
+        <div className='w-full bg-slate-50 h-screen'>
+          <MyModal
+            fullName={order?.fullName}
+            unique={unique({
+              id: receipt.id,
+              ownerCi: receipt.ownerCi,
+              labName: order.labName,
+              cuiid: receipt.cuiid
+            })}
+          />
+        </div>
+      )}
+      {!receipt && (
         <Link href='/registro'>
           <a>Regresar</a>
         </Link>
-      </div>
+      )}
       {order?.fullName ? (
         <OrderProfile
           {...order}
@@ -148,27 +148,24 @@ export default function RegisterNewCI ({ order = '' }) {
       )}
       <style jsx>
         {`
-          #modal {
-            display: ${modal ? 'flex' : 'none'};
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            flex-direction: column;
-            height: 100%;
-            z-index: 9999;
-            background-color: #eee;
-            justify-content: center;
-            backdrop-filter: blur(5px);
-            align-items: center;
-          }
-          #id {
-            text-align: center;
-          }
           section {
             max-width: 900px;
             margin: 0 auto;
             width: 100%;
+            backdrop-filter: blur(10px);
+          }
+          h3 {
+            text-align: center;
+          }
+          a {
+            background-color: blue;
+            padding: 0.4rem 0.8rem;
+            width: 100%;
+            display: block;
+            text-align: center;
+            margin: 0 auto;
+            color: #eee;
+            border-radius: 5px;
           }
         `}
       </style>
@@ -178,7 +175,6 @@ export default function RegisterNewCI ({ order = '' }) {
 
 export async function getServerSideProps ({ params }) {
   const ci = params.ci
-
   const res = await prisma.order.findUnique({
     where: {
       ci: ci

@@ -19,9 +19,7 @@ export default function AnaIf ({
         name='ana_if'
         type='number'
         placeholder='ANA (IF)...'
-      >
-        ANA (IF)
-      </Input>
+      />
     </>
   )
 }

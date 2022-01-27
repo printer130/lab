@@ -1,6 +1,12 @@
 import { Input } from '../Input'
 
-export default function AntiDsDna ({ values, onChange, value, register, required }) {
+export default function AntiDsDna ({
+  values,
+  onChange,
+  value,
+  register,
+  required
+}) {
   return (
     <>
       <h2>Anti ds DNA</h2>
@@ -14,9 +20,7 @@ export default function AntiDsDna ({ values, onChange, value, register, required
         name='anti_ds_dna'
         type='number'
         placeholder='Anti ds DNA...'
-      >
-        Anti ds DNA
-      </Input>
+      />
     </>
   )
 }

@@ -6,23 +6,20 @@ export function IdentificacionDelGermen ({
   onChange,
   name,
   muestra,
-  values
+  values,
+  pdf = null
 }) {
-  console.log('values', values)
   return (
     <>
       {muestra && (
         <Input
-          value={
-            !values?.muestra
-              ? value
-              : values.muestra
-          }
+          value={!values?.muestra ? value : values.muestra}
           register={register}
           onChange={onChange}
           name={`${name}.muestra`}
           placeholder='Muestra...'
           type='text'
+          pdf={pdf}
         >
           Muestra
         </Input>
@@ -33,6 +30,7 @@ export function IdentificacionDelGermen ({
         }
         register={register}
         onChange={onChange}
+        pdf={pdf}
         name={`${name}.germen_identificado`}
         placeholder='Germen Identificado...'
         type='text'
@@ -49,6 +47,7 @@ export function IdentificacionDelGermen ({
         name={`${name}.recuento_de_colonias`}
         placeholder='Recuento de colonias...'
         type='number'
+        pdf={pdf}
       >
         Recuento de colonias:
       </Input>

@@ -22,24 +22,35 @@ async function main () {
   //   }
   // })
 
-  const res = await prisma.user.create({
-    data: {
-      role: 'BIOCHEMICAL',
-      email: 'prisma@gmail.com',
-      name: 'prisma0',
-      password: 'prisma',
-      lab: {
-        connect: {
-          name: 'labo0'
-        }
+  // const res = await prisma.user.create({
+  //   data: {
+  //     role: 'BIOCHEMICAL',
+  //     email: 'prisma@gmail.com',
+  //     name: 'prisma0',
+  //     password: 'prisma',
+  //     lab: {
+  //       connect: {
+  //         name: 'labo0'
+  //       }
+  //     }
+  //   }
+  // })
+
+  // ckykex7t50303449n44gzyyec -> EMBARAZO
+  // ckyk88ad10416tg9ngaw318lu -> HEMOSTASIA
+  const res = await prisma[`receipt${labId}`].findMany({
+    where: {
+      createdAt: {
+        gte: new Date('2022-01-21')
       }
+    },
+    include: {
+      owner: true
     }
   })
-  // const res = await await prisma[`receipt${labId}`].findMany({
-  //   where: {},
-  //   include: {
-  //     owner: true
-  //   }
+
+  // res.map(item => {
+  //   return console.log(item.json)
   // })
 
   // FIND USER

@@ -12,26 +12,26 @@ export default function Coprocultivo ({
 }) {
   return (
     <>
-      <section>
-        <h2>CULTIVO DE SECRECION</h2>
+      <h2>CULTIVO DE SECRECION</h2>
 
-        <h3>Siembra Primaria</h3>
-        <Input
-          value={
-            !values?.germen_de_identificado
-              ? value
-              : values.germen_de_identificado
-          }
-          register={register}
-          onChange={onChange}
-          name='coprocultivo.germen_de_identificado'
-          placeholder='Germen Identificado...'
-          type='text'
-        >
-          Germen Identificado
-        </Input>
+      <h3>Siembra Primaria</h3>
+      <Input
+        value={
+          !values?.germen_de_identificado
+            ? value
+            : values.germen_de_identificado
+        }
+        register={register}
+        onChange={onChange}
+        name='coprocultivo.germen_de_identificado'
+        placeholder='Germen Identificado...'
+        type='text'
+      >
+        Germen Identificado
+      </Input>
 
-        <h3>Antibiograma</h3>
+      <h3>Antibiograma</h3>
+      <section className='section'>
         <Input
           value={
             !values?.antibiograma_levofloxacino
@@ -200,12 +200,13 @@ export default function Coprocultivo ({
         >
           Ampicilina
         </Input>
-        <Remarks
-          value={!values?.remarks ? value : values.remarks}
-          register={register}
-          name='coprocultivo.remarks'
-        />
       </section>
+
+      <Remarks
+        value={!values?.remarks ? value : values.remarks}
+        register={register}
+        name='coprocultivo.remarks'
+      />
     </>
   )
 }

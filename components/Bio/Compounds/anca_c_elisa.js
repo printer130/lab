@@ -19,10 +19,7 @@ export default function AncaCElisa ({
         name='anca_c_elisa'
         type='number'
         placeholder='ANCA - C (Elisa)...'
-      >
-        ANCA-C (Elisa)
-      </Input>
-
+      />
     </>
   )
 }

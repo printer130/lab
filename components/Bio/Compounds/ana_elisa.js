@@ -20,9 +20,7 @@ export default function AnaElisa ({
         measure='UAI/mL'
         type='number'
         placeholder='ANA (Elisa)...'
-      >
-        ANA (Elisa)
-      </Input>
+      />
     </>
   )
 }

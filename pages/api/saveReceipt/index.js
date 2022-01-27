@@ -35,6 +35,7 @@ export default async function (req, res) {
       }
     }
   }
+
   try {
     const savedReceipt = await prisma[`receipt${labId}`].create({ data: receipt })
     return res.status(201).json({ data: savedReceipt })

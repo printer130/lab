@@ -4,9 +4,11 @@ import jsonData from 'const/data.json'
 export const DicList = ({ onChange }) => {
   return (
     <>
-      <section>
-        {
-        jsonData.map(({ title, list }) => {
+      <strong className='mx-auto text-2xl'>
+        Lista de análisis y laboratorio
+      </strong>
+      <section className='mt-8'>
+        {jsonData.map(({ title, list }) => {
           return (
             <ListOfAnalisys
               key={title}
@@ -15,15 +17,15 @@ export const DicList = ({ onChange }) => {
               title={title}
             />
           )
-        })
-       }
+        })}
       </section>
-      <style jsx>{`
-        section { 
-              columns: 5 270px;
-              column-gap: 0.5rem;
-              margin-bottom: 2rem;
-            }
+      <style jsx>
+        {`
+          section {
+            columns: 5 270px;
+            column-gap: 0.5rem;
+            margin-bottom: 2rem;
+          }
         `}
       </style>
     </>
