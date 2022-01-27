@@ -21,7 +21,7 @@ export function LazyBio ({ name, register, values, pdf }) {
     name === 'anti_ds_dna_ifi' ||
     name === 'anti_dpg_ig_g'
   ) {
-    return <>{name}</>
+    return <></>
   }
   if (
     // hemostasia
@@ -66,7 +66,7 @@ export function LazyBio ({ name, register, values, pdf }) {
     name === 'osmolaridad_plasm_tica' ||
     name === 'oximetr_a'
   ) {
-    return <div>{name}</div>
+    return <div />
   }
 
   const LazyComponent = dynamic(

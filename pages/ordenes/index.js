@@ -1,30 +1,22 @@
 /* eslint-disable react/jsx-closing-tag-location */
 import { ListOfOrders } from 'components/ListOrders'
 import { OnDelete } from 'components/OnDelete'
+import { PlaceholderListOrders } from 'components/Placeholders/ListOfOrders'
 import { Search } from 'components/Search'
-import { prisma } from 'db/prisma'
-import { getSession, useSession } from 'next-auth/react'
+import { useSession } from 'next-auth/react'
+import { useApiCallback } from 'hooks/useApiCallback'
 import { useCallback, useMemo, useState } from 'react'
-import { normalizedReceipts } from 'utils/normalize/receipts'
 
 const ROLE_TYPE_BIOCHEMICAL = 'BIOCHEMICAL'
 
-export default function Ordenes ({ result, fallback }) {
-  // const { data: result } = useSWR('/api/receipt/getAll')
-  // const [result, setResult] = useState({})
-
-  // useEffect(() => {
-  //   if (!result.length) {
-  //     getAllReceipts().then(res => {
-  //       setResult(res)
-  //     })
-  //   }
-  // }, [])
+export default function Ordenes () {
   const [isOpen, setIsOpen] = useState(false)
   const [elDelete, setElDelete] = useState({ cuiid: '', fullname: '' })
   const [value, setValue] = useState('')
   const session = useSession()
   const token = session?.data?.token
+
+  const { apiResponse } = useApiCallback({ endpoint: '/api/receipt/getAll' })
 
   const handleChange = useCallback(
     e => {
@@ -35,8 +27,8 @@ export default function Ordenes ({ result, fallback }) {
   const v = String(value.toLowerCase())
 
   const resFiltered =
-    result.length &&
-    result?.filter(({ fullName, unique }) => {
+    apiResponse?.data?.length > 0 &&
+    apiResponse.data.filter(({ fullName, unique }) => {
       return (
         fullName.toLowerCase().includes(v) || unique.toLowerCase().includes(v)
       )
@@ -71,7 +63,6 @@ export default function Ordenes ({ result, fallback }) {
   }
 
   if (!session?.data) return <div />
-
   return (
     <>
       <OnDelete
@@ -98,7 +89,24 @@ export default function Ordenes ({ result, fallback }) {
             <strong>Saldo</strong>
             <strong>A cuenta</strong>
           </nav>
-          <ListOfOrders data={data} onDelete={handleDelete} />
+          {data
+            ? (
+              <ListOfOrders
+                data={data}
+                onDelete={handleDelete}
+              />
+              )
+            : (
+              <div className='w-screen flex items-center flex-col'>
+                <PlaceholderListOrders />
+                <PlaceholderListOrders />
+                <PlaceholderListOrders />
+                <PlaceholderListOrders />
+                <PlaceholderListOrders />
+                <PlaceholderListOrders />
+                <PlaceholderListOrders />
+              </div>
+              )}
         </main>
       </section>
       <style jsx>
@@ -138,25 +146,23 @@ export default function Ordenes ({ result, fallback }) {
             width: 900px;
             grid-template-rows: repeat(auto-fill, 55px);
           }
+          [data-placeholder]::after {
+            content: " ";
+            box-shadow: 0 0 50px 9px rgba(254,254,254);
+            position: absolute;
+            top: 0;
+            left: -100%;
+            height: 100%; 
+            animation: load 1s infinite;
+          }
+          @keyframes load {
+            0%{ left: -100%}
+            100%{ left: 150%}
+          }
         `}
       </style>
     </>
   )
 }
 
-export async function getServerSideProps ({ req }) {
-  const session = await getSession({ req })
-  const { labId } = session.token.user
-  const receipts = await prisma[`receipt${labId}`].findMany({
-    where: {},
-    include: {
-      owner: true
-    }
-  })
-  const result = normalizedReceipts({ receipts })
-
-  return {
-    props: { result }
-  }
-}
 Ordenes.auth = true

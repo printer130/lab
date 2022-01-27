@@ -1,30 +1,27 @@
 import { useForm } from 'react-hook-form'
 import { useState } from 'react'
-import { prisma } from 'db/prisma'
-import { getSession } from 'next-auth/react'
-import { normalizedReceiptByCu } from 'utils/normalize/receiptByCu'
 import { getAge } from 'hooks/dateTime/getAge'
 import Link from 'next/link'
 import { LazyBio } from 'components/LazyBio'
 import { receiptBio } from 'lib/db/receiptBio'
+import { useApiCallback } from 'hooks/useApiCallback'
 
  export default function Bio ({ receiptByCu = {} }) {
-   const [loading, setLoading] = useState(false)
-  
-    // const { data } = useSWR(`/api/receipt/${cuiid}`)
    const {
      register,
      handleSubmit,
      formState: { errors }
    } = useForm()
+   const [loading, setLoading] = useState(false)
+   const { apiResponse } = useApiCallback({endpoint: '/api/receipt/getOne', cuiid: 'ckyk88ad10416tg9ngaw318lu'})
 
+  //  console.log('BIO', apiResponse);
     const onSubmit = data => {
-      const culo = {
+      receiptBio({ culo: {
         json: receiptByCu.json,
         data,
         cuiid: receiptByCu.cuiid
-      }
-      receiptBio({ culo, onLoading: setLoading })
+      }, onLoading: setLoading })
     }
     const handlePDF = () => {
       console.log('clic')
@@ -109,56 +106,3 @@ import { receiptBio } from 'lib/db/receiptBio'
      </>
    )
  }
-
- export async function getServerSideProps ({ req, query }) {
- const session = await getSession({ req })
-  const { labId } = session.token.user
-
-   const receiptFinded = await prisma[`receipt${labId}`].findUnique({
-     where: {
-       cuiid: query.cu
-     },
-     include: {
-       owner: true
-     }
-   })
-   console.log({ receiptFinded })
-
-  return {
-    props: {
-      receiptByCu: normalizedReceiptByCu({ receiptFinded })
-    }
-  }
- }
-
-// function ReceiptByCu () {
-//   const router = useRouter()
-
-//   return <h1>hola {JSON.stringify(router.query.cu)}</h1>
-// }
-
-// export default function Bio ({ fallback }) {
-//   return <SWRConfig value={{ fallback }}>
-//       <ReceiptByCu />
-//    </SWRConfig>
-// }
-
-// export async function getServerSideProps ({ req, query}) {
-//   const session = await getSession({ req })
-//   const { labId } = session.token.user
-
-//    const receiptFinded = await prisma[`receipt${labId}`].findUnique({
-//      where: {
-//        cuiid: query.cu
-//      },
-//      include: {
-//        owner: true
-//      }
-//    })
-
-//   return {
-//     props: {
-//         receipt: normalizedReceiptByCu({ receiptFinded })
-//     }
-//   }
-// }

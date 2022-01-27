@@ -23,7 +23,6 @@ export default async function GetAll (req, res) {
     })
 
     const result = normalizedReceipts({ receipts })
-
     return res.status(201).json({ ok: true, data: result })
   } catch (error) {
     return res.status(400).json({

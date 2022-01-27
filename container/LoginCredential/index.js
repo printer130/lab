@@ -6,7 +6,9 @@ import { signIn } from 'next-auth/react'
 import { Input, Button, ErrorMessage } from 'components'
 import { useRouter } from 'next/router'
 import { URL_CALLBACK } from 'const/config'
-export function LoginCredential ({ csrfToken, provider }) {
+import { useState } from 'react'
+export function LoginCredential ({ provider }) {
+  const [loading, setLoading] = useState(false)
   const { register, handleSubmit, formState, setError } = useForm({
     mode: 'onChange',
     resolver: zodResolver(LoginSchema),
@@ -16,6 +18,7 @@ export function LoginCredential ({ csrfToken, provider }) {
   const router = useRouter()
 
   const onSubmit = ({ email, password }) => {
+    setLoading(true)
     signIn('credentials', {
       email: email,
       password: password,
@@ -30,6 +33,7 @@ export function LoginCredential ({ csrfToken, provider }) {
             error: '401'
           })
         }
+        setLoading(false)
       })
       .catch(e => {
         return setError('password', {
@@ -48,7 +52,6 @@ export function LoginCredential ({ csrfToken, provider }) {
           errorHeight
           errors={errors.email}
           placeholder='example@gmail.com'
-          image='/svg/email.svg'
           {...register('email')}
         >
           Correo Electronico
@@ -59,13 +62,12 @@ export function LoginCredential ({ csrfToken, provider }) {
           autoComplete
           errors={errors.password}
           placeholder='Contraseña...'
-          image='/svg/password.svg'
           {...register('password')}
         >
           Contraseña
         </Input>
         <Button isValid={isValid} isDirty={isDirty}>
-          Ingresar con {provider.name}
+          {loading ? 'Cargando...' : 'Iniciar Sesión'}
         </Button>
         <ErrorMessage>{errors?.password?.message}</ErrorMessage>
       </form>
@@ -74,6 +76,8 @@ export function LoginCredential ({ csrfToken, provider }) {
           form {
             min-width: 220px;
             margin: 0 auto;
+            opacity: ${loading ? '.35' : 'inherit'};
+            pointer-events: ${loading ? 'none' : 'auto'};
           }
         `}
       </style>

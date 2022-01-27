@@ -1,10 +1,8 @@
 import { prisma } from 'db/prisma'
 
 export default async function (req, res) {
-  // const session = await getSession({ req })
-
-  // const { labId } = session.token.user
-
+  const session = await getSession({ req })
+  const { labId } = session.token.user
   // if (!session?.token) {
 
   //   return res.status(405).json({
@@ -14,13 +12,12 @@ export default async function (req, res) {
   // }
   // const { email, labName } = session.token.user
   // const receiptData = JSON.parse(req.body)
-
-
-  const labId = 'labo0'
+  // console.log('GETONE[] PARAMS', req.query.cuiid)
+  // const labId = 'labo0'
   try {
     const receiptUpdated = await prisma[`receipt${labId}`].findMany({
       where: {
-        cuiid: 'ckyk88ad10416tg9ngaw318lu'
+        cuiid: req.query.cuiid
       },
       include: {
         owner: true

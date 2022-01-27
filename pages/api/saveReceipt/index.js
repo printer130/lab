@@ -4,7 +4,8 @@ import { prisma } from 'db/prisma'
 export default async function (req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({
-      message: 'Method not allowed'
+      message: 'No session',
+      data: null
     })
   }
   const session = await getSession({ req })
@@ -25,9 +26,9 @@ export default async function (req, res) {
   const receipt = {
     json: filteredBox,
     total: +total,
-    itotal: +indebt,
-    saldo: +change,
-    indebtList: { indebt: +indebt },
+    itotal: +change,
+    saldo: +indebt,
+    indebtList: { indebt: +change },
     labName: labId,
     owner: {
       connect: {
