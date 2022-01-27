@@ -42,7 +42,7 @@ export function Order ({
           filename={`${cuiid}.pdf`}
           title='Descargar en pdf'
         />
-        <a onClick={onDelete} title='Borrar' />
+        <a onClick={() => onDelete({ cuiid, fullname })} title='Borrar' />
       </div>
       <style jsx>
         {`

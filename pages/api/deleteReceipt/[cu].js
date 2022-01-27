@@ -18,5 +18,5 @@ export default async function handler (req, res) {
     return res.status(404).json({ message: 'Receipt not found', data: null })
   }
 
-  res.status(200).json({ message: 'Receipt deleted', data: {} })
+  return res.status(200).json({ message: 'Receipt deleted', data: deletedReceipt })
 }

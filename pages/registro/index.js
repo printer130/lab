@@ -44,13 +44,13 @@ export default function Registro () {
         if (e.message) {
           return router.replace('/')
         }
-        // setError(e)
       })
   }
   const handleFill = ({ ci }) => {
     setLoading(true)
     router.push(`/registro/${ci}`)
   }
+  console.log('registro', session)
 
   return (
     <>
@@ -61,7 +61,7 @@ export default function Registro () {
           content='Para laboratorios y pacientes con recetas|orden'
         />
       </Head>
-      {session.data && (
+      {session?.data && (
         <Form
           onClick={handleFill}
           onLoading={setLoading}

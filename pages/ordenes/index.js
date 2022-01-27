@@ -1,8 +1,8 @@
 /* eslint-disable react/jsx-closing-tag-location */
 import { ListOfOrders } from 'components/ListOrders'
+import { OnDelete } from 'components/OnDelete'
 import { Search } from 'components/Search'
 import { prisma } from 'db/prisma'
-import { getAllReceipts } from 'lib/db'
 import { getSession, useSession } from 'next-auth/react'
 import { useCallback, useMemo, useState } from 'react'
 import { normalizedReceipts } from 'utils/normalize/receipts'
@@ -20,6 +20,8 @@ export default function Ordenes ({ result, fallback }) {
   //     })
   //   }
   // }, [])
+  const [isOpen, setIsOpen] = useState(false)
+  const [elDelete, setElDelete] = useState({ cuiid: '', fullname: '' })
   const [value, setValue] = useState('')
   const session = useSession()
   const token = session?.data?.token
@@ -44,20 +46,40 @@ export default function Ordenes ({ result, fallback }) {
     return resFiltered
   }, [resFiltered])
 
-  const handleDelete = ({ cuiid }) => {
-    window
-      .fetch(`/api/deleteReceipt/${cuiid}`, {
-        method: 'DELETE',
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      })
-      .then(res => res.json())
+  const handleDelete = ({ cuiid, fullname }) => {
+    if (isOpen) {
+      window
+        .fetch(`/api/deleteReceipt/${elDelete.cuiid}`, {
+          method: 'DELETE'
+        })
+        .then(res => {
+          if (res.ok) {
+            setElDelete({ cuiid: '', fullname: '' })
+            setIsOpen(false)
+          }
+          // Cant delete the last order
+        })
+    }
+    if (!isOpen) {
+      setIsOpen(true)
+      setElDelete({ fullname, cuiid })
+    }
+  }
+
+  function closeModal () {
+    setIsOpen(false)
   }
 
   if (!session?.data) return <div />
+
   return (
     <>
+      <OnDelete
+        elDelete={elDelete?.fullname}
+        onDelete={handleDelete}
+        isOpen={isOpen}
+        onClose={closeModal}
+      />
       <header>
         <strong className='block text-2xl mb-4'>Lista de Ordenes</strong>
         <Search
@@ -76,9 +98,7 @@ export default function Ordenes ({ result, fallback }) {
             <strong>Saldo</strong>
             <strong>A cuenta</strong>
           </nav>
-          {/* <SWRConfig value={{fallback}} > */}
           <ListOfOrders data={data} onDelete={handleDelete} />
-          {/* </SWRConfig > */}
         </main>
       </section>
       <style jsx>
@@ -114,7 +134,7 @@ export default function Ordenes ({ result, fallback }) {
 
           main {
             display: grid;
-
+            opacity: ${isOpen ? '.5' : 'none'};
             width: 900px;
             grid-template-rows: repeat(auto-fill, 55px);
           }

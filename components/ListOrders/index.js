@@ -1,14 +1,13 @@
 import { Order } from 'components/Order'
 import { unique } from 'utils/unique'
 
-export const ListOfOrders = ({ data }) =>
+export const ListOfOrders = ({ data, onDelete }) =>
   data.map(
     ({
       id,
       fullName,
       saldo,
       total,
-      onDelete,
       indebt,
       itotal,
       cuiid,
