@@ -38,16 +38,17 @@ async function main () {
 
   // ckykex7t50303449n44gzyyec -> EMBARAZO
   // ckyk88ad10416tg9ngaw318lu -> HEMOSTASIA
-  const res = await prisma[`receipt${labId}`].findMany({
-    where: {
-      createdAt: {
-        gte: new Date('2022-01-21')
-      }
-    },
-    include: {
-      owner: true
-    }
-  })
+  // Arqueo
+  // const res = await prisma[`receipt${labId}`].findMany({
+  //   where: {
+  //     createdAt: {
+  //       gte: new Date('2022-01-21')
+  //     }
+  //   },
+  //   include: {
+  //     owner: true
+  //   }
+  // })
 
   // res.map(item => {
   //   return console.log(item.json)
@@ -90,7 +91,7 @@ async function main () {
   // FIND USER
   // const res = await prisma.user.findMany()
   // FIND ORDER
-  // const res = await prisma.order.findMany({})
+  const res = await prisma[`receipt${labId}`].findMany({})
 
   // SEACH ORDER
   // const res = await prisma.order.findMany({
