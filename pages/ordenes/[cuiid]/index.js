@@ -3,6 +3,7 @@ import { getSession } from 'next-auth/react'
 import { useState } from 'react'
 import { getAge } from 'hooks/dateTime/getAge'
 import { unique } from 'utils/unique'
+import Link from 'next/link'
 
 export default function OrderToEdit ({ result }) {
   const {
@@ -47,7 +48,6 @@ export default function OrderToEdit ({ result }) {
       .slice(0, indece + 1)
       .reduce((acc, cur) => acc + +cur.indebt, 0)
   }
-
   return (
     <>
       <header>
@@ -67,6 +67,7 @@ export default function OrderToEdit ({ result }) {
               <th>Debe</th>
             </tr>
             {newIndebtList.map(({ indebt }, index) => {
+              console.log({ newIndebtList, indebt })
               const res = total - reducir(index)
               if (res <= 0) {
                 isCompleted = true
@@ -96,7 +97,7 @@ export default function OrderToEdit ({ result }) {
             </tr>
           </tbody>
         </table>
-        {!isCompleted && <button>{loading ? 'Guardando...' : 'Guardar'}</button>}
+        {!isCompleted ? <button>{loading ? 'Guardando...' : 'Guardar'}</button> : <Link href='/ordenes'><a>Regresar</a></Link>}
       </form>
       <style jsx>
         {`
@@ -154,6 +155,19 @@ export default function OrderToEdit ({ result }) {
           }
           span {
             font-size: 1.2rem;
+          }
+          a {
+            background-color: #1a8cbb;
+            padding: 0.4rem 0.8rem;
+            width: 100%;
+            display: block;
+            text-align: center;
+            margin: 0 auto;
+            color: #eee;
+            border-radius: 5px;
+          }
+          a:hover {
+            background-color: #167ca6;
           }
         `}
       </style>

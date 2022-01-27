@@ -24,9 +24,8 @@ export default async function (req, res) {
 
   const { cuiid, saldo, indebtList, sal } = receiptData
 
-  indebtList.push({ indebt: +sal })
   // return res.status(200).json({})
-
+  indebtList.push({ indebt: +sal })
   try {
     const receiptUpdated = await prisma[`receipt${labId}`].update({
       where: {
