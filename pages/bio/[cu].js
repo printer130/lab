@@ -8,23 +8,20 @@ import { useApiCallback } from 'hooks/useApiCallback'
 import { useSession } from 'next-auth/react'
 import { useRouter } from 'next/router'
 
- export default function Bio (ctx) {
+ export default function Bio () {
    const {
      register,
      handleSubmit,
      formState: { errors }
    } = useForm()
    const [loading, setLoading] = useState(false)
-   const session = useSession()
    const router = useRouter()
    const { apiResponse } = useApiCallback({ endpoint: '/api/receipt/getOne', cuiid: router.query.cu})
-    // const { data : apiResponse?.data } = apiResponse
-  //  console.log('BIO', apiResponse);
     const onSubmit = data => {
       receiptBio({ culo: {
-        json: apiResponse?.data.json,
+        json: apiResponse?.data[0].json,
         data,
-        cuiid: apiResponse?.data.cuiid
+        cuiid: apiResponse?.data[0].cuiid
       }, onLoading: setLoading })
     }
     console.log('apiResponse', apiResponse)
@@ -38,13 +35,13 @@ import { useRouter } from 'next/router'
          <nav>
            <p>
              <span>
-               Nombre: <strong>{apiResponse?.data?.owner?.fullName}</strong>
+               Nombre: <strong>{apiResponse?.data[0]?.owner?.fullName}</strong>
              </span>
              <span>
-               Edad: <strong>{getAge(apiResponse?.data?.owner?.birth)}</strong>
+               Edad: <strong>{getAge(apiResponse?.data[0]?.owner?.birth)}</strong>
              </span>
              <span>
-               Sexo: <strong>{apiResponse?.data?.owner?.sex}</strong>
+               Sexo: <strong>{apiResponse?.data[0]?.owner?.sex}</strong>
              </span>
            </p>
            <Link href='/ordenes'>
@@ -52,8 +49,8 @@ import { useRouter } from 'next/router'
            </Link>
          </nav>
          <form onSubmit={handleSubmit(onSubmit)}>
-           {apiResponse?.data?.json?.length > 0 &&
-             apiResponse?.data.json.map(({ name, values = null }) => {
+           {apiResponse?.data[0]?.json?.length > 0 &&
+             apiResponse?.data[0].json.map(({ name, values = null }) => {
                return (
                  <div key={name}>
                    <LazyBio name={name} values={values} register={register} />

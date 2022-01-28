@@ -11,12 +11,15 @@ const fetchApi = ({ endpoint, cuiid = '' }) => {
 }
 
 export const useApiCallback = function ({ endpoint, cuiid }) {
+  console.log('ENTRAMOS')
   const [isLoadingPost, setLoadingPost] = useState(false)
   const [apiResponse, setApiResponse] = useState(null)
   const [apiError, setApiError] = useState(null)
 
   useEffect(() => {
+    console.log('EFECTO!')
     if (!apiResponse?.ok) {
+      console.log('PEDIR')
       setLoadingPost(true)
       setApiError(null)
       fetchApi({ endpoint, cuiid }).then(res => {
@@ -25,7 +28,7 @@ export const useApiCallback = function ({ endpoint, cuiid }) {
       }).catch(setApiError)
     }
     return { apiResponse }
-  }, [apiResponse, endpoint])
-
+  }, [endpoint])
+  console.log('Return')
   return { isLoadingPost, apiResponse, apiError }
 }
