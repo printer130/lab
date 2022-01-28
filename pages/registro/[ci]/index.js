@@ -65,7 +65,6 @@ export default function RegisterNewCI ({ order = '' }) {
       const checked = target.checked
       const name = target.name
       const dataPrice = +target.attributes['data-price'].value
-      console.log('rest', rest)
 
       setCheckboxes({
         ...checkboxes,
@@ -79,10 +78,6 @@ export default function RegisterNewCI ({ order = '' }) {
     },
     [checkboxes, total]
   )
-
-  const handleGoBack = () => {
-    console.log('Back')
-  }
 
   const handleChecked = e => {
     !checked ? setIndebt(total - change) : setIndebt(total)
@@ -138,7 +133,6 @@ export default function RegisterNewCI ({ order = '' }) {
           onCheckbox={handleCheckbox}
           onSave={handleOrder}
           onVerify={setVerify}
-          onBack={handleGoBack}
           listToVerify={filteredBox}
         />
       ) : (

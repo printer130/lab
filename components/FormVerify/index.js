@@ -1,9 +1,8 @@
 import { Button, Input } from 'components'
 
-export const FormVerify = ({ onCheckbox, onSave, listToVerify, onBack }) => {
+export const FormVerify = ({ onCheckbox, onSave, listToVerify }) => {
   return (
     <main>
-      <Button onChange={onBack}>Ir atrás</Button>
       <form onSubmit={onSave}>
         {listToVerify.map(item => {
           return (
