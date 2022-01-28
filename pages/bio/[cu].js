@@ -27,6 +27,7 @@ import { useRouter } from 'next/router'
         cuiid: apiResponse?.data.cuiid
       }, onLoading: setLoading })
     }
+    console.log('apiResponse', apiResponse)
     const handlePDF = () => {
       console.log('clic')
       return null
