@@ -17,7 +17,7 @@ import { useRouter } from 'next/router'
    const [loading, setLoading] = useState(false)
    const session = useSession()
    const router = useRouter()
-   const { apiResponse: receiptByCu } = useApiCallback({ endpoint: '/api/receipt/getOne', cuiid: router.query.cu})
+   const { apiResponse: { data: receiptByCu } } = useApiCallback({ endpoint: '/api/receipt/getOne', cuiid: router.query.cu})
 
   //  console.log('BIO', apiResponse);
     const onSubmit = data => {
@@ -33,11 +33,7 @@ import { useRouter } from 'next/router'
     }
    return (
      <>
-     {JSON.stringify(router)}
-     <h1>*************</h1>
-     <h1>*************</h1>
-     {JSON.stringify(receiptByCu)}
-       {/* <section>
+       <section>
          <nav>
            <p>
              <span>
@@ -68,7 +64,7 @@ import { useRouter } from 'next/router'
          <a onClick={handlePDF} title='Descargar en pdf'>
            Descargar PDF
          </a>
-       </section> */}
+       </section>
        <style jsx>
          {`
            div {
