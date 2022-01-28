@@ -44,7 +44,6 @@ export default function RegisterNewCI ({ order = '' }) {
     setVerify(false)
     setLoading(true)
     saveReceipt({ filteredBox, total, indebt, change, find: order.ci })
-      .then(res => res.json())
       .then(res => {
         setReceipt(res.data)
         setLoading(false)
