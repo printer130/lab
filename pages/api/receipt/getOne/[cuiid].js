@@ -1,19 +1,16 @@
 import { prisma } from 'db/prisma'
+import { getSession } from 'next-auth/react'
 
 export default async function (req, res) {
-  const session = await getSession({ req })
+  const session = await getSession()
   const { labId } = session.token.user
-  // if (!session?.token) {
+  if (!session?.token) {
+    return res.status(405).json({
+      message: 'Method not allowed',
+      data: null
+    })
+  }
 
-  //   return res.status(405).json({
-  //     message: 'Method not allowed',
-  //     data: null
-  //   })
-  // }
-  // const { email, labName } = session.token.user
-  // const receiptData = JSON.parse(req.body)
-  // console.log('GETONE[] PARAMS', req.query.cuiid)
-  // const labId = 'labo0'
   try {
     const receiptUpdated = await prisma[`receipt${labId}`].findMany({
       where: {

@@ -5,15 +5,19 @@ import Link from 'next/link'
 import { LazyBio } from 'components/LazyBio'
 import { receiptBio } from 'lib/db/receiptBio'
 import { useApiCallback } from 'hooks/useApiCallback'
+import { useSession } from 'next-auth/react'
+import { useRouter } from 'next/router'
 
- export default function Bio ({ receiptByCu = {} }) {
+ export default function Bio (ctx) {
    const {
      register,
      handleSubmit,
      formState: { errors }
    } = useForm()
    const [loading, setLoading] = useState(false)
-   const { apiResponse } = useApiCallback({endpoint: '/api/receipt/getOne', cuiid: 'ckyk88ad10416tg9ngaw318lu'})
+   const session = useSession()
+   const router = useRouter()
+   const { apiResponse: receiptByCu } = useApiCallback({ endpoint: '/api/receipt/getOne', cuiid: router.query.cu})
 
   //  console.log('BIO', apiResponse);
     const onSubmit = data => {
@@ -29,7 +33,11 @@ import { useApiCallback } from 'hooks/useApiCallback'
     }
    return (
      <>
-       <section>
+     {JSON.stringify(router)}
+     <h1>*************</h1>
+     <h1>*************</h1>
+     {JSON.stringify(ctx)}
+       {/* <section>
          <nav>
            <p>
              <span>
@@ -60,7 +68,7 @@ import { useApiCallback } from 'hooks/useApiCallback'
          <a onClick={handlePDF} title='Descargar en pdf'>
            Descargar PDF
          </a>
-       </section>
+       </section> */}
        <style jsx>
          {`
            div {
