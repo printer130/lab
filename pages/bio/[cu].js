@@ -36,7 +36,7 @@ import { useRouter } from 'next/router'
      {JSON.stringify(router)}
      <h1>*************</h1>
      <h1>*************</h1>
-     {JSON.stringify(ctx)}
+     {JSON.stringify(receiptByCu)}
        {/* <section>
          <nav>
            <p>
