@@ -60,7 +60,7 @@ export default function RegisterNewCI ({ order = '' }) {
   }
 
   const handleCheckbox = useCallback(
-    ({ target, ...rest }) => {
+    ({ target }) => {
       const checked = target.checked
       const name = target.name
       const dataPrice = +target.attributes['data-price'].value

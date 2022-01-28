@@ -24,7 +24,6 @@ import { useRouter } from 'next/router'
         cuiid: apiResponse?.data[0].cuiid
       }, onLoading: setLoading })
     }
-    console.log('apiResponse', apiResponse)
     const handlePDF = () => {
       console.log('clic')
       return null
@@ -59,9 +58,9 @@ import { useRouter } from 'next/router'
              })}
            <button>{loading ? 'Guardando...' : 'Guardar'}</button>
          </form>
-         <a onClick={handlePDF} title='Descargar en pdf'>
+         {/* <a onClick={handlePDF} title='Descargar en pdf'>
            Descargar PDF
-         </a>
+         </a> */}
        </section>
        <style jsx>
          {`

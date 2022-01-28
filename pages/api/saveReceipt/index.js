@@ -2,7 +2,6 @@ import { prisma } from 'db/prisma'
 import { getSession } from 'next-auth/react'
 
 export default async function (req, res) {
-  console.log('SAVE RECEIPT')
   if (req.method !== 'POST') {
     return res.status(405).json({
       message: 'No session',
@@ -10,15 +9,12 @@ export default async function (req, res) {
     })
   }
   const session = await getSession({ req })
-  console.log('session', session)
   if (!session) {
     return res.status(401).json({ message: 'No session', data: null })
   }
   const { labId } = session.token.user
-  console.log('labId', labId)
 
   const data = JSON.parse(req.body)
-  console.log('data', data)
 
   const { filteredBox, total, indebt, change, find } = data
 
@@ -39,7 +35,6 @@ export default async function (req, res) {
       }
     }
   }
-  console.log('[receipt]', receipt)
 
   try {
     const savedReceipt = await prisma[`receipt${labId}`].create({ data: receipt })
