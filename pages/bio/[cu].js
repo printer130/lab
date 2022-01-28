@@ -18,13 +18,13 @@ import { useRouter } from 'next/router'
    const session = useSession()
    const router = useRouter()
    const { apiResponse } = useApiCallback({ endpoint: '/api/receipt/getOne', cuiid: router.query.cu})
-    // const { data : receiptByCu?.data } = apiResponse
+    // const { data : apiResponse?.data } = apiResponse
   //  console.log('BIO', apiResponse);
     const onSubmit = data => {
       receiptBio({ culo: {
-        json: receiptByCu?.data.json,
+        json: apiResponse?.data.json,
         data,
-        cuiid: receiptByCu?.data.cuiid
+        cuiid: apiResponse?.data.cuiid
       }, onLoading: setLoading })
     }
     const handlePDF = () => {
@@ -37,13 +37,13 @@ import { useRouter } from 'next/router'
          <nav>
            <p>
              <span>
-               Nombre: <strong>{receiptByCu?.data?.owner?.fullName}</strong>
+               Nombre: <strong>{apiResponse?.data?.owner?.fullName}</strong>
              </span>
              <span>
-               Edad: <strong>{getAge(receiptByCu?.data?.owner?.birth)}</strong>
+               Edad: <strong>{getAge(apiResponse?.data?.owner?.birth)}</strong>
              </span>
              <span>
-               Sexo: <strong>{receiptByCu?.data?.owner?.sex}</strong>
+               Sexo: <strong>{apiResponse?.data?.owner?.sex}</strong>
              </span>
            </p>
            <Link href='/ordenes'>
@@ -51,8 +51,8 @@ import { useRouter } from 'next/router'
            </Link>
          </nav>
          <form onSubmit={handleSubmit(onSubmit)}>
-           {receiptByCu?.data?.json?.length > 0 &&
-             receiptByCu?.data.json.map(({ name, values = null }) => {
+           {apiResponse?.data?.json?.length > 0 &&
+             apiResponse?.data.json.map(({ name, values = null }) => {
                return (
                  <div key={name}>
                    <LazyBio name={name} values={values} register={register} />
