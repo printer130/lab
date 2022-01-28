@@ -5,105 +5,114 @@ import Link from 'next/link'
 import { LazyBio } from 'components/LazyBio'
 import { receiptBio } from 'lib/db/receiptBio'
 import { useApiCallback } from 'hooks/useApiCallback'
-import { useSession } from 'next-auth/react'
 import { useRouter } from 'next/router'
 
- export default function Bio () {
-   const {
-     register,
-     handleSubmit,
-     formState: { errors }
-   } = useForm()
-   const [loading, setLoading] = useState(false)
-   const router = useRouter()
-   const { apiResponse } = useApiCallback({ endpoint: '/api/receipt/getOne', cuiid: router.query.cu})
-    const onSubmit = data => {
-      receiptBio({ culo: {
+export default function Bio () {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors }
+  } = useForm()
+  const [loading, setLoading] = useState(false)
+  const router = useRouter()
+  const { apiResponse } = useApiCallback({
+    endpoint: '/api/receipt/getOne',
+    cuiid: router.query.cu
+  })
+  const onSubmit = data => {
+    receiptBio({
+      culo: {
         json: apiResponse?.data[0].json,
         data,
         cuiid: apiResponse?.data[0].cuiid
-      }, onLoading: setLoading })
-    }
-    const handlePDF = () => {
-      console.log('clic')
-      return null
-    }
-   return (
-     <>
-       <section>
-         <nav>
-           <p>
-             <span>
-               Nombre: <strong>{apiResponse?.data[0]?.owner?.fullName}</strong>
-             </span>
-             <span>
-               Edad: <strong>{getAge(apiResponse?.data[0]?.owner?.birth)}</strong>
-             </span>
-             <span>
-               Sexo: <strong>{apiResponse?.data[0]?.owner?.sex}</strong>
-             </span>
-           </p>
-           <Link href='/ordenes'>
-             <a className='atras'>Ir Atras</a>
-           </Link>
-         </nav>
-         <form onSubmit={handleSubmit(onSubmit)}>
-           {apiResponse?.data[0]?.json?.length > 0 &&
-             apiResponse?.data[0].json.map(({ name, values = null }) => {
-               return (
-                 <div key={name}>
-                   <LazyBio name={name} values={values} register={register} />
-                 </div>
-               )
-             })}
-           <button>{loading ? 'Guardando...' : 'Guardar'}</button>
-         </form>
-         {/* <a onClick={handlePDF} title='Descargar en pdf'>
+      }
+    }).then(res => {
+      return router.replace('/ordenes')
+    })
+  }
+
+  const handlePDF = () => {
+    console.log('clic')
+    return null
+  }
+
+  return (
+    <>
+      <section>
+        <nav>
+          <p>
+            <span>
+              Nombre: <strong>{apiResponse?.data[0]?.owner?.fullName}</strong>
+            </span>
+            <span>
+              Edad:{' '}
+              <strong>{getAge(apiResponse?.data[0]?.owner?.birth)}</strong>
+            </span>
+            <span>
+              Sexo: <strong>{apiResponse?.data[0]?.owner?.sex}</strong>
+            </span>
+          </p>
+          <Link href='/ordenes'>
+            <a className='atras'>Ir Atras</a>
+          </Link>
+        </nav>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          {apiResponse?.data[0]?.json?.length > 0 &&
+            apiResponse?.data[0].json.map(({ name, values = null }) => {
+              return (
+                <div key={name}>
+                  <LazyBio name={name} values={values} register={register} />
+                </div>
+              )
+            })}
+          <button>{loading ? 'Guardando...' : 'Guardar'}</button>
+        </form>
+        {/* <a onClick={handlePDF} title='Descargar en pdf'>
            Descargar PDF
          </a> */}
-       </section>
-       <style jsx>
-         {`
-           div {
-             max-width: 900px;
-             margin: 0 auto;
-           }
+      </section>
+      <style jsx>
+        {`
+          div {
+            max-width: 900px;
+            margin: 0 auto;
+          }
 
-           nav {
-             display: flex;
-             justify-content: space-between;
-           }
-           p {
-             display: flex;
-             flex-direction: column;
-           }
-           .atras {
-             display: block;
-             width: 270px;
-             background-color: #1a90c0;
-             height: 28.4px;
-             padding: 0.25rem 0.45rem;
-             color: #eee;
-             text-align: center;
-             font-size: 1rem;
-             border-radius: 7px;
-           }
+          nav {
+            display: flex;
+            justify-content: space-between;
+          }
+          p {
+            display: flex;
+            flex-direction: column;
+          }
+          .atras {
+            display: block;
+            width: 270px;
+            background-color: #1a90c0;
+            height: 28.4px;
+            padding: 0.25rem 0.45rem;
+            color: #eee;
+            text-align: center;
+            font-size: 1rem;
+            border-radius: 7px;
+          }
 
-           button {
-             pointer-events: ${loading ? 'none' : 'auto'};
-             width: 100%;
-             margin-top: 2rem;
-             background-color: #1a90c0;
-             opacity: ${loading ? '.55' : '1'};
-             padding: 0.25rem 0.45rem;
-             color: #eee;
-             font-size: 1rem;
-             cursor: pointer;
-             border-radius: 7px;
-             border: 1px solid #ddd;
-           }
-         `}
-       </style>
-     </>
-   )
- }
+          button {
+            pointer-events: ${loading ? 'none' : 'auto'};
+            width: 100%;
+            margin-top: 2rem;
+            background-color: #1a90c0;
+            opacity: ${loading ? '.55' : '1'};
+            padding: 0.25rem 0.45rem;
+            color: #eee;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 7px;
+            border: 1px solid #ddd;
+          }
+        `}
+      </style>
+    </>
+  )
+}

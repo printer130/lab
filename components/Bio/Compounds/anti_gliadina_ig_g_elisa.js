@@ -18,9 +18,7 @@ export default function AntiGliadinaIgGElisa ({
         name='anti_gliadina_ig_g_elisa'
         type='number'
         placeholder='Anti Gliadina IgG (Elisa)...'
-      >
-        Anti Gliadina IgG (Elisa)
-      </Input>
+      />
     </>
   )
 }
