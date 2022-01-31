@@ -3,7 +3,8 @@ export const Button = ({
   isDirty = !false,
   children,
   onChange,
-  className
+  className,
+  order
 }) => {
   return (
     <>
@@ -22,7 +23,8 @@ export const Button = ({
             width: 100%;
             font-weight: bold;
             cursor: pointer;
-            color: #252525;
+            color: #252525; 
+            order: ${!order ? 'inherit' : '9'};
             letter-spacing: 0.5px;
             max-width: 270px;
             min-width: 189px;

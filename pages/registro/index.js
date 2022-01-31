@@ -46,11 +46,11 @@ export default function Registro () {
         }
       })
   }
+
   const handleFill = ({ ci }) => {
-    setLoading(true)
-    router.push(`/registro/${ci}`)
+    // setLoading(true)
+    // router.push(`/registro/${ci}`)
   }
-  console.log('registro', session)
 
   return (
     <>

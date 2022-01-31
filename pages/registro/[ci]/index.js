@@ -151,7 +151,7 @@ export default function RegisterNewCI ({ order = '' }) {
             text-align: center;
           }
           a {
-            background-color: blue;
+            background-color: #1a90c0;
             padding: 0.4rem 0.8rem;
             width: 100%;
             display: block;

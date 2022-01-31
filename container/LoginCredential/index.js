@@ -28,14 +28,15 @@ export function LoginCredential ({ provider }) {
       .then(res => {
         if (res.ok) return router.push(res.url)
         if (!res.ok) {
+          setLoading(false)
           return setError('password', {
             message: 'Contraseña incorrecta',
             error: '401'
           })
         }
-        setLoading(false)
       })
       .catch(e => {
+        setLoading(false)
         return setError('password', {
           message: 'Contraseña incorrecta',
           error: '401'
@@ -76,6 +77,7 @@ export function LoginCredential ({ provider }) {
           form {
             min-width: 220px;
             margin: 0 auto;
+            height: 310px;
             opacity: ${loading ? '.35' : 'inherit'};
             pointer-events: ${loading ? 'none' : 'auto'};
           }
