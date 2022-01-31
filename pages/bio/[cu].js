@@ -56,6 +56,7 @@ export default function Bio () {
             <a className='atras'>Ir Atras</a>
           </Link>
         </nav>
+        {!apiResponse?.data[0] && <div>Cargando...</div>}
         <form onSubmit={handleSubmit(onSubmit)}>
           {apiResponse?.data[0]?.json?.length > 0 &&
             apiResponse?.data[0].json.map(({ name, values = null }) => {
