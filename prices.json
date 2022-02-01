@@ -1,0 +1,960 @@
+// 20220131113713
+
+[
+  {
+    "LABORATORIO KC LAB": "HEMATOLOGIA",
+    "field2": "BS"
+  },
+  {
+    "LABORATORIO KC LAB": "Hemograma",
+    "field2": "35"
+  },
+  {
+    "LABORATORIO KC LAB": "VES",
+    "field2": "20"
+  },
+  {
+    "LABORATORIO KC LAB": "Reticulocitos",
+    "field2": "50"
+  },
+  {
+    "LABORATORIO KC LAB": "Grupo y Rh",
+    "field2": "25"
+  },
+  {
+    "LABORATORIO KC LAB": "Gota Gruesa",
+    "field2": "40"
+  },
+  {
+    "LABORATORIO KC LAB": "COOMBS Directo",
+    "field2": "60"
+  },
+  {
+    "LABORATORIO KC LAB": "COOMBS Indirecto",
+    "field2": "60"
+  },
+  {
+    "LABORATORIO KC LAB": "Fe S�rico",
+    "field2": "50"
+  },
+  {
+    "LABORATORIO KC LAB": "TIBC",
+    "field2": "50"
+  },
+  {
+    "LABORATORIO KC LAB": "Ferritina",
+    "field2": "100"
+  },
+  {
+    "LABORATORIO KC LAB": "Transferrina",
+    "field2": "50"
+  },
+  {
+    "LABORATORIO KC LAB": "HEMOSTASIA",
+    "field2": "BS"
+  },
+  {
+    "LABORATORIO KC LAB": "TP-INR",
+    "field2": "40"
+  },
+  {
+    "LABORATORIO KC LAB": "APTT",
+    "field2": "50"
+  },
+  {
+    "LABORATORIO KC LAB": "T. Trombina",
+    "field2": ""
+  },
+  {
+    "LABORATORIO KC LAB": "T. Coagulaci�n",
+    "field2": "20"
+  },
+  {
+    "LABORATORIO KC LAB": "T. Sangr�a",
+    "field2": "20"
+  },
+  {
+    "LABORATORIO KC LAB": "Fibrin�geno",
+    "field2": "90"
+  },
+  {
+    "LABORATORIO KC LAB": "D�meros D",
+    "field2": "250"
+  },
+  {
+    "LABORATORIO KC LAB": "ORINAS",
+    "field2": "BS"
+  },
+  {
+    "LABORATORIO KC LAB": "General de Orina",
+    "field2": "25"
+  },
+  {
+    "LABORATORIO KC LAB": "Depuraci�n de Creatinina",
+    "field2": "60"
+  },
+  {
+    "LABORATORIO KC LAB": "Proteinuria de 24 hrs.",
+    "field2": "60"
+  },
+  {
+    "LABORATORIO KC LAB": "Na en Orina",
+    "field2": "45"
+  },
+  {
+    "LABORATORIO KC LAB": "K en Orina",
+    "field2": "45"
+  },
+  {
+    "LABORATORIO KC LAB": "Ca en Orina",
+    "field2": "45"
+  },
+  {
+    "LABORATORIO KC LAB": "CI en Orina",
+    "field2": "45"
+  },
+  {
+    "LABORATORIO KC LAB": "Microalbuminuria",
+    "field2": "90"
+  },
+  {
+    "LABORATORIO KC LAB": "Proteinuria Matinal",
+    "field2": "30"
+  },
+  {
+    "LABORATORIO KC LAB": "Creatinuria Matinal",
+    "field2": "30"
+  },
+  {
+    "LABORATORIO KC LAB": "Prote�na de Bence-Jonce",
+    "field2": "60"
+  },
+  {
+    "LABORATORIO KC LAB": "P en Orina",
+    "field2": "45"
+  },
+  {
+    "LABORATORIO KC LAB": "Mg en Orina",
+    "field2": "45"
+  },
+  {
+    "LABORATORIO KC LAB": "Urea en Orina",
+    "field2": "40"
+  },
+  {
+    "LABORATORIO KC LAB": "COPROLOG�A",
+    "field2": "BS"
+  },
+  {
+    "LABORATORIO KC LAB": "Coproparasitol�gico x1",
+    "field2": "25"
+  },
+  {
+    "LABORATORIO KC LAB": "Coproparasitol�gico x3",
+    "field2": "70"
+  },
+  {
+    "LABORATORIO KC LAB": "Parasitol�gico Concentrado",
+    "field2": "50"
+  },
+  {
+    "LABORATORIO KC LAB": "Oxiuros",
+    "field2": "50"
+  },
+  {
+    "LABORATORIO KC LAB": "EMBARAZO",
+    "field2": "BS"
+  },
+  {
+    "LABORATORIO KC LAB": "BHCG Cualitativa",
+    "field2": "30"
+  },
+  {
+    "LABORATORIO KC LAB": "BHCG Cuantitativa",
+    "field2": "100"
+  },
+  {
+    "LABORATORIO KC LAB": "MARCADORES TUMORALES",
+    "field2": "BS"
+  },
+  {
+    "LABORATORIO KC LAB": "CEA",
+    "field2": "150"
+  },
+  {
+    "LABORATORIO KC LAB": "AFP",
+    "field2": "150"
+  },
+  {
+    "LABORATORIO KC LAB": "CA - 19.9",
+    "field2": "150"
+  },
+  {
+    "LABORATORIO KC LAB": "CA - 125",
+    "field2": "150"
+  },
+  {
+    "LABORATORIO KC LAB": "CA - 15.3",
+    "field2": "150"
+  },
+  {
+    "LABORATORIO KC LAB": "PSA Total",
+    "field2": "100"
+  },
+  {
+    "LABORATORIO KC LAB": "PSA Libre",
+    "field2": "100"
+  },
+  {
+    "LABORATORIO KC LAB": "Beta 2 MicroAlb",
+    "field2": "200"
+  },
+  {
+    "LABORATORIO KC LAB": "BHCG Cuantitativo",
+    "field2": "100"
+  },
+  {
+    "LABORATORIO KC LAB": "ENSAYO EN HECES",
+    "field2": "BS"
+  },
+  {
+    "LABORATORIO KC LAB": "ELISA AMEBAS",
+    "field2": "80"
+  },
+  {
+    "LABORATORIO KC LAB": "ELISA Giardia",
+    "field2": "80"
+  },
+  {
+    "LABORATORIO KC LAB": "Azucares Reductores",
+    "field2": "60"
+  },
+  {
+    "LABORATORIO KC LAB": "Rotavirus",
+    "field2": "70"
+  },
+  {
+    "LABORATORIO KC LAB": "Adenovirus",
+    "field2": "80"
+  },
+  {
+    "LABORATORIO KC LAB": "Sangre Oculta",
+    "field2": "70"
+  },
+  {
+    "LABORATORIO KC LAB": "H. Pylori Ag.",
+    "field2": "80"
+  },
+  {
+    "LABORATORIO KC LAB": "Sudam III",
+    "field2": "80"
+  },
+  {
+    "LABORATORIO KC LAB": "Clostridium Difficile Tox. A y B",
+    "field2": "250"
+  },
+  {
+    "LABORATORIO KC LAB": "Cryptosporidium Parvum",
+    "field2": "80"
+  },
+  {
+    "LABORATORIO KC LAB": "PANEL DE ALERGIAS",
+    "field2": "BS"
+  },
+  {
+    "LABORATORIO KC LAB": "Respiratorio",
+    "field2": "700"
+  },
+  {
+    "LABORATORIO KC LAB": "Alimenticio",
+    "field2": "700"
+  },
+  {
+    "LABORATORIO KC LAB": "Pedi�trico",
+    "field2": "700"
+  },
+  {
+    "LABORATORIO KC LAB": "MICROBIOLOG�A",
+    "field2": "BS"
+  },
+  {
+    "LABORATORIO KC LAB": "Urocultivo",
+    "field2": "100"
+  },
+  {
+    "LABORATORIO KC LAB": "Coprocultivo",
+    "field2": "100"
+  },
+  {
+    "LABORATORIO KC LAB": "Cultivo de Secrecion",
+    "field2": "150"
+  },
+  {
+    "LABORATORIO KC LAB": "Hemocultivo x1",
+    "field2": "150"
+  },
+  {
+    "LABORATORIO KC LAB": "Hemocultivo x2",
+    "field2": "300"
+  },
+  {
+    "LABORATORIO KC LAB": "Hemocultivo x3",
+    "field2": "450"
+  },
+  {
+    "LABORATORIO KC LAB": "BK Seriado",
+    "field2": "90"
+  },
+  {
+    "LABORATORIO KC LAB": "Tinci�n de Gram",
+    "field2": "50"
+  },
+  {
+    "LABORATORIO KC LAB": "Tinci�n de Zhiel Neelsen",
+    "field2": "60"
+  },
+  {
+    "LABORATORIO KC LAB": "Cultivo de Sec. Vaginal",
+    "field2": "100"
+  },
+  {
+    "LABORATORIO KC LAB": "Tinta China",
+    "field2": "120"
+  },
+  {
+    "LABORATORIO KC LAB": "INMUNOLOG�A",
+    "field2": "BS"
+  },
+  {
+    "LABORATORIO KC LAB": "Toxoplasmosis IgG",
+    "field2": "80"
+  },
+  {
+    "LABORATORIO KC LAB": "Toxoplasmosis IgM",
+    "field2": "80"
+  },
+  {
+    "LABORATORIO KC LAB": "Chagas ELISA",
+    "field2": "80"
+  },
+  {
+    "LABORATORIO KC LAB": "Chagas HAI",
+    "field2": "50"
+  },
+  {
+    "LABORATORIO KC LAB": "Chlamydia Trachomatis IgG",
+    "field2": "80"
+  },
+  {
+    "LABORATORIO KC LAB": "Chlamydia Trachomatis IgM",
+    "field2": "80"
+  },
+  {
+    "LABORATORIO KC LAB": "Citomegalovirus - IgG",
+    "field2": "80"
+  },
+  {
+    "LABORATORIO KC LAB": "Citomegalovirus - IgM",
+    "field2": "80"
+  },
+  {
+    "LABORATORIO KC LAB": "Citomegalovirus - Ag.",
+    "field2": "300"
+  },
+  {
+    "LABORATORIO KC LAB": "Herpes tipo 1 (HSV1) - IgG",
+    "field2": "100"
+  },
+  {
+    "LABORATORIO KC LAB": "Herpes tipo 1 (HSV1) - IgM",
+    "field2": "100"
+  },
+  {
+    "LABORATORIO KC LAB": "Herpes tipo 2 (HSV2) - IgG",
+    "field2": "100"
+  },
+  {
+    "LABORATORIO KC LAB": "Herpes tipo 2 (HSV2) - IgM",
+    "field2": "100"
+  },
+  {
+    "LABORATORIO KC LAB": "Rubeola - IgG",
+    "field2": "80"
+  },
+  {
+    "LABORATORIO KC LAB": "Rubeola - IgM",
+    "field2": "80"
+  },
+  {
+    "LABORATORIO KC LAB": "Hepatitis B (HBs Ag)",
+    "field2": "100"
+  },
+  {
+    "LABORATORIO KC LAB": "Hepatitis B (HBc Ac) IgG",
+    "field2": "100"
+  },
+  {
+    "LABORATORIO KC LAB": "Hepatitis B (HBc Ac) IgM",
+    "field2": "100"
+  },
+  {
+    "LABORATORIO KC LAB": "H. Pylori IgG",
+    "field2": "90"
+  },
+  {
+    "LABORATORIO KC LAB": "H. Pylori IgA",
+    "field2": "90"
+  },
+  {
+    "LABORATORIO KC LAB": "H. Pylori IgM",
+    "field2": "90"
+  },
+  {
+    "LABORATORIO KC LAB": "IgA",
+    "field2": "150"
+  },
+  {
+    "LABORATORIO KC LAB": "IgG",
+    "field2": "150"
+  },
+  {
+    "LABORATORIO KC LAB": "IgM",
+    "field2": "150"
+  },
+  {
+    "LABORATORIO KC LAB": "IgE",
+    "field2": "150"
+  },
+  {
+    "LABORATORIO KC LAB": "Dengue - IgG (ELISA)",
+    "field2": ""
+  },
+  {
+    "LABORATORIO KC LAB": "Dengue - IgM (ELISA)",
+    "field2": ""
+  },
+  {
+    "LABORATORIO KC LAB": "FTA-ABS (Sifilis) - IgG",
+    "field2": ""
+  },
+  {
+    "LABORATORIO KC LAB": "FTA-ABS (Sifilis) - IgM",
+    "field2": ""
+  },
+  {
+    "LABORATORIO KC LAB": "Hidatidosis Elisa",
+    "field2": ""
+  },
+  {
+    "LABORATORIO KC LAB": "Hidatidosis Western Blot",
+    "field2": ""
+  },
+  {
+    "LABORATORIO KC LAB": "Influenza A+B",
+    "field2": ""
+  },
+  {
+    "LABORATORIO KC LAB": "Micoplasma - IgG",
+    "field2": ""
+  },
+  {
+    "LABORATORIO KC LAB": "Micoplasma - IgM",
+    "field2": ""
+  },
+  {
+    "LABORATORIO KC LAB": "Brucellosis IgG",
+    "field2": ""
+  },
+  {
+    "LABORATORIO KC LAB": "Brucellosis IgM",
+    "field2": ""
+  },
+  {
+    "LABORATORIO KC LAB": "COVID 19 (Flujo lateral)",
+    "field2": "150"
+  },
+  {
+    "LABORATORIO KC LAB": "COVID 19 (ELISA)",
+    "field2": "250"
+  },
+  {
+    "LABORATORIO KC LAB": "COVID 19 (Ac. Neutralizantes)",
+    "field2": ""
+  },
+  {
+    "LABORATORIO KC LAB": "COVID 19 (Ag. Nasal)",
+    "field2": "180"
+  },
+  {
+    "LABORATORIO KC LAB": "IL - 6",
+    "field2": ""
+  },
+  {
+    "LABORATORIO KC LAB": "AUTOINMUNIDAD",
+    "field2": "BS"
+  },
+  {
+    "LABORATORIO KC LAB": "Anti ds DNA",
+    "field2": "150"
+  },
+  {
+    "LABORATORIO KC LAB": "ANA (ELISA)",
+    "field2": "350"
+  },
+  {
+    "LABORATORIO KC LAB": "C�lulas LE",
+    "field2": "70"
+  },
+  {
+    "LABORATORIO KC LAB": "Anca-P (ELISA)",
+    "field2": "150"
+  },
+  {
+    "LABORATORIO KC LAB": "Anca-C (ELISA)",
+    "field2": "150"
+  },
+  {
+    "LABORATORIO KC LAB": "ASMA",
+    "field2": "150"
+  },
+  {
+    "LABORATORIO KC LAB": "AMA",
+    "field2": "150"
+  },
+  {
+    "LABORATORIO KC LAB": "LKM1",
+    "field2": "150"
+  },
+  {
+    "LABORATORIO KC LAB": "C3",
+    "field2": "150"
+  },
+  {
+    "LABORATORIO KC LAB": "C4",
+    "field2": "150"
+  },
+  {
+    "LABORATORIO KC LAB": "Ac. Anticitrulina",
+    "field2": "150"
+  },
+  {
+    "LABORATORIO KC LAB": "ENA Profile",
+    "field2": "500"
+  },
+  {
+    "LABORATORIO KC LAB": "Panel Digestivo",
+    "field2": "600"
+  },
+  {
+    "LABORATORIO KC LAB": "Panel Hep�tico Autoinmune",
+    "field2": "450"
+  },
+  {
+    "LABORATORIO KC LAB": "Anticardiolipina screening",
+    "field2": ""
+  },
+  {
+    "LABORATORIO KC LAB": "Anticardiolipina IgG",
+    "field2": ""
+  },
+  {
+    "LABORATORIO KC LAB": "Anticardiolipina IgM",
+    "field2": ""
+  },
+  {
+    "LABORATORIO KC LAB": "Ac. Antifosfol�pidos - IgG",
+    "field2": ""
+  },
+  {
+    "LABORATORIO KC LAB": "Ac. Antifosfol�pidos - IgM",
+    "field2": ""
+  },
+  {
+    "LABORATORIO KC LAB": "Anti DNP",
+    "field2": ""
+  },
+  {
+    "LABORATORIO KC LAB": "Anti Endomisio IgA (IF)",
+    "field2": "200"
+  },
+  {
+    "LABORATORIO KC LAB": "Anti Transglutaminasa IgA",
+    "field2": "200"
+  },
+  {
+    "LABORATORIO KC LAB": "Anti Gliadina IgA (Elisa)",
+    "field2": "200"
+  },
+  {
+    "LABORATORIO KC LAB": "L�QUIDOS BIOL�GICOS",
+    "field2": "BS"
+  },
+  {
+    "LABORATORIO KC LAB": "Citoqui. LCR",
+    "field2": "200"
+  },
+  {
+    "LABORATORIO KC LAB": "Citoqui. Liq. Pleural",
+    "field2": "230"
+  },
+  {
+    "LABORATORIO KC LAB": "Citoqui. Liq. Ascitico",
+    "field2": "230"
+  },
+  {
+    "LABORATORIO KC LAB": "Citoqui. Liq. Sinovial",
+    "field2": "230"
+  },
+  {
+    "LABORATORIO KC LAB": "Citoqui. Liq. Pericardio",
+    "field2": "230"
+  },
+  {
+    "LABORATORIO KC LAB": "Citoqui. Liq. Peritoneal",
+    "field2": "230"
+  },
+  {
+    "LABORATORIO KC LAB": "ADA",
+    "field2": "250"
+  },
+  {
+    "LABORATORIO KC LAB": "Espermograma",
+    "field2": "200"
+  },
+  {
+    "LABORATORIO KC LAB": "SEROLOG�A",
+    "field2": "BS"
+  },
+  {
+    "LABORATORIO KC LAB": "PCR Cuantitativo",
+    "field2": "50"
+  },
+  {
+    "LABORATORIO KC LAB": "ASTO Cuantitativo",
+    "field2": "50"
+  },
+  {
+    "LABORATORIO KC LAB": "RF Cuantitativo",
+    "field2": "50"
+  },
+  {
+    "LABORATORIO KC LAB": "RPR",
+    "field2": "40"
+  },
+  {
+    "LABORATORIO KC LAB": "Reacci�n Widal",
+    "field2": "40"
+  },
+  {
+    "LABORATORIO KC LAB": "Mononucleosis",
+    "field2": "150"
+  },
+  {
+    "LABORATORIO KC LAB": "QU�MICA METAB�LICA",
+    "field2": "BS"
+  },
+  {
+    "LABORATORIO KC LAB": "Glicemia",
+    "field2": "25"
+  },
+  {
+    "LABORATORIO KC LAB": "Glicemia Post Estimulo",
+    "field2": "25"
+  },
+  {
+    "LABORATORIO KC LAB": "Tolerancia a la Glucosa",
+    "field2": "100"
+  },
+  {
+    "LABORATORIO KC LAB": "Hb Glicosilada A1",
+    "field2": "80"
+  },
+  {
+    "LABORATORIO KC LAB": "Urea/BUN",
+    "field2": "30"
+  },
+  {
+    "LABORATORIO KC LAB": "Creatinina",
+    "field2": "30"
+  },
+  {
+    "LABORATORIO KC LAB": "Acido �rico",
+    "field2": "30"
+  },
+  {
+    "LABORATORIO KC LAB": "Colesterol",
+    "field2": "25"
+  },
+  {
+    "LABORATORIO KC LAB": "Colesterol HDL",
+    "field2": "25"
+  },
+  {
+    "LABORATORIO KC LAB": "Colesterol LDL",
+    "field2": "25"
+  },
+  {
+    "LABORATORIO KC LAB": "Triglic�ridos",
+    "field2": "25"
+  },
+  {
+    "LABORATORIO KC LAB": "L�pidos Totales",
+    "field2": "100"
+  },
+  {
+    "LABORATORIO KC LAB": "VLDL",
+    "field2": "25"
+  },
+  {
+    "LABORATORIO KC LAB": "CPK",
+    "field2": "80"
+  },
+  {
+    "LABORATORIO KC LAB": "CPK MB",
+    "field2": "80"
+  },
+  {
+    "LABORATORIO KC LAB": "Lact. Desh Hidrogenasa",
+    "field2": "80"
+  },
+  {
+    "LABORATORIO KC LAB": "Troponina I",
+    "field2": "100"
+  },
+  {
+    "LABORATORIO KC LAB": "Amilasa",
+    "field2": "50"
+  },
+  {
+    "LABORATORIO KC LAB": "Lipasa",
+    "field2": "100"
+  },
+  {
+    "LABORATORIO KC LAB": "Amonio",
+    "field2": "200"
+  },
+  {
+    "LABORATORIO KC LAB": "Vitamina B12",
+    "field2": "250"
+  },
+  {
+    "LABORATORIO KC LAB": "Procalcitonina",
+    "field2": "200"
+  },
+  {
+    "LABORATORIO KC LAB": "Bilirrubinas D. T. I.",
+    "field2": "40"
+  },
+  {
+    "LABORATORIO KC LAB": "GOT",
+    "field2": "25"
+  },
+  {
+    "LABORATORIO KC LAB": "GPT",
+    "field2": "25"
+  },
+  {
+    "LABORATORIO KC LAB": "GGT",
+    "field2": "50"
+  },
+  {
+    "LABORATORIO KC LAB": "Fosfatasa Alcalina",
+    "field2": "40"
+  },
+  {
+    "LABORATORIO KC LAB": "Fosfatasa Acida",
+    "field2": "100"
+  },
+  {
+    "LABORATORIO KC LAB": "Fosfatasa Acida Prost�tica",
+    "field2": "100"
+  },
+  {
+    "LABORATORIO KC LAB": "Prote�nas Totales",
+    "field2": "30"
+  },
+  {
+    "LABORATORIO KC LAB": "Albumina",
+    "field2": "30"
+  },
+  {
+    "LABORATORIO KC LAB": "Globulina",
+    "field2": "30"
+  },
+  {
+    "LABORATORIO KC LAB": "Electroforesis de Prote�nas",
+    "field2": "20"
+  },
+  {
+    "LABORATORIO KC LAB": "Sodio Na",
+    "field2": "40"
+  },
+  {
+    "LABORATORIO KC LAB": "Potasio K",
+    "field2": "40"
+  },
+  {
+    "LABORATORIO KC LAB": "Cloro Cl",
+    "field2": "40"
+  },
+  {
+    "LABORATORIO KC LAB": "Calcio Ca",
+    "field2": "40"
+  },
+  {
+    "LABORATORIO KC LAB": "Calcio I�nico Ca++",
+    "field2": "50"
+  },
+  {
+    "LABORATORIO KC LAB": "Magnesio Mg",
+    "field2": "40"
+  },
+  {
+    "LABORATORIO KC LAB": "Fosforo P",
+    "field2": "40"
+  },
+  {
+    "LABORATORIO KC LAB": "ENDOCRINOLOG�A",
+    "field2": "BS"
+  },
+  {
+    "LABORATORIO KC LAB": "FSH",
+    "field2": "90"
+  },
+  {
+    "LABORATORIO KC LAB": "LH",
+    "field2": "90"
+  },
+  {
+    "LABORATORIO KC LAB": "Progesterona",
+    "field2": "100"
+  },
+  {
+    "LABORATORIO KC LAB": "T3",
+    "field2": "80"
+  },
+  {
+    "LABORATORIO KC LAB": "T4",
+    "field2": "80"
+  },
+  {
+    "LABORATORIO KC LAB": "T4 Libre",
+    "field2": "80"
+  },
+  {
+    "LABORATORIO KC LAB": "TSH",
+    "field2": "80"
+  },
+  {
+    "LABORATORIO KC LAB": "TG",
+    "field2": "180"
+  },
+  {
+    "LABORATORIO KC LAB": "a-TG",
+    "field2": "150"
+  },
+  {
+    "LABORATORIO KC LAB": "a-TPO",
+    "field2": "150"
+  },
+  {
+    "LABORATORIO KC LAB": "Testosterona",
+    "field2": "100"
+  },
+  {
+    "LABORATORIO KC LAB": "Testosterona Libre",
+    "field2": "100"
+  },
+  {
+    "LABORATORIO KC LAB": "Insulina Basal",
+    "field2": "100"
+  },
+  {
+    "LABORATORIO KC LAB": "Insulina 120 min",
+    "field2": "200"
+  },
+  {
+    "LABORATORIO KC LAB": "Cortisol AM",
+    "field2": "90"
+  },
+  {
+    "LABORATORIO KC LAB": "cortisol PM",
+    "field2": "90"
+  },
+  {
+    "LABORATORIO KC LAB": "PTH 2a Generaci�n",
+    "field2": "230"
+  },
+  {
+    "LABORATORIO KC LAB": "ACTH",
+    "field2": "350"
+  },
+  {
+    "LABORATORIO KC LAB": "Horm. de crecimiento (HGH)",
+    "field2": "150"
+  },
+  {
+    "LABORATORIO KC LAB": "HGH Post Estimulo",
+    "field2": ""
+  },
+  {
+    "LABORATORIO KC LAB": "HGH de 4 Tiempos",
+    "field2": ""
+  },
+  {
+    "LABORATORIO KC LAB": "Delta 4-Androstenediona",
+    "field2": ""
+  },
+  {
+    "LABORATORIO KC LAB": "DHEAS",
+    "field2": ""
+  },
+  {
+    "LABORATORIO KC LAB": "17-OH Progesterona",
+    "field2": ""
+  },
+  {
+    "LABORATORIO KC LAB": "Calcitonina",
+    "field2": ""
+  },
+  {
+    "LABORATORIO KC LAB": "Osteocalcina",
+    "field2": ""
+  },
+  {
+    "LABORATORIO KC LAB": "Cross Lap",
+    "field2": ""
+  },
+  {
+    "LABORATORIO KC LAB": "Perfil Metab�lico Neonatal",
+    "field2": ""
+  },
+  {
+    "LABORATORIO KC LAB": "Renina",
+    "field2": ""
+  },
+  {
+    "LABORATORIO KC LAB": "Aldosterona",
+    "field2": ""
+  },
+  {
+    "LABORATORIO KC LAB": "Prueba de Reserva Testicular",
+    "field2": ""
+  },
+  {
+    "LABORATORIO KC LAB": "P�ptido C",
+    "field2": "150"
+  },
+  {
+    "LABORATORIO KC LAB": "�ndice HOMA",
+    "field2": "200"
+  },
+  {
+    "LABORATORIO KC LAB": "Vitamina D 25(OH)",
+    "field2": "250"
+  },
+  {
+    "LABORATORIO KC LAB": "Hormona Antimulleriana",
+    "field2": "700"
+  }
+]
