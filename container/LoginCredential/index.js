@@ -68,7 +68,7 @@ export function LoginCredential ({ provider }) {
           Contraseña
         </Input>
         <Button isValid={isValid} isDirty={isDirty}>
-          {loading ? 'Cargando...' : 'Iniciar Sesión'}
+          {loading ? 'Verificando...' : 'Iniciar Sesión'}
         </Button>
         <ErrorMessage>{errors?.password?.message}</ErrorMessage>
       </form>
