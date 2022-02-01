@@ -49,7 +49,7 @@ export const Input = forwardRef(
             label {
               display: flex;
               width: 100%;
-              position: relative;
+              position:${type === 'hidden' ? 'absolute' : 'relative'};
               min-width: ${type === 'checkbox' ? '' : '100%'};
               max-width: fit-content;
               height: ${errorHeight ? '100px' : 'inherit'};
