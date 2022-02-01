@@ -18,6 +18,8 @@ export const Form = ({
 
   const zzz = loading ? '.4' : '1'
 
+  console.log('onDebounce', onDebounce)
+
   return (
     <>
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -29,9 +31,10 @@ export const Form = ({
             {debouncedSearch?.data?.length > 0 && (
               <MenuSearch data={debouncedSearch} onClick={onClick} />
             )}
-            <label className='w-full flex flex-col mb-6'>
+            <label className='w-full flex flex-col mb-6 order-1'>
               <strong>Sexo:</strong>
               <select
+                value='Masculino'
                 className='w-100 p-1 border-zinc-900 border-solid border cursor-pointer rounded '
                 {...register('sex')}
                 required
@@ -56,7 +59,7 @@ export const Form = ({
                 )
               }
             )}
-            <Button isValid={isValid} isDirty={isDirty}>
+            <Button isValid={isValid} isDirty={isDirty} order>
               {loading ? 'Guardando...' : 'Guardar'}
             </Button>
           </div>
