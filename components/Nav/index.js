@@ -10,12 +10,12 @@ import { useRouter } from 'next/router'
 export const Nav = () => {
   const [checked, setChecked] = useState(false)
   const session = useSession()
-
+  const { replace } = useRouter()
   const handleButton = () => {
     signOut({
       redirect: false,
       callbackUrl: `${SIGN_OUT}`
-    }).then(data => useRouter().push(data.url))
+    }).then(data => replace(data.url))
   }
   const handleClic = () => {
     setChecked(!checked)
