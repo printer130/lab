@@ -179,6 +179,18 @@ export default function Hemograma ({ onChange, register, value, values }) {
               onChange={onChange}
               type='number'
               measure='%'
+              placeholder='Neutrófilos / Segmentados...'
+              value={!values?.neutrofilos ? value : values.neutrofilos}
+              name='hemograma.neutrofilos'
+            >
+              Neutrófilos / Segmentados
+            </Input>
+
+            <Input
+              register={register}
+              onChange={onChange}
+              type='number'
+              measure='%'
               placeholder='Linfocitos...'
               value={!values?.linfocitos ? value : values.linfocitos}
               name='hemograma.linfocitos'
