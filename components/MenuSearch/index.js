@@ -32,7 +32,7 @@ export function MenuSearch ({ data, onClick }) {
       {data && (
         <Menu
           as='div'
-          className='absolute top-40 text-left bg z-10 py-2 px-1  right-0 w-56 mt-2 origin-top-right bg-white divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none'
+          className='absolute top-24  text-left bg z-10 px-1 right-0 w-56 origin-top-right bg-white divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none'
         >
           {data?.data &&
             data.data.map(({ id, ci, fullName }) => {
