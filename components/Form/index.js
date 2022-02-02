@@ -29,7 +29,7 @@ export const Form = ({
             {debouncedSearch?.data?.length > 0 && (
               <MenuSearch data={debouncedSearch} onClick={onClick} />
             )}
-            <label className='w-full flex flex-col mb-6 order-1'>
+            <label className='w-full flex flex-col mb-6 order-2'>
               <strong>Sexo:</strong>
               <select
                 className='w-100 p-1 border-zinc-900 border-solid border cursor-pointer rounded '
@@ -41,9 +41,10 @@ export const Form = ({
               </select>
             </label>
             {formInputs.map(
-              ({ error, name, type, placeholder, options, label, v }) => {
+              ({ error, name, type, order, placeholder, options, label, v }) => {
                 return (
                   <Input
+                    order={order}
                     v={v}
                     errors={error}
                     key={name + label}
