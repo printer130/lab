@@ -4,7 +4,7 @@ export default function Page404 () {
   return (
     <>
       <div
-        className='flex items-center justify-center w-screen h-screen bg-gradient-to-r from-indigo-100 to-blue-200'
+        className='flex items-center justify-center w-full h-screen bg-gradient-to-r from-indigo-100 to-blue-200'
       >
         <div className='px-40 py-20 bg-white rounded-md shadow-xl'>
           <div className='flex flex-col items-center'>
