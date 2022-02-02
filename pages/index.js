@@ -7,7 +7,7 @@ import {
   getSession,
   useSession
 } from 'next-auth/react'
-import { URL_CALLBACK } from 'const/config'
+import { URL_CALLBACK, SIGN_OUT } from 'const/config'
 import { Logo } from 'components/Logo'
 
 export default function Home ({ providers = {}, csrfToken = {} }) {
@@ -16,6 +16,10 @@ export default function Home ({ providers = {}, csrfToken = {} }) {
 
   useEffect(() => {
     session?.status === 'authenticated' && router.push(`${URL_CALLBACK}`)
+  }, [session?.status])
+
+  useEffect(() => {
+    session?.status === 'unauthenticated' && router.push(`${SIGN_OUT}`)
   }, [session?.status])
 
   return (
