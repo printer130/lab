@@ -15,7 +15,7 @@ export default function Home ({ providers = {}, csrfToken = {} }) {
   const router = useRouter()
 
   useEffect(() => {
-    session?.data && router.push(`${URL_CALLBACK}`)
+    session?.data === 'authenticated' && router.push(`${URL_CALLBACK}`)
   }, [session?.data])
 
   return (
