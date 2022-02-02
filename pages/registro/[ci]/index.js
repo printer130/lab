@@ -22,7 +22,6 @@ export default function RegisterNewCI ({ order = '' }) {
   const [receipt, setReceipt] = useState(null)
 
   const [total, setTotal] = useState(0)
-  const [checked, setChecked] = useState(false)
   const [indebt, setIndebt] = useState(total)
   const [change, setChange] = useState(0)
 
@@ -78,17 +77,20 @@ export default function RegisterNewCI ({ order = '' }) {
     [checkboxes, total]
   )
 
-  const handleChecked = e => {
-    !checked ? setIndebt(total - change) : setIndebt(total)
-    setChecked(!checked)
-  }
-
   const handleChange = e => {
     const valueIn = +e.target.value
     setChange(valueIn)
   }
 
-  if (router.isFallback) return <div>Cargando...</div>
+  useEffect(() => {
+    if(change >= 0 && change<=total && change <= total) {
+    setIndebt(total - change)
+    } else {
+      setIndebt(total)
+    }
+  },[change])
+
+  if (router?.isFallback) return <div>Cargando...</div>
 
   if (!session) return <div />
 
@@ -117,10 +119,8 @@ export default function RegisterNewCI ({ order = '' }) {
       {order?.fullName ? (
         <OrderProfile
           {...order}
-          onIndebtChecked={handleChecked}
           onIndebtChange={handleChange}
           indebt={indebt}
-          checked={checked}
           total={total}
           ci={order.ci}
         />
@@ -136,7 +136,7 @@ export default function RegisterNewCI ({ order = '' }) {
         />
       ) : (
         <InputProvider>
-          <FormContinue onForm={handleContinue} onList={handleCheckbox} />
+          <FormContinue receipt={receipt?.cuiid} onForm={handleContinue} onList={handleCheckbox} />
         </InputProvider>
       )}
       <style jsx>
