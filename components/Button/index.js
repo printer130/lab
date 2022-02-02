@@ -4,7 +4,8 @@ export const Button = ({
   children,
   onChange,
   className,
-  order
+  order,
+  fixed
 }) => {
   return (
     <>
@@ -14,22 +15,22 @@ export const Button = ({
       <style jsx>
         {`
           button {
+            position: ${fixed ? 'fixed' : 'static'};
             display: ${className ? 'none' : 'block'};
             pointer-events: ${!isValid || !isDirty ? 'none' : 'auto'};
-            border: 0.5px solid black;
             margin: 0.55rem 0;
+            top: 100px;
             border-radius: 7px;
-            background: #d2f2ff;
+            background: #1a90c0;
             width: 100%;
-            font-weight: bold;
             cursor: pointer;
-            color: #252525; 
+            color: #eee; 
             order: ${!order ? 'inherit' : '9'};
-            letter-spacing: 0.5px;
             max-width: 270px;
             min-width: 189px;
             padding: 0.45rem 0.75rem;
           }
+
           button:disabled {
             border: 0.5px solid #ccc;
           }
