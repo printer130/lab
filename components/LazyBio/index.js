@@ -1,6 +1,6 @@
 /* eslint-disable no-constant-condition */
 import dynamic from 'next/dynamic'
-import { lazy, Suspense } from 'react'
+import { Suspense } from 'react'
 
 export function LazyBio ({ name, register, values, pdf }) {
   if (

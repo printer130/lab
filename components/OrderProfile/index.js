@@ -1,13 +1,9 @@
-import { Input } from 'components'
-
 export const OrderProfile = ({
   fullName,
   total,
   birth,
-  onIndebtChecked,
   onIndebtChange,
   ci,
-  checked,
   indebt
 }) => {
   return (
@@ -31,17 +27,15 @@ export const OrderProfile = ({
             min={0}
             onChange={onIndebtChange}
             max={200}
-            placeholder='A cuenta...'
-            disabled={checked}
+            placeholder='0 Bs.'
           />
-          <Input onChange={onIndebtChecked} type='checkbox' checked={checked} />
         </p>
         <p>
           <strong>Total: </strong>
           <span>{total} Bs.</span>
         </p>
         <p>
-          <strong>Saldo: </strong> {!checked ? total : indebt}
+          <strong>Saldo: </strong> {indebt} Bs.
         </p>
       </div>
       <style jsx>
@@ -70,12 +64,12 @@ export const OrderProfile = ({
         p {
           width: 320px;
           min-width: 220px;
+          height: 43px;
         }
 
         p:nth-child(3) {
           display: flex;
           width: fit-content;
-          align-items: center;
         }
 
         p:nth-child(3) > strong {
