@@ -1,29 +1,18 @@
-import { Button } from 'components'
 import { DicList } from 'components/DicList'
+import { Portal } from 'components/Portal'
 
-export const FormContinue = ({ onForm, onList, checked }) => {
+export const FormContinue = ({ onForm, onList, receipt }) => {
   return (
-    <>
-      <form onSubmit={onForm}>
-        <DicList onChange={onList} />
-        <Button>Continuar</Button>
-      </form>
-      <style jsx>
-        {`
-          header {
-            display: grid;
-            align-items: flex-start;
-            padding-top: 1.8rem;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-          }
-          header div {
-            width: fit-content;
-          }
-          small {
-            heiht: 40px;
-          }
-        `}
-      </style>
-    </>
+    <form>
+      <DicList onChange={onList} />
+      {
+        !receipt && <Portal id='portal'>
+          <button
+            onClick={onForm}
+          >Continuar
+          </button>
+        </Portal>
+        }
+    </form>
   )
 }
