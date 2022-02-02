@@ -1,18 +1,6 @@
-import { StyleSheet, Text } from '@react-pdf/renderer'
 import { Input } from '../Input'
 import { Remarks } from '../Remarks'
-const styles = StyleSheet.create({
-  title: {
-    display: 'flex',
-    fontSize: 18,
-    color: '#0f0',
-    borderBottomWidth: 2,
-    borderBottomColor: '#112131',
-    borderBottomStyle: 'solid',
-    width: 500,
-    marginBottom: 10
-  }
-})
+
 export default function TP_INR ({
   onChange,
   register,
@@ -22,9 +10,7 @@ export default function TP_INR ({
 }) {
   return (
     <>
-      {
-          !pdf ? <h2>TP - INR</h2> : <Text style={styles.title}>TP - INR</Text>
-        }
+      <h2>TP - INR</h2>
       <section className='section'>
         <Input
           pdf={pdf}

@@ -1,21 +1,4 @@
-import { StyleSheet, Text, View } from '@react-pdf/renderer'
 import { forwardRef } from 'react'
-const s = StyleSheet.create({
-  value: {
-    fontSize: 16,
-    color: '#000000'
-  },
-  title: {
-    fontSize: 14,
-    color: '#000000'
-  },
-  input: {
-    display: 'flex',
-    flexDirection: 'column',
-    flexGrow: 9,
-    flexWrap: 'wrap'
-  }
-})
 
 export const Input = forwardRef(
   (
@@ -35,32 +18,24 @@ export const Input = forwardRef(
   ) => {
     return (
       <>
-        {!pdf
-          ? (
-            <label>
-              <h5>{children}</h5>
-              <div>
-                <input
-                  step='.001'
-                  checked={checked}
-                  value={value}
-                  ref={ref}
-                  name={name}
-                  {...register(name, { required })}
-                  type={type}
-                  required={required}
-                  placeholder={placeholder}
-                />
-                {measure && <p>{measure}</p>}
-              </div>
-            </label>
-            )
-          : (
-            <View style={s.input}>
-              <Text style={s.title}>{children}</Text>
-              <Text style={s.value}>{value}</Text>
-            </View>
-            )}
+        <label>
+          <h5>{children}</h5>
+          <div>
+            <input
+              step='.001'
+              checked={checked}
+              value={value}
+              ref={ref}
+              name={name}
+              {...register(name, { required })}
+              type={type}
+              required={required}
+              placeholder={placeholder}
+            />
+            {measure && <p>{measure}</p>}
+          </div>
+        </label>
+        )
         <style jsx>
           {`
             label {
