@@ -6,6 +6,7 @@ export const REGISTER_VALUES = ({ errors, onDebounce, item }) => {
       error: errors?.ci,
       label: 'Carnet de identidad: ',
       placeholder: 'C.I',
+      order: 1,
       name: 'ci',
       options: {
         valueAsNumber: true,
@@ -18,6 +19,7 @@ export const REGISTER_VALUES = ({ errors, onDebounce, item }) => {
       label: 'Nombre Completo',
       error: errors?.fullName,
       placeholder: 'Nombre Completo...',
+      order: 3,
       name: 'fullName',
       options: {}
     },
@@ -26,6 +28,7 @@ export const REGISTER_VALUES = ({ errors, onDebounce, item }) => {
       type: 'date',
       label: 'Fecha de nacimiento',
       placeholder: 'Fecha de Nacimiento',
+      order: 4,
       name: 'birth',
       options: {
         valueAsDate: true
@@ -37,6 +40,7 @@ export const REGISTER_VALUES = ({ errors, onDebounce, item }) => {
       label: 'Número de celular',
       error: errors?.phone,
       placeholder: 'Celular',
+      order: 5,
       name: 'phone',
       options: {
         valueAsNumber: true
@@ -48,6 +52,7 @@ export const REGISTER_VALUES = ({ errors, onDebounce, item }) => {
       error: errors?.nit,
       label: 'N.I.T.',
       placeholder: 'NIT',
+      order: 6,
       name: 'nit',
       options: {
         valueAsNumber: true
@@ -59,6 +64,7 @@ export const REGISTER_VALUES = ({ errors, onDebounce, item }) => {
       label: 'Razon Social',
       error: errors?.reason,
       placeholder: 'Razon Social',
+      order: 7,
       name: 'reason',
       options: {}
     },
@@ -67,6 +73,7 @@ export const REGISTER_VALUES = ({ errors, onDebounce, item }) => {
       label: 'Nombre del médico',
       type: 'text',
       placeholder: 'Médico...',
+      order: 8,
       name: 'doctor',
       options: {}
     }

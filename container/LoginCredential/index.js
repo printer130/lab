@@ -14,7 +14,7 @@ export function LoginCredential ({ provider }) {
     resolver: zodResolver(LoginSchema),
     defaultValues: DEFAULT_VALUES
   })
-  const { isValid, isDirty, errors } = formState
+  const { errors } = formState
   const router = useRouter()
 
   const onSubmit = ({ email, password }) => {
@@ -30,7 +30,7 @@ export function LoginCredential ({ provider }) {
         if (!res.ok) {
           setLoading(false)
           return setError('password', {
-            message: 'Contraseña incorrecta',
+            message: 'Contraseña incorrecta.',
             error: '401'
           })
         }
@@ -38,7 +38,7 @@ export function LoginCredential ({ provider }) {
       .catch(e => {
         setLoading(false)
         return setError('password', {
-          message: 'Contraseña incorrecta',
+          message: 'Contraseña incorrecta.',
           error: '401'
         })
       })
@@ -47,7 +47,8 @@ export function LoginCredential ({ provider }) {
   return (
     <>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <Input type='hidden' {...register('csrfToken')} />
+        {/* <Input type='hidden' {...register('csrfToken')} /> */}
+        <input type='hidden' {...register('csrfToken')} />
         <Input
           type='text'
           errorHeight
@@ -67,7 +68,7 @@ export function LoginCredential ({ provider }) {
         >
           Contraseña
         </Input>
-        <Button isValid={isValid} isDirty={isDirty}>
+        <Button isValid isDirty>
           {loading ? 'Verificando...' : 'Iniciar Sesión'}
         </Button>
         <ErrorMessage>{errors?.password?.message}</ErrorMessage>

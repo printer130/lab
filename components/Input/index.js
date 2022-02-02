@@ -18,7 +18,8 @@ export const Input = forwardRef(
       disabled,
       max,
       errorHeight,
-      children
+      children,
+      order
     },
     ref
   ) => {
@@ -47,6 +48,7 @@ export const Input = forwardRef(
         <style jsx>
           {`
             label {
+              order: ${order};
               display: flex;
               width: 100%;
               position:${type === 'hidden' ? 'absolute' : 'relative'};
