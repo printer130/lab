@@ -6,6 +6,7 @@ import { Search } from 'components/Search'
 import { useSession } from 'next-auth/react'
 import { useApiCallback } from 'hooks/useApiCallback'
 import { useCallback, useMemo, useState } from 'react'
+import { deleteOrder } from 'lib/db'
 
 const ROLE_TYPE_BIOCHEMICAL = 'BIOCHEMICAL'
 
@@ -40,12 +41,9 @@ export default function Ordenes () {
 
   const handleDelete = ({ cuiid, fullname }) => {
     if (isOpen) {
-      window
-        .fetch(`/api/deleteReceipt/${elDelete.cuiid}`, {
-          method: 'DELETE'
-        })
-        .then(res => {
-          if (res.ok) {
+      deleteOrder({ cuiid: elDelete.cuiid })
+        .then(itemDeleted => {
+          if (itemDeleted) {
             setElDelete({ cuiid: '', fullname: '' })
             setIsOpen(false)
           }
@@ -63,6 +61,7 @@ export default function Ordenes () {
   }
 
   if (!session?.data) return <div />
+
   return (
     <>
       <OnDelete
@@ -86,9 +85,12 @@ export default function Ordenes () {
             <strong>Codigo</strong>
             <strong>Nombre</strong>
             <strong>Total</strong>
-            <strong>Saldo</strong>
             <strong>A cuenta</strong>
+            <strong>Saldo</strong>
           </nav>
+          {
+            data.length === 0 && <div>No pudimos encontrar esa busqueda.</div>
+          }
           {data
             ? (
               <ListOfOrders
@@ -125,7 +127,7 @@ export default function Ordenes () {
           section {
             margin: 0 auto;
             width: 100%;
-            overflow-x: scroll;
+            overflow-x: ${data.length === 0 ? 'hidden' : 'scroll'};
             scroll-behavior: smooth;
           }
 
