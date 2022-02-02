@@ -13,9 +13,9 @@
     "@heroicons/react": "1.0.5",
     "@hookform/resolvers": "2.8.3",
     "@next-auth/prisma-adapter": "0.5.2-next.19",
-    "@prisma/client": "3.8.0",
-    "@react-pdf/renderer": "2.1.0",
+    "@prisma/client": "^3.9.0",
     "framer-motion": "5.5.6",
+    "jspdf": "^2.5.1",
     "next": "12.0.2",
     "next-auth": "4.0.0-beta.2",
     "node-fetch": "3.1.0",
@@ -23,7 +23,6 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-hook-form": "7.19.1",
-    "react-pdf": "5.6.0",
     "swr": "1.1.2",
     "unfetch": "4.2.0",
     "zod": "3.11.6"
@@ -33,7 +32,7 @@
     "cssnano": "^5.0.16",
     "node-jose-tools": "1.6.28",
     "postcss": "8.4.5",
-    "prisma": "3.8.0",
+    "prisma": "^3.9.0",
     "standard": "16.0.4",
     "tailwindcss": "3.0.15"
   },
