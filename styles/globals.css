@@ -20,7 +20,18 @@ a {
 }
 
 h3, h2 { 
+  font-weight: bolder;
+}
+h2 {
   width: -webkit-fill-available;
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+h3 {
+  width: fit-content;
+  font-size: 16px;
+  height: fit-content;
+  min-width: 194px;
 }
 
 .section {

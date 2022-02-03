@@ -7,13 +7,11 @@ export const GeneratePDF = ({ id }) => {
     format: [867, 1024]
   })
 
-  doc.setFontSize(12)
   doc.html(window.document.querySelector('#' + id), {
     callback: function (doc) {
+      // doc.putTotalPages()
       doc.save('Arqueo.pdf')
     },
-    margin: [
-      0, 0, 0, 0
-    ]
+    margin: [0, 0, 0, 0]
   })
 }
