@@ -11,8 +11,7 @@ export const Input = forwardRef(
       name,
       register,
       required = false,
-      measure,
-      pdf = null
+      measure
     },
     ref
   ) => {
