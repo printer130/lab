@@ -16,11 +16,11 @@ export const Input = forwardRef(
     ref
   ) => {
     return (
-      <>
-        <label>
-          <h5>{children}</h5>
-          <div>
+        <label className={`${type==='radio'? 'w-fit flex': 'w-[270px]'}`}>
+          <h5 className='w-[inherit] py-0 pl-0 pr-4'>{children}</h5>
+          <div className={`flex max-w-xs ${type ==='radio' ? 'self-center':''}`}>
             <input
+            className='h-min text-base w-[auto] rounded py-[0.15rem] px-[0.35rem] border border-solid border-slate-400'
               step='.001'
               checked={checked}
               value={value}
@@ -31,37 +31,9 @@ export const Input = forwardRef(
               required={required}
               placeholder={placeholder}
             />
-            {measure && <p>{measure}</p>}
+            {measure && <p className='m-0 w-11'>{measure}</p>}
           </div>
         </label>
-        )
-        <style jsx>
-          {`
-            label {
-              width: 270px;
-            }
-            h5 {
-              padding: 0 2rem 0 0;
-            }
-            div {
-              max-width: 320px;
-              display: flex;
-            }
-            input {
-              padding: 0.15rem 0.35rem;
-              border: 1px solid #ccc;
-              border-radius: 4px;
-              width: auto;
-              font-size: 1rem;
-              height: min-content;
-            }
-            p {
-              margin: 0;
-              width: 45px;
-            }
-          `}
-        </style>
-      </>
     )
   }
 )

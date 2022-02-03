@@ -11,6 +11,7 @@ export default function GrupoYRh ({
   return (
     <>
       <h2>Grupo y RH</h2>
+      <h3>Grupo</h3>
       <section>
         <Input
           checked={values?.a !== null}
@@ -43,7 +44,7 @@ export default function GrupoYRh ({
           O
         </Input>
       </section>
-      <strong>Factor RH</strong>
+      <h3>Factor RH</h3>
       <NegativePositive
         values={values?.factor_rh}
         register={register}

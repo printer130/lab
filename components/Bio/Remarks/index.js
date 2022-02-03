@@ -11,7 +11,6 @@ export function Remarks ({ name, onChange, value, register, pdf }) {
           rows='5'
         />
       </label>
-      )
       <style jsx>
         {`
           div {
