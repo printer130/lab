@@ -14,8 +14,8 @@ export default function GrupoYRh ({
       <section>
         <Input
           checked={values?.a !== null}
-          value={!values?.radio.a ? value : values.radio.a}
-          name='grupo_y_rh.radio.a'
+          value={!values?.a ? value : values.a}
+          name='grupo_y_rh.a'
           register={register}
           onChange={onChange}
           type='radio'
@@ -23,9 +23,9 @@ export default function GrupoYRh ({
           A
         </Input>
         <Input
-          checked={values?.radio.b !== null}
-          value={!values?.radio.b ? value : values.radio.b}
-          name='grupo_y_rh.radio.b'
+          checked={values?.b !== null}
+          value={!values?.b ? value : values.b}
+          name='grupo_y_rh.b'
           register={register}
           onChange={onChange}
           type='radio'
@@ -33,9 +33,9 @@ export default function GrupoYRh ({
           B
         </Input>
         <Input
-          checked={values?.radio.o !== null}
-          value={!values?.radio.o ? value : values.radio.o}
-          name='grupo_y_rh.radio.o'
+          checked={values?.o !== null}
+          value={!values?.o ? value : values.o}
+          name='grupo_y_rh.o'
           register={register}
           onChange={onChange}
           type='radio'
