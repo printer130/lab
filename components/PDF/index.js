@@ -1,3 +1,5 @@
+import { LazyBio } from 'components/LazyBio'
+
 function Layout ({ children, id }) {
   return (
     <section
@@ -54,18 +56,19 @@ function Header () {
   )
 }
 
-export const PDFComponent = ({ id }) => {
+export const PDFComponent = ({ id, json, register }) => {
   return (
     <Layout id={id}>
       <Header />
       <div className='px-4'>
         <h2 style={{ color: '#000' }}>Title: {new Date().toLocaleDateString()}</h2>
-        <div className='flex flex-col border mx-4 text-slate-800'>
-          <strong>50</strong>
-          <strong>100</strong>
-          <strong>150</strong>
-          <input readOnly value='HOLA' />
-        </div>
+        {
+          json.map(json => {
+            return (
+              <LazyBio name={json.name}  register={register} values={json.values}/>
+            )
+          })
+        }
       </div>
       <Footer />
     </Layout>
