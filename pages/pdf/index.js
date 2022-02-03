@@ -14,10 +14,9 @@ const handleClic = () => {
 export default function Pdf () {
   return (
     <>
-      <h1>hola</h1>
       <PDFComponent id='pdf' />
       <button
-        className='w-20 text-pink-200 bg-black-600 h-11'
+        className='w-28 mt-4 text-blue-700  border border-solid border-slate-600 h-11 rounded-md'
         onClick={handleClic}
       >
         Descargar PDF

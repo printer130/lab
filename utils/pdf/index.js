@@ -4,11 +4,10 @@ export const GeneratePDF = ({ id }) => {
   const doc = new JsPDF({
     orientation: 'portrait',
     unit: 'px',
-    format: [595, 843]
+    format: [867, 1024]
   })
 
-  doc.addImage('/pege.jpeg', 'JPEG', 100, 100, 595, 842)
-
+  doc.setFontSize(12)
   doc.html(window.document.querySelector('#' + id), {
     callback: function (doc) {
       doc.save('Arqueo.pdf')
