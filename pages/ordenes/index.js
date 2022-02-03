@@ -1,19 +1,27 @@
 /* eslint-disable react/jsx-closing-tag-location */
 import { ListOfOrders } from 'components/ListOrders'
 import { OnDelete } from 'components/OnDelete'
+import { OnPDF } from 'components/OnPDF'
 import { PlaceholderListOrders } from 'components/Placeholders/ListOfOrders'
 import { Search } from 'components/Search'
 import { useSession } from 'next-auth/react'
 import { useApiCallback } from 'hooks/useApiCallback'
-import { useCallback, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 import { deleteOrder } from 'lib/db'
 
 const ROLE_TYPE_BIOCHEMICAL = 'BIOCHEMICAL'
+
+const getOne = ({ cuiid }) => {
+  return window.fetch('/api/receipt/getOne/' + cuiid).then(res => res.json())
+}
 
 export default function Ordenes () {
   const [isOpen, setIsOpen] = useState(false)
   const [elDelete, setElDelete] = useState({ cuiid: '', fullname: '' })
   const [value, setValue] = useState('')
+  let [isModalPDF, setIsModalPDF] = useState(false)
+  const [onePDF, setOnePDF] = useState()
+
   const session = useSession()
   const token = session?.data?.token
 
@@ -41,14 +49,13 @@ export default function Ordenes () {
 
   const handleDelete = ({ cuiid, fullname }) => {
     if (isOpen) {
-      deleteOrder({ cuiid: elDelete.cuiid })
-        .then(itemDeleted => {
-          if (itemDeleted) {
-            setElDelete({ cuiid: '', fullname: '' })
-            setIsOpen(false)
-          }
-          // Cant delete the last order
-        })
+      deleteOrder({ cuiid: elDelete.cuiid }).then(itemDeleted => {
+        if (itemDeleted) {
+          setElDelete({ cuiid: '', fullname: '' })
+          setIsOpen(false)
+        }
+        // Cant delete the last order
+      })
     }
     if (!isOpen) {
       setIsOpen(true)
@@ -59,11 +66,28 @@ export default function Ordenes () {
   function closeModal () {
     setIsOpen(false)
   }
+  function toggleModalPDF () {
+    console.log('CLICK PDF')
+    setIsModalPDF(!isModalPDF)
+    console.log('CLICK PDF', isModalPDF)
+  }
 
+  useEffect(() => {
+    getOne({ cuiid: 'ckz4tqxe8000009mlowmlp5sv' }).then(setOnePDF)
+  }, [])
+
+  console.log('onePDF', isModalPDF, onePDF)
   if (!session?.data) return <div />
 
   return (
     <>
+      {isModalPDF && (
+        <OnPDF
+          stateModal={isModalPDF}
+          onModal={toggleModalPDF}
+          data={onePDF?.data[0]}
+        />
+      )}
       <OnDelete
         elDelete={elDelete?.fullname}
         onDelete={handleDelete}
@@ -78,7 +102,7 @@ export default function Ordenes () {
           placeholder='Buscar por: nombre - número de orden'
         />
       </header>
-      <section>
+      <section className='w-full my-0 mx-[auto] lg:overflow-x-none'>
         <main>
           <nav>
             <strong>Creado</strong>
@@ -88,46 +112,32 @@ export default function Ordenes () {
             <strong>A cuenta</strong>
             <strong>Saldo</strong>
           </nav>
-          {
-            data.length === 0 && <div>No pudimos encontrar esa busqueda.</div>
-          }
-          {data
-            ? (
-              <ListOfOrders
-                data={data}
-                onDelete={handleDelete}
-              />
-              )
-            : (
-              <div className='w-screen flex items-center flex-col'>
-                <PlaceholderListOrders />
-                <PlaceholderListOrders />
-                <PlaceholderListOrders />
-                <PlaceholderListOrders />
-                <PlaceholderListOrders />
-                <PlaceholderListOrders />
-                <PlaceholderListOrders />
-              </div>
-              )}
+          {data.length === 0 && <div>No pudimos encontrar esa busqueda.</div>}
+          {data ? (
+            <ListOfOrders
+              onPDF={toggleModalPDF}
+              data={data}
+              onDelete={handleDelete}
+            />
+          ) : (
+            <>
+              <PlaceholderListOrders />
+              <PlaceholderListOrders />
+              <PlaceholderListOrders />
+              <PlaceholderListOrders />
+              <PlaceholderListOrders />
+              <PlaceholderListOrders />
+              <PlaceholderListOrders />
+              <PlaceholderListOrders />
+              <PlaceholderListOrders />
+              <PlaceholderListOrders />
+            </>
+          )}
         </main>
       </section>
       <style jsx>
         {`
-          input {
-            width: 100%;
-            max-width: 500px;
-            padding: 0.4rem 0.6rem;
-            font-size: 1rem;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-            margin-bottom: 1rem;
-          }
-
           section {
-            margin: 0 auto;
-            width: 100%;
-            overflow-x: ${data.length === 0 ? 'hidden' : 'scroll'};
             scroll-behavior: smooth;
           }
 
@@ -147,19 +157,6 @@ export default function Ordenes () {
             opacity: ${isOpen ? '.5' : 'none'};
             width: 900px;
             grid-template-rows: repeat(auto-fill, 55px);
-          }
-          [data-placeholder]::after {
-            content: " ";
-            box-shadow: 0 0 50px 9px rgba(254,254,254);
-            position: absolute;
-            top: 0;
-            left: -100%;
-            height: 100%; 
-            animation: load 1s infinite;
-          }
-          @keyframes load {
-            0%{ left: -100%}
-            100%{ left: 150%}
           }
         `}
       </style>

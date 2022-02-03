@@ -1,7 +1,7 @@
 import { Order } from 'components/Order'
 import { unique } from 'utils/unique'
 
-export const ListOfOrders = ({ data, onDelete }) =>
+export const ListOfOrders = ({ data, onDelete, onPDF }) =>
   data.map(
     ({
       id,
@@ -17,6 +17,7 @@ export const ListOfOrders = ({ data, onDelete }) =>
     }) => {
       return (
         <Order
+          onPDF={onPDF}
           key={cuiid}
           cuiid={cuiid}
           date={createdAt}

@@ -6,6 +6,7 @@ const ROLE_TYPE_BIOCHEMICAL = 'BIOCHEMICAL'
 export function Order ({
   itotal,
   date,
+  onPDF,
   id,
   fullname,
   total,
@@ -36,10 +37,8 @@ export function Order ({
         <Link href={`/ordenes/${cuiid}`}>
           <a title='Editar' />
         </Link>
-        <a
-          download
-          href={`/bio/${cuiid}`}
-          filename={`${cuiid}.pdf`}
+        <button
+          onClick={onPDF}
           title='Descargar en pdf'
         />
         <a onClick={() => onDelete({ cuiid, fullname })} title='Borrar' />
@@ -80,7 +79,11 @@ export function Order ({
           a:nth-last-child(1) {
             background-image: url('/svg/cross.webp');
           }
-          a:nth-last-child(2) {
+          button {
+            width: 16px;
+            height: 16px;
+            background-size: contain;
+            cursor: pointer;
             background-image: url('/svg/pdf2.webp');
           }
           a:nth-last-child(3) {
