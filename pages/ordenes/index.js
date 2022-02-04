@@ -19,8 +19,8 @@ export default function Ordenes () {
   const [isOpen, setIsOpen] = useState(false)
   const [elDelete, setElDelete] = useState({ cuiid: '', fullname: '' })
   const [value, setValue] = useState('')
-  let [isModalPDF, setIsModalPDF] = useState(false)
   const [onePDF, setOnePDF] = useState()
+  let [isModalPDF, setIsModalPDF] = useState(false)
 
   const session = useSession()
   const token = session?.data?.token
@@ -57,6 +57,7 @@ export default function Ordenes () {
         // Cant delete the last order
       })
     }
+
     if (!isOpen) {
       setIsOpen(true)
       setElDelete({ fullname, cuiid })
@@ -66,17 +67,15 @@ export default function Ordenes () {
   function closeModal () {
     setIsOpen(false)
   }
+
   function toggleModalPDF () {
-    console.log('CLICK PDF')
     setIsModalPDF(!isModalPDF)
-    console.log('CLICK PDF', isModalPDF)
   }
 
   useEffect(() => {
     getOne({ cuiid: 'ckz4tqxe8000009mlowmlp5sv' }).then(setOnePDF)
   }, [])
 
-  console.log('onePDF', isModalPDF, onePDF)
   if (!session?.data) return <div />
 
   return (
