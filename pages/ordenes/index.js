@@ -8,21 +8,7 @@ import { useSession } from 'next-auth/react'
 import { useApiCallback } from 'hooks/useApiCallback'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { deleteOrder } from 'lib/db'
-import { Disclosure } from '@headlessui/react'
 
-function MyDisclosure () {
-  return (
-    <Disclosure>
-      <Disclosure.Button className='py-2'>
-        Is team pricing available?
-      </Disclosure.Button>
-      <Disclosure.Panel className='text-gray-500'>
-        Yes! You can purchase a license that you can share with your entire
-        team.
-      </Disclosure.Panel>
-    </Disclosure>
-  )
-}
 const ROLE_TYPE_BIOCHEMICAL = 'BIOCHEMICAL'
 
 const getOne = ({ cuiid }) => {
@@ -36,7 +22,7 @@ export default function Ordenes () {
   const [onePDF, setOnePDF] = useState()
   const [loadingPDF, setLoadingPDF] = useState(false)
   const [PDFCuiid, setPDFCuiid] = useState()
-  let [isModalPDF, setIsModalPDF] = useState(false)
+  const [isModalPDF, setIsModalPDF] = useState(false)
 
   const session = useSession()
   const token = session?.data?.token
@@ -133,34 +119,36 @@ export default function Ordenes () {
             <strong>Saldo</strong>
           </nav>
           {data.length === 0 && <div>No pudimos encontrar esa busqueda.</div>}
-          {data ? (
-            <ListOfOrders
-              onPDF={toggleModalPDF}
-              data={data}
-              onDelete={handleDelete}
-            />
-          ) : (
-            <>
-              <PlaceholderListOrders />
-              <PlaceholderListOrders />
-              <PlaceholderListOrders />
-              <PlaceholderListOrders />
-              <PlaceholderListOrders />
-              <PlaceholderListOrders />
-              <PlaceholderListOrders />
-              <PlaceholderListOrders />
-              <PlaceholderListOrders />
-              <PlaceholderListOrders />
-            </>
-          )}
+          {data
+            ? (
+              <ListOfOrders
+                onPDF={toggleModalPDF}
+                data={data}
+                onDelete={handleDelete}
+              />
+              )
+            : (
+              <>
+                <PlaceholderListOrders />
+                <PlaceholderListOrders />
+                <PlaceholderListOrders />
+                <PlaceholderListOrders />
+                <PlaceholderListOrders />
+                <PlaceholderListOrders />
+                <PlaceholderListOrders />
+                <PlaceholderListOrders />
+                <PlaceholderListOrders />
+                <PlaceholderListOrders />
+              </>
+              )}
         </main>
       </section>
       <style jsx>
         {`
           section {
             scroll-behavior: smooth;
-            pointer-events: ${loadingPDF ? 'none': 'auto'};
-            opacity: ${loadingPDF ? '0.75': '1'};
+            pointer-events: ${loadingPDF ? 'none' : 'auto'};
+            opacity: ${loadingPDF ? '0.75' : '1'};
           }
 
           nav {
