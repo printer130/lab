@@ -88,7 +88,7 @@ export default function RegisterNewCI ({ order = '' }) {
     } else {
       setIndebt(total)
     }
-  },[change])
+  }, [change])
 
   if (router?.isFallback) return <div>Cargando...</div>
 
