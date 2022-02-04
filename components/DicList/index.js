@@ -1,9 +1,31 @@
 import { ListOfAnalisys } from 'components/ListOfAnalisys'
 import jsonData from 'const/data.json'
+import { useSession } from 'next-auth/react'
+import dynamic from 'next/dynamic'
+import { Suspense } from 'react'
+
+export function DinamicDicc ({ labId }) {
+  const DinamicList = dynamic(
+    () => import(`const/${labId}.json`),
+    {
+      ssr: false,
+      suspense: false
+    }
+  )
+
+  return (
+    <Suspense fallback='Cargando...'>
+      <DinamicList />
+    </Suspense>
+  )
+}
 
 export const DicList = ({ onChange }) => {
+  const session = useSession()
+  console.log('SESSIOn', session)
   return (
     <>
+      <DinamicDicc labId='kc_lab' />
       <strong className='mx-auto text-2xl'>
         Lista de análisis y laboratorio
       </strong>

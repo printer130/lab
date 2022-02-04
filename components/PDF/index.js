@@ -72,7 +72,7 @@ function Header ({ data }) {
         </p>
         <p className='flex'>
           <span className='w-44'>Fecha de impresión: </span>
-          <strong>{new Date().toLocaleDateString()}</strong>
+          <strong>{new Date().toLocaleDateString().split('/').reverse().join('-')}</strong>
         </p>
         <p className='flex'>
           <span className='w-44'>Institución: </span>
@@ -84,6 +84,7 @@ function Header ({ data }) {
 }
 
 export const PDFComponent = ({ id, data, register }) => {
+  console.log('DATA-[PDF]', data)
   return (
     <Layout id={id}>
       <Header data={data} />

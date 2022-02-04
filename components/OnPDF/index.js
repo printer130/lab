@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import { PDFComponent } from 'components/PDF'
 import { GeneratePDF } from 'utils/pdf'
