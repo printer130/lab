@@ -1,0 +1,25 @@
+datasource db {
+  provider             = "postgresql"
+  url                  = env("DATABASE_URL_ARQUEO")
+}
+
+generator client {
+  provider        = "prisma-client-js"
+  output          =  "./generated/arqueo-client.js"
+}
+
+model Lab {
+  createdAt    DateTime @default(now())
+  lab_name     String   @id
+  image        String?
+  arqueo       Arqueo[]
+}
+
+model Arqueo {
+  cuiid      String   @id @default(cuid())
+  total      Int
+  createdAt  DateTime @default(now())
+  username   String
+  lab        Lab      @relation(fields: [lab_id], references: [lab_name])
+  lab_id     String
+}

@@ -1,17 +1,18 @@
-generator client {
-  provider        = "prisma-client-js"
-  previewFeatures = ["extendedIndexes", "referentialIntegrity", "fullTextSearch", "fullTextIndex"]
-}
-
 datasource db {
   provider             = "postgresql"
   url                  = env("DATABASE_URL")
   referentialIntegrity = "prisma"
 }
 
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["extendedIndexes", "referentialIntegrity", "fullTextSearch", "fullTextIndex"]
+}
+
 model Lab {
   id   Int     @id @default(autoincrement())
   name String? @unique
+  image String? @default("")
   User User[]
 }
 
@@ -30,7 +31,7 @@ model User {
 model Order {
   id          Int       @id @default(autoincrement())
   createdAt   DateTime  @default(now())
-  fullName    String    @db.VarChar(70) @unique
+  fullName    String    @db.VarChar(70)
   ci          String    @unique
   nit         Int
   birth       DateTime
