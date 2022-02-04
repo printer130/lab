@@ -74,7 +74,7 @@ export function Order ({
           }
 
           a:nth-last-child(1) {
-            background-image: url('/svg/cross.webp');
+            background-image: url('/svg/delete.svg');
           }
           button {
             width: 16px;
@@ -84,7 +84,7 @@ export function Order ({
             background-image: url('/svg/pdf2.webp');
           }
           a:nth-last-child(3) {
-            background-image: url('/svg/edit.webp');
+            background-image: url('/svg/edit.svg');
           }
           a:nth-last-child(4) {
             background-image: url('/miniLogo.svg');
