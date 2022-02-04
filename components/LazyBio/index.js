@@ -85,8 +85,8 @@ export function LazyBio ({ name, register, values }) {
           name={name}
           values={values}
           required
-          />
-        </div>
+        />
+      </div>
     </Suspense>
   )
 }

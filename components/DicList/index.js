@@ -5,13 +5,10 @@ import dynamic from 'next/dynamic'
 import { Suspense } from 'react'
 
 export function DinamicDicc ({ labId }) {
-  const DinamicList = dynamic(
-    () => import(`const/${labId}.json`),
-    {
-      ssr: false,
-      suspense: false
-    }
-  )
+  const DinamicList = dynamic(() => import(`/const/${labId}.json`), {
+    ssr: false,
+    suspense: false
+  })
 
   return (
     <Suspense fallback='Cargando...'>
@@ -25,7 +22,7 @@ export const DicList = ({ onChange }) => {
   console.log('SESSIOn', session)
   return (
     <>
-      <DinamicDicc labId='kc_lab' />
+      {/* <DinamicDicc labId='data' /> */}
       <strong className='mx-auto text-2xl'>
         Lista de análisis y laboratorio
       </strong>
