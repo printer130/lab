@@ -30,10 +30,10 @@ function Footer () {
   )
 }
 
-function Header ({ data }) {
+function Header ({ data, lab }) {
   return (
     <div id='header' className='flex justify-between items-center p-4'>
-      <img className='w-64' src='lab_valencia.png' />
+      <img className='w-64' src={lab.image} />
       <div className='flex flex-col'>
         <p className='flex'>
           <span className='w-[68px] min-w-[68px]'>Paciente: </span>
@@ -72,7 +72,13 @@ function Header ({ data }) {
         </p>
         <p className='flex'>
           <span className='w-44'>Fecha de impresión: </span>
-          <strong>{new Date().toLocaleDateString().split('/').reverse().join('-')}</strong>
+          <strong>
+            {new Date()
+              .toLocaleDateString()
+              .split('/')
+              .reverse()
+              .join('-')}
+          </strong>
         </p>
         <p className='flex'>
           <span className='w-44'>Institución: </span>
@@ -83,11 +89,12 @@ function Header ({ data }) {
   )
 }
 
-export const PDFComponent = ({ id, data, register }) => {
-  console.log('DATA-[PDF]', data)
+export const PDFComponent = ({ id, data, register, lab }) => {
+  // console.log('DATA-[PDF]', data)
+  // console.log('DATA-[lab]', lab)
   return (
     <Layout id={id}>
-      <Header data={data} />
+      <Header data={data} lab={lab} />
       <div className='px-4 flex flex-row flex-wrap'>
         {data.json.map(json => {
           return (
