@@ -26,9 +26,10 @@ export default function Ordenes () {
 
   const session = useSession()
   const token = session?.data?.token
+  const lab = token?.user?.lab
 
   const { apiResponse } = useApiCallback({ endpoint: '/api/receipt/getAll' })
-
+  console.log('session', session)
   const handleChange = useCallback(
     e => {
       setValue(e.target.value)
@@ -89,6 +90,7 @@ export default function Ordenes () {
     <>
       {isModalPDF & (onePDF?.data !== undefined) && (
         <OnPDF
+          lab={lab}
           stateModal={isModalPDF}
           onModal={toggleModalPDF}
           data={onePDF?.data[0]}
@@ -120,27 +122,27 @@ export default function Ordenes () {
           </nav>
           {data.length === 0 && <div>No pudimos encontrar esa busqueda.</div>}
           {data
-            ? (
-              <ListOfOrders
-                onPDF={toggleModalPDF}
-                data={data}
-                onDelete={handleDelete}
-              />
-              )
-            : (
-              <>
-                <PlaceholderListOrders />
-                <PlaceholderListOrders />
-                <PlaceholderListOrders />
-                <PlaceholderListOrders />
-                <PlaceholderListOrders />
-                <PlaceholderListOrders />
-                <PlaceholderListOrders />
-                <PlaceholderListOrders />
-                <PlaceholderListOrders />
-                <PlaceholderListOrders />
-              </>
-              )}
+? (
+            <ListOfOrders
+              onPDF={toggleModalPDF}
+              data={data}
+              onDelete={handleDelete}
+            />
+          )
+: (
+            <>
+              <PlaceholderListOrders />
+              <PlaceholderListOrders />
+              <PlaceholderListOrders />
+              <PlaceholderListOrders />
+              <PlaceholderListOrders />
+              <PlaceholderListOrders />
+              <PlaceholderListOrders />
+              <PlaceholderListOrders />
+              <PlaceholderListOrders />
+              <PlaceholderListOrders />
+            </>
+          )}
         </main>
       </section>
       <style jsx>

@@ -27,7 +27,15 @@ export default NextAuth({
               createdAt: true,
               name: true,
               labId: true,
-              password: false
+              password: false,
+              lab: {
+                select: {
+                  image: true,
+                  name: true,
+                  User: false,
+                  id: false
+                }
+              }
             }
           })
         } catch (error) {
