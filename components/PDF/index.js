@@ -1,4 +1,6 @@
 import { LazyBio } from 'components/LazyBio'
+import { getAge } from 'hooks/dateTime/getAge'
+import { unique } from 'utils/unique'
 
 function Layout ({ children, id }) {
   return (
@@ -15,7 +17,7 @@ function Footer () {
   return (
     <div
       id='footer'
-      className='flex flex-col text-center justify-center h-60  text-[#e1f3ef]  w-full bg-[#0d1117]'
+      className='flex mt-4 flex-col text-center justify-center h-60  text-[#e1f3ef]  w-full bg-[#0d1117]'
     >
       <div className='flex self-center items-center  text-center justify-aroud'>
         <p className='mr-4'>c. Urpila S/N Frente al Hospital del Nortes</p>
@@ -28,40 +30,49 @@ function Footer () {
   )
 }
 
-function Header () {
+function Header ({ data }) {
   return (
     <div id='header' className='flex justify-between items-center p-4'>
       <img className='w-64' src='lab_valencia.png' />
       <div className='flex flex-col'>
         <p className='flex'>
           <span className='w-[68px] min-w-[68px]'>Paciente: </span>
-          <strong>Mauricio Edwin Avilez Fernandez</strong>
+          <strong>{data.owner.fullName}</strong>
         </p>
         <p className='flex'>
           <span className='w-[68px]'>Edad: </span>
-          <strong>48 AÑOS</strong>
+          <strong>{getAge(data.owner.birth)}</strong>
         </p>
         <p className='flex'>
           <span className='w-[68px]'>Género: </span>
-          <strong>Masculino</strong>
+          <strong>
+            {data.owner.male === 'male' ? 'Masculino' : 'Femenino'}
+          </strong>
         </p>
         <p className='flex'>
           <span className='w-[68px]'>Médico: </span>
-          <strong>DRA. Ruiz</strong>
+          <strong>{data.owner.doctor}</strong>
         </p>
       </div>
       <div className='flex flex-col ml-4'>
         <p className='flex'>
           <span className='w-44'>Codigo: </span>
-          <strong>1283518235</strong>{' '}
+          <strong>
+            {unique({
+              labName: data.labName,
+              ownerCi: data.owner.ci,
+              cuiid: data.cuiid,
+              id: data.owner.id
+            })}
+          </strong>
         </p>
         <p className='flex'>
           <span className='w-44'>Fecha toma de muestra: </span>
-          <strong>29/2/2022</strong>{' '}
+          <strong>{data.createdAt.slice(0, 10)} </strong>
         </p>
         <p className='flex'>
           <span className='w-44'>Fecha de impresión: </span>
-          <strong>29/2/2022</strong>
+          <strong>{new Date().toLocaleDateString()}</strong>
         </p>
         <p className='flex'>
           <span className='w-44'>Institución: </span>
@@ -72,15 +83,12 @@ function Header () {
   )
 }
 
-export const PDFComponent = ({ id, json, register }) => {
+export const PDFComponent = ({ id, data, register }) => {
   return (
     <Layout id={id}>
-      <Header />
-      <h2 style={{ color: '#000' }}>
-        Title: {new Date().toLocaleDateString()}
-      </h2>
+      <Header data={data} />
       <div className='px-4 flex flex-row flex-wrap'>
-        {json.map(json => {
+        {data.json.map(json => {
           return (
             <LazyBio
               key={json.name}

@@ -8,7 +8,21 @@ import { useSession } from 'next-auth/react'
 import { useApiCallback } from 'hooks/useApiCallback'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { deleteOrder } from 'lib/db'
+import { Disclosure } from '@headlessui/react'
 
+function MyDisclosure () {
+  return (
+    <Disclosure>
+      <Disclosure.Button className='py-2'>
+        Is team pricing available?
+      </Disclosure.Button>
+      <Disclosure.Panel className='text-gray-500'>
+        Yes! You can purchase a license that you can share with your entire
+        team.
+      </Disclosure.Panel>
+    </Disclosure>
+  )
+}
 const ROLE_TYPE_BIOCHEMICAL = 'BIOCHEMICAL'
 
 const getOne = ({ cuiid }) => {
@@ -20,6 +34,8 @@ export default function Ordenes () {
   const [elDelete, setElDelete] = useState({ cuiid: '', fullname: '' })
   const [value, setValue] = useState('')
   const [onePDF, setOnePDF] = useState()
+  const [loadingPDF, setLoadingPDF] = useState(false)
+  const [PDFCuiid, setPDFCuiid] = useState()
   let [isModalPDF, setIsModalPDF] = useState(false)
 
   const session = useSession()
@@ -68,19 +84,24 @@ export default function Ordenes () {
     setIsOpen(false)
   }
 
-  function toggleModalPDF () {
+  function toggleModalPDF ({ cuiid }) {
+    setLoadingPDF(true)
     setIsModalPDF(!isModalPDF)
+    setPDFCuiid(cuiid)
+    if (isModalPDF) {
+      setLoadingPDF(false)
+    }
   }
 
   useEffect(() => {
-    getOne({ cuiid: 'ckz4tqxe8000009mlowmlp5sv' }).then(setOnePDF)
-  }, [])
+    PDFCuiid && getOne({ cuiid: PDFCuiid }).then(setOnePDF)
+  }, [PDFCuiid])
 
   if (!session?.data) return <div />
 
   return (
     <>
-      {isModalPDF && (
+      {isModalPDF & (onePDF?.data !== undefined) && (
         <OnPDF
           stateModal={isModalPDF}
           onModal={toggleModalPDF}
@@ -138,6 +159,8 @@ export default function Ordenes () {
         {`
           section {
             scroll-behavior: smooth;
+            pointer-events: ${loadingPDF ? 'none': 'auto'};
+            opacity: ${loadingPDF ? '0.75': '1'};
           }
 
           nav {
@@ -145,10 +168,11 @@ export default function Ordenes () {
             max-width: 100%;
             width: 100%;
             align-self: center;
-            grid-template-columns: 105px 145px 1fr repeat(3, 80px) ${token?.user
-                ?.role === ROLE_TYPE_BIOCHEMICAL
+            grid-template-columns: 105px 145px 1fr repeat(3, 80px) ${
+              token?.user?.role === ROLE_TYPE_BIOCHEMICAL
                 ? 'repeat(4, 35px)'
-                : 'repeat(3, 35px)'};
+                : 'repeat(3, 35px)'
+            };
           }
 
           main {

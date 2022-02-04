@@ -37,10 +37,7 @@ export function Order ({
         <Link href={`/ordenes/${cuiid}`}>
           <a title='Editar' />
         </Link>
-        <button
-          onClick={onPDF}
-          title='Descargar en pdf'
-        />
+        <button onClick={() => onPDF({ cuiid })} title='Descargar en pdf' />
         <a onClick={() => onDelete({ cuiid, fullname })} title='Borrar' />
       </div>
       <style jsx>
