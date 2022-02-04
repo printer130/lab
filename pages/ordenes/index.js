@@ -101,7 +101,7 @@ export default function Ordenes () {
           placeholder='Buscar por: nombre - número de orden'
         />
       </header>
-      <section className='w-full my-0 mx-[auto] lg:overflow-x-none'>
+      <section className='w-full my-0 mx-[auto] overflow-x-scroll md:overflow-x-visible'>
         <main>
           <nav>
             <strong>Creado</strong>
@@ -157,6 +157,7 @@ export default function Ordenes () {
             width: 900px;
             grid-template-rows: repeat(auto-fill, 55px);
           }
+        }
         `}
       </style>
     </>
