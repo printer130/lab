@@ -1,14 +1,15 @@
-export function Remarks ({ name, onChange, value, register, pdf }) {
+export function Remarks ({ name, onChange, value, register }) {
   return (
     <div>
       <label>
-        <h5>Observaciones</h5>
+        <h3>Observaciones</h3>
         <textarea
           name={name}
           {...register(name)}
           onChange={onChange}
           value={value}
-          rows='5'
+          rows='3'
+          readOnly={value?.length > 0}
         />
       </label>
       <style jsx>
