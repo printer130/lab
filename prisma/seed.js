@@ -22,19 +22,18 @@ async function main () {
   //   }
   // })
 
-  // const res = await prisma.user.create({
-  //   data: {
-  //     role: 'BIOCHEMICAL',
-  //     email: 'prisma@gmail.com',
-  //     name: 'prisma0',
-  //     password: 'prisma',
-  //     lab: {
-  //       connect: {
-  //         name: 'labo0'
-  //       }
-  //     }
-  //   }
-  // })
+  const res = await prisma.user.create({
+    data: {
+      email: 'prismar@gmail.com',
+      name: 'receipcionista',
+      password: 'prisma',
+      lab: {
+        connect: {
+          name: 'labo0'
+        }
+      }
+    }
+  })
 
   // ckykex7t50303449n44gzyyec -> EMBARAZO
   // ckyk88ad10416tg9ngaw318lu -> HEMOSTASIA
@@ -91,10 +90,10 @@ async function main () {
   // FIND USER
   // const res = await prisma.user.findMany()
   // FIND ORDER
-  const res = await prisma[`receipt${labId}`].findMany({
-    where: {},
-    include: { owner: true }
-  })
+  // const res = await prisma[`receipt${labId}`].findMany({
+  //   where: {},
+  //   include: { owner: true }
+  // })
 
   // SEACH ORDER
   // const res = await prisma.order.findMany({

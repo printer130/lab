@@ -19,7 +19,6 @@ export function DinamicDicc ({ labId }) {
 
 export const DicList = ({ onChange }) => {
   const session = useSession()
-  console.log('SESSIOn', session)
   return (
     <>
       {/* <DinamicDicc labId='data' /> */}

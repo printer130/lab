@@ -7,7 +7,7 @@ function Layout ({ children, id }) {
     <section
       id={id}
       className='relative min-full'
-      style={{ width: 612, height: 792 }}
+      style={{ width: 612, height: 791 }}
     >
       <main className='w-full h-full'>{children}</main>
     </section>

@@ -3,7 +3,6 @@ import { getSession } from 'next-auth/react'
 
 export default async function (req, res) {
   const session = await getSession({ req })
-  console.log('session', session)
   const { labId } = session?.token?.user
   console.log('labId', labId)
   if (!session?.token) {
