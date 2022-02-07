@@ -54,7 +54,7 @@ export default function Arqueo ({ getReceipts }) {
             Bs.
           </p>
         </div>
-        <Button onChange={handleClick}>No hace nada este boton</Button>
+        {/* <Button onChange={handleClick}>No hace nada este boton</Button> */}
         {error && <span className='text-red-600'>Caja incorrecta.</span>}
       </section>
     </>
