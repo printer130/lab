@@ -10,7 +10,7 @@ import {
 import { URL_CALLBACK, SIGN_OUT } from 'const/config'
 import { Logo } from 'components/Logo'
 
-export default function Home ({ providers = {}, csrfToken = {} }) {
+export default function Home ({ providers = {}, csrfToken = null }) {
   const session = useSession()
   const router = useRouter()
 
