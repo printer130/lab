@@ -7,7 +7,7 @@ function Layout ({ children, id }) {
     <section
       id={id}
       className='relative min-full'
-      style={{ width: 867, height: '100%' }}
+      style={{ width: 612, height: 792 }}
     >
       <main className='w-full h-full'>{children}</main>
     </section>
@@ -17,7 +17,7 @@ function Footer () {
   return (
     <div
       id='footer'
-      className='flex mt-4 flex-col text-center justify-center h-60  text-[#e1f3ef]  w-full bg-[#0d1117]'
+      className='absolute bottom-0 flex mt-4 flex-col text-center justify-center h-28  text-[#e1f3ef]  w-full bg-[#0d1117]'
     >
       <div className='flex self-center items-center  text-center justify-aroud'>
         <p className='mr-4'>c. Urpila S/N Frente al Hospital del Nortes</p>
@@ -31,7 +31,7 @@ function Footer () {
 }
 
 function Header ({ data, lab }) {
-  return (
+  return (<>
     <div id='header' className='flex justify-between items-center p-4'>
       <img className='w-64' src={lab.image} />
       <div className='flex flex-col'>
@@ -54,8 +54,9 @@ function Header ({ data, lab }) {
           <strong>{data.owner.doctor}</strong>
         </p>
       </div>
-      <div className='flex flex-col ml-4'>
-        <p className='flex'>
+    </div>
+    <div className='flex flex-row pl-4'>
+        <p className=''>
           <span className='w-44'>Codigo: </span>
           <strong>
             {unique({
@@ -66,11 +67,11 @@ function Header ({ data, lab }) {
             })}
           </strong>
         </p>
-        <p className='flex'>
+        <p className=''>
           <span className='w-44'>Fecha toma de muestra: </span>
           <strong>{data.createdAt.slice(0, 10)} </strong>
         </p>
-        <p className='flex'>
+        <p className=''>
           <span className='w-44'>Fecha de impresión: </span>
           <strong>
             {new Date()
@@ -80,12 +81,13 @@ function Header ({ data, lab }) {
               .join('-')}
           </strong>
         </p>
-        <p className='flex'>
+        <p className=''>
           <span className='w-44'>Institución: </span>
           <strong />
         </p>
       </div>
-    </div>
+      <span className='w-full bg-sky-600 h-[2px] block mt-4' />
+  </>
   )
 }
 

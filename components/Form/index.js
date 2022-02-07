@@ -8,6 +8,7 @@ export const Form = ({
   loading,
   onClick,
   isDirty,
+  isFetched,
   onDebounce,
   debouncedSearch,
   isValid,
@@ -57,7 +58,7 @@ export const Form = ({
                 )
               }
             )}
-            <Button isValid={isValid} isDirty={isDirty} order>
+            <Button isFetched={isFetched} isValid={isValid} isDirty={isDirty} order>
               {loading ? 'Guardando...' : 'Guardar'}
             </Button>
           </div>

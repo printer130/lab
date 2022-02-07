@@ -5,11 +5,12 @@ export const Button = ({
   onChange,
   className,
   order,
-  fixed
+  fixed,
+  isFetched
 }) => {
   return (
     <>
-      <button onClick={onChange} disabled={!isValid || !isDirty}>
+      <button onClick={onChange} disabled={!isValid || !isDirty || isFetched}>
         {children}
       </button>
       <style jsx>
@@ -33,6 +34,8 @@ export const Button = ({
 
           button:disabled {
             border: 0.5px solid #ccc;
+            opacity: 0.5;
+            pointer-events: none;
           }
         `}
       </style>

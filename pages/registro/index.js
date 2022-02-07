@@ -63,6 +63,7 @@ export default function Registro () {
       </Head>
       {session?.data && (
         <Form
+          isFetched={data?.data?.length > 0}
           onClick={handleFill}
           onLoading={setLoading}
           debouncedSearch={data ?? null}

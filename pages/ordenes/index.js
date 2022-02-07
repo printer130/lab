@@ -29,7 +29,6 @@ export default function Ordenes () {
   const lab = token?.user?.lab
 
   const { apiResponse } = useApiCallback({ endpoint: '/api/receipt/getAll' })
-  console.log('session', session)
   const handleChange = useCallback(
     e => {
       setValue(e.target.value)
