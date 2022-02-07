@@ -18,7 +18,7 @@ export function PlaceholderListOrders () {
         }
         [data-placeholder]::after {
             content: ' ';
-            box-shadow: 0 0 50px 9px rgba(254, 254, 254,.3);
+            box-shadow: 0 0 50px 9px rgba(254, 254, 254,.15);
             position: absolute;
             top: 0;
             left: -100%;
