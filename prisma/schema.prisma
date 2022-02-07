@@ -7,7 +7,7 @@ datasource db {
 generator client {
   provider        = "prisma-client-js"
   engineType = "dataproxy"
-  previewFeatures = ["extendedIndexes", "referentialIntegrity", "fullTextSearch", "fullTextIndex", "dataProxy"]
+  previewFeatures = ["extendedIndexes", "referentialIntegrity", "fullTextSearch", "fullTextIndex"]
 }
 
 model Lab {
