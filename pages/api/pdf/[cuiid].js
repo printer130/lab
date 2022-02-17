@@ -31,10 +31,10 @@ export default async function PDF (req, res) {
   // data Buffer to bytes
   const dataBytes = Buffer.from(data, 'base64')
 
-  console.log('TYPEOF', typeof data)
-  console.log('length', data?.length)
-  console.log('length', typeof dataBytes)
-  console.log('length', dataBytes?.length)
+  /// console.log('TYPEOF', typeof data)
+  /// console.log('length', data?.length)
+  /// console.log('length', typeof dataBytes)
+  /// console.log('length', dataBytes?.length)
   /* res.status(200).json({
     message: 'OK',
     ok: true,
