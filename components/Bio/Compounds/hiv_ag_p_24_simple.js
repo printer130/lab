@@ -1,11 +1,12 @@
 import { Input } from '../Input'
 
-export default function HIVAgP24 ({ value, values, onChange, register }) {
+export default function HIVAgP24 ({ value, pdf, values, onChange, register }) {
   return (
     <>
       <section>
-        <h2>HIV AgP24</h2>
+        <h3>HIV AgP24</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

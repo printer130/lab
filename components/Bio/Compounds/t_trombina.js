@@ -6,7 +6,7 @@ export default function TincionDeGram ({
   values,
   value,
   onChange,
-  pdf = null
+  pdf
 }) {
   return (
     <>

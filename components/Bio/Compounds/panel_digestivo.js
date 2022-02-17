@@ -1,6 +1,6 @@
 import { Select } from '../Select'
 
-export default function PanelDigestivo ({ values, register }) {
+export default function PanelDigestivo ({ values, register, pdf }) {
   return (
     <>
       <h2>Panel Digestivo</h2>
@@ -8,6 +8,7 @@ export default function PanelDigestivo ({ values, register }) {
         <label>
           <span>ASCA IgA (Saccharomyces cerevesiae): </span>
           <Select
+            pdf={pdf}
             register={register}
             values={values?.asca_ig_a}
             name='panel_digestivo.asca_ig_a'
@@ -17,6 +18,7 @@ export default function PanelDigestivo ({ values, register }) {
         <label>
           <span>Anti Transglutaminasa IgA: </span>
           <Select
+            pdf={pdf}
             register={register}
             values={values?.anti_transglutaminasa_ig_a}
             name='panel_digestivo.anti_transglutaminasa_ig_a'
@@ -26,6 +28,7 @@ export default function PanelDigestivo ({ values, register }) {
         <label>
           <span>Anti Gliadina IgA: </span>
           <Select
+            pdf={pdf}
             register={register}
             values={values?.anti_gliadina_ig_a}
             name='panel_digestivo.anti_gliadina_ig_a'
@@ -35,6 +38,7 @@ export default function PanelDigestivo ({ values, register }) {
         <label>
           <span>Anti Factor Intrinseco IgA: </span>
           <Select
+            pdf={pdf}
             register={register}
             values={values?.anti_factor_intrinseco_ig_a}
             name='panel_digestivo.anti_factor_intrinseco_ig_a'
@@ -44,6 +48,7 @@ export default function PanelDigestivo ({ values, register }) {
         <label>
           <span>Anti Endomisio IgA: </span>
           <Select
+            pdf={pdf}
             register={register}
             values={values?.anti_endomisio_ig_a}
             name='panel_digestivo.anti_endomisio_ig_a'
@@ -53,6 +58,7 @@ export default function PanelDigestivo ({ values, register }) {
         <label>
           <span>Anti Células Parietales IgA: </span>
           <Select
+            pdf={pdf}
             register={register}
             values={values?.anti_celulas_parientales_ig_a}
             name='panel_digestivo.anti_celulas_parientales_ig_a'

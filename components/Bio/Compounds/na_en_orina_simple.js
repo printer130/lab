@@ -1,11 +1,12 @@
 import { Input } from '../Input'
 
-export default function NaEnOrina ({ value, values, onChange, register }) {
+export default function NaEnOrina ({ value, pdf, values, onChange, register }) {
   return (
     <>
       <section>
-        <h2>Na en Orina</h2>
+        <h3>Na en Orina</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

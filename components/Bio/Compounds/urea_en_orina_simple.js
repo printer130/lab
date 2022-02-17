@@ -1,11 +1,12 @@
 import { Input } from '../Input'
 
-export default function UreaEnOrina ({ value, values, onChange, register }) {
+export default function UreaEnOrina ({ value, pdf, values, onChange, register }) {
   return (
     <>
       <section>
-        <h2>Urea en Orina</h2>
+        <h3>Urea en Orina</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

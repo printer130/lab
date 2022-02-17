@@ -1,11 +1,12 @@
 import { Input } from '../Input'
 
-export default function CalcioIonicoCa ({ value, values, onChange, register }) {
+export default function CalcioIonicoCa ({ value, pdf, values, onChange, register }) {
   return (
     <>
       <section>
         <h2>Calcio Ionico Ca++</h2>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

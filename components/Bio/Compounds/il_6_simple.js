@@ -1,11 +1,12 @@
 import { Input } from '../Input'
 
-export default function IL6 ({ value, onChange, values, register }) {
+export default function IL6 ({ value, onChange, pdf, values, register }) {
   return (
     <>
       <section>
-        <h2>IL - 6</h2>
+        <h3>IL - 6</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           type='number'
           onChange={onChange}

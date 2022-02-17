@@ -4,13 +4,15 @@ export default function Microalbuminuria ({
   value,
   values,
   onChange,
-  register
+  register,
+  pdf
 }) {
   return (
     <>
       <section>
-        <h2>Microalbuminuria</h2>
+        <h3>Microalbuminuria</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

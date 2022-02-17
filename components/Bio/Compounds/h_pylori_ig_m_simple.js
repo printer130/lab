@@ -1,11 +1,12 @@
 import { Input } from '../Input'
 
-export default function HPyloriIgM ({ value, onChange, values, register }) {
+export default function HPyloriIgM ({ value, pdf, onChange, values, register }) {
   return (
     <>
       <section>
         <h2>H. Pylori IgM</h2>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

@@ -7,7 +7,8 @@ export default function GasometriaSanguinea ({
   value,
   values,
   register,
-  required
+  required,
+  pdf
 }) {
   return (
     <div className='w-[auto]'>
@@ -16,6 +17,7 @@ export default function GasometriaSanguinea ({
       <h3>Muestra</h3>
 
       <NegativePositive
+        pdf={pdf}
         values={!values?.radio ? value : values.radio}
         n='Arterial'
         p='Venosa'
@@ -26,6 +28,7 @@ export default function GasometriaSanguinea ({
       <h3>Parámetros del Paciente</h3>
       <div className='my-1 flex flex-wrap'>
         <Input
+          pdf={pdf}
           value={
             !values?.temperatura_corporal ? value : values.temperatura_corporal
           }
@@ -41,6 +44,7 @@ export default function GasometriaSanguinea ({
         </Input>
 
         <Input
+          pdf={pdf}
           value={!values?.hb_total ? value : values.hb_total}
           register={register}
           onChange={onChange}
@@ -54,6 +58,7 @@ export default function GasometriaSanguinea ({
         </Input>
 
         <Input
+          pdf={pdf}
           value={!values?.fio2 ? value : values.fio2}
           name='gasometr_a.fio2'
           register={register}
@@ -69,6 +74,7 @@ export default function GasometriaSanguinea ({
       <h3>Parámetros medidos</h3>
       <div className='my-1 flex flex-wrap'>
         <Input
+          pdf={pdf}
           value={!values?.ph ? value : values.ph}
           register={register}
           onChange={onChange}
@@ -81,6 +87,7 @@ export default function GasometriaSanguinea ({
         </Input>
 
         <Input
+          pdf={pdf}
           value={!values?.po2 ? value : values.po2}
           register={register}
           onChange={onChange}
@@ -94,6 +101,7 @@ export default function GasometriaSanguinea ({
         </Input>
 
         <Input
+          pdf={pdf}
           value={!values?.pco2 ? value : values.pco2}
           register={register}
           onChange={onChange}
@@ -107,6 +115,7 @@ export default function GasometriaSanguinea ({
         </Input>
 
         <Input
+          pdf={pdf}
           value={!values?.sodio ? value : values.sodio}
           register={register}
           onChange={onChange}
@@ -120,6 +129,7 @@ export default function GasometriaSanguinea ({
         </Input>
 
         <Input
+          pdf={pdf}
           value={!values?.potasio ? value : values.potasio}
           register={register}
           onChange={onChange}
@@ -133,6 +143,7 @@ export default function GasometriaSanguinea ({
         </Input>
 
         <Input
+          pdf={pdf}
           value={!values?.calcio_ionico ? value : values.calcio_ionico}
           register={register}
           onChange={onChange}
@@ -148,6 +159,7 @@ export default function GasometriaSanguinea ({
       <h3>Parámetros Calculados</h3>
       <div className='my-1 flex flex-wrap'>
         <Input
+          pdf={pdf}
           value={!values?.hco3 ? value : values.hco3}
           register={register}
           onChange={onChange}
@@ -161,6 +173,7 @@ export default function GasometriaSanguinea ({
         </Input>
 
         <Input
+          pdf={pdf}
           value={!values?.tco2 ? value : values.tco2}
           register={register}
           onChange={onChange}
@@ -174,6 +187,7 @@ export default function GasometriaSanguinea ({
         </Input>
 
         <Input
+          pdf={pdf}
           value={!values?.beb ? value : values.beb}
           register={register}
           onChange={onChange}
@@ -187,6 +201,7 @@ export default function GasometriaSanguinea ({
         </Input>
 
         <Input
+          pdf={pdf}
           value={!values?.beect ? value : values.beect}
           register={register}
           onChange={onChange}
@@ -200,6 +215,7 @@ export default function GasometriaSanguinea ({
         </Input>
 
         <Input
+          pdf={pdf}
           value={!values?.saturacion_o2 ? value : values.saturacion_o2}
           register={register}
           onChange={onChange}
@@ -213,6 +229,7 @@ export default function GasometriaSanguinea ({
         </Input>
       </div>
       <Remarks
+        pdf={pdf}
         value={!values?.remarks ? value : values.remarks}
         name='gasometr_a.remarks'
         register={register}

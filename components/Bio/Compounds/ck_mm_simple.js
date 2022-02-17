@@ -1,19 +1,18 @@
 import { Input } from '../Input'
 
-export default function CKMM ({ value, values, onChange, register }) {
+export default function CKMM ({ value, values, pdf, onChange, register }) {
   return (
-    <>
-      <section>
-        <h2>CK MM</h2>
-        <Input
-          value={!values ? value : values}
-          onChange={onChange}
-          register={register}
-          type='number'
-          placeholder='CK MM....'
-          name='ck_mm_simple'
-        />
-      </section>
-    </>
+    <section>
+      <h3>CK MM</h3>
+      <Input
+        value={!values ? value : values}
+        onChange={onChange}
+        register={register}
+        type='number'
+        pdf={pdf}
+        placeholder='CK MM....'
+        name='ck_mm_simple'
+      />
+    </section>
   )
 }

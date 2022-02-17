@@ -1,14 +1,15 @@
 import { Input } from '../Input'
 
-export default function CrossLap ({ value, values, onChange, register }) {
+export default function CrossLap ({ value, pdf, values, onChange, register }) {
   return (
     <>
       <section>
-        <h2>Cross Lap</h2>
+        <h3>Cross Lap</h3>
         <Input
           value={!values ? value : values}
           onChange={onChange}
           register={register}
+          pdf={pdf}
           type='number'
           placeholder='Cross Lap....'
           name='cross_lap_simple'

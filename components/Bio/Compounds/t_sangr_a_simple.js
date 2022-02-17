@@ -4,7 +4,7 @@ export default function TSangria ({ value, onChange, values, register, pdf }) {
   return (
     <>
       <section>
-        <h2>T. Sangria</h2>
+        <h3>T. Sangria</h3>
         <Input
           pdf={pdf}
           value={!values ? value : values}

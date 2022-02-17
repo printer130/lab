@@ -11,6 +11,10 @@ export const Nav = () => {
   const [checked, setChecked] = useState(false)
   const session = useSession()
   const { replace } = useRouter()
+
+  // console.log('{session}', session)
+  //  console.log('[ROLE]: ', session?.data?.user?.role)
+
   const handleButton = () => {
     signOut({
       redirect: false,
@@ -21,6 +25,7 @@ export const Nav = () => {
     setChecked(!checked)
   }
 
+  console.log('session?.data?.user?.role', session)
   return (
     <>
       <input
@@ -35,22 +40,34 @@ export const Nav = () => {
         {session.data !== null && (
           <>
             <small>{session.data?.token?.email}</small>
-
             <div className='header-content'>
               <label htmlFor='open' className='menu-open' />
               <nav className='menu'>
-                <Link href='/arqueo'>
-                  <a onClick={handleClic}>Arqueo</a>
-                </Link>
+                {
+                  session?.data?.token?.user?.role === 'BIOCHEMICAL'
+                    ? <></>
+                    : (
+                      <Link href='/arqueo'>
+                        <a onClick={handleClic}>Arqueo</a>
+                      </Link>
+                      )
+                }
                 <Link href='/registro'>
                   <a onClick={handleClic}>Registro</a>
                 </Link>
                 <Link href='/ordenes'>
                   <a onClick={handleClic}>Lista de Ordenes</a>
                 </Link>
-                <Link href='/reactivos'>
-                  <a onClick={handleClic}>Reactivos</a>
-                </Link>
+                {
+                  // session?.data?.token?.user.role
+                  session?.data?.token?.user?.role === 'RECEPTIONIST' | session?.data?.token?.user?.role === 'ADMIN'
+                    ? <></>
+                    : (
+                      <Link href='/reactivos'>
+                        <a onClick={handleClic}>Reactivos</a>
+                      </Link>
+                      )
+                }
                 <Button onChange={handleButton}>Cerrar Session</Button>
               </nav>
             </div>

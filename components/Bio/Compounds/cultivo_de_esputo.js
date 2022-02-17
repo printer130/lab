@@ -8,6 +8,7 @@ export default function CultivoDeEsputo ({
   onChange,
   register,
   value,
+  pdf,
   values
 }) {
   const antibio = values?.antibiograma ?? false
@@ -17,6 +18,7 @@ export default function CultivoDeEsputo ({
       <h3>Identificación del Germen</h3>
       <section className='section'>
         <GramZielhlTinciones
+          pdf={pdf}
           register={register}
           value={value}
           values={values?.gram_zielhl_tinciones}
@@ -26,6 +28,7 @@ export default function CultivoDeEsputo ({
 
         <IdentificacionDelGermen
           register={register}
+          pdf={pdf}
           value={value}
           values={
             !values?.identificacion_del_germen
@@ -39,6 +42,7 @@ export default function CultivoDeEsputo ({
         <IdentificacionDelGermen
           register={register}
           value={value}
+          pdf={pdf}
           values={
             !values?.identificacion_del_germen_2
               ? value
@@ -50,6 +54,7 @@ export default function CultivoDeEsputo ({
       </section>
 
       <Remarks
+        pdf={pdf}
         value={!values?.remarks ? value : values.remarks}
         name='cultivo_de_esputo.remarks'
         register={register}
@@ -60,6 +65,7 @@ export default function CultivoDeEsputo ({
         {antibiograma.map(({ name, type, placeholder, map }) => {
           return (
             <Input
+              pdf={pdf}
               key={map}
               value={!antibio ? value : antibio[map]}
               register={register}
@@ -74,6 +80,7 @@ export default function CultivoDeEsputo ({
         })}
       </section>
       <Remarks
+        pdf={pdf}
         value={!values?.remarks2 ? value : values.remarks2}
         name='cultivo_de_esputo.remarks2'
         register={register}

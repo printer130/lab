@@ -1,11 +1,12 @@
 import { Input } from '../Input'
 
-export default function PEnOrina ({ value, values, onChange, register }) {
+export default function PEnOrina ({ value, values, pdf, onChange, register }) {
   return (
     <>
       <section>
-        <h2>P en Orina</h2>
+        <h3>P en Orina</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

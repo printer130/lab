@@ -2,14 +2,16 @@ import { NegativePositive } from '../NegativePositive'
 
 export default function AzucaresReductores ({
   values,
-  register
+  register,
+  pdf
 }) {
   return (
     <>
       <section>
-        <h2>Azucares Reductores</h2>
+        <h3>Azucares Reductores</h3>
         <NegativePositive
           values={values}
+          pdf={pdf}
           register={register}
           name='azucares_reductores_simple'
         />

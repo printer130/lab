@@ -1,11 +1,12 @@
 import { Input } from '../Input'
 
-export default function PhDe24hrs ({ value, values, onChange, register }) {
+export default function PhDe24hrs ({ value, values, pdf, onChange, register }) {
   return (
     <>
       <section>
-        <h2>pH de 24hrs.</h2>
+        <h3>pH de 24hrs.</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

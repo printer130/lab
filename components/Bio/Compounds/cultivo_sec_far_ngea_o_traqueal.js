@@ -7,7 +7,8 @@ export default function CultivoDeFaringea ({
   onChange,
   register,
   value,
-  values
+  values,
+  pdf
 }) {
   const antibio = values?.antibiograma ?? false
   return (
@@ -16,6 +17,7 @@ export default function CultivoDeFaringea ({
       <h3>Identificación del Germen</h3>
       <section className='section'>
         <IdentificacionDelGermen
+          pdf={pdf}
           register={register}
           value={value}
           onChange={onChange}
@@ -29,6 +31,7 @@ export default function CultivoDeFaringea ({
         <IdentificacionDelGermen
           register={register}
           value={value}
+          pdf={pdf}
           onChange={onChange}
           name='cultivo_sec_far_ngea_o_traqueal.identificacion_del_germen_2'
           values={
@@ -39,6 +42,7 @@ export default function CultivoDeFaringea ({
         />
       </section>
       <Remarks
+        pdf={pdf}
         value={!values?.remarks ? value : values.remarks}
         name='cultivo_sec_far_ngea_o_traqueal.remarks'
         register={register}
@@ -48,6 +52,7 @@ export default function CultivoDeFaringea ({
         {antibiograma.map(({ name, type, placeholder, map }) => {
           return (
             <Input
+              pdf={pdf}
               key={name}
               register={register}
               onChange={onChange}
@@ -62,6 +67,7 @@ export default function CultivoDeFaringea ({
         })}
       </section>
       <Remarks
+        pdf={pdf}
         value={!values?.remarks2 ? value : values.remarks2}
         name='cultivo_sec_far_ngea_o_traqueal.remarks2'
         register={register}

@@ -1,11 +1,12 @@
 import { Input } from '../Input'
 
-export default function InsulinaBasal ({ value, values, onChange, register }) {
+export default function InsulinaBasal ({ value, pdf, values, onChange, register }) {
   return (
     <>
       <section>
-        <h2>Insulina Basal</h2>
+        <h3>Insulina Basal</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

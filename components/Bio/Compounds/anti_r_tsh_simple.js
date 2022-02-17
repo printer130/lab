@@ -1,11 +1,12 @@
 import { Input } from '../Input'
 
-export default function AntirTSH ({ value, values, onChange, register }) {
+export default function AntirTSH ({ value, pdf, values, onChange, register }) {
   return (
     <>
       <section>
-        <h2>Anti r-TSH</h2>
+        <h3>Anti r-TSH</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

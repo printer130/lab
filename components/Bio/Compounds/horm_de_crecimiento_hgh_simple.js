@@ -4,13 +4,15 @@ export default function HormDecrecimientoHGH ({
   value,
   onChange,
   register,
-  values
+  values,
+  pdf
 }) {
   return (
     <>
       <section>
-        <h2>Horm. de crecimiento (HGH) </h2>
+        <h3>Horm. de crecimiento (HGH) </h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

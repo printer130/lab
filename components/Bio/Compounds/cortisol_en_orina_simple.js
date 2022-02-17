@@ -4,13 +4,15 @@ export default function CortisolEnOrina ({
   value,
   values,
   onChange,
+  pdf,
   register
 }) {
   return (
     <>
       <section>
-        <h2>Cortisol en Orina</h2>
+        <h3>Cortisol en Orina</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

@@ -1,11 +1,12 @@
 import { Input } from '../Input'
 
-export default function MgEnOrina ({ value, values, onChange, register }) {
+export default function MgEnOrina ({ value, pdf, values, onChange, register }) {
   return (
     <>
       <section>
-        <h2>Mg en Orina</h2>
+        <h3>Mg en Orina</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

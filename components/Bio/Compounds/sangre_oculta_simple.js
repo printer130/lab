@@ -1,12 +1,13 @@
 import { NegativePositive } from '../NegativePositive'
 
-export default function SangreOculta ({ register, values }) {
+export default function SangreOculta ({ register, values, pdf }) {
   return (
     <>
       <section>
-        <h2>Sangre Oculta</h2>
+        <h3>Sangre Oculta</h3>
         <NegativePositive
           values={values}
+          pdf={pdf}
           register={register}
           name='sangre_oculta_simple'
         />

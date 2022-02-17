@@ -4,13 +4,15 @@ export default function HGHPostEstimulo ({
   value,
   values,
   onChange,
-  register
+  register,
+  pdf
 }) {
   return (
     <>
       <section>
-        <h2>HGH Post Estimulo </h2>
+        <h3>HGH Post Estimulo </h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

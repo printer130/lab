@@ -8,26 +8,27 @@ export default function ChagasIFI ({
   value,
   values,
   register,
+  pdf,
   required
 }) {
   return (
-    <>
-      <section>
-        <h2>Chagas IF</h2>
-        <Input
-          value={!values?.chagas_ifi ? value : values.chagas_ifi}
-          register={register}
-          onChange={onChange}
-          name='chagas_ifi.chagas_ifi'
-          type='number'
-          placeholder='Chagas IFI...'
-        />
-        <Remarks
-          value={!values?.remarks ? value : values.remarks}
-          name='chagas_ifi.remarks'
-          register={register}
-        />
-      </section>
-    </>
+    <section>
+      <h3>Chagas IF</h3>
+      <Input
+        pdf={pdf}
+        value={!values?.chagas_ifi ? value : values.chagas_ifi}
+        register={register}
+        onChange={onChange}
+        name='chagas_ifi.chagas_ifi'
+        type='number'
+        placeholder='Chagas IFI...'
+      />
+      <Remarks
+        pdf={pdf}
+        value={!values?.remarks ? value : values.remarks}
+        name='chagas_ifi.remarks'
+        register={register}
+      />
+    </section>
   )
 }

@@ -1,13 +1,14 @@
 import { Input } from '../Input'
 
-export default function AcidoUrico ({ values, value, onChange, register }) {
+export default function AcidoUrico ({ values, pdf, value, onChange, register }) {
   return (
     <>
       <section>
-        <h2>Acido Urico</h2>
+        <h3>Acido Urico</h3>
         <Input
           value={!values ? value : values}
           onChange={onChange}
+          pdf={pdf}
           register={register}
           type='number'
           placeholder='Acido Urico....'

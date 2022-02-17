@@ -1,14 +1,15 @@
 import { Input } from '../Input'
 
-export default function Amilasa ({ values, value, onChange, register }) {
+export default function Amilasa ({ values, pdf, value, onChange, register }) {
   return (
     <>
       <section>
-        <h2>Amilasa</h2>
+        <h3>Amilasa</h3>
         <Input
           value={!values ? value : values}
           onChange={onChange}
           register={register}
+          pdf={pdf}
           type='number'
           placeholder='Amilasa....'
           name='amilasa_simple'

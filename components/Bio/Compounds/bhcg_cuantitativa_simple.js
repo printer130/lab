@@ -4,21 +4,21 @@ export default function BHCGCuantitativa ({
   values,
   value,
   onChange,
-  register
+  register,
+  pdf
 }) {
   return (
-    <>
-      <section>
-        <h2>BHCG Cuantitativa</h2>
-        <Input
-          value={!values ? value : values}
-          onChange={onChange}
-          register={register}
-          type='number'
-          placeholder='BHCG Cuantitativa...'
-          name='bhcg_cuantitativa_simple'
-        />
-      </section>
-    </>
+    <section>
+      <h3>BHCG Cuantitativa</h3>
+      <Input
+        pdf={pdf}
+        value={!values ? value : values}
+        onChange={onChange}
+        register={register}
+        type='number'
+        placeholder='BHCG Cuantitativa...'
+        name='bhcg_cuantitativa_simple'
+      />
+    </section>
   )
 }

@@ -6,7 +6,8 @@ export default function BKSimple ({
   onChange,
   value,
   register,
-  required
+  required,
+  pdf
 }) {
   return (
     <>
@@ -14,6 +15,7 @@ export default function BKSimple ({
       <h3>Identificación del Germen</h3>
       <section className='section'>
         <Input
+          pdf={pdf}
           value={
             !values?.muestra_identificacion_germen_simple
               ? value
@@ -28,6 +30,7 @@ export default function BKSimple ({
           Muestra
         </Input>
         <Input
+          pdf={pdf}
           value={
             !values?.germen_identificado_simple
               ? value
@@ -42,6 +45,7 @@ export default function BKSimple ({
           Germen Identificado
         </Input>
         <Input
+          pdf={pdf}
           value={
             !values?.recuento_de_colonias_simple
               ? value

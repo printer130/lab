@@ -11,7 +11,6 @@ export function NegativePositive ({
 }) {
   const isNew = !values
   const isNewCustom = isNew & !p & !n
-  console.log('isNewCustom', isNewCustom)
   return (
     <section className='flex flex-wrap w-[auto] flex-col'>
       <Input

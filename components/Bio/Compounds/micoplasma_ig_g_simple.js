@@ -1,11 +1,12 @@
 import { Input } from '../Input'
 
-export default function MicoplasmaIgG ({ value, values, onChange, register }) {
+export default function MicoplasmaIgG ({ value, pdf, values, onChange, register }) {
   return (
     <>
       <section>
-        <h2>Micoplasma - IgG</h2>
+        <h3>Micoplasma - IgG</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

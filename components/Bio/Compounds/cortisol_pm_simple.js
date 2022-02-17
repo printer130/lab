@@ -1,14 +1,15 @@
 import { Input } from '../Input'
 
-export default function CortisonPM ({ value, values, onChange, register }) {
+export default function CortisonPM ({ value, pdf, values, onChange, register }) {
   return (
     <>
       <section>
-        <h2>Cortison PM</h2>
+        <h3>Cortison PM</h3>
         <Input
           value={!values ? value : values}
           onChange={onChange}
           register={register}
+          pdf={pdf}
           type='number'
           placeholder='Cortison PM....'
           name='cortisol_pm_simple'

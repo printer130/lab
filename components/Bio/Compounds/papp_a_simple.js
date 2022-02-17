@@ -1,11 +1,12 @@
 import { Input } from '../Input'
 
-export default function PAPP_A ({ value, onChange, values, register }) {
+export default function PAPP_A ({ value, onChange, pdf, values, register }) {
   return (
     <>
       <section>
-        <h2>PAPP-A</h2>
+        <h3>PAPP-A</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

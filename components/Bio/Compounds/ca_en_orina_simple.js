@@ -1,11 +1,12 @@
 import { Input } from '../Input'
 
-export default function CanOrina ({ value, onChange, register, values }) {
+export default function CanOrina ({ value, pdf, onChange, register, values }) {
   return (
     <>
       <section>
         <h2>Ca en Orina</h2>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

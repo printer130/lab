@@ -11,16 +11,25 @@ import { Form } from 'components/Form'
 import { useSession } from 'next-auth/react'
 import { saveOrder, normalizedOrder } from 'lib/db'
 import { useDebounce } from 'hooks/useDebounce'
+import { toast, ToastContainer } from 'react-toastify'
+import { Button, Input } from 'components'
+
 export default function Registro () {
   const session = useSession()
   const [loading, setLoading] = useState(false)
   const [search, setSearch] = useState(null)
+  const [filed, setFiled] = useState(null)
+  const [disable, setDisable] = useState(false)
 
   const router = useRouter()
-  const { register, handleSubmit, formState, setError } = useForm({
+  const { register, handleSubmit, formState, clearErrors } = useForm({
     resolver: zodResolver(registerSchema),
     mode: 'onChange',
-    defaultValues: DEFAULT_REGISTER_VALUES,
+    defaultValues: !disable
+      ? DEFAULT_REGISTER_VALUES
+      : {
+          phone: filed.phone
+        },
     reValidateMode: 'onChange'
   })
 
@@ -34,22 +43,54 @@ export default function Registro () {
   const { errors, isValid, isDirty } = formState
   const onSubmit = data => {
     setLoading(true)
-    saveOrder(normalizedOrder(data))
+    saveOrder(normalizedOrder(data), disable)
       .then(res => {
+        toast.success('Orden guardada con éxito')
+
         if (!res.ok) return new Error('No se pudo guardar la orden')
         setLoading(false)
         return router.push(`/registro/${data.ci}`)
       })
       .catch(e => {
         if (e.message) {
+          toast.error('No se pudo guardar la orden')
           return router.replace('/')
         }
       })
   }
 
-  const handleFill = ({ ci }) => {
+  const handleFill = ({ ci, nit, sex, birth, doctor, fullName, authorEmail, phone, reason }) => {
+    // setLoading(true)
+    toast.info('Formulario rellenado!', { })
+    setSearch('')
+    clearErrors()
+    setFiled({ ci, nit, sex, birth, doctor, fullName, authorEmail, phone, reason })
+    setDisable(true)
+  }
+
+  const handleEdit = e => {
+    setFiled({
+      ...filed,
+      [e.target.name]: e.target.value
+    })
+  }
+  const handleSubmitEdit = e => {
     setLoading(true)
-    router.push(`/registro/${ci}`)
+    e.preventDefault()
+    saveOrder(filed, disable)
+      .then(res => {
+        toast.success('Seguir')
+        if (!res.ok) return new Error('No se pudo guardar la orden')
+        setLoading(false)
+        router.push(`/registro/${filed.ci}`)
+      })
+      .catch(e => {
+        if (e.message) {
+          setLoading(false)
+          toast.error('No se pudo guardar la orden')
+          router.replace('/')
+        }
+      })
   }
 
   return (
@@ -61,13 +102,24 @@ export default function Registro () {
           content='Para laboratorios y pacientes con recetas|orden'
         />
       </Head>
+      <ToastContainer
+        position='top-center'
+        autoClose={3000}
+        hideProgressBar={false}
+        closeOnClick
+        pauseOnFocusLoss={false}
+        pauseOnHover={false}
+        draggable={false}
+        progress={undefined}
+      />
       {session?.data && (
         <Form
+          disable={disable}
           isFetched={data?.data?.length > 0}
           onClick={handleFill}
           onLoading={setLoading}
           debouncedSearch={data ?? null}
-          onDebounce={setSearch}
+          onFill={setSearch}
           handleSubmit={handleSubmit}
           onSubmit={onSubmit}
           loading={loading}
@@ -77,6 +129,98 @@ export default function Registro () {
           register={register}
         />
       )}
+      {
+        disable && (
+          <form id='filled' onSubmit={handleSubmitEdit}>
+            <fieldset>
+              <legend>
+                <strong className='text-2xl'>Usuario seleccionado:</strong>
+              </legend>
+              <div>
+                <Input
+                  disabled
+                  type='number'
+                  v={filed?.ci}
+                  name='ci'
+                  onChange={handleEdit}
+                  placeholder
+                >Carnet de Identidad: </Input>
+                <Input
+                  type='text'
+                  v={filed?.fullName}
+                  disabled
+                  onChange={handleEdit}
+                  name='fullName'
+                  placeholder
+                >Nombre Completo: </Input>
+                <Input
+                  type='date'
+                  v={filed?.birth?.split('T')[0]}
+                  onChange={handleEdit}
+                  name='birth'
+                  disabled
+                  placeholder
+                >Fecha de Nacimiento: </Input>
+                <Input
+                  onChange={handleEdit}
+                  type='number'
+                  v={filed?.phone}
+                  name='phone'
+                  placeholder
+                >Número de Celular: </Input>
+                <Input
+                  type='number'
+                  v={filed?.nit}
+                  name='nit'
+                  onChange={handleEdit}
+                  placeholder
+                >N.I.T.: </Input>
+                <Input
+                  onChange={handleEdit}
+                  type='text'
+                  v={filed?.reason}
+                  name='reason'
+                  placeholder
+                >Razon Social: </Input>
+                <Input
+                  onChange={handleEdit}
+                  type='text'
+                  v={filed?.doctor}
+                  name='doctor'
+                  placeholder
+                >Médico: </Input>
+                <Input
+                  disabled
+                  onChange={handleEdit}
+                  type='text'
+                  v={filed?.sex}
+                  name='sex'
+                >Sexo: </Input>
+                <Button>Seguir</Button>
+              </div>
+            </fieldset>
+          </form>
+        )
+      }
+      <style jsx>{`
+        #filled {
+          max-width: 900px;
+          margin: 0 auto;
+          opacity: ${loading ? '.4' : '1'};
+          pointer-events: ${loading ? 'none' : 'all'};
+          user-select: ${loading ? 'none' : 'auto'};
+        }
+        div {
+          display: ${!disable ? 'none' : 'flex'};
+          min-width: 220px;
+          width: 220px;
+          flex-wrap: wrap;
+          margin: 0 auto;
+          opacity: ${loading ? '.4' : '1'};
+          pointer-events: ${loading ? 'none' : 'all'};
+          user-select: ${loading ? 'none' : 'auto'};
+        }
+      `}</style>
     </>
   )
 }

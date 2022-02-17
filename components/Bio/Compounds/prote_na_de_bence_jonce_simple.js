@@ -4,13 +4,15 @@ export default function ProteinaDeBenceJonce ({
   value,
   values,
   onChange,
-  register
+  register,
+  pdf
 }) {
   return (
     <>
       <section>
-        <h2>Proteina de Bence-Jonce</h2>
+        <h3>Proteina de Bence-Jonce</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

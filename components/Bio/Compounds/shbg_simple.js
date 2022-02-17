@@ -1,11 +1,12 @@
 import { Input } from '../Input'
 
-export default function SHBG ({ value, values, onChange, register }) {
+export default function SHBG ({ value, pdf, values, onChange, register }) {
   return (
     <>
       <section>
-        <h2>SHBG</h2>
+        <h3>SHBG</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

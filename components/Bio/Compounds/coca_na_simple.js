@@ -1,16 +1,15 @@
 import { NegativePositive } from '../NegativePositive'
 
-export default function Cocaina ({ values, register }) {
+export default function Cocaina ({ values, pdf, register }) {
   return (
-    <>
-      <section>
-        <h2>Cocaína</h2>
-        <NegativePositive
-          register={register}
-          values={values}
-          name='coca_na_simple'
-        />
-      </section>
-    </>
+    <section>
+      <h3>Cocaína</h3>
+      <NegativePositive
+        register={register}
+        values={values}
+        pdf={pdf}
+        name='coca_na_simple'
+      />
+    </section>
   )
 }

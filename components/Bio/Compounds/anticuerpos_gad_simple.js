@@ -1,11 +1,12 @@
 import { Input } from '../Input'
 
-export default function AnticuerposGAD ({ value, values, onChange, register }) {
+export default function AnticuerposGAD ({ value, pdf, values, onChange, register }) {
   return (
     <>
       <section>
-        <h2>Anticuerpos GAD</h2>
+        <h3>Anticuerpos GAD</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

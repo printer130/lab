@@ -1,11 +1,12 @@
 import { Input } from '../Input'
 
-export default function PeptidoC ({ value, values, onChange, register }) {
+export default function PeptidoC ({ value, values, onChange, pdf, register }) {
   return (
     <>
       <section>
-        <h2>Peptido C</h2>
+        <h3>Peptido C</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

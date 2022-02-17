@@ -4,21 +4,21 @@ export default function CisticercosisElisa ({
   value,
   values,
   onChange,
-  register
+  register,
+  pdf
 }) {
   return (
-    <>
-      <section>
-        <h2>Cisticercosis Elisa</h2>
-        <Input
-          value={!values ? value : values}
-          onChange={onChange}
-          register={register}
-          type='number'
-          placeholder='Cisticercosis Elisa....'
-          name='cisticercosis_elisa_simple'
-        />
-      </section>
-    </>
+    <section>
+      <h3>Cisticercosis Elisa</h3>
+      <Input
+        pdf={pdf}
+        value={!values ? value : values}
+        onChange={onChange}
+        register={register}
+        type='number'
+        placeholder='Cisticercosis Elisa....'
+        name='cisticercosis_elisa_simple'
+      />
+    </section>
   )
 }

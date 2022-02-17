@@ -1,0 +1,17 @@
+datasource pdf {
+  provider             = "mongodb"
+  url                  = env("DATABASE_URL_PDF")
+}
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["mongoDb"]
+  output          =  "./generated/pdf-client.js"
+}
+
+model pdf {
+  id       String   @map("_id") @id @default(cuid())
+  name     String  
+  url      String  
+  json     Bytes
+}

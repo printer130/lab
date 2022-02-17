@@ -4,14 +4,15 @@ export default function AnticardiolipinaIgG ({
   onChange,
   value,
   register,
+  pdf,
   required,
   values
 }) {
   return (
-    <>
-      <h2>Anticardiolipina - IgG</h2>
-
+    <section>
+      <h3>Anticardiolipina - IgG</h3>
       <Input
+        pdf={pdf}
         value={!values ? value : values}
         register={register}
         onChange={onChange}
@@ -20,9 +21,7 @@ export default function AnticardiolipinaIgG ({
         measure='U/mL'
         type='number'
         placeholder='Anticardiolipina - IgG...'
-      >
-        Anticardiolipina - IgG
-      </Input>
-    </>
+      />
+    </section>
   )
 }

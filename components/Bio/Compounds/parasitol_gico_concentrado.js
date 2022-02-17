@@ -6,7 +6,8 @@ export default function ParasitologicoConcentrado ({
   value,
   onChange,
   name,
-  values = null
+  values = null,
+  pdf
 }) {
   return (
     <>
@@ -14,6 +15,7 @@ export default function ParasitologicoConcentrado ({
       <h3>Examen Fisico-Quimico</h3>
 
       <FisicoQuimico
+        pdf={pdf}
         register={register}
         name='parasitol_gico_concentrado.fisico_quimico.'
         value={value}
@@ -23,6 +25,7 @@ export default function ParasitologicoConcentrado ({
 
       <h3>Examen Microscópico</h3>
       <Microscopico
+        pdf={pdf}
         onChange={onChange}
         value={value}
         values={values?.microscopico}

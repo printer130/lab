@@ -1,6 +1,6 @@
-export function Remarks ({ name, onChange, value, register }) {
+export function Remarks ({ name, onChange, value, register, pdf }) {
   return (
-    <div>
+    <div className='w-full'>
       <label>
         <h3>Observaciones</h3>
         <textarea
@@ -9,25 +9,10 @@ export function Remarks ({ name, onChange, value, register }) {
           onChange={onChange}
           value={value}
           rows='3'
+          className={`w-full resize-none border border-gray-300 rounded-lg text-base px-[0.35rem] pt-[0.15rem] ${pdf && 'border-none h-fit bg-transparent text-xs'}`}
           readOnly={value?.length > 0}
         />
       </label>
-      <style jsx>
-        {`
-          div {
-            width: 100%;
-          }
-          textarea {
-            resize: none;
-            width: 100%;
-            padding: 0.15rem 0.35rem;
-            letter-spacing: 0.5px;
-            font-size: 1rem;
-            border: 1px solid #eee;
-            border-radius: 7px;
-          }
-        `}
-      </style>
     </div>
   )
 }

@@ -4,13 +4,15 @@ export default function LactDeshHidrogenas ({
   value,
   values,
   onChange,
-  register
+  register,
+  pdf
 }) {
   return (
     <>
       <section>
-        <h2>Lact. Desh Hidrogenasa</h2>
+        <h3>Lact. Desh Hidrogenasa</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

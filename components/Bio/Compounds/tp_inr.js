@@ -6,7 +6,7 @@ export default function TP_INR ({
   register,
   value,
   values,
-  pdf = null
+  pdf
 }) {
   return (
     <>

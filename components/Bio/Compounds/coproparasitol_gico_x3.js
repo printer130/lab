@@ -9,6 +9,7 @@ export default function Coproparasitologicox3 ({
   value,
   register,
   required,
+  pdf,
   values
 }) {
   return (
@@ -18,6 +19,7 @@ export default function Coproparasitologicox3 ({
         <h3>Examen Fisico-Quimico</h3>
 
         <FisicoQuimico
+          pdf={pdf}
           register={register}
           value={value}
           name='coproparasitol_gico_x3.fisico_quimico.'
@@ -27,6 +29,7 @@ export default function Coproparasitologicox3 ({
 
         <h3>Examen Microscópico</h3>
         <Microscopico
+          pdf={pdf}
           register={register}
           value={value}
           values={values?.microscopico}
@@ -34,6 +37,7 @@ export default function Coproparasitologicox3 ({
           name='coproparasitol_gico_x3.microscopico.'
         />
         <Remarks
+          pdf={pdf}
           name='coproparasitol_gico_x3.remarks'
           value={!values?.remarks ? value : values.remarks}
           register={register}
@@ -43,6 +47,7 @@ export default function Coproparasitologicox3 ({
         <h3>Examen Fisico-Quimico</h3>
 
         <FisicoQuimico
+          pdf={pdf}
           register={register}
           value={value}
           onChange={onChange}
@@ -52,6 +57,7 @@ export default function Coproparasitologicox3 ({
 
         <h3>Examen Microscópico</h3>
         <Microscopico
+          pdf={pdf}
           register={register}
           value={value}
           values={values?.microscopico2}
@@ -60,6 +66,7 @@ export default function Coproparasitologicox3 ({
         />
 
         <Remarks
+          pdf={pdf}
           name='coproparasitol_gico_x3.remarks2'
           register={register}
           value={!values?.remarks2 ? value : values.remarks2}
@@ -67,6 +74,7 @@ export default function Coproparasitologicox3 ({
         <h2>Coproparasitologico 3° Dia</h2>
         <h3>Examen Fisico-Quimico</h3>
         <FisicoQuimico
+          pdf={pdf}
           register={register}
           onChange={onChange}
           value={value}
@@ -77,6 +85,7 @@ export default function Coproparasitologicox3 ({
         <h3>Examen Microscópico</h3>
 
         <Microscopico
+          pdf={pdf}
           register={register}
           onChange={onChange}
           value={value}
@@ -84,6 +93,7 @@ export default function Coproparasitologicox3 ({
           name='coproparasitol_gico_x3.microscopico3.'
         />
         <Remarks
+          pdf={pdf}
           name='coproparasitol_gico_x3.remarks3'
           register={register}
           value={!values?.remarks3 ? value : values.remarks3}

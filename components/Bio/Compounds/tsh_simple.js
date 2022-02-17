@@ -1,11 +1,12 @@
 import { Input } from '../Input'
 
-export default function TSH ({ value, values, onChange, register }) {
+export default function TSH ({ value, pdf, values, onChange, register }) {
   return (
     <>
       <section>
-        <h2>TSH</h2>
+        <h3>TSH</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

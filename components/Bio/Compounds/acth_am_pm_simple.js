@@ -1,13 +1,14 @@
 import { Input } from '../Input'
 
-export default function ACTHAMPM ({ value, values, onChange, register }) {
+export default function ACTHAMPM ({ value, pdf, values, onChange, register }) {
   return (
     <>
       <section>
-        <h2>ACTH AM - PM</h2>
+        <h3>ACTH AM - PM</h3>
         <Input
           value={!values ? value : values}
           onChange={onChange}
+          pdf={pdf}
           register={register}
           type='number'
           placeholder='ACTH AM - PM....'

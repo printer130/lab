@@ -1,9 +1,9 @@
 import { NegativePositive } from '../NegativePositive'
 
-export default function TestIndicam ({ register, values }) {
+export default function TestIndicam ({ register, values, pdf }) {
   return (
     <>
-      <h2>Test de Inducam</h2>
+      <h3>Test de Inducam</h3>
 
       <NegativePositive
         values={values}
@@ -12,6 +12,7 @@ export default function TestIndicam ({ register, values }) {
         n='Grado 0'
         p='Grado 1'
         checked
+        pdf={pdf}
       />
 
       <NegativePositive
@@ -20,6 +21,7 @@ export default function TestIndicam ({ register, values }) {
         name='test_indicam'
         n='Grado 2'
         p='Grado 3'
+        pdf={pdf}
       />
     </>
   )

@@ -13,6 +13,7 @@ import { saveReceipt } from 'lib/db'
 import Link from 'next/link'
 import { MyModal } from 'components/Dialog'
 import { unique } from 'utils/unique'
+import { toast, ToastContainer } from 'react-toastify'
 
 export default function RegisterNewCI ({ order = '' }) {
   const router = useRouter()
@@ -39,22 +40,28 @@ export default function RegisterNewCI ({ order = '' }) {
   }, [filteredBox])
 
   const handleOrder = e => {
+    toast.info('Verificando...')
     e.preventDefault()
     setVerify(false)
     setLoading(true)
     saveReceipt({ filteredBox, total, indebt, change, find: order.ci })
       .then(res => {
+        if (!res.ok) {
+          toast.error('Ups algo salió mal')
+        }
+        toast.success('Analisis guardado con éxito')
         setReceipt(res.data)
         setLoading(false)
         setModal(c => !c)
         // if (!res.ok) return new Error('No se pudo guardar el recibo')
         setCheckboxes({})
       })
-      .catch(err => console.log('ERR', err, err.message))
+      .catch(err => err?.message && toast.error('Ups algo salió mal'))
   }
 
   const handleContinue = e => {
     e.preventDefault()
+    toast.info('Continuar!')
     setVerify(true)
   }
 
@@ -83,8 +90,8 @@ export default function RegisterNewCI ({ order = '' }) {
   }
 
   useEffect(() => {
-    if(change >= 0 && change<=total && change <= total) {
-    setIndebt(total - change)
+    if (change >= 0 && change <= total && change <= total) {
+      setIndebt(total - change)
     } else {
       setIndebt(total)
     }
@@ -98,6 +105,16 @@ export default function RegisterNewCI ({ order = '' }) {
 
   return (
     <section>
+       <ToastContainer
+         position='top-center'
+         autoClose={3000}
+         hideProgressBar={false}
+         closeOnClick
+         pauseOnFocusLoss={false}
+         pauseOnHover={false}
+         draggable={false}
+         progress={undefined}
+       />
       {receipt && (
         <div className='w-full bg-slate-50 h-screen'>
           <MyModal
@@ -116,7 +133,8 @@ export default function RegisterNewCI ({ order = '' }) {
           <a>Regresar</a>
         </Link>
       )}
-      {order?.fullName ? (
+      {order?.fullName
+        ? (
         <OrderProfile
           {...order}
           onIndebtChange={handleChange}
@@ -124,21 +142,24 @@ export default function RegisterNewCI ({ order = '' }) {
           total={total}
           ci={order.ci}
         />
-      ) : (
+          )
+        : (
         <h1>Cargando... </h1>
-      )}
-      {verify ? (
+          )}
+      {verify
+        ? (
         <FormVerify
           onCheckbox={handleCheckbox}
           onSave={handleOrder}
           onVerify={setVerify}
           listToVerify={filteredBox}
         />
-      ) : (
+          )
+        : (
         <InputProvider>
           <FormContinue receipt={receipt?.cuiid} onForm={handleContinue} onList={handleCheckbox} />
         </InputProvider>
-      )}
+          )}
       <style jsx>
         {`
           section {

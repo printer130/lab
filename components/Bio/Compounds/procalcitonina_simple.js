@@ -1,11 +1,12 @@
 import { Input } from '../Input'
 
-export default function Procalcitonina ({ value, values, onChange, register }) {
+export default function Procalcitonina ({ value, pdf, values, onChange, register }) {
   return (
     <>
       <section>
-        <h2>Procalcitonina</h2>
+        <h3>Procalcitonina</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

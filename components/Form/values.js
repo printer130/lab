@@ -1,21 +1,21 @@
-export const REGISTER_VALUES = ({ errors, onDebounce, item }) => {
+export const REGISTER_VALUES = ({ errors, onFill, item }) => {
   return [
     {
       v: item?.ci || undefined,
       type: 'number',
       error: errors?.ci,
-      label: 'Carnet de identidad: ',
+      label: 'Carnet de Identidad: ',
       placeholder: 'C.I',
       order: 1,
       name: 'ci',
       options: {
         valueAsNumber: true,
-        onChange: e => onDebounce(e.target.value)
+        onChange: e => onFill(e.target.value)
       }
     },
     {
-      v: item?.fullName || undefined,
       type: 'text',
+      v: item?.fullName || undefined,
       label: 'Nombre Completo',
       error: errors?.fullName,
       placeholder: 'Nombre Completo...',
@@ -24,9 +24,10 @@ export const REGISTER_VALUES = ({ errors, onDebounce, item }) => {
       options: {}
     },
     {
-      v: item?.birth || '',
+      defaultValue: item?.birth && item?.birth?.split('T')[0],
+      v: undefined,
       type: 'date',
-      label: 'Fecha de nacimiento',
+      label: 'Fecha de Nacimiento',
       placeholder: 'Fecha de Nacimiento',
       order: 4,
       name: 'birth',
@@ -37,7 +38,7 @@ export const REGISTER_VALUES = ({ errors, onDebounce, item }) => {
     {
       v: item?.phone || undefined,
       type: 'number',
-      label: 'Número de celular',
+      label: 'Número de Celular',
       error: errors?.phone,
       placeholder: 'Celular',
       order: 5,
@@ -70,7 +71,7 @@ export const REGISTER_VALUES = ({ errors, onDebounce, item }) => {
     },
     {
       v: item?.doctor || undefined,
-      label: 'Nombre del médico',
+      label: 'Médico',
       type: 'text',
       placeholder: 'Médico...',
       order: 8,

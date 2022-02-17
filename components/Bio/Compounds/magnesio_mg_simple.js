@@ -1,11 +1,12 @@
 import { Input } from '../Input'
 
-export default function MagnesioMg ({ value, values, onChange, register }) {
+export default function MagnesioMg ({ value, pdf, values, onChange, register }) {
   return (
     <>
       <section>
-        <h2>Magnesio Mg</h2>
+        <h3>Magnesio Mg</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

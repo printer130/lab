@@ -4,13 +4,15 @@ export default function GlicemiaPostEstimulo ({
   value,
   values,
   onChange,
+  pdf,
   register
 }) {
   return (
     <>
       <section>
-        <h2>Glicemia Post Estimulo</h2>
+        <h3>Glicemia Post Estimulo</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

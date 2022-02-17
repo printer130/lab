@@ -1,11 +1,12 @@
 import { Input } from '../Input'
 
-export default function Aldosterona ({ values, value, onChange, register }) {
+export default function Aldosterona ({ values, pdf, value, onChange, register }) {
   return (
     <>
       <section>
-        <h2>Aldosterona</h2>
+        <h3>Aldosterona</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

@@ -1,11 +1,12 @@
 import { Input } from '../Input'
 
-export default function AnticuerposICA ({ value, values, onChange, register }) {
+export default function AnticuerposICA ({ value, pdf, values, onChange, register }) {
   return (
     <>
       <section>
-        <h2>Anticuerpos ICA</h2>
+        <h3>Anticuerpos ICA</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

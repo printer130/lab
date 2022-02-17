@@ -22,32 +22,39 @@ async function main () {
   //   }
   // })
 
+  // role      Role     @default(RECEPTIONIST)
+  // email     String   @unique
+  // name      String?
+  // password  String?  @db.VarChar(255)
+  // lab       Lab?     @relation(fields: [labId], references: [name], onUpdate: Cascade)
+
   // const res = await prisma.user.create({
-  //   data: {
-  //     role: 'BIOCHEMICAL',
-  //     email: 'prisma@gmail.com',
-  //     name: 'prisma0',
-  //     password: 'prisma',
-  //     lab: {
-  //       connect: {
-  //         name: 'labo0'
-  //       }
-  //     }
-  //   }
+  //  data: {
+  //    name: 'prismad',
+  //    email: 'prismad@gmail.com',
+  //    ci: '9126391623',
+  //    password: 'prisma',
+  //    phone: 8912636812,
+  //    role: 'BIOCHEMICAL',
+  //    lab: {
+  //      connect: {
+  //        name: 'labo0'
+  //      }
+  //    }
+  //  }
   // })
 
   // ckykex7t50303449n44gzyyec -> EMBARAZO
   // ckyk88ad10416tg9ngaw318lu -> HEMOSTASIA
   // Arqueo
-  // const res = await prisma[`receipt${labId}`].findMany({
-  //   where: {
-  //     createdAt: {
-  //       gte: new Date('2022-01-21')
-  //     }
-  //   },
-  //   include: {
-  //     owner: true
-  //   }
+  // const res = await prisma.receipts.findMany({
+  //  where: {
+  //    cuiid: 'ckzqwenun0000oyknajrsjwx4',
+  //    labName: 'labo0'
+  //  },
+  //  include: {
+  //    owner: true
+  //  }
   // })
 
   // res.map(item => {
@@ -87,14 +94,28 @@ async function main () {
   //     }
   //   }
   // })
-
   // FIND USER
-  // const res = await prisma.user.findMany()
-  // FIND ORDER
-  const res = await prisma[`receipt${labId}`].findMany({
-    where: {},
-    include: { owner: true }
+  const res = await prisma.receipts.create({
+    data: {
+      json: [
+        { name: 'chagas_elisa_simple', isChecked: true, price: 80 },
+        { name: 'grupo_y_rh', isChecked: true, price: 25 },
+        { name: 'reticulocitos', isChecked: true, price: 50 }
+      ],
+      total: 155,
+      itotal: 150,
+      saldo: 5,
+      indebtList: { indebt: 150 },
+      labName: 'labo0',
+      owner: { connect: { ci: '333333' } }
+    }
   })
+
+  // FIND ORDER
+  // const res = await prisma[`receipt${labId}`].findMany({
+  //   where: {},
+  //   include: { owner: true }
+  // })
 
   // SEACH ORDER
   // const res = await prisma.order.findMany({
@@ -125,8 +146,8 @@ async function main () {
 
   // UPDATE ORDER
   // const res = await prisma.order.update({
-  //   where: { ci: 333333 },
-  //   data: { fullName: 'Leonardo cambiado' }
+  //  where: { ci: '23423' },
+  //  data: { phone: 11111, nit: 111111, author: { connect: { email: 'prisma@gmail.com' } } }
   // })
 
   // UPDATE RECEIPT
@@ -177,20 +198,20 @@ async function main () {
   // const r = Object.keys(d)
   // const receiptTarget = 'Receiptlabo'
 
-  // const res = await prisma[`receipt${labId}`].create({
-  //   data: {
-  //     json: ['15', '15'],
-  //     total: 250,
-  //     itotal: 75,
-  //     labName: labId,
-  //     saldo: 175,
-  //     indebtList: { indebt: 75 },
-  //     owner: {
-  //       connect: {
-  //         ci: '123123'
-  //       }
-  //     }
-  //   }
+  // const res = await prisma.receipts.create({
+  //  data: {
+  //    json: ['15', '23123'],
+  //    total: 250,
+  //    itotal: 75,
+  //    labName: labId,
+  //    saldo: 175,
+  //    indebtList: { indebt: 75 },
+  //    owner: {
+  //      connect: {
+  //        ci: '123123'
+  //      }
+  //    }
+  //  }
   // })
 
   // const res = await prisma.receipt.create({
@@ -326,6 +347,15 @@ async function main () {
   //   }
   // })
 
+  // const res = await prisma[`receipt${labId}`].findMany({
+  //  where: {
+  //    createdAt: {
+  //      lte: new Date(new Date('Sun Feb 06 2022 00:00:00 GMT-0400 (Bolivia Time)').toLocaleDateString()),
+  //      gte: new Date(new Date('Sun Feb 02 2022 00:00:00 GMT-0400 (Bolivia Time)').toLocaleDateString())
+  //    }
+  //  }
+  // })
+  // const res = new Date(new Date('2022-01-12T04:00:00.000Z').toLocaleDateString())
   return res
 }
 

@@ -1,11 +1,12 @@
 import { Input } from '../Input'
 
-export default function Albumina ({ values, value, onChange, register }) {
+export default function Albumina ({ values, pdf, value, onChange, register }) {
   return (
     <>
       <section>
-        <h2>Albumina</h2>
+        <h3>Albumina</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

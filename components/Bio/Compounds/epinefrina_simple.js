@@ -1,11 +1,12 @@
 import { Input } from '../Input'
 
-export default function Epinefrina ({ value, values, onChange, register }) {
+export default function Epinefrina ({ value, pdf, values, onChange, register }) {
   return (
     <>
       <section>
-        <h2>Epinefrina</h2>
+        <h3>Epinefrina</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

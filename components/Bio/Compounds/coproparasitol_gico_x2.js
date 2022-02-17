@@ -9,6 +9,7 @@ export default function Coproparasitologicox2 ({
   value,
   register,
   required,
+  pdf,
   values
 }) {
   return (
@@ -17,6 +18,7 @@ export default function Coproparasitologicox2 ({
         <h2>Coproparasitologico 1° Dia</h2>
         <h3>Examen Fisico-Quimico</h3>
         <FisicoQuimico
+          pdf={pdf}
           register={register}
           value={value}
           name='coproparasitol_gico_x2.fisico_quimico.'
@@ -26,6 +28,7 @@ export default function Coproparasitologicox2 ({
 
         <h3>Examen Microscópico</h3>
         <Microscopico
+          pdf={pdf}
           register={register}
           value={value}
           values={values?.microscopico}
@@ -34,6 +37,7 @@ export default function Coproparasitologicox2 ({
         />
 
         <Remarks
+          pdf={pdf}
           value={!values?.remarks ? value : values.remarks}
           name='coproparasitol_gico_x2.remarks'
           register={register}
@@ -42,6 +46,7 @@ export default function Coproparasitologicox2 ({
         <h2>Coproparasitologico 2° Dia</h2>
         <h3>Examen Fisico-Quimico</h3>
         <FisicoQuimico
+          pdf={pdf}
           register={register}
           values={values?.fisico_quimico2}
           value={value}
@@ -51,6 +56,7 @@ export default function Coproparasitologicox2 ({
 
         <h3>Examen Microscópico</h3>
         <Microscopico
+          pdf={pdf}
           register={register}
           value={value}
           values={values?.microscopico2}
@@ -59,6 +65,7 @@ export default function Coproparasitologicox2 ({
         />
 
         <Remarks
+          pdf={pdf}
           name='coproparasitol_gico_x2.remarks2'
           value={!values?.remarks2 ? value : values.remarks2}
           register={register}

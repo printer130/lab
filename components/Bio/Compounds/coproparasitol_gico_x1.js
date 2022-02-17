@@ -8,36 +8,38 @@ export default function Coproparasitologico ({
   onChange,
   value,
   values,
+  pdf,
   register,
   required
 }) {
   return (
-    <>
-      <section>
-        <h2>Coproparasitologico</h2>
-        <h3>Examen Fisico-Quimico</h3>
-        <FisicoQuimico
-          register={register}
-          value={value}
-          name='coproparasitol_gico_x1.fisico_quimico.'
-          values={values?.fisico_quimico}
-          onChange={onChange}
-        />
-        <h3>Examen Microscópico</h3>
+    <section>
+      <h2>Coproparasitologico</h2>
+      <h3>Examen Fisico-Quimico</h3>
+      <FisicoQuimico
+        pdf={pdf}
+        register={register}
+        value={value}
+        name='coproparasitol_gico_x1.fisico_quimico.'
+        values={values?.fisico_quimico}
+        onChange={onChange}
+      />
+      <h3>Examen Microscópico</h3>
 
-        <Microscopico
-          register={register}
-          value={value}
-          values={values?.microscopico}
-          onChange={onChange}
-          name='coproparasitol_gico_x1.microscopico.'
-        />
-        <Remarks
-          value={!values?.remarks ? value : values.remarks}
-          name='coproparasitol_gico_x1.remarks'
-          register={register}
-        />
-      </section>
-    </>
+      <Microscopico
+        pdf={pdf}
+        register={register}
+        value={value}
+        values={values?.microscopico}
+        onChange={onChange}
+        name='coproparasitol_gico_x1.microscopico.'
+      />
+      <Remarks
+        pdf={pdf}
+        value={!values?.remarks ? value : values.remarks}
+        name='coproparasitol_gico_x1.remarks'
+        register={register}
+      />
+    </section>
   )
 }

@@ -1,13 +1,14 @@
 import { Input } from '../Input'
 
-export default function AcUricoEnOrina ({ values, value, onChange, register }) {
+export default function AcUricoEnOrina ({ values, pdf, value, onChange, register }) {
   return (
     <>
       <section>
-        <h2>Ac. Urico en orina</h2>
+        <h3>Ac. Urico en orina</h3>
         <Input
           value={!values ? value : values}
           onChange={onChange}
+          pdf={pdf}
           register={register}
           type='number'
           placeholder='Ac. Urico en orina....'

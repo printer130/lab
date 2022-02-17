@@ -4,13 +4,15 @@ export default function HidatidosisElisa ({
   value,
   values,
   onChange,
-  register
+  register,
+  pdf
 }) {
   return (
     <>
       <section>
-        <h2>Hidatidosis Elisa</h2>
+        <h3>Hidatidosis Elisa</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

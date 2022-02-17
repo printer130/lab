@@ -4,13 +4,15 @@ export default function ToxoplasmosisHAI ({
   value,
   values,
   onChange,
+  pdf,
   register
 }) {
   return (
     <>
       <section>
-        <h2>Toxoplasmosis HAI</h2>
+        <h3>Toxoplasmosis HAI</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

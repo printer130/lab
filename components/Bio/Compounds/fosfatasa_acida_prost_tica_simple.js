@@ -3,13 +3,15 @@ export default function FosfatasaAcidaProstatica ({
   value,
   values,
   onChange,
-  register
+  register,
+  pdf
 }) {
   return (
     <>
       <section>
-        <h2>Fosfatasa Acida Prostatica</h2>
+        <h3>Fosfatasa Acida Prostatica</h3>
         <Input
+          pdf={pdf}
           value={!values ? values : values}
           onChange={onChange}
           register={register}

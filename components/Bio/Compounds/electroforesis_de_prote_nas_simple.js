@@ -4,13 +4,15 @@ export default function ElectroforesisDeProteinas ({
   value,
   values,
   onChange,
-  register
+  register,
+  pdf
 }) {
   return (
     <>
       <section>
-        <h2>Electroforesis de Proteinas</h2>
+        <h3>Electroforesis de Proteinas</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

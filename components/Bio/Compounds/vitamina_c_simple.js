@@ -1,11 +1,12 @@
 import { Input } from '../Input'
 
-export default function vitaminac ({ value, values, onChange, register }) {
+export default function vitaminac ({ value, values, onChange, register, pdf }) {
   return (
     <>
       <section>
-        <h2>Vitamina C</h2>
+        <h3>Vitamina C</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

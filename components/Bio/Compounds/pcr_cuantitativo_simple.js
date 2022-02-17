@@ -4,13 +4,15 @@ export default function PCRCuantitativo ({
   value,
   values,
   onChange,
-  register
+  register,
+  pdf
 }) {
   return (
     <>
       <section>
-        <h2>PCR Cuantitativo</h2>
+        <h3>PCR Cuantitativo</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

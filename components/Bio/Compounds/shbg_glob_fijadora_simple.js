@@ -4,13 +4,15 @@ export default function SHBGGlobFijadora ({
   value,
   onChange,
   values,
-  register
+  register,
+  pdf
 }) {
   return (
     <>
       <section>
-        <h2>SHBG (Glob. Fijadora)</h2>
+        <h3>SHBG (Glob. Fijadora)</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

@@ -1,5 +1,6 @@
 import { Dialog } from '@headlessui/react'
 import { PDFComponent } from 'components/PDF'
+import { toast } from 'react-toastify'
 import { GeneratePDF } from 'utils/pdf'
 
 function register (name, options) {
@@ -9,7 +10,10 @@ function register (name, options) {
 
 export function OnPDF ({ stateModal, onModal, data, lab }) {
   const handleClic = () => {
-    GeneratePDF({ id: 'pdf' })
+    toast.info('Generando PDF...')
+
+    GeneratePDF({ id: 'pdf', data, lab })
+    // RendererPDFButton({ id: 'pdf', data, lab })
   }
 
   if (!data) return <div>Cargando...</div>
@@ -21,8 +25,8 @@ export function OnPDF ({ stateModal, onModal, data, lab }) {
     >
       <PDFComponent id='pdf' data={data} register={register} lab={lab} />
       <button
-        className='w-28 ml-4 fixed bottom-4 md:hover:bg-sky-700 bg-sky-600 text-sky-100  border border-solid border-slate-600 h-11 rounded-md'
         onClick={handleClic}
+        className='w-28 ml-4 fixed bottom-4 md:hover:bg-sky-700 bg-sky-600 text-sky-100  border border-solid border-slate-600 h-11 rounded cursor-pointer'
       >
         Descargar PDF
       </button>

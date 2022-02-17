@@ -1,11 +1,12 @@
 import { Input } from '../Input'
 
-export default function AmilasaEnOrina ({ values, value, onChange, register }) {
+export default function AmilasaEnOrina ({ values, pdf, value, onChange, register }) {
   return (
     <>
       <section>
-        <h2>Amilasa en Orina</h2>
+        <h3>Amilasa en Orina</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

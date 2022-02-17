@@ -1,11 +1,12 @@
 import { Input } from '../Input'
 
-export default function TIBC ({ register, value, values, onChange }) {
+export default function TIBC ({ register, value, values, pdf, onChange }) {
   return (
     <>
       <section>
-        <h2>TIBC</h2>
+        <h3>TIBC</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChagen={onChange}
           register={register}

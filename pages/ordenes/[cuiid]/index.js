@@ -67,7 +67,6 @@ export default function OrderToEdit ({ result }) {
               <th>Debe</th>
             </tr>
             {newIndebtList.map(({ indebt }, index) => {
-              console.log({ newIndebtList, indebt })
               const res = total - reducir(index)
               if (res <= 0) {
                 isCompleted = true
@@ -179,8 +178,9 @@ export async function getServerSideProps ({ params, req }) {
   const cuiid = params.cuiid
   const session = await getSession({ req })
   const { labId } = session.token.user
+  if (!labId) return { props: { result: null } }
 
-  const orderToEdit = await prisma[`${'receipt' + labId}`].findUnique({
+  const orderToEdit = await prisma.receipts.findUnique({
     where: {
       cuiid
     },
@@ -188,8 +188,6 @@ export async function getServerSideProps ({ params, req }) {
       owner: true
     }
   })
-
-  console.log('date', orderToEdit)
 
   const orderNormalized = {
     ...orderToEdit,
@@ -201,8 +199,6 @@ export async function getServerSideProps ({ params, req }) {
       birth: +new Date(orderToEdit.owner.birth)
     }
   }
-
-  console.log('orderNormalized', orderNormalized)
 
   return {
     props: { result: orderNormalized }

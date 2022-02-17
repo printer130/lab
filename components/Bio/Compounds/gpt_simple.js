@@ -1,11 +1,12 @@
 import { Input } from '../Input'
 
-export default function GPT ({ value, values, onChange, register }) {
+export default function GPT ({ value, values, pdf, onChange, register }) {
   return (
     <>
       <section>
-        <h2>GPT</h2>
+        <h3>GPT</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

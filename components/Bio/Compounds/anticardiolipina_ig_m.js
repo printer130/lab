@@ -5,23 +5,23 @@ export default function AnticardiolipinaIgM ({
   value,
   register,
   required,
-  values
+  values,
+  pdf
 }) {
   return (
     <>
-      <h2>Anticardiolipina - IgM</h2>
+      <h3>Anticardiolipina - IgM</h3>
       <Input
         value={!values ? value : values}
         register={register}
         onChange={onChange}
         required={required}
+        pdf={pdf}
         name='anticardiolipina_ig_m'
         measure='U/mL'
         type='number'
         placeholder='Anticardiolipina - IgM...'
-      >
-        Anticardiolipina - IgM
-      </Input>
+      />
     </>
   )
 }

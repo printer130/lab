@@ -5,12 +5,14 @@ export default function AcCitrulina ({
   onChange,
   value,
   register,
-  required
+  required,
+  pdf
 }) {
   return (
     <>
-      <h2>ANTICUERPOS ANTICITRULINA</h2>
+      <h3>ANTICUERPOS ANTICITRULINA</h3>
       <Input
+        pdf={pdf}
         type='number'
         measure='U/mL'
         name='ac_anticitrulina'
@@ -18,9 +20,7 @@ export default function AcCitrulina ({
         value={!values ? value : values}
         register={register}
         onChange={onChange}
-      >
-        Anticuerpos Anticitrulina
-      </Input>
+      />
     </>
   )
 }

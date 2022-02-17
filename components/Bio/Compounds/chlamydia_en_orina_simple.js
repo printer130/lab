@@ -2,18 +2,18 @@ import { NegativePositive } from '../NegativePositive'
 
 export default function ChalamydiaEnOrina ({
   values,
-  register
+  register,
+  pdf
 }) {
   return (
-    <>
-      <section>
-        <h2>Chalamydia En Orina</h2>
-        <NegativePositive
-          values={values}
-          register={register}
-          name='chlamydia_en_orina_simple'
-        />
-      </section>
-    </>
+    <section>
+      <h3>Chalamydia En Orina</h3>
+      <NegativePositive
+        pdf={pdf}
+        values={values}
+        register={register}
+        name='chlamydia_en_orina_simple'
+      />
+    </section>
   )
 }

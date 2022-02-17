@@ -1,13 +1,14 @@
 import { Input } from '../Input'
 
-export default function Amonio ({ values, value, onChange, register }) {
+export default function Amonio ({ values, pdf, value, onChange, register }) {
   return (
     <>
       <section>
-        <h2>Amonio</h2>
+        <h3>Amonio</h3>
         <Input
           value={!values ? value : values}
           onChange={onChange}
+          pdf={pdf}
           register={register}
           type='number'
           placeholder='Amonio....'

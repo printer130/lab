@@ -4,13 +4,15 @@ export default function HerperTipo2HSV2IgG ({
   value,
   values,
   onChange,
-  register
+  register,
+  pdf
 }) {
   return (
     <>
       <section>
-        <h2>Herper tipo 2 (HSV2) - IgG</h2>
+        <h3>Herper tipo 2 (HSV2) - IgG</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

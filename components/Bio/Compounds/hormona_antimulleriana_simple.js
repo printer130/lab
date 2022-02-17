@@ -4,13 +4,15 @@ export default function HormonaAntimulleriana ({
   value,
   values,
   onChange,
-  register
+  register,
+  pdf
 }) {
   return (
     <>
       <section>
-        <h2>Hormona Antimulleriana</h2>
+        <h3>Hormona Antimulleriana</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

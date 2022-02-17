@@ -1,11 +1,12 @@
 import { Input } from '../Input'
 
-export default function LH ({ value, values, onChange, register }) {
+export default function LH ({ value, values, pdf, onChange, register }) {
   return (
     <>
       <section>
-        <h2>LH</h2>
+        <h3>LH</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

@@ -1,11 +1,12 @@
 import { Input } from '../Input'
 
-export default function VitaminaB12 ({ value, onChange, values, register }) {
+export default function VitaminaB12 ({ value, onChange, values, pdf, register }) {
   return (
     <>
       <section>
-        <h2>Vitamina B12</h2>
+        <h3>Vitamina B12</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

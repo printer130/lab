@@ -4,13 +4,15 @@ export default function TestosteronaLibre ({
   value,
   values,
   onChange,
-  register
+  register,
+  pdf
 }) {
   return (
     <>
       <section>
-        <h2>Testosterona Libre</h2>
+        <h3>Testosterona Libre</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

@@ -1,13 +1,14 @@
 import { Input } from '../Input'
 import { Remarks } from '../Remarks'
 
-export default function EnaProfile ({ onChange, register, value, values }) {
+export default function EnaProfile ({ onChange, pdf, register, value, values }) {
   return (
     <>
       <section>
         <h2>Ena Profile</h2>
         <section className='section'>
           <Input
+            pdf={pdf}
             value={!values?.d_ss_b_la ? value : values.d_ss_b_la}
             register={register}
             onChange={onChange}
@@ -19,6 +20,7 @@ export default function EnaProfile ({ onChange, register, value, values }) {
           </Input>
 
           <Input
+            pdf={pdf}
             value={!values?.sm ? value : values.sm}
             register={register}
             onChange={onChange}
@@ -30,6 +32,7 @@ export default function EnaProfile ({ onChange, register, value, values }) {
           </Input>
 
           <Input
+            pdf={pdf}
             value={!values?.scl_70 ? value : values.scl_70}
             register={register}
             onChange={onChange}
@@ -41,6 +44,7 @@ export default function EnaProfile ({ onChange, register, value, values }) {
           </Input>
 
           <Input
+            pdf={pdf}
             value={!values?.rnp ? value : values.rnp}
             register={register}
             onChange={onChange}
@@ -52,6 +56,7 @@ export default function EnaProfile ({ onChange, register, value, values }) {
           </Input>
 
           <Input
+            pdf={pdf}
             value={!values?.jo_1 ? value : values.jo_1}
             register={register}
             onChange={onChange}
@@ -63,6 +68,7 @@ export default function EnaProfile ({ onChange, register, value, values }) {
           </Input>
 
           <Input
+            pdf={pdf}
             value={!values?.ss_a_ro ? value : values.ss_a_ro}
             register={register}
             onChange={onChange}
@@ -74,6 +80,7 @@ export default function EnaProfile ({ onChange, register, value, values }) {
           </Input>
 
           <Input
+            pdf={pdf}
             value={!values?.anti_rib_p ? value : values.anti_rib_p}
             register={register}
             onChange={onChange}
@@ -85,6 +92,7 @@ export default function EnaProfile ({ onChange, register, value, values }) {
           </Input>
 
           <Input
+            pdf={pdf}
             value={!values?.anti_cenp_b ? value : values.anti_cenp_b}
             register={register}
             onChange={onChange}
@@ -96,6 +104,7 @@ export default function EnaProfile ({ onChange, register, value, values }) {
           </Input>
 
           <Input
+            pdf={pdf}
             value={!values?.ss_a_52 ? value : values.ss_a_52}
             register={register}
             onChange={onChange}
@@ -107,6 +116,7 @@ export default function EnaProfile ({ onChange, register, value, values }) {
           </Input>
         </section>
         <Remarks
+          pdf={pdf}
           value={!values?.remarks ? value : values.remarks}
           name='ena_profile.remarks'
           register={register}

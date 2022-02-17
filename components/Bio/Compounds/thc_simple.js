@@ -1,11 +1,12 @@
 import { NegativePositive } from '../NegativePositive'
 
-export default function THC ({ value, values, onChange, register }) {
+export default function THC ({ value, values, pdf, onChange, register }) {
   return (
     <>
       <section>
-        <h2>THC</h2>
+        <h3>THC</h3>
         <NegativePositive
+          pdf={pdf}
           values={!values ? value : values}
           register={register}
           name='thc_simple'

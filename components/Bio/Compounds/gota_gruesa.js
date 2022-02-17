@@ -5,14 +5,16 @@ export default function GotaGruesa ({
   value,
   values,
   register,
-  required
+  required,
+  pdf
 }) {
   return (
     <>
-      <h2>Gota Gruesa</h2>
+      <h3>Gota Gruesa</h3>
       <Input
         value={!values ? value : values}
         name='gota_gruesa'
+        pdf={pdf}
         register={register}
         onChange={onChange}
         type='text'

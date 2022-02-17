@@ -1,11 +1,12 @@
 import { Input } from '../Input'
 
-export default function Reticulocitos ({ onChange, value, values, register }) {
+export default function Reticulocitos ({ pdf, onChange, value, values, register }) {
   return (
     <>
       <h2>Reticulocitos</h2>
       <section className='section'>
         <Input
+          pdf={pdf}
           value={!values?.corregidos ? value : values.corregidos}
           register={register}
           onChange={onChange}
@@ -18,6 +19,7 @@ export default function Reticulocitos ({ onChange, value, values, register }) {
         </Input>
 
         <Input
+          pdf={pdf}
           value={!values?.produccion ? value : values.produccion}
           name='reticulocitos.produccion'
           register={register}
@@ -29,6 +31,7 @@ export default function Reticulocitos ({ onChange, value, values, register }) {
         </Input>
 
         <Input
+          pdf={pdf}
           register={register}
           onChange={onChange}
           measure='%'

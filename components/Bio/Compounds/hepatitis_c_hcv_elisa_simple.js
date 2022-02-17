@@ -4,13 +4,15 @@ export default function HepatitisCHCVELISA ({
   value,
   values,
   onChange,
-  register
+  register,
+  pdf
 }) {
   return (
     <>
       <section>
-        <h2>Hepatitis C (HCV) ELISA</h2>
+        <h3>Hepatitis C (HCV) ELISA</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

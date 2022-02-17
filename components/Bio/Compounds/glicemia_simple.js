@@ -1,11 +1,12 @@
 import { Input } from '../Input'
 
-export default function Glicemia ({ value, values, onChange, register }) {
+export default function Glicemia ({ value, pdf, values, onChange, register }) {
   return (
     <>
       <section>
-        <h2>Glicemia</h2>
+        <h3>Glicemia</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

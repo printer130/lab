@@ -1,11 +1,12 @@
 import { Input } from '../Input'
 
-export default function IgA ({ value, values, onChange, register }) {
+export default function IgA ({ value, pdf, values, onChange, register }) {
   return (
     <>
       <section>
-        <h2>Ig A</h2>
+        <h3>Ig A</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

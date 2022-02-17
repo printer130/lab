@@ -1,16 +1,15 @@
 import { NegativePositive } from '../NegativePositive'
 
-export default function CoombsDirecto ({ register, values }) {
+export default function CoombsDirecto ({ register, values, pdf }) {
   return (
-    <>
-      <section>
-        <h2>COOMBS Directo</h2>
-        <NegativePositive
-          values={values}
-          register={register}
-          name='coombs_directo_simple'
-        />
-      </section>
-    </>
+    <section>
+      <h3>COOMBS Directo</h3>
+      <NegativePositive
+        values={values}
+        pdf={pdf}
+        register={register}
+        name='coombs_directo_simple'
+      />
+    </section>
   )
 }

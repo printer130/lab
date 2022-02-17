@@ -1,11 +1,12 @@
 import { Input } from '../Input'
 
-export default function ACTH ({ values, value, onChange, register }) {
+export default function ACTH ({ values, pdf, value, onChange, register }) {
   return (
     <>
       <section>
-        <h2>ACTH</h2>
+        <h3>ACTH</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

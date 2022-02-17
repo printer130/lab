@@ -1,11 +1,12 @@
 import { Input } from '../Input'
 
-export default function Fenilalanina ({ value, values, onChange, register }) {
+export default function Fenilalanina ({ value, pdf, values, onChange, register }) {
   return (
     <>
       <section>
-        <h2>Fenilalanina</h2>
+        <h3>Fenilalanina</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

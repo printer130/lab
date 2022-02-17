@@ -5,6 +5,7 @@ export default function CurvaToleranciaALaGlucosa ({
   onChange,
   register,
   values,
+  pdf,
   value
 }) {
   return (
@@ -12,6 +13,7 @@ export default function CurvaToleranciaALaGlucosa ({
       <h2>Curva Tolerancia a la Glucosa</h2>
       <section className='section'>
         <Input
+          pdf={pdf}
           register={register}
           onChange={onChange}
           type='number'
@@ -24,6 +26,7 @@ export default function CurvaToleranciaALaGlucosa ({
         </Input>
 
         <Input
+          pdf={pdf}
           value={
             !values?.glucosa_estimulo_60_min
               ? value
@@ -40,6 +43,7 @@ export default function CurvaToleranciaALaGlucosa ({
         </Input>
 
         <Input
+          pdf={pdf}
           value={
             !values?.glucosa_estimulo_120_min
               ? value
@@ -56,6 +60,7 @@ export default function CurvaToleranciaALaGlucosa ({
         </Input>
 
         <Input
+          pdf={pdf}
           value={
             !values?.glucosa_estimulo_180_min
               ? value
@@ -73,6 +78,7 @@ export default function CurvaToleranciaALaGlucosa ({
       </section>
 
       <Remarks
+        pdf={pdf}
         value={!values?.remarks ? value : values.remarks}
         register={register}
         name='tolerancia_a_la_glucosa.remarks'

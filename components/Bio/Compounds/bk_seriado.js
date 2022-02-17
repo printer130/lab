@@ -7,6 +7,7 @@ export default function BKSeriado ({
   value,
   register,
   required,
+  pdf,
   values
 }) {
   return (
@@ -16,6 +17,7 @@ export default function BKSeriado ({
       <h3>1° Muestra Identificación del Germen</h3>
       <section className='section'>
         <Input
+          pdf={pdf}
           value={
             !values?.muestra_identificacion_germen_1
               ? value
@@ -30,6 +32,7 @@ export default function BKSeriado ({
           Muestra
         </Input>
         <Input
+          pdf={pdf}
           value={
             !values?.germen_identificado_1
               ? value
@@ -45,6 +48,7 @@ export default function BKSeriado ({
         </Input>
       </section>
       <Remarks
+        pdf={pdf}
         value={!values?.remarks1 ? value : values.remarks1}
         name='bk_seriado.remarks1'
         register={register}
@@ -52,6 +56,7 @@ export default function BKSeriado ({
       <h3>2° Muestra Identificación del Germen</h3>
       <section className='section'>
         <Input
+          pdf={pdf}
           value={
             !values?.muestra_identificacion_germen_2
               ? value
@@ -66,6 +71,7 @@ export default function BKSeriado ({
           Muestra
         </Input>
         <Input
+          pdf={pdf}
           value={
             !values?.germen_identificado_2
               ? value
@@ -81,6 +87,7 @@ export default function BKSeriado ({
         </Input>
       </section>
       <Remarks
+        pdf={pdf}
         value={!values?.remarks2 ? value : values.remarks2}
         name='bk_seriado.remarks2'
         register={register}
@@ -88,6 +95,7 @@ export default function BKSeriado ({
       <h3>3° Muestra Identificación del Germen</h3>
       <section className='section'>
         <Input
+          pdf={pdf}
           value={
             !values?.muestra_identificacion_germen_3
               ? value
@@ -102,6 +110,7 @@ export default function BKSeriado ({
           Muestra
         </Input>
         <Input
+          pdf={pdf}
           value={
             !values?.germen_identificado_3
               ? value
@@ -117,6 +126,7 @@ export default function BKSeriado ({
         </Input>
       </section>
       <Remarks
+        pdf={pdf}
         value={!values?.remarks3 ? value : values.remarks3}
         name='bk_seriado.remarks3'
         register={register}

@@ -1,14 +1,15 @@
 import { Input } from '../Input'
 
-export default function IgM ({ value, onChange, register, values }) {
+export default function IgM ({ value, onChange, pdf, register, values }) {
   return (
     <>
       <section>
-        <h2>IgM</h2>
+        <h3>IgM</h3>
         <Input
           value={!values ? value : values}
           onChange={onChange}
           register={register}
+          pdf={pdf}
           type='number'
           placeholder='IgM....'
           name='ig_m_simple'

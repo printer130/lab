@@ -2,7 +2,7 @@
 import dynamic from 'next/dynamic'
 import { Suspense } from 'react'
 
-export function LazyBio ({ name, register, values }) {
+export function LazyBio ({ name, register, values, pdf }) {
   if (
     name === 'l_k_m_1' ||
     name === 'asma' ||
@@ -83,6 +83,7 @@ export function LazyBio ({ name, register, values }) {
         <LazyComponent
           register={register}
           name={name}
+          pdf={pdf}
           values={values}
           required
         />

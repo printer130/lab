@@ -82,6 +82,7 @@ export const Input = forwardRef(
               padding-right: ${image ? '2rem' : '0'};
               margin: ${type !== 'checkbox' ? '.75rem 0' : '.35rem .15rem'};
               border: ${error ? '1px solid #f00' : '.35px solid #101010'};
+              border:${disabled && '1px solid transparent'};
             }
 
             input[type='number']::-webkit-inner-spin-button {

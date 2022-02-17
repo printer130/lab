@@ -4,13 +4,15 @@ export default function ProteinasTotales ({
   value,
   onChange,
   values,
-  register
+  register,
+  pdf
 }) {
   return (
     <>
       <section>
-        <h2>Proteinas Totales</h2>
+        <h3>Proteinas Totales</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

@@ -10,7 +10,7 @@ export default function TCoagulacion ({
   return (
     <>
       <section>
-        <h2>T. Coagulacion</h2>
+        <h3>T. Coagulacion</h3>
         <Input
           pdf={pdf}
           value={!values ? value : values}

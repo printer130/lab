@@ -1,11 +1,12 @@
 import { Input } from '../Input'
 
-export default function AFP ({ values, value, onChange, register }) {
+export default function AFP ({ values, pdf, value, onChange, register }) {
   return (
     <>
       <section>
-        <h2>AFP</h2>
+        <h3>AFP</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

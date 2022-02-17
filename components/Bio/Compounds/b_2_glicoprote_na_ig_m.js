@@ -5,16 +5,19 @@ export default function B2GlicoproteinaIgM ({
   value,
   values,
   register,
-  required
+  required,
+  pdf
 }) {
   return (
-    <>
-      <h2>B2 Glicoproteína - IgM</h2>
+    <section>
+
+      <h3>B2 Glicoproteína - IgM</h3>
 
       <Input
         value={!values ? value : values}
         register={register}
         onChange={onChange}
+        pdf={pdf}
         required={required}
         name='b_2_glicoprote_na_ig_m'
         measure='U/mL'
@@ -23,6 +26,6 @@ export default function B2GlicoproteinaIgM ({
       >
         B2 Glicoproteína - IgM
       </Input>
-    </>
+    </section>
   )
 }

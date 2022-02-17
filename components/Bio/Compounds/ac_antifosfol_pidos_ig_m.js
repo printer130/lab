@@ -5,15 +5,17 @@ export default function AnticuerpoAntifosfolipidosIgM ({
   value,
   register,
   required,
+  pdf,
   values
 }) {
   return (
     <>
-      <h2>Anticuerpo Antifosfolípidos - IgM</h2>
+      <h3>Anticuerpo Antifosfolípidos - IgM</h3>
       <Input
         value={!values ? value : values}
         register={register}
         onChange={onChange}
+        pdf={pdf}
         required={required}
         name='ac_antifosfol_pidos_ig_m'
         measure='MPL'

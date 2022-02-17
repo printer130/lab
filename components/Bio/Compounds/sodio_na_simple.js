@@ -1,11 +1,12 @@
 import { Input } from '../Input'
 
-export default function SodioNa ({ value, values, onChange, register }) {
+export default function SodioNa ({ value, pdf, values, onChange, register }) {
   return (
     <>
       <section>
-        <h2>Sodio Na</h2>
+        <h3>Sodio Na</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

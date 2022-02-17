@@ -7,6 +7,7 @@ export default function CultivoDeSecrecion ({
   onChange,
   values,
   register,
+  pdf,
   value
 }) {
   const antibio = values?.antibiograma ?? false
@@ -18,6 +19,7 @@ export default function CultivoDeSecrecion ({
         <h3>Identificación del Germen</h3>
         <section className='section'>
           <Input
+            pdf={pdf}
             value={
               !values?.muestra_de_secrecion
                 ? value
@@ -33,6 +35,7 @@ export default function CultivoDeSecrecion ({
           </Input>
 
           <Input
+            pdf={pdf}
             value={
               !values?.germen_identificado ? value : values.germen_identificado
             }
@@ -46,6 +49,7 @@ export default function CultivoDeSecrecion ({
           </Input>
 
           <IdentificacionDelGermen
+            pdf={pdf}
             register={register}
             value={value}
             onChange={onChange}
@@ -58,6 +62,7 @@ export default function CultivoDeSecrecion ({
           />
         </section>
         <Remarks
+          pdf={pdf}
           name='cultivo_de_secrecion.remarks'
           value={!values?.remarks ? value : values.remarks}
           register={register}
@@ -68,6 +73,7 @@ export default function CultivoDeSecrecion ({
           {antibiograma.map(({ name, type, placeholder, map }) => {
             return (
               <Input
+                pdf={pdf}
                 key={map}
                 value={!antibio ? value : antibio[map]}
                 register={register}
@@ -83,6 +89,7 @@ export default function CultivoDeSecrecion ({
         </section>
 
         <Remarks
+          pdf={pdf}
           name='cultivo_de_secrecion.remarks2'
           value={!values?.remarks2 ? value : values.remarks2}
           register={register}

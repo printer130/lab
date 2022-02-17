@@ -2,13 +2,15 @@ import { NegativePositive } from '../NegativePositive'
 
 export default function Benzodiazepinas ({
   values,
-  register
+  register,
+  pdf
 }) {
   return (
     <>
       <section>
-        <h2>Benzodiazepinas</h2>
+        <h3>Benzodiazepinas</h3>
         <NegativePositive
+          pdf={pdf}
           values={values}
           register={register}
           name='benzodiazepinas_simple'

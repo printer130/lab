@@ -9,29 +9,21 @@ export default function Aptt ({
   values,
   pdf
 }) {
-  console.log('aptt', values, register?.name)
   const empty = !values ?? isEmpty(values)
   return (
     <>
-      {!pdf
-        ? (
-          <>
-            <h2>APTT</h2>
-            <Input
-              value={empty ? value : values}
-              register={register}
-              onChange={onChange}
-              required={required}
-              name='aptt'
-              measure='segundos'
-              type='number'
-              placeholder='APTT...'
-            />
-          </>
-          )
-        : (
-          <> APTT {values}</>
-          )}
+      <h3>APTT</h3>
+      <Input
+        value={empty ? value : values}
+        register={register}
+        onChange={onChange}
+        pdf={pdf}
+        required={required}
+        name='aptt'
+        measure='segundos'
+        type='number'
+        placeholder='APTT...'
+      />
     </>
   )
 }

@@ -1,10 +1,12 @@
 import { Search } from 'components/Search'
+import { useSession } from 'next-auth/react'
 import { useCallback, useMemo, useState } from 'react'
 import reagentsJson from '../../reagents.json'
 
 export default function Reactivos () {
   const [value, setValue] = useState('')
-
+  const session = useSession()
+  // session?.data?.token?.user?.role
   const handleChange = useCallback((e) => {
     setValue(e.target.value)
   }, [value])
@@ -17,6 +19,11 @@ export default function Reactivos () {
 
   const reagents = useMemo(() => filteredJson, [value])
 
+  if (session?.data?.token?.user?.role === 'RECEPTIONIST' |
+  session?.data?.token?.user?.role === 'ADMIN'
+  ) {
+    return <div>Nada que ver aqui.</div>
+  }
   return (
     <section>
       <h1>Reactivos</h1>

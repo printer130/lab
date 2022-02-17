@@ -1,7 +1,7 @@
 import { Input } from '../Input'
 import { Remarks } from '../Remarks'
 
-export default function Hemograma ({ onChange, register, value, values }) {
+export default function Hemograma ({ onChange, register, value, values, pdf }) {
   return (
     <>
       <section>
@@ -14,6 +14,7 @@ export default function Hemograma ({ onChange, register, value, values }) {
               register={register}
               onChange={onChange}
               type='number'
+              pdf={pdf}
               measure='/mm3'
               placeholder='Globulos Rojos...'
               name='hemograma.globulos_rojos'
@@ -25,6 +26,7 @@ export default function Hemograma ({ onChange, register, value, values }) {
             <Input
               register={register}
               onChange={onChange}
+              pdf={pdf}
               type='number'
               measure='/mm3'
               placeholder='Globulos Blancos...'
@@ -39,6 +41,7 @@ export default function Hemograma ({ onChange, register, value, values }) {
             <Input
               register={register}
               onChange={onChange}
+              pdf={pdf}
               type='number'
               measure='/mm3'
               name='hemograma.plaquetas'
@@ -52,6 +55,7 @@ export default function Hemograma ({ onChange, register, value, values }) {
               register={register}
               onChange={onChange}
               type='number'
+              pdf={pdf}
               measure='g/dL'
               placeholder='Hemoglobina...'
               name='hemograma.hemoglobina'
@@ -64,6 +68,7 @@ export default function Hemograma ({ onChange, register, value, values }) {
               register={register}
               onChange={onChange}
               type='number'
+              pdf={pdf}
               measure='%'
               placeholder='Hematocrito...'
               name='hemograma.hematocrito'
@@ -78,6 +83,7 @@ export default function Hemograma ({ onChange, register, value, values }) {
             <Input
               register={register}
               onChange={onChange}
+              pdf={pdf}
               type='number'
               measure='fL'
               placeholder='V.C.M...'
@@ -89,6 +95,7 @@ export default function Hemograma ({ onChange, register, value, values }) {
 
             <Input
               register={register}
+              pdf={pdf}
               onChange={onChange}
               type='number'
               measure='PG.'
@@ -103,6 +110,7 @@ export default function Hemograma ({ onChange, register, value, values }) {
               register={register}
               onChange={onChange}
               type='number'
+              pdf={pdf}
               measure='g/dL'
               name='hemograma.c_hb_c_m'
               value={!values?.c_hb_c_m ? value : values.c_hb_c_m}
@@ -117,6 +125,7 @@ export default function Hemograma ({ onChange, register, value, values }) {
             <Input
               register={register}
               onChange={onChange}
+              pdf={pdf}
               name='hemograma.blastos'
               value={!values?.blastos ? value : values.blastos}
               type='number'
@@ -131,6 +140,7 @@ export default function Hemograma ({ onChange, register, value, values }) {
               onChange={onChange}
               name='hemograma.promielocitos'
               value={!values?.promielocitos ? value : values.promielocitos}
+              pdf={pdf}
               type='number'
               measure='%'
               placeholder='Promielocitos...'
@@ -142,6 +152,7 @@ export default function Hemograma ({ onChange, register, value, values }) {
               register={register}
               onChange={onChange}
               value={!values?.mielocitos ? value : values.mielocitos}
+              pdf={pdf}
               name='hemograma.mielocitos'
               type='number'
               measure='%'
@@ -155,6 +166,7 @@ export default function Hemograma ({ onChange, register, value, values }) {
               onChange={onChange}
               type='number'
               measure='%'
+              pdf={pdf}
               placeholder='Metamielocitos...'
               value={!values?.metamielocitos ? value : values.metamielocitos}
               name='hemograma.metamielocitos'
@@ -167,6 +179,7 @@ export default function Hemograma ({ onChange, register, value, values }) {
               onChange={onChange}
               type='number'
               measure='%'
+              pdf={pdf}
               placeholder='Cayados...'
               value={!values?.cayados ? value : values.cayados}
               name='hemograma.cayados'
@@ -178,6 +191,7 @@ export default function Hemograma ({ onChange, register, value, values }) {
               register={register}
               onChange={onChange}
               type='number'
+              pdf={pdf}
               measure='%'
               placeholder='Neutrófilos / Segmentados...'
               value={!values?.neutrofilos ? value : values.neutrofilos}
@@ -189,6 +203,7 @@ export default function Hemograma ({ onChange, register, value, values }) {
             <Input
               register={register}
               onChange={onChange}
+              pdf={pdf}
               type='number'
               measure='%'
               placeholder='Linfocitos...'
@@ -201,6 +216,7 @@ export default function Hemograma ({ onChange, register, value, values }) {
             <Input
               register={register}
               onChange={onChange}
+              pdf={pdf}
               type='number'
               measure='%'
               placeholder='Monocitos...'
@@ -213,6 +229,7 @@ export default function Hemograma ({ onChange, register, value, values }) {
             <Input
               register={register}
               onChange={onChange}
+              pdf={pdf}
               type='number'
               measure='%'
               placeholder='Eosinófilos...'
@@ -225,6 +242,7 @@ export default function Hemograma ({ onChange, register, value, values }) {
             <Input
               register={register}
               onChange={onChange}
+              pdf={pdf}
               type='number'
               measure='%'
               placeholder='Basófilos...'
@@ -239,6 +257,7 @@ export default function Hemograma ({ onChange, register, value, values }) {
             value={!values?.remarks ? value : values.remarks}
             name='hemograma.remarks'
             register={register}
+            pdf={pdf}
           />
         </div>
         <style jsx>

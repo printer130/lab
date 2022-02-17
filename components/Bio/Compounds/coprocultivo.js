@@ -7,6 +7,7 @@ export default function Coprocultivo ({
   onChange,
   value,
   values,
+  pdf,
   register,
   required
 }) {
@@ -16,6 +17,7 @@ export default function Coprocultivo ({
 
       <h3>Siembra Primaria</h3>
       <Input
+        pdf={pdf}
         value={
           !values?.germen_de_identificado
             ? value
@@ -33,6 +35,7 @@ export default function Coprocultivo ({
       <h3>Antibiograma</h3>
       <section className='section'>
         <Input
+          pdf={pdf}
           value={
             !values?.antibiograma_levofloxacino
               ? value
@@ -47,6 +50,7 @@ export default function Coprocultivo ({
           Levofloxacino
         </Input>
         <Input
+          pdf={pdf}
           value={
             !values?.antibiograma_sulfatrimetoprim
               ? value
@@ -61,6 +65,7 @@ export default function Coprocultivo ({
           Sulfatrimetoprim
         </Input>
         <Input
+          pdf={pdf}
           value={
             !values?.antibiograma_amoxicilina_sulbactam
               ? value
@@ -75,6 +80,7 @@ export default function Coprocultivo ({
           Amoxicilina/Sulbactam
         </Input>
         <Input
+          pdf={pdf}
           value={
             !values?.antibiograma_cefalexina
               ? value
@@ -89,6 +95,7 @@ export default function Coprocultivo ({
           Cefalexina
         </Input>
         <Input
+          pdf={pdf}
           value={
             !values?.antibiograma_amoxicilina
               ? value
@@ -103,6 +110,7 @@ export default function Coprocultivo ({
           Amoxicilina
         </Input>
         <Input
+          pdf={pdf}
           value={
             !values?.antibiograma_ceftazidima
               ? value
@@ -117,6 +125,7 @@ export default function Coprocultivo ({
           Ceftazidima
         </Input>
         <Input
+          pdf={pdf}
           value={
             !values?.antibiograma_tetraciclina
               ? value
@@ -131,6 +140,7 @@ export default function Coprocultivo ({
           Tetraciclina
         </Input>
         <Input
+          pdf={pdf}
           value={
             !values?.antibiograma_cloranfenicol
               ? value
@@ -145,6 +155,7 @@ export default function Coprocultivo ({
           Cloranfenicol
         </Input>
         <Input
+          pdf={pdf}
           value={
             !values?.antibiograma_Amikazina
               ? value
@@ -159,6 +170,7 @@ export default function Coprocultivo ({
           Amikazina
         </Input>
         <Input
+          pdf={pdf}
           value={
             !values?.antibiograma_ceftriaxona
               ? value
@@ -173,6 +185,7 @@ export default function Coprocultivo ({
           Ceftriaxona
         </Input>
         <Input
+          pdf={pdf}
           value={
             !values?.antibiograma_cefotaxina
               ? value
@@ -187,6 +200,7 @@ export default function Coprocultivo ({
           Cefotaxina
         </Input>
         <Input
+          pdf={pdf}
           value={
             !values?.antibiograma_ampicilina
               ? value
@@ -203,6 +217,7 @@ export default function Coprocultivo ({
       </section>
 
       <Remarks
+        pdf={pdf}
         value={!values?.remarks ? value : values.remarks}
         register={register}
         name='coprocultivo.remarks'

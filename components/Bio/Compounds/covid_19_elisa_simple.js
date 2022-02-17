@@ -1,11 +1,12 @@
 import { Input } from '../Input'
 
-export default function COVID19elisa ({ value, values, onChange, register }) {
+export default function COVID19elisa ({ value, pdf, values, onChange, register }) {
   return (
     <>
       <section>
-        <h2>COVID 19 elisa</h2>
+        <h3>COVID 19 elisa</h3>
         <Input
+          pdf={pdf}
           type='number'
           value={!values ? value : values}
           onChange={onChange}

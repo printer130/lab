@@ -5,6 +5,7 @@ export default function Calprotectina ({
   onChange,
   value,
   register,
+  pdf,
   required,
   values
 }) {
@@ -13,6 +14,7 @@ export default function Calprotectina ({
       <section>
         <h2>CALPROTECTINA Fecal</h2>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           register={register}
           onChange={onChange}

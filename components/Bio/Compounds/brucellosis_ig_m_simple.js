@@ -1,11 +1,12 @@
 import { Input } from '../Input'
 
-export default function BrucellosisIgM ({ value, values, onChange, register }) {
+export default function BrucellosisIgM ({ value, pdf, values, onChange, register }) {
   return (
     <>
       <section>
         <h2>Brucellosis IgM</h2>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

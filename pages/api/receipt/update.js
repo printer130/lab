@@ -13,7 +13,7 @@ export default async function (req, res) {
 
   const { labId } = session.token.user
 
-  if (!session?.token) {
+  if (!session?.token || !labId) {
     return res.status(405).json({
       message: 'Method not allowed',
       data: null
@@ -26,8 +26,9 @@ export default async function (req, res) {
 
   // return res.status(200).json({})
   indebtList.push({ indebt: +sal })
+
   try {
-    const receiptUpdated = await prisma[`receipt${labId}`].update({
+    const receiptUpdated = await prisma.receipts.update({
       where: {
         cuiid: cuiid
       },

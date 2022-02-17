@@ -5,15 +5,17 @@ export default function AncaPElisa ({
   value,
   values,
   register,
-  required
+  required,
+  pdf
 }) {
   return (
     <>
-      <h2>ANCA - P (Elisa)</h2>
+      <h3>ANCA - P (Elisa)</h3>
       <Input
         value={!values ? value : values}
         register={register}
         onChange={onChange}
+        pdf={pdf}
         required={required}
         name='anca_p_elisa'
         type='number'

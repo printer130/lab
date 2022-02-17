@@ -1,11 +1,12 @@
 import { Input } from '../Input'
 
-export default function KEnOrina ({ value, onChange, values, register }) {
+export default function KEnOrina ({ value, pdf, onChange, values, register }) {
   return (
     <>
       <section>
-        <h2>K en Orina</h2>
+        <h3>K en Orina</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

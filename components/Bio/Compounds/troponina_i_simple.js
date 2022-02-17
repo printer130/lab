@@ -1,11 +1,12 @@
 import { Input } from '../Input'
 
-export default function TroponinaI ({ value, values, onChange, register }) {
+export default function TroponinaI ({ value, pdf, values, onChange, register }) {
   return (
     <>
       <section>
-        <h2>Troponina I</h2>
+        <h3>Troponina I</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

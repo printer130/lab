@@ -1,11 +1,12 @@
 import { Input } from '../Input'
 
-export default function HIVWestBlot ({ value, values, onChange, register }) {
+export default function HIVWestBlot ({ value, pdf, values, onChange, register }) {
   return (
     <>
       <section>
-        <h2>HIV West. Blot</h2>
+        <h3>HIV West. Blot</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

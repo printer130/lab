@@ -1,11 +1,12 @@
 import { Input } from '../Input'
 
-export default function IgE ({ value, onChange, register, values }) {
+export default function IgE ({ value, onChange, pdf, register, values }) {
   return (
     <>
       <section>
-        <h2>IgE</h2>
+        <h3>IgE</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

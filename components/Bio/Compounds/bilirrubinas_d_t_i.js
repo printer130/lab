@@ -6,13 +6,15 @@ export default function Bilirrubinas ({
   value,
   register,
   required,
-  values
+  values,
+  pdf
 }) {
   return (
     <>
       <h2>Bilirrubinas</h2>
 
       <Input
+        pdf={pdf}
         value={!values?.bilirrubina_directa ? value : values.bilirrubina_directa}
         register={register}
         onChange={onChange}
@@ -25,6 +27,7 @@ export default function Bilirrubinas ({
         Bilirrubina Directa
       </Input>
       <Input
+        pdf={pdf}
         value={
           !values?.bilirrubina_indirecta ? value : values.bilirrubina_indirecta
         }
@@ -39,6 +42,7 @@ export default function Bilirrubinas ({
         Bilirrubina Indirecta
       </Input>
       <Input
+        pdf={pdf}
         value={!values?.bilirrubina_total ? value : values.bilirrubina_total}
         register={register}
         onChange={onChange}

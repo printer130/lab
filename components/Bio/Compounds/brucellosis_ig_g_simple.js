@@ -1,19 +1,18 @@
 import { Input } from '../Input'
 
-export default function BrucellosisIgG ({ value, values, onChange, register }) {
+export default function BrucellosisIgG ({ value, pdf, values, onChange, register }) {
   return (
-    <>
-      <section>
-        <h2>Brucellosis IgG</h2>
-        <Input
-          value={!values ? value : values}
-          onChange={onChange}
-          register={register}
-          type='number'
-          placeholder='Brucellosis IgG....'
-          name='brucellosis_ig_g_simple'
-        />
-      </section>
-    </>
+    <section>
+      <h3>Brucellosis IgG</h3>
+      <Input
+        pdf={pdf}
+        value={!values ? value : values}
+        onChange={onChange}
+        register={register}
+        type='number'
+        placeholder='Brucellosis IgG....'
+        name='brucellosis_ig_g_simple'
+      />
+    </section>
   )
 }

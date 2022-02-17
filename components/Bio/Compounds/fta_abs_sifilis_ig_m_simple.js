@@ -4,13 +4,15 @@ export default function FTAABSSifilisIgM ({
   value,
   values,
   onChange,
-  register
+  register,
+  pdf
 }) {
   return (
     <>
       <section>
-        <h2>FTA-ABS (Sifilis) - IgM</h2>
+        <h3>FTA-ABS (Sifilis) - IgM</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

@@ -1,11 +1,12 @@
 import { Input } from '../Input'
 
-export default function TG ({ value, onChange, values, register }) {
+export default function TG ({ value, onChange, pdf, values, register }) {
   return (
     <>
       <section>
-        <h2>TG</h2>
+        <h3>TG</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

@@ -1,13 +1,14 @@
 import { Input } from '../Input'
 
-export default function B2Microalb ({ value, values, onChange, register }) {
+export default function B2Microalb ({ value, values, pdf, onChange, register }) {
   return (
     <>
       <section>
-        <h2>B2 Microalb</h2>
+        <h3>B2 Microalb</h3>
         <Input
           value={!values ? value : values}
           onChange={onChange}
+          pdf={pdf}
           register={register}
           type='number'
           placeholder='B2 Microalb...'

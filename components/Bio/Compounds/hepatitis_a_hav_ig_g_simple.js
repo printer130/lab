@@ -4,13 +4,15 @@ export default function HepatitisAHAVIgG ({
   value,
   values,
   onChange,
-  register
+  register,
+  pdf
 }) {
   return (
     <>
       <section>
-        <h2>Hepatitis A (HAV) - IgG</h2>
+        <h3>Hepatitis A (HAV) - IgG</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

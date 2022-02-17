@@ -1,11 +1,12 @@
 import { Input } from '../Input'
 
-export default function HGHDe4Tiempos ({ value, values, onChange, register }) {
+export default function HGHDe4Tiempos ({ value, pdf, values, onChange, register }) {
   return (
     <>
       <section>
-        <h2>HGH de 4 Tiempos </h2>
+        <h3>HGH de 4 Tiempos </h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

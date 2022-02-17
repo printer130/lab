@@ -4,13 +4,15 @@ export default function COVID19AcNeutralizantes ({
   value,
   values,
   onChange,
+  pdf,
   register
 }) {
   return (
     <>
       <section>
-        <h2>COVID 19 (Ac. Neutralizantes)</h2>
+        <h3>COVID 19 (Ac. Neutralizantes)</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           type='number'
           onChange={onChange}

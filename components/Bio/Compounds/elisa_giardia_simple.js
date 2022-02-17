@@ -1,11 +1,12 @@
 import { Input } from '../Input'
 
-export default function ElisaGiardia ({ value, values, onChange, register }) {
+export default function ElisaGiardia ({ value, pdf, values, onChange, register }) {
   return (
     <>
       <section>
-        <h2>Elisa Giardia</h2>
+        <h3>Elisa Giardia</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

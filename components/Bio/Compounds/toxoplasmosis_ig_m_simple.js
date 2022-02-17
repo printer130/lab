@@ -4,13 +4,15 @@ export default function ToxoplasmosisIgM ({
   value,
   values,
   onChange,
-  register
+  register,
+  pdf
 }) {
   return (
     <>
       <section>
-        <h2>Toxoplasmosis IgM</h2>
+        <h3>Toxoplasmosis IgM</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

@@ -1,10 +1,11 @@
 import { Input } from '../Input'
 
-export default function Lienteria ({ onChange, values, value, register }) {
+export default function Lienteria ({ onChange, pdf, values, value, register }) {
   return (
     <>
-      <h2>Inhibidor Lúpidico</h2>
+      <h3>Inhibidor Lúpidico</h3>
       <Input
+        pdf={pdf}
         type='text'
         name='lienter_a'
         placeholder='lienteria'

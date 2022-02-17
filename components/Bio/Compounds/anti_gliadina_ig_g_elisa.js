@@ -5,14 +5,16 @@ export default function AntiGliadinaIgGElisa ({
   value,
   values,
   register,
-  required
+  required,
+  pdf
 }) {
   return (
     <>
-      <h2>Anti Gliadina IgG (Elisa)</h2>
+      <h3>Anti Gliadina IgG (Elisa)</h3>
       <Input
         value={!values ? value : values}
         register={register}
+        pdf={pdf}
         onChange={onChange}
         required={required}
         name='anti_gliadina_ig_g_elisa'

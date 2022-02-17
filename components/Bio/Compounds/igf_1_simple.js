@@ -1,11 +1,12 @@
 import { Input } from '../Input'
 
-export default function IGF1 ({ value, onChange, values, register }) {
+export default function IGF1 ({ value, pdf, onChange, values, register }) {
   return (
     <>
       <section>
-        <h2>IGF - 1</h2>
+        <h3>IGF - 1</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

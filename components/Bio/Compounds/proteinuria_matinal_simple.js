@@ -4,13 +4,15 @@ export default function ProteinuriaMatinal ({
   value,
   values,
   onChange,
+  pdf,
   register
 }) {
   return (
     <>
       <section>
-        <h2>Proteinuria Matinal</h2>
+        <h3>Proteinuria Matinal</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

@@ -1,11 +1,12 @@
 import { Input } from '../Input'
 
-export default function DHEAS ({ value, values, onChange, register }) {
+export default function DHEAS ({ value, pdf, values, onChange, register }) {
   return (
     <>
       <section>
-        <h2>DHEAS</h2>
+        <h3>DHEAS</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

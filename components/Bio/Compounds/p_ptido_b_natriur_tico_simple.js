@@ -4,13 +4,15 @@ export default function PeptidoBNatriureico ({
   value,
   values,
   onChange,
-  register
+  register,
+  pdf
 }) {
   return (
     <>
       <section>
-        <h2>Peptido B Natriureico</h2>
+        <h3>Peptido B Natriureico</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

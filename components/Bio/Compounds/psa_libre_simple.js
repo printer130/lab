@@ -1,11 +1,12 @@
 import { Input } from '../Input'
 
-export default function PSALibre ({ value, onChange, values, register }) {
+export default function PSALibre ({ value, pdf, onChange, values, register }) {
   return (
     <>
       <section>
-        <h2>PSA Libre</h2>
+        <h3>PSA Libre</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

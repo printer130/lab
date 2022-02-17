@@ -6,11 +6,12 @@ export const Button = ({
   className,
   order,
   fixed,
+  disable,
   isFetched
 }) => {
   return (
     <>
-      <button onClick={onChange} disabled={!isValid || !isDirty || isFetched}>
+      <button onClick={onChange} disabled={!disable ? (!isValid || !isDirty || isFetched) : false}>
         {children}
       </button>
       <style jsx>
@@ -18,7 +19,7 @@ export const Button = ({
           button {
             position: ${fixed ? 'fixed' : 'static'};
             display: ${className ? 'none' : 'block'};
-            pointer-events: ${!isValid || !isDirty ? 'none' : 'auto'};
+            pointer-events: ${!disable ? (!isValid || !isDirty) ? 'none' : 'auto' : 'auto'};
             margin: 0.55rem 0;
             top: 100px;
             border-radius: 7px;

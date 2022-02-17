@@ -1,11 +1,12 @@
 import { Input } from '../Input'
 
-export default function FeSerico ({ value, values, onChange, register }) {
+export default function FeSerico ({ value, pdf, values, onChange, register }) {
   return (
     <>
       <section>
-        <h2>Fe Sérico</h2>
+        <h3>Fe Sérico</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChagen={onChange}
           register={register}

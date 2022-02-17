@@ -1,11 +1,12 @@
 import { Input } from '../Input'
 
-export default function Ada ({ onChange, value, register, required, values }) {
+export default function Ada ({ onChange, value, pdf, register, required, values }) {
   return (
     <>
       <h2>ADA</h2>
       <section className='section'>
         <Input
+          pdf={pdf}
           value={!values ? value : values.ada_de_liquido_cefalorraquideo}
           register={register}
           onChange={onChange}
@@ -19,6 +20,7 @@ export default function Ada ({ onChange, value, register, required, values }) {
         </Input>
 
         <Input
+          pdf={pdf}
           value={!values ? value : values.ada_de_liquido_pleural}
           register={register}
           onChange={onChange}
@@ -32,6 +34,7 @@ export default function Ada ({ onChange, value, register, required, values }) {
         </Input>
 
         <Input
+          pdf={pdf}
           value={!values ? value : values.ada_de_liquido_ascitico}
           register={register}
           onChange={onChange}
@@ -45,6 +48,7 @@ export default function Ada ({ onChange, value, register, required, values }) {
         </Input>
 
         <Input
+          pdf={pdf}
           value={!values ? value : values.ada_de_liquido_peritoneal}
           register={register}
           onChange={onChange}
@@ -58,6 +62,7 @@ export default function Ada ({ onChange, value, register, required, values }) {
         </Input>
 
         <Input
+          pdf={pdf}
           value={!values ? value : values.ada_de_liquido}
           register={register}
           onChange={onChange}
@@ -71,6 +76,7 @@ export default function Ada ({ onChange, value, register, required, values }) {
         </Input>
 
         <Input
+          pdf={pdf}
           value={!values ? value : values.ada_de_liquido_sinovial}
           register={register}
           onChange={onChange}
@@ -84,6 +90,7 @@ export default function Ada ({ onChange, value, register, required, values }) {
         </Input>
 
         <Input
+          pdf={pdf}
           value={!values ? value : values.ada_de_liquido_pericardico}
           register={register}
           onChange={onChange}
@@ -97,6 +104,7 @@ export default function Ada ({ onChange, value, register, required, values }) {
         </Input>
 
         <Input
+          pdf={pdf}
           value={!values ? value : values.ada_de_liquido_suero}
           register={register}
           onChange={onChange}

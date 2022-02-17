@@ -1,12 +1,13 @@
 import { Input } from '../Input'
 import { Remarks } from '../Remarks'
 
-export default function MocoFecal ({ onChange, value, values, register }) {
+export default function MocoFecal ({ onChange, value, pdf, values, register }) {
   return (
     <>
       <h2>Moco Fecal</h2>
       <section className='section'>
         <Input
+          pdf={pdf}
           register={register}
           onChange={onChange}
           type='text'
@@ -18,6 +19,7 @@ export default function MocoFecal ({ onChange, value, values, register }) {
         </Input>
 
         <Input
+          pdf={pdf}
           register={register}
           onChange={onChange}
           type='number'
@@ -32,6 +34,7 @@ export default function MocoFecal ({ onChange, value, values, register }) {
         </Input>
 
         <Input
+          pdf={pdf}
           register={register}
           onChange={onChange}
           type='number'
@@ -45,6 +48,7 @@ export default function MocoFecal ({ onChange, value, values, register }) {
       </section>
 
       <Remarks
+        pdf={pdf}
         value={!values?.remarks ? value : values.remarks}
         register={register}
         name='moco_fecal.remarks'

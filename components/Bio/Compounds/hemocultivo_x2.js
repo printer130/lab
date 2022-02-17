@@ -3,7 +3,7 @@ import { Remarks } from '../Remarks'
 import { antibiograma } from 'const/antibiograma'
 import { IdentificacionDelGermen } from '../Identificacion'
 
-export default function Hemocultivox2 ({ onChange, values, register, value }) {
+export default function Hemocultivox2 ({ onChange, pdf, values, register, value }) {
   const antibio = values?.antibiograma ?? false
 
   return (
@@ -12,6 +12,7 @@ export default function Hemocultivox2 ({ onChange, values, register, value }) {
       <h3>1° Muestra Identificación del Germen</h3>
       <section className='section'>
         <IdentificacionDelGermen
+          pdf={pdf}
           muestra
           register={register}
           onChange={onChange}
@@ -24,6 +25,7 @@ export default function Hemocultivox2 ({ onChange, values, register, value }) {
         value={!values?.remarks ? value : values.remarks}
         name='hemocultivo_x2.remarks'
         register={register}
+        pdf={pdf}
       />
 
       <h3>Antibiograma</h3>
@@ -31,6 +33,7 @@ export default function Hemocultivox2 ({ onChange, values, register, value }) {
         {antibiograma.map(({ name, type, placeholder, map }) => {
           return (
             <Input
+              pdf={pdf}
               key={name}
               value={!antibio ? value : antibio[map]}
               name={`hemocultivo_x2.antibiograma.${map}`}
@@ -46,6 +49,7 @@ export default function Hemocultivox2 ({ onChange, values, register, value }) {
       </section>
 
       <Remarks
+        pdf={pdf}
         value={!values?.remarks2 ? value : values.remarks2}
         name='hemocultivo_x2.remarks2'
         register={register}
@@ -55,6 +59,7 @@ export default function Hemocultivox2 ({ onChange, values, register, value }) {
       <section className='section'>
         <IdentificacionDelGermen
           register={register}
+          pdf={pdf}
           values={!values?.identificacion2 ? value : values.identificacion2}
           name='hemocultivo_x2.identificacion2'
           value={value}
@@ -64,6 +69,7 @@ export default function Hemocultivox2 ({ onChange, values, register, value }) {
       </section>
 
       <Remarks
+        pdf={pdf}
         value={!values?.remarks3 ? value : values.remarks3}
         name='hemocultivo_x2.remarks3'
         register={register}
@@ -73,6 +79,7 @@ export default function Hemocultivox2 ({ onChange, values, register, value }) {
         {antibiograma.map(({ name, type, placeholder, map }) => {
           return (
             <Input
+              pdf={pdf}
               value={!antibio ? value : antibio[map]}
               name={`hemocultivo_x2.antibiograma.${map}`}
               key={name}
@@ -88,6 +95,7 @@ export default function Hemocultivox2 ({ onChange, values, register, value }) {
       </section>
 
       <Remarks
+        pdf={pdf}
         value={!values?.remarks4 ? value : values.remarks4}
         name='hemocultivo_x2.remarks4'
         register={register}

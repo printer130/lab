@@ -4,13 +4,15 @@ export default function ProteinuruaDe24Horas ({
   value,
   values,
   onChange,
-  register
+  register,
+  pdf
 }) {
   return (
     <>
       <section>
-        <h2>Proteinuria de 24 Hrs</h2>
+        <h3>Proteinuria de 24 Hrs</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           type='number'

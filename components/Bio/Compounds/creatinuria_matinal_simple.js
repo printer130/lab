@@ -4,13 +4,15 @@ export default function CreatinuriaMatinal ({
   value,
   values,
   onChange,
-  register
+  register,
+  pdf
 }) {
   return (
     <>
       <section>
-        <h2>Creatinuria Matinal</h2>
+        <h3>Creatinuria Matinal</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

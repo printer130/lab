@@ -4,13 +4,15 @@ export default function HepatitisBHBeAgAGE ({
   value,
   values,
   onChange,
-  register
+  register,
+  pdf
 }) {
   return (
     <>
       <section>
-        <h2>Hepatitis B (HBe Ag) AG E</h2>
+        <h3>Hepatitis B (HBe Ag) AG E</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

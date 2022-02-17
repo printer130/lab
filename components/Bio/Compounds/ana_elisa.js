@@ -5,16 +5,18 @@ export default function AnaElisa ({
   value,
   values,
   register,
+  pdf,
   required
 }) {
   return (
     <>
-      <h2>ANA (Elisa)</h2>
+      <h3>ANA (Elisa)</h3>
 
       <Input
         value={!values ? value : values}
         register={register}
         onChange={onChange}
+        pdf={pdf}
         required={required}
         name='ana_elisa'
         measure='UAI/mL'

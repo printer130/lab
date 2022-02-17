@@ -1,11 +1,12 @@
 import { Input } from '../Input'
 
-export default function LitioLi ({ value, values, onChange, register }) {
+export default function LitioLi ({ value, pdf, values, onChange, register }) {
   return (
     <>
       <section>
-        <h2>Litio Li</h2>
+        <h3>Litio Li</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

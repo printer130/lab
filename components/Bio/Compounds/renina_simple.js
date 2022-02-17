@@ -1,11 +1,12 @@
 import { Input } from '../Input'
 
-export default function Renina ({ value, onChange, values, register }) {
+export default function Renina ({ value, pdf, onChange, values, register }) {
   return (
     <>
       <section>
-        <h2>Renina</h2>
+        <h3>Renina</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

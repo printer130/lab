@@ -6,7 +6,8 @@ export default function GeneralDeOrina ({
   value,
   values,
   register,
-  required
+  required,
+  pdf
 }) {
   return (
     <>
@@ -14,6 +15,7 @@ export default function GeneralDeOrina ({
       <h3>Examen Físico</h3>
       <section className='section'>
         <Input
+          pdf={pdf}
           value={!values?.olor ? value : values.olor}
           name='general_de_orina.olor'
           register={register}
@@ -25,6 +27,7 @@ export default function GeneralDeOrina ({
         </Input>
 
         <Input
+          pdf={pdf}
           value={!values?.color ? value : values.color}
           name='general_de_orina.color'
           register={register}
@@ -36,6 +39,7 @@ export default function GeneralDeOrina ({
         </Input>
 
         <Input
+          pdf={pdf}
           value={!values?.aspecto ? value : values.aspecto}
           name='general_de_orina.aspecto'
           register={register}
@@ -47,6 +51,7 @@ export default function GeneralDeOrina ({
         </Input>
 
         <Input
+          pdf={pdf}
           value={!values?.densidad ? value : values.densidad}
           name='general_de_orina.densidad'
           register={register}
@@ -58,6 +63,7 @@ export default function GeneralDeOrina ({
         </Input>
 
         <Input
+          pdf={pdf}
           value={!values?.ph ? value : values.ph}
           name='general_de_orina.ph'
           register={register}
@@ -72,6 +78,7 @@ export default function GeneralDeOrina ({
       <h3>Examen Químico</h3>
       <section className='section'>
         <Input
+          pdf={pdf}
           value={!values?.proteinas ? value : values.proteinas}
           name='general_de_orina.proteinas'
           register={register}
@@ -84,6 +91,7 @@ export default function GeneralDeOrina ({
         </Input>
 
         <Input
+          pdf={pdf}
           value={!values?.cuerpo_cetonicos ? value : values.cuerpo_cetonicos}
           name='general_de_orina.cuerpo_cetonicos'
           register={register}
@@ -95,6 +103,7 @@ export default function GeneralDeOrina ({
         </Input>
 
         <Input
+          pdf={pdf}
           value={!values?.sales_biliares ? value : values.sales_biliares}
           name='general_de_orina.sales_biliares'
           register={register}
@@ -106,6 +115,7 @@ export default function GeneralDeOrina ({
         </Input>
 
         <Input
+          pdf={pdf}
           value={!values?.hemoglobina ? value : values.hemoglobina}
           name='general_de_orina.hemoglobina'
           register={register}
@@ -117,6 +127,7 @@ export default function GeneralDeOrina ({
         </Input>
 
         <Input
+          pdf={pdf}
           value={!values?.urobilina ? value : values.urobilina}
           name='general_de_orina.urobilina'
           register={register}
@@ -129,6 +140,7 @@ export default function GeneralDeOrina ({
         </Input>
 
         <Input
+          pdf={pdf}
           value={!values?.nitritos ? value : values.nitritos}
           name='general_de_orina.nitritos'
           register={register}
@@ -140,6 +152,7 @@ export default function GeneralDeOrina ({
         </Input>
 
         <Input
+          pdf={pdf}
           value={!values?.glucosa ? value : values.glucosa}
           name='general_de_orina.glucosa'
           register={register}
@@ -152,6 +165,7 @@ export default function GeneralDeOrina ({
         </Input>
 
         <Input
+          pdf={pdf}
           value={!values?.bilirrubinas ? value : values.bilirrubinas}
           name='general_de_orina.bilirrubinas'
           register={register}
@@ -166,6 +180,7 @@ export default function GeneralDeOrina ({
       <h3>Examen Microscópico</h3>
       <section className='section'>
         <Input
+          pdf={pdf}
           value={!values?.leucocitos ? value : values.leucocitos}
           name='general_de_orina.leucocitos'
           register={register}
@@ -177,6 +192,7 @@ export default function GeneralDeOrina ({
         </Input>
 
         <Input
+          pdf={pdf}
           value={!values?.hematies ? value : values.hematies}
           name='general_de_orina.hematies'
           register={register}
@@ -188,6 +204,7 @@ export default function GeneralDeOrina ({
         </Input>
 
         <Input
+          pdf={pdf}
           value={
             !values?.celulas_descamadas ? value : values.celulas_descamadas
           }
@@ -201,6 +218,7 @@ export default function GeneralDeOrina ({
         </Input>
 
         <Input
+          pdf={pdf}
           value={!values?.flora_microbiana ? value : values.flora_microbiana}
           name='general_de_orina.flora_microbiana'
           register={register}
@@ -212,6 +230,7 @@ export default function GeneralDeOrina ({
         </Input>
 
         <Input
+          pdf={pdf}
           value={!values?.piocitos ? value : values.piocitos}
           name='general_de_orina.piocitos'
           register={register}
@@ -223,6 +242,7 @@ export default function GeneralDeOrina ({
         </Input>
 
         <Input
+          pdf={pdf}
           value={!values?.cilindros ? value : values.cilindros}
           name='general_de_orina.cilindros'
           register={register}
@@ -234,6 +254,7 @@ export default function GeneralDeOrina ({
         </Input>
 
         <Input
+          pdf={pdf}
           value={!values?.celulas_renales ? value : values.celulas_renales}
           name='general_de_orina.celulas_renales'
           register={register}
@@ -245,6 +266,7 @@ export default function GeneralDeOrina ({
         </Input>
 
         <Input
+          pdf={pdf}
           value={!values?.cristales ? value : values.cristales}
           name='general_de_orina.cristales'
           register={register}
@@ -256,6 +278,7 @@ export default function GeneralDeOrina ({
         </Input>
 
         <Input
+          pdf={pdf}
           value={!values?.levaduras ? value : values.levaduras}
           name='general_de_orina.levaduras'
           register={register}
@@ -268,6 +291,7 @@ export default function GeneralDeOrina ({
       </section>
 
       <Remarks
+        pdf={pdf}
         value={!values?.remarks ? value : values.remarks}
         name='general_de_orina.remarks'
         register={register}

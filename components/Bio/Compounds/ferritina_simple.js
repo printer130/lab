@@ -1,11 +1,12 @@
 import { Input } from '../Input'
 
-export default function Ferritina ({ register, value, values, onChange }) {
+export default function Ferritina ({ register, pdf, value, values, onChange }) {
   return (
     <>
       <section>
-        <h2>Ferritina</h2>
+        <h3>Ferritina</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChagen={onChange}
           name='ferritina_simple'

@@ -1,11 +1,12 @@
 import { Input } from '../Input'
 
-export default function Globulina ({ value, onChange, register, values }) {
+export default function Globulina ({ value, pdf, onChange, register, values }) {
   return (
     <>
       <section>
-        <h2>Globulina</h2>
+        <h3>Globulina</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

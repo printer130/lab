@@ -4,13 +4,15 @@ export default function EpstainBaarVirusIgM ({
   value,
   values,
   onChange,
-  register
+  register,
+  pdf
 }) {
   return (
     <>
       <section>
-        <h2>Epstain Baar Virus - IgM</h2>
+        <h3>Epstain Baar Virus - IgM</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

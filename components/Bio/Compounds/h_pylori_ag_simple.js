@@ -1,12 +1,13 @@
 import { NegativePositive } from '../NegativePositive'
 
-export default function HPyloriAg ({ register, values }) {
+export default function HPyloriAg ({ register, pdf, values }) {
   return (
     <>
       <section>
-        <h2>H. Pylori Ag.</h2>
+        <h3>H. Pylori Ag.</h3>
         <NegativePositive
           values={values}
+          pdf={pdf}
           register={register}
           name='h_pylori_ag_simple'
         />

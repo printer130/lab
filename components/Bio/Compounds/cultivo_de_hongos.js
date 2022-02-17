@@ -6,7 +6,8 @@ export default function CultivoDeHongos ({
   onChange,
   values,
   register,
-  value
+  value,
+  pdf
 }) {
   return (
     <>
@@ -15,6 +16,7 @@ export default function CultivoDeHongos ({
         <h3>Identificación del Germen</h3>
         <section className='section'>
           <Input
+            pdf={pdf}
             value={
               !values?.muestra_de_hongos ? value : values.muestra_de_hongos
             }
@@ -28,6 +30,7 @@ export default function CultivoDeHongos ({
           </Input>
 
           <IdentificacionDelGermen
+            pdf={pdf}
             register={register}
             value={value}
             values={
@@ -41,6 +44,7 @@ export default function CultivoDeHongos ({
         </section>
 
         <Remarks
+          pdf={pdf}
           value={!values?.remarks ? value : values.remarks}
           name='cultivo_de_hongos.remarks'
           register={register}

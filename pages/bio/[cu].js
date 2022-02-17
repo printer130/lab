@@ -6,6 +6,7 @@ import { LazyBio } from 'components/LazyBio'
 import { receiptBio } from 'lib/db/receiptBio'
 import { useApiCallback } from 'hooks/useApiCallback'
 import { useRouter } from 'next/router'
+import { toast, ToastContainer } from 'react-toastify'
 
 export default function Bio () {
   const {
@@ -20,6 +21,7 @@ export default function Bio () {
     cuiid: router.query.cu
   })
   const onSubmit = data => {
+    setLoading(true)
     receiptBio({
       culo: {
         json: apiResponse?.data[0].json,
@@ -27,8 +29,11 @@ export default function Bio () {
         cuiid: apiResponse?.data[0].cuiid
       }
     }).then(res => {
+      setLoading(false)
+      toast.success('Se ha guardado la información')
       return router.replace('/ordenes')
     })
+    setLoading(false)
   }
 
   const handlePDF = () => {
@@ -39,6 +44,16 @@ export default function Bio () {
   return (
     <>
       <section>
+        <ToastContainer
+          position='top-center'
+          autoClose={3000}
+          hideProgressBar={false}
+          closeOnClick
+          pauseOnFocusLoss={false}
+          pauseOnHover={false}
+          draggable={false}
+          progress={undefined}
+        />
         <nav>
           <p>
             <span>

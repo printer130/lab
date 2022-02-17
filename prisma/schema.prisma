@@ -11,20 +11,27 @@ generator client {
 
 model Lab {
   id   Int     @id @default(autoincrement())
+  
   name String? @unique
   image String? @default("")
+  address String?
+
   User User[]
 }
 
 model User {
   id        Int      @id @default(autoincrement())
   createdAt DateTime @default(now())
-  role      Role     @default(RECEPTIONIST)
-  email     String   @unique
+
   name      String?
+  email     String   @unique
+  ci        String?  @default("")
   password  String?  @db.VarChar(255)
+  phone     Int?
+  role      Role     @default(RECEPTIONIST)
+
   labId     String?
-  lab       Lab?     @relation(fields: [labId], references: [name], onUpdate: Cascade)
+  lab       Lab?     @relation(fields: [labId], references: [name], onUpdate: NoAction, onDelete: SetNull)
   orders    Order[]
 }
 
@@ -40,13 +47,12 @@ model Order {
   sex         String
   doctor      String
   authorEmail String?
-  author      User?     @relation(fields: [authorEmail], references: [email], onDelete: NoAction, onUpdate: NoAction)
-  receiptlabo     Receiptlabo[]
-  Receiptlabo0    Receiptlabo0[]
+  author      User?     @relation(fields: [authorEmail], references: [email], onDelete: SetNull, onUpdate: NoAction)
+  receipts     Receipts[]
 }
 
-model Receiptlabo0 {
-  cuiid      String   @unique @default(cuid())
+model Receipts {
+  cuiid      String   @id @default(cuid())
   id         Int      @default(autoincrement())
   json       Json     @db.Json
   createdAt  DateTime @default(now())
@@ -57,25 +63,9 @@ model Receiptlabo0 {
   labName    String?
   ownerCi    String?
   indebtList Json[]
-  owner      Order?   @relation(fields: [ownerCi], references: [ci], onUpdate: NoAction)
+  owner      Order?   @relation(fields: [ownerCi], references: [ci], onUpdate: NoAction, onDelete: NoAction)
 
   @@index([labName, ownerCi], map: "receipt_lab_owner")
-}
-model Receiptlabo {
-  cuiid      String   @unique @default(cuid())
-  id         Int      @default(autoincrement())
-  json       Json     @db.Json
-  createdAt  DateTime @default(now())
-  saldo      Int
-  itotal     Int      @default(0)
-  total      Int
-  updatedAt  DateTime @updatedAt
-  labName    String?
-  ownerCi    String?
-  indebtList Json[]
-  owner      Order?   @relation(fields: [ownerCi], references: [ci], onUpdate: NoAction)
-
-  @@index([labName, ownerCi], map: "labo_receipt")
 }
 
 enum Role {

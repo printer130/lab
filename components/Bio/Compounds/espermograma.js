@@ -1,13 +1,14 @@
 import { Input } from '../Input'
 import { Remarks } from '../Remarks'
 
-export default function Espermograma ({ onChange, register, value, values }) {
+export default function Espermograma ({ onChange, pdf, register, value, values }) {
   return (
     <>
       <h2>Espermograma</h2>
       <h3>Examen Físico</h3>
       <section className='section'>
         <Input
+          pdf={pdf}
           register={register}
           onChange={onChange}
           measure='ml'
@@ -20,6 +21,7 @@ export default function Espermograma ({ onChange, register, value, values }) {
         </Input>
 
         <Input
+          pdf={pdf}
           register={register}
           onChange={onChange}
           measure='min'
@@ -32,6 +34,7 @@ export default function Espermograma ({ onChange, register, value, values }) {
         </Input>
 
         <Input
+          pdf={pdf}
           value={!values?.viscosidad ? value : values.viscosidad}
           name='espermograma.viscosidad'
           register={register}
@@ -43,6 +46,7 @@ export default function Espermograma ({ onChange, register, value, values }) {
         </Input>
 
         <Input
+          pdf={pdf}
           value={!values?.ph ? value : values.ph}
           name='espermograma.ph'
           register={register}
@@ -56,6 +60,7 @@ export default function Espermograma ({ onChange, register, value, values }) {
       <h3>Recuento y Citología</h3>
       <section className='section'>
         <Input
+          pdf={pdf}
           value={!values?.vitalidad ? value : values.vitalidad}
           name='espermograma.vitalidad'
           register={register}
@@ -68,6 +73,7 @@ export default function Espermograma ({ onChange, register, value, values }) {
         </Input>
 
         <Input
+          pdf={pdf}
           value={
             !values?.recuento_relativos ? value : values.recuento_relativos
           }
@@ -82,6 +88,7 @@ export default function Espermograma ({ onChange, register, value, values }) {
         </Input>
 
         <Input
+          pdf={pdf}
           value={!values?.inmovil ? value : values.inmovil}
           name='espermograma.inmovil'
           register={register}
@@ -96,6 +103,7 @@ export default function Espermograma ({ onChange, register, value, values }) {
       <h3>Movilidad</h3>
       <section className='section'>
         <Input
+          pdf={pdf}
           value={!values?.mov_progresivo ? value : values.mov_progresivo}
           name='espermograma.mov_progresivo'
           register={register}
@@ -108,6 +116,7 @@ export default function Espermograma ({ onChange, register, value, values }) {
         </Input>
 
         <Input
+          pdf={pdf}
           value={!values?.mov_no_progresivo ? value : values.mov_no_progresivo}
           name='espermograma.mov_no_progresivo'
           register={register}
@@ -120,6 +129,7 @@ export default function Espermograma ({ onChange, register, value, values }) {
         </Input>
 
         <Input
+          pdf={pdf}
           value={!values?.Inmovil ? value : values.Inmovil}
           name='espermograma.Inmovil'
           register={register}
@@ -132,6 +142,7 @@ export default function Espermograma ({ onChange, register, value, values }) {
         </Input>
 
         <Input
+          pdf={pdf}
           value={!values?.movilidad_total ? value : values.movilidad_total}
           name='espermograma.movilidad_total'
           register={register}
@@ -145,6 +156,7 @@ export default function Espermograma ({ onChange, register, value, values }) {
       </section>
       <h3>Morfologia</h3>
       <Remarks
+        pdf={pdf}
         value={!values?.remarks ? value : values.remarks}
         name='espermograma.remarks'
         register={register}

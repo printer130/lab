@@ -2,14 +2,14 @@ import { Input } from '../Input'
 import { Remarks } from '../Remarks'
 import biogramaJsonUrocultivo from 'const/antibiograma_cultivo.json'
 
-export default function Urocultivo ({ register, onChange, value, values }) {
+export default function Urocultivo ({ register, onChange, value, pdf, values }) {
   const antibio = values?.biograma ?? false
-  console.log('antibio', antibio)
   return (
     <>
       <h2>Examen del Sedimiento</h2>
       <section className='section'>
         <Input
+          pdf={pdf}
           value={!values?.leucocitos ? value : values.leucocitos}
           name='urocultivo.leucocitos'
           onChange={onChange}
@@ -24,6 +24,7 @@ export default function Urocultivo ({ register, onChange, value, values }) {
           value={!values?.piocitos ? value : values.piocitos}
           name='urocultivo.piocitos'
           onChange={onChange}
+          pdf={pdf}
           register={register}
           type='text'
           placeholder='Piocitos...'
@@ -36,6 +37,7 @@ export default function Urocultivo ({ register, onChange, value, values }) {
           name='urocultivo.eritrocitos'
           onChange={onChange}
           register={register}
+          pdf={pdf}
           type='text'
           placeholder='Eritrocitos...'
         >
@@ -49,6 +51,7 @@ export default function Urocultivo ({ register, onChange, value, values }) {
           name='urocultivo.celulas_descamadas'
           onChange={onChange}
           register={register}
+          pdf={pdf}
           type='text'
           placeholder='Celulas Descamadas...'
         >
@@ -60,6 +63,7 @@ export default function Urocultivo ({ register, onChange, value, values }) {
           name='urocultivo.celulas_redondas'
           onChange={onChange}
           register={register}
+          pdf={pdf}
           type='text'
           placeholder='Celulas Redondas...'
         >
@@ -71,6 +75,7 @@ export default function Urocultivo ({ register, onChange, value, values }) {
           name='urocultivo.celulas_renales'
           onChange={onChange}
           register={register}
+          pdf={pdf}
           type='text'
           placeholder='Celulas Renales...'
         >
@@ -82,6 +87,7 @@ export default function Urocultivo ({ register, onChange, value, values }) {
           name='urocultivo.flora_microbiana'
           onChange={onChange}
           register={register}
+          pdf={pdf}
           type='text'
           placeholder='Flora Microbiana...'
         >
@@ -93,6 +99,7 @@ export default function Urocultivo ({ register, onChange, value, values }) {
           name='urocultivo.levaduras'
           onChange={onChange}
           register={register}
+          pdf={pdf}
           type='text'
           placeholder='Levaduras...'
         >
@@ -104,12 +111,14 @@ export default function Urocultivo ({ register, onChange, value, values }) {
           name='urocultivo.cristales'
           onChange={onChange}
           register={register}
+          pdf={pdf}
           type='text'
           placeholder='Cristales...'
         >
           Cristales
         </Input>
         <Remarks
+          pdf={pdf}
           value={!values?.remarks ? value : values.remarks}
           register={register}
           name='urocultivo.remarks'
@@ -125,6 +134,7 @@ export default function Urocultivo ({ register, onChange, value, values }) {
           name='urocultivo.recuento_de_colonias'
           register={register}
           onChange={onChange}
+          pdf={pdf}
           measure='UFC/mL'
           placeholder='Recuento de colonias...'
           type='number'
@@ -137,6 +147,7 @@ export default function Urocultivo ({ register, onChange, value, values }) {
           name='urocultivo.germen'
           register={register}
           onChange={onChange}
+          pdf={pdf}
           placeholder='Germen...'
           type='text'
         >
@@ -150,6 +161,7 @@ export default function Urocultivo ({ register, onChange, value, values }) {
               name={`urocultivo.biograma.${map}`}
               key={map}
               type={type}
+              pdf={pdf}
               onChange={onChange}
               register={register}
               placeholder={name}
@@ -162,6 +174,7 @@ export default function Urocultivo ({ register, onChange, value, values }) {
 
       <Remarks
         register={register}
+        pdf={pdf}
         value={!values?.remarks2 ? value : values.remarks2}
         name='urocultivo.remarks2'
       />

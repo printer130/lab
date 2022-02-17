@@ -1,11 +1,12 @@
 import { Input } from '../Input'
 
-export default function Estrona ({ value, values, onChange, register }) {
+export default function Estrona ({ value, values, pdf, onChange, register }) {
   return (
     <>
       <section>
-        <h2>Estrona</h2>
+        <h3>Estrona</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

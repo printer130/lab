@@ -3,13 +3,15 @@ export default function FosfatasaAlcaline ({
   value,
   onChange,
   values,
-  register
+  register,
+  pdf
 }) {
   return (
     <>
       <section>
-        <h2>Fosfatasa Alcaline</h2>
+        <h3>Fosfatasa Alcaline</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

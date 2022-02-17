@@ -1,12 +1,13 @@
 import { NegativePositive } from '../NegativePositive'
 
-export default function Crioglobulina ({ values, onChange, register }) {
+export default function Crioglobulina ({ values, pdf, onChange, register }) {
   return (
     <>
       <section>
-        <h2>Crioglobulina</h2>
+        <h3>Crioglobulina</h3>
         <NegativePositive
           values={values}
+          pdf={pdf}
           register={register}
           name='crioglobulina_simple'
         />

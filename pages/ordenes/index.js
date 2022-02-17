@@ -8,6 +8,7 @@ import { useSession } from 'next-auth/react'
 import { useApiCallback } from 'hooks/useApiCallback'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { deleteOrder } from 'lib/db'
+import { toast, ToastContainer } from 'react-toastify'
 
 const ROLE_TYPE_BIOCHEMICAL = 'BIOCHEMICAL'
 
@@ -53,8 +54,11 @@ export default function Ordenes () {
     if (isOpen) {
       deleteOrder({ cuiid: elDelete.cuiid }).then(itemDeleted => {
         if (itemDeleted) {
+          toast.success('Orden eliminada, por favor recargue la página')
           setElDelete({ cuiid: '', fullname: '' })
           setIsOpen(false)
+        } else {
+          toast.error('No se pudo eliminar la orden')
         }
         // Cant delete the last order
       })
@@ -87,6 +91,16 @@ export default function Ordenes () {
 
   return (
     <>
+      <ToastContainer
+        position='top-center'
+        autoClose={3000}
+        hideProgressBar={false}
+        closeOnClick
+        pauseOnFocusLoss={false}
+        pauseOnHover={false}
+        draggable={false}
+        progress={undefined}
+      />
       {isModalPDF & (onePDF?.data !== undefined) && (
         <OnPDF
           lab={lab}

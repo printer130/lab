@@ -1,11 +1,11 @@
 import { Menu } from '@headlessui/react'
 
-export function Item ({ onClick, fullName, ci }) {
+export function Item ({ onClick, fullName, ci, ...rest }) {
   return (
     <Menu.Item>
       {({ active }) => (
         <button
-          onClick={() => onClick({ ci })}
+          onClick={() => onClick({ ci, fullName, ...rest })}
           className={`${
             active ? 'bg-violet-500 text-white' : 'text-gray-900'
           } group flex rounded-md items-center w-full px-2 py-2 text-sm`}
@@ -35,10 +35,21 @@ export function MenuSearch ({ data, onClick }) {
           className='absolute top-24  text-left bg z-10 px-1 right-0 w-56 origin-top-right bg-white divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none'
         >
           {data?.data &&
-            data.data.map(({ id, ci, fullName }) => {
-              console.log(data?.data)
+            data.data.map(({ id, ci, fullName, authorEmail, birth, doctor, nit, phone, sex, reason }) => {
               return (
-                <Item key={id} onClick={onClick} ci={ci} fullName={fullName} />
+                <Item
+                  key={id}
+                  onClick={onClick}
+                  ci={ci}
+                  fullName={fullName}
+                  authorEmail={authorEmail}
+                  birth={birth}
+                  doctor={doctor}
+                  nit={nit}
+                  phone={phone}
+                  sex={sex}
+                  reason={reason}
+                />
               )
             })}
         </Menu>

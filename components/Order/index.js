@@ -2,6 +2,7 @@ import { useSession } from 'next-auth/react'
 import Link from 'next/link'
 
 const ROLE_TYPE_BIOCHEMICAL = 'BIOCHEMICAL'
+const ROLE_TYPE_ADMIN = 'ADMIN'
 
 export function Order ({
   itotal,
@@ -94,7 +95,7 @@ export function Order ({
           @media (max-width: 600px) {
             div {
               grid-template-columns: 105px 145px 1fr repeat(3, 80px) ${role ===
-                ROLE_TYPE_BIOCHEMICAL
+                ROLE_TYPE_BIOCHEMICAL | role === ROLE_TYPE_ADMIN
                   ? 'repeat(4, 35px)'
                   : 'repeat(3, 35px)'};
             }

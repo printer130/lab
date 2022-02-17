@@ -1,11 +1,12 @@
 import { Input } from '../Input'
 
-export default function PSATotal ({ value, onChange, values, register }) {
+export default function PSATotal ({ value, pdf, onChange, values, register }) {
   return (
     <>
       <section>
-        <h2>PSA Total</h2>
+        <h3>PSA Total</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

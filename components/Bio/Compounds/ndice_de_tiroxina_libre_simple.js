@@ -4,13 +4,15 @@ export default function IndiceDeTiroxinaLibre ({
   value,
   values,
   onChange,
-  register
+  register,
+  pdf
 }) {
   return (
     <>
       <section>
-        <h2>Indice de Tiroxina Libre</h2>
+        <h3>Indice de Tiroxina Libre</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

@@ -15,8 +15,10 @@ export default async function GetAll (req, res) {
   const { labId } = session.token.user
 
   try {
-    const receipts = await prisma[`receipt${labId}`].findMany({
-      where: {},
+    const receipts = await prisma.receipts.findMany({
+      where: {
+        labName: labId
+      },
       include: {
         owner: true
       }

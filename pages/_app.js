@@ -5,6 +5,7 @@ import { SessionProvider } from 'next-auth/react'
 import { Nav } from '../components/index'
 import { fetcher } from 'lib/fetcher'
 import 'styles/globals.css'
+import 'react-toastify/dist/ReactToastify.css'
 
 import ErrorBoundary from 'errorBoundary'
 import { SWRConfig } from 'swr'

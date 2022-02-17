@@ -1,11 +1,12 @@
 import { Input } from '../Input'
 
-export default function Homocisteina ({ value, values, onChange, register }) {
+export default function Homocisteina ({ value, pdf, values, onChange, register }) {
   return (
     <>
       <section>
-        <h2>Homocisteína</h2>
+        <h3>Homocisteína</h3>
         <Input
+          pdf={pdf}
           value={!values ? value : values}
           onChange={onChange}
           register={register}

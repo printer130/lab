@@ -4,13 +4,15 @@ export default function AntiTransglutaminasaIgGElisa ({
   onChange,
   value,
   register,
+  pdf,
   required,
   values
 }) {
   return (
     <>
-      <h2>Anti Transglutaminasa IgG</h2>
+      <h3>Anti Transglutaminasa IgG</h3>
       <Input
+        pdf={pdf}
         value={!values ? value : values}
         register={register}
         onChange={onChange}

@@ -1,13 +1,14 @@
 import { Input } from '../Input'
 
-export default function ATG ({ values, value, onChange, register }) {
+export default function ATG ({ values, pdf, value, onChange, register }) {
   return (
     <>
       <section>
-        <h2>A-TG</h2>
+        <h3>A-TG</h3>
         <Input
           value={!values ? value : values}
           onChange={onChange}
+          pdf={pdf}
           register={register}
           type='number'
           placeholder='a-TG....'

@@ -6,6 +6,7 @@ export default function GrupoYRh ({
   value,
   register,
   required,
+  pdf,
   values
 }) {
   return (
@@ -14,6 +15,7 @@ export default function GrupoYRh ({
       <h3>Grupo</h3>
       <section>
         <Input
+          pdf={pdf}
           checked={values?.a !== null}
           value={!values?.a ? value : values.a}
           name='grupo_y_rh.a'
@@ -24,6 +26,7 @@ export default function GrupoYRh ({
           A
         </Input>
         <Input
+          pdf={pdf}
           checked={values?.b !== null}
           value={!values?.b ? value : values.b}
           name='grupo_y_rh.b'
@@ -34,6 +37,7 @@ export default function GrupoYRh ({
           B
         </Input>
         <Input
+          pdf={pdf}
           checked={values?.o !== null}
           value={!values?.o ? value : values.o}
           name='grupo_y_rh.o'
@@ -46,6 +50,7 @@ export default function GrupoYRh ({
       </section>
       <h3>Factor RH</h3>
       <NegativePositive
+        pdf={pdf}
         values={values?.factor_rh}
         register={register}
         name='grupo_y_rh.factor_rh'

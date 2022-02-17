@@ -1,17 +1,15 @@
 import { NegativePositive } from '../NegativePositive'
 
-export default function CoombsIndirecto ({ register, values }) {
-  console.log('values', values)
+export default function CoombsIndirecto ({ register, values, pdf }) {
   return (
-    <>
-      <section>
-        <h2>COOMBS Indirecto</h2>
-        <NegativePositive
-          values={values}
-          register={register}
-          name='coombs_indirecto_simple'
-        />
-      </section>
-    </>
+    <section>
+      <h3>COOMBS Indirecto</h3>
+      <NegativePositive
+        pdf={pdf}
+        values={values}
+        register={register}
+        name='coombs_indirecto_simple'
+      />
+    </section>
   )
 }

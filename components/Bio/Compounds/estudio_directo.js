@@ -2,7 +2,7 @@ import { Input } from '../Input'
 import { Remarks } from '../Remarks'
 import { IdentificacionDelGermen } from '../Identificacion'
 
-export default function EstudioDirecto ({ onChange, register, value, values }) {
+export default function EstudioDirecto ({ onChange, pdf, register, value, values }) {
   return (
     <>
       <h2>Estudio Directo</h2>
@@ -10,6 +10,7 @@ export default function EstudioDirecto ({ onChange, register, value, values }) {
 
       <section className='section'>
         <Input
+          pdf={pdf}
           value={!values?.muestra ? value : values.muestra}
           register={register}
           onChange={onChange}
@@ -21,6 +22,7 @@ export default function EstudioDirecto ({ onChange, register, value, values }) {
         </Input>
 
         <IdentificacionDelGermen
+          pdf={pdf}
           register={register}
           value={value}
           values={
@@ -33,6 +35,7 @@ export default function EstudioDirecto ({ onChange, register, value, values }) {
         />
       </section>
       <Remarks
+        pdf={pdf}
         value={!values?.remarks ? value : values.remarks}
         name='estudio_directo.remarks'
         register={register}

@@ -1,6 +1,6 @@
 import { Input } from '../Input'
 
-export default function FosforoP ({ value, values, onChange, register }) {
+export default function FosforoP ({ value, pdf, values, onChange, register }) {
   return (
     <>
       <section>
@@ -8,6 +8,7 @@ export default function FosforoP ({ value, values, onChange, register }) {
         <Input
           value={!values ? value : values}
           onChange={onChange}
+          pdf={pdf}
           register={register}
           type='number'
           placeholder='Fosforo P....'

@@ -4,7 +4,7 @@ import { antibiograma } from 'const/antibiograma'
 import { IdentificacionDelGermen } from '../Identificacion'
 import { GramZielhlTinciones } from '../Gram_zielhl_tinciones'
 
-export default function CultivoVaginal ({ onChange, register, value, values }) {
+export default function CultivoVaginal ({ onChange, pdf, register, value, values }) {
   const antibio = values?.antibiograma ?? false
   return (
     <>
@@ -14,6 +14,7 @@ export default function CultivoVaginal ({ onChange, register, value, values }) {
         <GramZielhlTinciones
           register={register}
           value={value}
+          pdf={pdf}
           values={values?.gram_zielhl_tinciones}
           onChange={onChange}
           name='cultivo_de_sec_vaginal.gram_zielhl_tinciones'
@@ -23,6 +24,7 @@ export default function CultivoVaginal ({ onChange, register, value, values }) {
           value={!values?.ph_vaginal ? value : values.ph_vaginal}
           register={register}
           onChange={onChange}
+          pdf={pdf}
           type='text'
           placeholder='ph vaginal...'
           name='cultivo_de_sec_vaginal.ph_vaginal'
@@ -31,6 +33,7 @@ export default function CultivoVaginal ({ onChange, register, value, values }) {
         </Input>
 
         <IdentificacionDelGermen
+          pdf={pdf}
           register={register}
           value={value}
           values={
@@ -43,6 +46,7 @@ export default function CultivoVaginal ({ onChange, register, value, values }) {
         />
 
         <IdentificacionDelGermen
+          pdf={pdf}
           register={register}
           value={value}
           values={
@@ -56,6 +60,7 @@ export default function CultivoVaginal ({ onChange, register, value, values }) {
       </section>
 
       <Remarks
+        pdf={pdf}
         value={!values?.remarks ? value : values.remarks}
         name='cultivo_de_sec_vaginal.remarks'
         register={register}
@@ -66,6 +71,7 @@ export default function CultivoVaginal ({ onChange, register, value, values }) {
         {antibiograma.map(({ name, type, placeholder, map }) => {
           return (
             <Input
+              pdf={pdf}
               key={map}
               register={register}
               onChange={onChange}
@@ -80,6 +86,7 @@ export default function CultivoVaginal ({ onChange, register, value, values }) {
         })}
       </section>
       <Remarks
+        pdf={pdf}
         value={!values?.remarks2 ? value : values.remarks2}
         name='cultivo_de_sec_vaginal.remarks2'
         register={register}
