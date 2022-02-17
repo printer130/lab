@@ -1,6 +1,7 @@
 datasource pdf {
   provider             = "mongodb"
   url                  = env("DATABASE_URL_PDF")
+  binaryTargets = ["native"]
 }
 
 generator client {
