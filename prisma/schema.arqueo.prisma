@@ -1,6 +1,7 @@
 datasource arqueo {
   provider             = "postgresql"
   url                  = env("DATABASE_URL_ARQUEO")
+  binaryTargets = ["rhel-openssl-1.0.x"]
 }
 
 generator client {
