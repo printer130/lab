@@ -22,6 +22,7 @@ export default function Ordenes () {
   const [value, setValue] = useState('')
   const [onePDF, setOnePDF] = useState()
   const [loadingPDF, setLoadingPDF] = useState(false)
+  const [loadingOnDownload, setLoadingOnDownload] = useState(false)
   const [PDFCuiid, setPDFCuiid] = useState()
   const [isModalPDF, setIsModalPDF] = useState(false)
 
@@ -74,6 +75,14 @@ export default function Ordenes () {
     setIsOpen(false)
   }
 
+  function handlePDFGenerated () {
+    setIsModalPDF(!isModalPDF)
+    setLoadingPDF(true)
+    if (isModalPDF) {
+      setLoadingPDF(false)
+    }
+  }
+
   function toggleModalPDF ({ cuiid }) {
     setLoadingPDF(true)
     setIsModalPDF(!isModalPDF)
@@ -103,6 +112,9 @@ export default function Ordenes () {
       />
       {isModalPDF & (onePDF?.data !== undefined) && (
         <OnPDF
+          onPDFGenerated={handlePDFGenerated}
+          loading={loadingOnDownload}
+          onLoading={setLoadingOnDownload}
           lab={lab}
           stateModal={isModalPDF}
           onModal={toggleModalPDF}

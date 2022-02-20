@@ -1,13 +1,14 @@
+import { db_arqueo } from 'db/prisma/arqueo'
 import { Button, Input } from 'components'
 import { prisma } from 'db/prisma'
 import { getSession } from 'next-auth/react'
 import { useState } from 'react'
 import { DateRangePicker } from 'react-date-range'
-import 'react-date-range/dist/styles.css'
-import 'react-date-range/dist/theme/default.css'
 import { getRangeDate, createArqueo } from 'lib/db'
 import { toast } from 'react-toastify'
-import { db_arqueo } from 'db/prisma/arqueo'
+
+import 'react-date-range/dist/theme/default.css'
+import 'react-date-range/dist/styles.css'
 
 export const ADMIN = 'admin'
 
@@ -94,7 +95,7 @@ export default function Arqueo ({ getReceipts, session }) {
           </div>
           <Button onChange={handleClick}>Finalizar</Button>
           {error && <span className='text-red-600'>Caja incorrecta.</span>}
-          </section>
+        </section>
     }
 
       {

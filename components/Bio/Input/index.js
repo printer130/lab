@@ -18,7 +18,7 @@ export const Input = forwardRef(
   ) => {
     return (
       <label className={`${type === 'radio' ? 'w-fit flex' : 'w-[270px]'} ${pdf && 'mt-4'} `}>
-        <h5 className='w-[inherit] py-0 pl-0 pr-4'>{children}</h5>
+        <h3 className='w-[inherit] py-0 pl-0 pr-4'>{children}</h3>
         <div className={`flex max-w-xs ${type === 'radio' ? 'self-center' : ''}`}>
           <input
             className={`h-min text-base w-[auto] rounded py-[0.15rem] px-[0.35rem] border border-solid border-slate-400 ${pdf && 'border-none bg-transparent pointer-events-none user-select-none px-0 pdf_input text-slate-900'}`}

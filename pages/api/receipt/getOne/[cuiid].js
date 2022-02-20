@@ -6,7 +6,7 @@ export default async function (req, res) {
   const { labId } = session?.token?.user
 
   if (!labId) {
-    res.status(500).json({ message: 'Error saving receipt', data: null })
+    res.status(500).json({ message: 'Error saving receipt I', data: null })
   }
 
   if (!session?.token) {
@@ -28,6 +28,6 @@ export default async function (req, res) {
 
     return res.status(200).json({ message: 'Receipt Saved!', data: getOne })
   } catch (error) {
-    res.status(500).json({ message: 'Error saving receipt', data: null })
+    res.status(500).json({ message: 'Error saving receipt P', data: null })
   }
 }

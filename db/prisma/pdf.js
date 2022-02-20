@@ -1,5 +1,7 @@
 const { PrismaClient } = require('../../prisma/generated/pdf-client.js')
 
+// import { PrismaClient } from './prisma/generated/pdf-client.js'
+
 let db_pdf
 if (typeof window === 'undefined') {
   if (process.env.NODE_ENV === 'production') {

@@ -4,16 +4,17 @@ import JsPDF from 'jspdf'
 import { toast } from 'react-toastify'
 import { unique } from 'utils/unique'
 
-export const GeneratePDF = ({ id, data, lab }) => {
+export const GeneratePDF = ({ id, data, lab, onLoading, onModal }) => {
+  // onLoading(true)
   const el = window.document.querySelector('#' + id)
   const doc = new JsPDF({
     orientation: 'portrait',
     unit: 'px',
-    format: [612, 794]
+    format: [612, 791]
   })
   const pageWidth = doc.internal.pageSize.getWidth()
   const sex = data.owner.male === 'male' ? 'Masculino' : 'Femenino'
-
+  doc.setFontSize(10)
   doc.html(el, {
     autoPaging: true,
     // top 0 bottom margin-Left
@@ -50,7 +51,9 @@ export const GeneratePDF = ({ id, data, lab }) => {
       // window.open(fileURL)
       usePDF({ data: blob, cuiidPDF: data.cuiid, endpoint: '/api/pdf' })
         .then(res => {
-          toast.success('PDF generado')
+          toast.success('PDF generado.')
+          // onLoading(false)
+          // onModal()
           doc.save(`${unique({
             id: data.id,
             labName: data.labName,

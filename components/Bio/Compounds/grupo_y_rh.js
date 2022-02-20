@@ -9,45 +9,49 @@ export default function GrupoYRh ({
   pdf,
   values
 }) {
+  console.log('GrupoYRh', value)
+  console.log('GrupoYRh', values)
   return (
     <>
       <h2>Grupo y RH</h2>
       <h3>Grupo</h3>
-      <section>
-        <Input
-          pdf={pdf}
-          checked={values?.a !== null}
-          value={!values?.a ? value : values.a}
-          name='grupo_y_rh.a'
-          register={register}
-          onChange={onChange}
-          type='radio'
-        >
-          A
-        </Input>
-        <Input
-          pdf={pdf}
-          checked={values?.b !== null}
-          value={!values?.b ? value : values.b}
-          name='grupo_y_rh.b'
-          register={register}
-          onChange={onChange}
-          type='radio'
-        >
-          B
-        </Input>
-        <Input
-          pdf={pdf}
-          checked={values?.o !== null}
-          value={!values?.o ? value : values.o}
-          name='grupo_y_rh.o'
-          register={register}
-          onChange={onChange}
-          type='radio'
-        >
-          O
-        </Input>
-      </section>
+      {
+      values?.grupo
+        ? <p>{values.grupo}</p>
+        : <section>
+          <Input
+            pdf={pdf}
+            value='A'
+            name='grupo_y_rh.grupo'
+            register={register}
+            onChange={onChange}
+            type='radio'
+          >
+            A
+          </Input>
+          <Input
+            pdf={pdf}
+            value='B'
+            name='grupo_y_rh.grupo'
+            register={register}
+            onChange={onChange}
+            type='radio'
+          >
+            B
+          </Input>
+          <Input
+            pdf={pdf}
+            value='O'
+            name='grupo_y_rh.grupo'
+            register={register}
+            onChange={onChange}
+            type='radio'
+          >
+            O
+          </Input>
+          </section>
+      }
+
       <h3>Factor RH</h3>
       <NegativePositive
         pdf={pdf}
@@ -59,7 +63,7 @@ export default function GrupoYRh ({
         section {
           display: flex;
           width: 220px;
-          justify-content: space-between;
+          flex-direction: column;
           margin-bottom: 2.2rem;
         }
       `}

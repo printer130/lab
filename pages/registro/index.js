@@ -45,7 +45,7 @@ export default function Registro () {
     setLoading(true)
     saveOrder(normalizedOrder(data), disable)
       .then(res => {
-        toast.success('Orden guardada con éxito')
+        toast.success('Orden guardada.')
 
         if (!res.ok) return new Error('No se pudo guardar la orden')
         setLoading(false)

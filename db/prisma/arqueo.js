@@ -1,4 +1,6 @@
-const { PrismaClient } = require('../../prisma/generated/arqueo-client.js')
+// const { PrismaClient } = require('../../prisma/generated/arqueo-client.js')
+
+import { PrismaClient } from './prisma/generated/arqueo-client.js'
 
 let db_arqueo
 if (typeof window === 'undefined') {

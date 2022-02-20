@@ -22,6 +22,7 @@ export default function Bio () {
   })
   const onSubmit = data => {
     setLoading(true)
+    console.log('data', data)
     receiptBio({
       culo: {
         json: apiResponse?.data[0].json,
