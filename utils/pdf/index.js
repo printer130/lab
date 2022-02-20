@@ -24,7 +24,8 @@ export const GeneratePDF = ({ id, data, lab, onLoading, onModal }) => {
       for (let i = 1; i <= pageCount; i++) {
         doc.setPage(i)
         // HEADER
-        doc.addImage(lab.image, 'JPEG', 0, 0, 150, 0)
+        doc.addImage(lab.image, 'PNG', 0, 0, 150, 0)
+        // doc.addImage('/, 'PNG', 0, 0, 150, 0)
         doc.text(166, 25, 'Paciente: ' + data.owner.fullName)
         doc.text(166, 55, 'Edad: ' + getAge(data.owner.birth))
         doc.text(166, 85, 'Género: ' + sex)

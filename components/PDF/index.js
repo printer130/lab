@@ -9,7 +9,7 @@ const Layout = ({ children, id, loading }) => {
       className='relative min-full mx-[auto] text-[12px]'
       style={{ width: 612, height: PDF_HEIGHT }}
     >
-      <main className={`w-full h-full text-[8px] ${loading ? 'opacity-60 pointer-events-none' : ''} `}>{children}</main>
+      <main className={`w-full h-full text-[12px] ${loading ? 'opacity-60 pointer-events-none' : ''} `}>{children}</main>
     </section>
   )
 }
