@@ -1,12 +1,12 @@
 datasource pdf {
   provider             = "mongodb"
   url                  = env("DATABASE_URL_PDF")
-  binaryTargets = ["rhel-openssl-1.0.x","debian-openssl-1.1.x"]
 }
 
 generator client {
   provider        = "prisma-client-js"
   previewFeatures = ["mongoDb"]
+  binaryTargets = ["rhel-openssl-1.0.x","debian-openssl-1.1.x"]
   output          =  "./generated/pdf-client.js"
 }
 

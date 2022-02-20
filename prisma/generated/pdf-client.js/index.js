@@ -112,7 +112,16 @@ const config = {
     "config": {
       "engineType": "library"
     },
-    "binaryTargets": [],
+    "binaryTargets": [
+      {
+        "fromEnvVar": null,
+        "value": "rhel-openssl-1.0.x"
+      },
+      {
+        "fromEnvVar": null,
+        "value": "debian-openssl-1.1.x"
+      }
+    ],
     "previewFeatures": [
       "mongoDb"
     ],
@@ -145,6 +154,9 @@ warnEnvConflicts({
 const PrismaClient = getPrismaClient(config)
 exports.PrismaClient = PrismaClient
 Object.assign(exports, Prisma)
+
+path.join(__dirname, 'libquery_engine-rhel-openssl-1.0.x.so.node');
+path.join(process.cwd(), './prisma/generated/pdf-client.js/libquery_engine-rhel-openssl-1.0.x.so.node')
 
 path.join(__dirname, 'libquery_engine-debian-openssl-1.1.x.so.node');
 path.join(process.cwd(), './prisma/generated/pdf-client.js/libquery_engine-debian-openssl-1.1.x.so.node')

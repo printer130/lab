@@ -1,12 +1,12 @@
 datasource arqueo {
   provider             = "postgresql"
   url                  = env("DATABASE_URL_ARQUEO")
-  binaryTargets = ["rhel-openssl-1.0.x"]
 }
 
 generator client {
   provider        = "prisma-client-js"
   output          =  "./generated/arqueo-client.js"
+  binaryTargets = ["rhel-openssl-1.0.x","debian-openssl-1.1.x"]
 }
 
 model Lab {
