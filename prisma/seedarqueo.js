@@ -14,30 +14,36 @@ async function main () {
   // lab        Lab      @relation(fields: [lab_id], references: [lab_name])
   // lab_id     String
 
-  const response = await db_arqueo.arqueo.create({
-    data: {
-      username: 'santi jose perez',
-      total: 216,
-      caja: 123,
-      lab: {
-        connect: {
-          lab_name: labId
-        }
-      }
-    }
-  })
-
-  // const response = await db_arqueo.arqueo.findMany({
-  //  where: {
-  //    createdAt: {
-  //      gte: new Date(new Date('2022-02-16T11:10:26.694Z').toLocaleDateString()),
-  //      lte: new Date(new Date('2022-03-16T11:10:26.694Z').toLocaleDateString())
-  //    },
+  // const response = await db_arqueo.arqueo.create({
+  //  data: {
+  //    username: 'santi jose perez',
+  //    total: 216,
+  //    caja: 123,
   //    lab: {
-  //      lab_name: 'labo0'
+  //      connect: {
+  //        lab_name: labId
+  //      }
   //    }
   //  }
   // })
+
+  const response = await db_arqueo.arqueo.findMany({
+    where: {
+      // checkear Lab Name
+      createdAt: {
+        gt: new Date('2022-02-21T12:51:54.725Z')
+      }
+    },
+    orderBy: [
+      {
+        // asc | desc
+        createdAt: 'desc'
+      }
+    ]
+  })
+
+  const finishDate = response[0].createdAt
+  console.log('finishDate', finishDate)
 
   // const response = await db_arqueo.arqueo.findMany({
   //  where: {

@@ -47,7 +47,15 @@ async function main () {
   // ckykex7t50303449n44gzyyec -> EMBARAZO
   // ckyk88ad10416tg9ngaw318lu -> HEMOSTASIA
   // Arqueo
-  const res = await prisma.receipts.findMany({})
+
+  const res = await prisma.receipts.findMany({
+    where: {
+      labName: labId,
+      createdAt: {
+        gte: new Date('2022-02-21T12:50:54.725Z')
+      }
+    }
+  })
 
   // res.map(item => {
   //   return console.log(item.json)

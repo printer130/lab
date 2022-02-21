@@ -116,12 +116,16 @@ export default function Arqueo ({ getReceipts, session }) {
           </>
     }
       <section className='w-[890px] overflow-x-scroll md:overflow-x-hidden flex flex-1 flex-col mt-4'>
-        <p className='flex w-full justify-between text-base font-bold'>
+        {
+      session?.user?.role === 'RECEPTIONIST'
+        ? null
+        : <p className='flex w-full justify-between text-base font-bold'>
           <span className='w-40'>Fecha de creación</span>
           <span className='w-24'>Caja</span>
           <span className='w-40'>Gasto</span>
           <span className='w-24'>Total</span>
         </p>
+    }
         {
           listOfDates.map(({ caja, createdAt, total, cuiid }) => {
             return (
@@ -179,11 +183,13 @@ export async function getServerSideProps ({ req, res }) {
 
   const finishDate = response[0]?.createdAt
 
+  console.log('finishDate', finishDate)
+
   const receipts = await prisma.receipts.findMany({
     where: {
       labName: labId,
       createdAt: {
-        gte: new Date(new Date(finishDate || null).toLocaleDateString())
+        gt: new Date(finishDate || null)
       }
     },
     include: {

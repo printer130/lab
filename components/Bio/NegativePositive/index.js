@@ -12,7 +12,7 @@ export function NegativePositive ({
   const isNew = !values
   const isNewCustom = isNew & !p & !n
   return (
-    <section className='flex flex-wrap w-[auto] flex-col'>
+    <section className='flex flex-wrap w-[auto] flex-col self-center'>
       <Input
         checked={
           values === 'negativo' ||

@@ -110,17 +110,20 @@ export default function Ordenes () {
         draggable={false}
         progress={undefined}
       />
-      {isModalPDF & (onePDF?.data !== undefined) && (
-        <OnPDF
-          onPDFGenerated={handlePDFGenerated}
-          loading={loadingOnDownload}
-          onLoading={setLoadingOnDownload}
-          lab={lab}
-          stateModal={isModalPDF}
-          onModal={toggleModalPDF}
-          data={onePDF?.data[0]}
-        />
-      )}
+      {isModalPDF & (onePDF?.data !== undefined)
+        ? (
+          <OnPDF
+            onPDFGenerated={handlePDFGenerated}
+            loading={loadingOnDownload}
+            onLoading={setLoadingOnDownload}
+            lab={lab}
+            stateModal={isModalPDF}
+            onModal={toggleModalPDF}
+            data={onePDF?.data[0]}
+          />
+          )
+          // Cero annoying
+        : null}
       <OnDelete
         elDelete={elDelete?.fullname}
         onDelete={handleDelete}

@@ -598,6 +598,17 @@
     ]
   },
   {
+    "title":"BIOLOGIA MOLECULAR",
+    "list": [
+      {
+        "value": "RT_PCR",
+        "values":null,
+        "price":234,
+        "map":"rt_pcr"
+      } 
+    ]
+  },
+  {
     "title": "MICROBIOLOGÍA",
     "list": [
       {
