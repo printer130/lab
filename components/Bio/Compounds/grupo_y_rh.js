@@ -9,11 +9,9 @@ export default function GrupoYRh ({
   pdf,
   values
 }) {
-  console.log('GrupoYRh', value)
-  console.log('GrupoYRh', values)
   return (
     <>
-      <h2>Grupo y RH</h2>
+      <h2 className='text-sm'>Grupo y RH</h2>
       <h3>Grupo</h3>
       {
       values?.grupo
@@ -49,7 +47,7 @@ export default function GrupoYRh ({
           >
             O
           </Input>
-          </section>
+        </section>
       }
 
       <h3>Factor RH</h3>
