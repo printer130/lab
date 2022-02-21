@@ -1,62 +1,52 @@
-import { useState, useEffect } from 'react'
+import { OrderProfile } from 'components/OrderProfile'
+import { PDFComponent } from 'components/PDF'
+import { useSession } from 'next-auth/react'
+import { toast } from 'react-toastify'
+import useSWR from 'swr'
+import { GeneratePDF } from 'utils/pdf'
+
+// ckzvjkbdv01239eknn0io59l1
+
+function register (name, options) {
+  const onChange = function (e) {}
+  return { name, onChange, ...options }
+}
+
+const cuiid = 'ckzvjkbdv01239eknn0io59l1'
 
 export default function Display () {
-  const [pdf, setPdf] = useState(null)
-  const [image, setImage] = useState()
+  const { data, error, isValidating } = useSWR('/api/receipt/getOne/' + cuiid)
+  const session = useSession()
 
-  const fetchData = async () => {
-    const response = await window.fetch('/api/display', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/pdf'
-      }
-    })
-    response.headers.append('Content-Type', 'application/pdf')
-    response.headers.set('Content-Type', 'application/pdf')
-    return await response.json()
-    // console.log('q', q)
-    // console.log('response', response)
-    // const data = await response
-    // setPdf(data)
-    // return await response.blob()
+  const handleClic = () => {
+    toast.success('PDF generado.')
+    GeneratePDF({ id: 'pdf', data: data?.data[0], lab: session?.data?.token.user.lab })
   }
 
-  useEffect(() => {
-    fetchData()
-      .then(setPdf)
-  }, [])
+  console.log('[data]', data?.data[0])
+  console.log('[session]', session?.data?.token.user.lab)
 
-  function toBase64 (a) {
-    // data:application/pdf;base64," + response.data
-    // 'data:image/png;base64,'
-    const base64 = btoa(String.fromCharCode(...a))
-    const str = `data:image/jpg;base64,${base64}`
-    setImage(str)
-  }
+  // <OrderProfile
+  //  fullName
+  //  total
+  //  birth
+  //  onIndebtChangee
+  //  ci
+  //  indebt
+  // > */
 
-  useEffect(() => {
-    //  const q = window.URL.createObjectURL(pdf)
-    //  console.log({ q })
-    //  window.open(q)
-    /// }
-
-    // const fileURL = URL.createObjectURL(pdf)
-    // console.log('fileURL', fileURL)
-
-    if (pdf && pdf?.data?.json) {
-      console.log('DATA', pdf?.data?.json)
-      toBase64(pdf.data.json.data)
-      //    setFile(new window.File([pdf], 'name'))
-    }
-  }, [pdf, image])
-
-  console.log('PDF', pdf)
-  console.log('IMAGE', image)
   return (
     <>
-      {
-      !image ? <div>loading...</div> : <a src={image} />
-    }
+      <div>
+        {
+          !data | session
+            ? <div>Recuperando Información</div>
+            : <>
+              <button onClick={handleClic}>DESCARGAR!</button>
+              <PDFComponent id='pdf' data={data?.data[0]} register={register} lab={session?.data?.token.user.lab} />
+              </>
+        }
+      </div>
       <style jsx>{`
       a , div{
         margin-top: 100px;

@@ -1,7 +1,7 @@
-const { prisma } = require('../db/prisma')
-// const { PrismaClient } = require('@prisma/client')
+// const { prisma } = require('../db/prisma')
+const { PrismaClient } = require('@prisma/client')
 
-// const prisma = new PrismaClient()
+const prisma = new PrismaClient()
 
 // const res = 1 || null
 async function main () {
@@ -47,15 +47,7 @@ async function main () {
   // ckykex7t50303449n44gzyyec -> EMBARAZO
   // ckyk88ad10416tg9ngaw318lu -> HEMOSTASIA
   // Arqueo
-  // const res = await prisma.receipts.findMany({
-  //  where: {
-  //    cuiid: 'ckzqwenun0000oyknajrsjwx4',
-  //    labName: 'labo0'
-  //  },
-  //  include: {
-  //    owner: true
-  //  }
-  // })
+  const res = await prisma.receipts.findMany({})
 
   // res.map(item => {
   //   return console.log(item.json)
@@ -95,21 +87,21 @@ async function main () {
   //   }
   // })
   // FIND USER
-  const res = await prisma.receipts.create({
-    data: {
-      json: [
-        { name: 'chagas_elisa_simple', isChecked: true, price: 80 },
-        { name: 'grupo_y_rh', isChecked: true, price: 25 },
-        { name: 'reticulocitos', isChecked: true, price: 50 }
-      ],
-      total: 155,
-      itotal: 150,
-      saldo: 5,
-      indebtList: { indebt: 150 },
-      labName: 'labo0',
-      owner: { connect: { ci: '333333' } }
-    }
-  })
+  // const res = await prisma.receipts.create({
+  //  data: {
+  //    json: [
+  //      { name: 'chagas_elisa_simple', isChecked: true, price: 80 },
+  //      { name: 'grupo_y_rh', isChecked: true, price: 25 },
+  //      { name: 'reticulocitos', isChecked: true, price: 50 }
+  //    ],
+  //    total: 155,
+  //    itotal: 150,
+  //    saldo: 5,
+  //    indebtList: { indebt: 150 },
+  //    labName: 'labo0',
+  //    owner: { connect: { ci: '333333' } }
+  //  }
+  // })
 
   // FIND ORDER
   // const res = await prisma[`receipt${labId}`].findMany({

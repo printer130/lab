@@ -10,10 +10,11 @@ export const GeneratePDF = ({ id, data, lab, onLoading, onModal }) => {
   const doc = new JsPDF({
     orientation: 'portrait',
     unit: 'px',
-    format: [612, 791]
+    format: [612, 793]
   })
+
   const pageWidth = doc.internal.pageSize.getWidth()
-  const sex = data.owner.male === 'male' ? 'Masculino' : 'Femenino'
+  const sex = data.owner.sex === 'male' ? 'Masculino' : 'Femenino'
   doc.setFontSize(10)
   doc.html(el, {
     autoPaging: true,
@@ -37,7 +38,7 @@ export const GeneratePDF = ({ id, data, lab, onLoading, onModal }) => {
           id: data.owner.id
         }))
         doc.text(320, 85, 'Fécha toma de muestra: ' + data.createdAt.slice(0, 10))
-        doc.text(320, 115, 'Fécha de impresión: ')
+        doc.text(320, 115, 'Fécha de impresión: ' + new Date().toLocaleDateString().split('T')[0])
         // FOOTER
         doc.text(pageWidth / 2, 720, 'c. Urpila S/N Frente al Hospital del Nortes', { align: 'center' })
         doc.text(271, 740, '72730216 - 68518882', { align: 'center' })
@@ -45,23 +46,23 @@ export const GeneratePDF = ({ id, data, lab, onLoading, onModal }) => {
         // Page
         doc.text(530, 760, 'Página ' + doc.internal.getCurrentPageInfo().pageNumber + ' de ' + pageCount)
       }
-      const blob = doc.output('blob')
+      // const blob = doc.output('blob')
       // const file = new Blob([blob], { type: 'application/pdf' })
       // const fileURL = URL.createObjectURL(file)
       // console.log('fileURL', fileURL)
       // window.open(fileURL)
-      usePDF({ data: blob, cuiidPDF: data.cuiid, endpoint: '/api/pdf' })
-        .then(res => {
-          toast.success('PDF generado.')
-          // onLoading(false)
-          // onModal()
-          doc.save(`${unique({
+      // usePDF({ data: blob, cuiidPDF: data.cuiid, endpoint: '/api/pdf' })
+      // .then(res => {
+      toast.success('PDF generado.')
+      // onLoading(false)
+      // onModal()
+      doc.save(`${unique({
             id: data.id,
             labName: data.labName,
             ownerCi: data.ownerCi,
             cuiid: data.cuiid
           })}`)
-        })
+      // })
     }
   })
 }

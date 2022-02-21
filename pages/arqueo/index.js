@@ -95,7 +95,7 @@ export default function Arqueo ({ getReceipts, session }) {
           </div>
           <Button onChange={handleClick}>Finalizar</Button>
           {error && <span className='text-red-600'>Caja incorrecta.</span>}
-        </section>
+          </section>
     }
 
       {
@@ -117,7 +117,7 @@ export default function Arqueo ({ getReceipts, session }) {
     }
       <section className='w-[890px] overflow-x-scroll md:overflow-x-hidden flex flex-1 flex-col mt-4'>
         <p className='flex w-full justify-between text-base font-bold'>
-          <span className='w-40'>Fecha de creacion</span>
+          <span className='w-40'>Fecha de creación</span>
           <span className='w-24'>Caja</span>
           <span className='w-40'>Gasto</span>
           <span className='w-24'>Total</span>
@@ -128,7 +128,7 @@ export default function Arqueo ({ getReceipts, session }) {
               <article className='flex w-full py-1 justify-between' key={cuiid}>
                 <p className='w-40'>{createdAt.split('T')[0]}</p>
                 <p className='w-24'>{caja}</p>
-                <p className='w-40'>{caja + 'diff'}</p>
+                <p className='w-40'>{total - caja}</p>
                 <p className='w-24'>{total}</p>
               </article>
             )

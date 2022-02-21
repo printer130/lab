@@ -8,10 +8,12 @@ async function main () {
   return response */
   // id: 'ckzixq49y0000fvkn0ks471ao' -> ARRAYBYTES
   // ckzmu1ycu0000xcknyo81wzt3  -> STRING
+  // const res = await db_pdf.pdf.findUnique({
+  //  where: {
+  //    id: 'ckzmu1ycu0000xcknyo81wzt3'
+  //  }
+  // })
   const res = await db_pdf.pdf.findUnique({
-    where: {
-      id: 'ckzmu1ycu0000xcknyo81wzt3'
-    }
   })
   return res
 }
