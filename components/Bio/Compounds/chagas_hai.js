@@ -1,16 +1,16 @@
+import { Span } from 'components/Span'
 import { isEmpty } from 'utils/isEmpty'
 
 // chagas_hai
 export default function ChagasHai ({ register, values, pdf }) {
   // const empty = !value ?? isEmpty(value)
+  console.log('values', values)
   return (
     <section>
       <h3>Chagas HAI</h3>
       {values?.length > 1
         ? (
-          <p>
-            <strong>{values}</strong>
-          </p>
+          <Span>{values}</Span>
           )
         : (
           <select {...register('chagas_hai', { required: true })}>

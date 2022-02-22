@@ -34,6 +34,8 @@ export default function Display () {
   //  ci
   //  indebt
   // > */
+  console.log('[error]', error)
+  console.log('[isValidating]', isValidating)
 
   return (
     <>
@@ -43,8 +45,8 @@ export default function Display () {
             ? <div>Recuperando Información</div>
             : <>
               <button onClick={handleClic}>DESCARGAR!</button>
-              <PDFComponent id='pdf' data={data?.data[0]} register={register} lab={session?.data?.token.user.lab} />
-              </>
+              <PDFComponent pdf id='pdf' data={data?.data[0]} register={register} lab={session?.data?.token.user.lab} />
+            </>
         }
       </div>
       <style jsx>{`

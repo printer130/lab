@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { getAge } from 'hooks/dateTime/getAge'
 import { unique } from 'utils/unique'
 import Link from 'next/link'
+import { toast } from 'react-toastify'
 
 export default function OrderToEdit ({ result }) {
   const {
@@ -33,7 +34,10 @@ export default function OrderToEdit ({ result }) {
       .then(res => res.json())
       .then(res => {
         if (!res.data) return null
+        setLoading(false)
+        toast.success('Pago actualizada.')
         const data = res.data
+        setSal('')
         setNewIndebtList(data.indebtList)
       })
       .catch(e => e)
@@ -63,8 +67,8 @@ export default function OrderToEdit ({ result }) {
         <table>
           <tbody>
             <tr>
-              <th>A Cuenta</th>
-              <th>Debe</th>
+              <th className='w-[185px] text-center'>A Cuenta</th>
+              <th className='w-[185px] text-center'>Debe</th>
             </tr>
             {newIndebtList.map(({ indebt }, index) => {
               const res = total - reducir(index)
@@ -73,8 +77,8 @@ export default function OrderToEdit ({ result }) {
               }
               return (
                 <tr key={index}>
-                  <td>{indebt} Bs.</td>
-                  <td>
+                  <td className='w-[185px]'> {indebt} Bs.</td>
+                  <td className='w-[185px]'>
                     {res <= 0 ? <span>¡Saldo completado!</span> : res + ' Bs.'}
                   </td>
                 </tr>
@@ -108,11 +112,6 @@ export default function OrderToEdit ({ result }) {
             min-width: 220px;
           }
 
-          th {
-            width: 185px;
-            text-align: start;
-          }
-
           tr:last-of-type {
             display: ${total};
           }
@@ -129,16 +128,13 @@ export default function OrderToEdit ({ result }) {
             margin: 0 0 0.55rem 0;
           }
 
-          td {
-            width: 185px;
-          }
-
           input {
             border-radius: 5px;
             padding: 0.3rem 0 0.3rem 0.15rem;
             border: 1px solid #202020;
             font-weight: bold;
           }
+
           button {
             pointer-events: ${loading ? 'none' : 'auto'};
             width: 100%;
@@ -152,9 +148,11 @@ export default function OrderToEdit ({ result }) {
             border-radius: 7px;
             border: 1px solid #ddd;
           }
+
           span {
             font-size: 1.2rem;
           }
+
           a {
             background-color: #1a8cbb;
             padding: 0.4rem 0.8rem;
@@ -165,6 +163,7 @@ export default function OrderToEdit ({ result }) {
             color: #eee;
             border-radius: 5px;
           }
+
           a:hover {
             background-color: #167ca6;
           }

@@ -56,6 +56,10 @@ export default function Arqueo ({ getReceipts, session }) {
       })
   }
 
+  const handlePrint = () => {
+    window.print()
+  }
+
   const handleRangeDate = () => {
     toast.info('Buscando en Rango de Fechas...')
     const { startDate, endDate } = dateRange[0]
@@ -94,8 +98,9 @@ export default function Arqueo ({ getReceipts, session }) {
             </p>
           </div>
           <Button onChange={handleClick}>Finalizar</Button>
+          <Button onChange={handlePrint}>Imprimir</Button>
           {error && <span className='text-red-600'>Caja incorrecta.</span>}
-          </section>
+        </section>
     }
 
       {
@@ -124,7 +129,7 @@ export default function Arqueo ({ getReceipts, session }) {
           <span className='w-24'>Caja</span>
           <span className='w-40'>Gasto</span>
           <span className='w-24'>Total</span>
-        </p>
+          </p>
     }
         {
           listOfDates.map(({ caja, createdAt, total, cuiid }) => {

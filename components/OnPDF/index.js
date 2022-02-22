@@ -23,7 +23,7 @@ export function OnPDF ({ stateModal, onModal, data, lab, onLoading, loading, onP
       open={stateModal}
       onClose={onModal}
     >
-      <PDFComponent id='pdf' data={data} register={register} lab={lab} loading={loading} />
+      <PDFComponent id='pdf' pdf data={data} register={register} lab={lab} loading={loading} />
       <button
         onClick={handleClic}
         className={`w-28 ml-4 fixed bottom-4 md:hover:bg-sky-700 bg-sky-600 text-sky-100  border border-solid border-slate-600 h-11 rounded cursor-pointer  ${loading ? 'opacity-60 pointer-events-none' : ''} `}

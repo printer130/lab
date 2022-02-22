@@ -1,3 +1,4 @@
+import { Span } from 'components/Span'
 import { Input } from '../Input'
 
 export function NegativePositive ({
@@ -13,29 +14,36 @@ export function NegativePositive ({
   const isNewCustom = isNew & !p & !n
   return (
     <section className='flex flex-wrap w-[auto] flex-col self-center'>
-      <Input
-        checked={
+      {
+        !pdf
+          ? <>
+            <Input
+              checked={
           values === 'negativo' ||
           values === n ||
           isNew ||
           !isNewCustom & checked
         }
-        value={!n ? 'negativo' : n}
-        register={register}
-        name={name}
-        type='radio'
-      >
-        {!n ? 'Negativo' : n}
-      </Input>
-      <Input
-        checked={values === 'positivo' || values === p || isNew}
-        value={!p ? 'positivo' : p}
-        register={register}
-        name={name}
-        type='radio'
-      >
-        {!p ? 'Positivo' : p}
-      </Input>
+              value={!n ? 'negativo' : n}
+              register={register}
+              name={name}
+              type='radio'
+            >
+              {!n ? 'Negativo' : n}
+            </Input>
+            <Input
+              checked={values === 'positivo' || values === p || isNew}
+              value={!p ? 'positivo' : p}
+              register={register}
+              name={name}
+              type='radio'
+            >
+              {!p ? 'Positivo' : p}
+
+            </Input>
+          </>
+          : <Span>{values}</Span>
+      }
     </section>
   )
 }

@@ -37,7 +37,7 @@ export const Nav = () => {
       />
       <header className='header'>
         <Logo white='#fff' blue='#1A90C0' innerB='#252525' a='#fff' />
-        {session.data !== null && (
+        {session?.data !== null && (
           <>
             <small>{session.data?.token?.email}</small>
             <div className='header-content'>

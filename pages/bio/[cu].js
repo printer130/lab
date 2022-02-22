@@ -22,7 +22,6 @@ export default function Bio () {
   })
   const onSubmit = data => {
     setLoading(true)
-    console.log('data', data)
     receiptBio({
       culo: {
         json: apiResponse?.data[0].json,
@@ -35,11 +34,6 @@ export default function Bio () {
       return router.replace('/ordenes')
     })
     setLoading(false)
-  }
-
-  const handlePDF = () => {
-    console.log('clic')
-    return null
   }
 
   return (
@@ -55,24 +49,24 @@ export default function Bio () {
           draggable={false}
           progress={undefined}
         />
+        {!apiResponse?.data[0] && <div>Cargando...</div>}
         <nav>
           <p>
             <span>
-              Nombre: <strong>{apiResponse?.data[0]?.owner?.fullName}</strong>
+              Nombre: <strong>{apiResponse?.data[0]?.owner?.fullName ?? <span className='bg-gray-200 h-12 w-full' data-placeholder />}</strong>
             </span>
             <span>
-              Edad:{' '}
-              <strong>{getAge(apiResponse?.data[0]?.owner?.birth)}</strong>
+              Edad:
+              <strong>{getAge(apiResponse?.data[0]?.owner?.birth) ?? <span className='bg-gray-200 h-12 w-full' data-placeholder />}</strong>
             </span>
             <span>
-              Sexo: <strong>{apiResponse?.data[0]?.owner?.sex}</strong>
+              Sexo: <strong>{apiResponse?.data[0]?.owner?.sex ?? <span className='bg-gray-200 h-12 w-full' data-placeholder />}</strong>
             </span>
           </p>
           <Link href='/ordenes'>
             <a className='atras'>Ir Atras</a>
           </Link>
         </nav>
-        {!apiResponse?.data[0] && <div>Cargando...</div>}
         <form onSubmit={handleSubmit(onSubmit)}>
           {apiResponse?.data[0]?.json?.length > 0 &&
             apiResponse?.data[0].json.map(({ name, values = null }) => {
@@ -82,17 +76,38 @@ export default function Bio () {
                 </div>
               )
             })}
-          <button>{loading ? 'Guardando...' : 'Guardar'}</button>
+          {
+          !apiResponse?.data[0].json[0].values?.length &&
+            <button>{loading ? 'Guardando...' : 'Guardar'}</button>
+          }
         </form>
-        {/* <a onClick={handlePDF} title='Descargar en pdf'>
-           Descargar PDF
-         </a> */}
       </section>
       <style jsx>
         {`
+        strong {
+          padding-left: 0.5rem;
+        }
           div {
             max-width: 900px;
             margin: 0 auto;
+          }
+          [data-placeholder]::after {
+            content: ' ';
+            box-shadow: 0 0 50px 9px rgba(254, 254, 254,.035);
+            position: absolute;
+            top: 0;
+            left: -100%;
+            height: 100%;
+            animation: load 1s infinite;
+          }
+
+          @keyframes load {
+            0% {
+              left: -100%;
+            }
+            100% {
+              left: 150%;
+            }
           }
 
           nav {

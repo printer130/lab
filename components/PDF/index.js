@@ -14,14 +14,14 @@ const Layout = ({ children, id, loading }) => {
   )
 }
 
-export const PDFComponent = ({ id, data, register, loading }) => {
+export const PDFComponent = ({ id, data, register, loading, pdf }) => {
   return (
     <Layout id={id} loading={loading}>
       <div className='px-4 flex flex-row flex-wrap'>
         {data.json.map((json, i) => {
           return (
             <LazyBio
-              pdf
+              pdf={pdf}
               key={json.name + String(i)}
               name={json.name}
               register={register}

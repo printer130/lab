@@ -11,7 +11,7 @@ export const OrderProfile = ({
       <legend>
         <strong className='text-xl'> {fullName} </strong>
       </legend>
-      <div className='mt-6'>
+      <div className='mt-6 flex w-full items-center justify-between flex-wrap'>
         <p>
           <strong>Carnet de identidad:</strong> <span>{ci}</span>
         </p>
@@ -22,7 +22,7 @@ export const OrderProfile = ({
         <p>
           <strong>A Cuenta:</strong>
           <input
-            className='w-auto'
+            className='items-center h-8 w-[186px] max-w-[169px] border-solid border border-[#252525] bg-[#f5f5f5] rounded-lg py-[.35rem] px-[.75rem]'
             type='number'
             min={0}
             onChange={onIndebtChange}
@@ -40,25 +40,8 @@ export const OrderProfile = ({
       </div>
       <style jsx>
         {`
-        div {
-          display: flex;
-          width: 100%;
-          align-items: center;
-          justify-content: space-between;
-          flex-wrap: wrap;
-        }
         input {
           letter-spacing: .75px;
-          align-items: center;
-          height: 33px;
-          max-width: 169px;
-          width: 186px;
-          border: none;
-          background-color: #f5f5f5;
-          padding: .35rem .75rem;
-          border: 1px solid #252525
-          background-color: #eee;
-          border-radius: 7px;
         }
 
         p {
