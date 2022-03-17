@@ -18,15 +18,15 @@ export function Item ({ onClick, fullName, ci, ...rest }) {
               <ArchiveInactiveIcon className='w-5 h-5 mr-2' ariaHidden='true' />
               )}
           <p className='flex flex-col mx-auto'>
-            <span> {ci}</span>
-            <span> {fullName}</span>
+            <span>{ci}</span>
+            <span>{fullName}</span>
           </p>
         </button>
       )}
     </Menu.Item>
   )
 }
-export function MenuSearch ({ data, onClick }) {
+export function MenuSearch ({ data, onClick, onClose }) {
   return (
     <>
       {data && (
@@ -34,6 +34,11 @@ export function MenuSearch ({ data, onClick }) {
           as='div'
           className='absolute top-24  text-left bg z-10 px-1 right-0 w-56 origin-top-right bg-white divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none'
         >
+          <button onClick={onClose} className='float-right py-2'>
+            <svg xmlns='http://www.w3.org/2000/svg' className='h-5 w-5' viewBox='0 0 20 20' fill='currentColor'>
+              <path fillRule='evenodd' d='M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z' clipRule='evenodd' />
+            </svg>
+          </button>
           {data?.data &&
             data.data.map(({ id, ci, fullName, authorEmail, birth, doctor, nit, phone, sex, reason }) => {
               return (

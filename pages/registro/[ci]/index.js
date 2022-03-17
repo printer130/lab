@@ -25,6 +25,7 @@ export default function RegisterNewCI ({ order = '' }) {
   const [total, setTotal] = useState(0)
   const [indebt, setIndebt] = useState(total)
   const [change, setChange] = useState(0)
+  const [percentage, setPercentage] = useState(0)
 
   let t = 0
 
@@ -33,11 +34,15 @@ export default function RegisterNewCI ({ order = '' }) {
   const { setCheckboxes, checkboxes, filteredBox } = useInputs({ verify })
 
   useEffect(() => {
+    calculateTotal()
+  }, [filteredBox])
+
+  function calculateTotal () {
     for (const i of filteredBox) {
       t += i.price
     }
     setTotal(t)
-  }, [filteredBox])
+  }
 
   const handleOrder = e => {
     toast.info('Verificando...')
@@ -90,12 +95,27 @@ export default function RegisterNewCI ({ order = '' }) {
   }
 
   useEffect(() => {
-    if (change >= 0 && change <= total && change <= total) {
+    if (change >= 0 && change <= total) {
       setIndebt(total - change)
+      if (percentage > 0) {
+        setIndebt(total - (total * (percentage / 100)) - change)
+      }
     } else {
       setIndebt(total)
     }
-  }, [change])
+  }, [change, percentage])
+
+  function handlePercentage (e) {
+    const value = +e.target.value
+    setPercentage(value)
+    //    const percentageOfTotal = total * (percentage / 100)
+    //  console.log(percentageOfTotal)
+    // console.log(percentage, percentageOfTotal)
+    // if (percentage > 0 && percentage <= 100) {
+    // setTotal(total - percentageOfTotal)
+    // setIndebt(cur => cur - percentageOfTotal)
+    // }
+  }
 
   if (router?.isFallback) return <div>Cargando...</div>
 
@@ -141,6 +161,7 @@ export default function RegisterNewCI ({ order = '' }) {
           indebt={indebt}
           total={total}
           ci={order.ci}
+          onPercentage={handlePercentage}
         />
           )
         : (

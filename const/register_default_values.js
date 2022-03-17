@@ -8,3 +8,5 @@ export const DEFAULT_REGISTER_VALUES = {
   reason: '',
   doctor: ''
 }
+
+export const SEARCHBYNUMBER = 3

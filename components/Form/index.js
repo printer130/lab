@@ -12,6 +12,7 @@ export const Form = ({
   onFill,
   debouncedSearch,
   errors,
+  onClose,
   isDirty,
   isValid,
   register
@@ -27,7 +28,7 @@ export const Form = ({
           </legend>
           <div className='relative pt-6'>
             {debouncedSearch?.data?.length > 0 && (
-              <MenuSearch data={debouncedSearch} onClick={onClick} />
+              <MenuSearch data={debouncedSearch} onClick={onClick} onClose={onClose} />
             )}
             <label className='w-full flex flex-col mb-6 order-2'>
               <strong>Sexo:</strong>

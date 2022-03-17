@@ -17,6 +17,7 @@ export function OnPDF ({ stateModal, onModal, data, lab, onLoading, loading, onP
   }
 
   if (!data) return <div>Cargando...</div>
+
   return (
     <Dialog
       className='fixed bg-gray-100 z-50 inset-0 overflow-y-auto mt-12'
