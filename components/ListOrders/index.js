@@ -8,6 +8,7 @@ export const ListOfOrders = ({ data, onDelete, onPDF }) =>
       fullName,
       saldo,
       total,
+      discount,
       indebt,
       itotal,
       cuiid,
@@ -19,6 +20,7 @@ export const ListOfOrders = ({ data, onDelete, onPDF }) =>
         <Order
           onPDF={onPDF}
           key={cuiid}
+          discount={discount}
           cuiid={cuiid}
           date={createdAt}
           acuenta={indebt}

@@ -8,6 +8,7 @@ export const normalizedReceipts = ({ receipts }) =>
       createdAt: +new Date(item.createdAt),
       itotal: item.itotal,
       total: item.total,
+      discount: item.discount,
       indebt: item.indebtList,
       saldo: item.saldo,
       unique: unique({

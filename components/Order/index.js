@@ -14,12 +14,13 @@ export function Order ({
   acuenta,
   onDelete,
   saldo,
-  cuiid
+  cuiid,
+  discount
 }) {
   const session = useSession()
   const { role } = session?.data?.token?.user
 
-  const diff = total - itotal
+  const diff = discount === 0 ? total - itotal : total - itotal - (total * (discount / 100))
 
   return (
     <>

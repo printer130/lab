@@ -108,13 +108,6 @@ export default function RegisterNewCI ({ order = '' }) {
   function handlePercentage (e) {
     const value = +e.target.value
     setPercentage(value)
-    //    const percentageOfTotal = total * (percentage / 100)
-    //  console.log(percentageOfTotal)
-    // console.log(percentage, percentageOfTotal)
-    // if (percentage > 0 && percentage <= 100) {
-    // setTotal(total - percentageOfTotal)
-    // setIndebt(cur => cur - percentageOfTotal)
-    // }
   }
 
   if (router?.isFallback) return <div>Cargando...</div>
