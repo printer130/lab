@@ -60,6 +60,7 @@ model Receipts {
   saldo      Int
   itotal     Int      @default(0)
   total      Int
+  discount   Int @default(0)
   updatedAt  DateTime @updatedAt
   labName    String?
   ownerCi    String?

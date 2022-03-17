@@ -5,7 +5,8 @@ export const OrderProfile = ({
   onIndebtChange,
   ci,
   indebt,
-  onPercentage
+  onPercentage,
+  discount
 }) => {
   return (
     <fieldset className='mb-7 mt-5'>
@@ -19,6 +20,10 @@ export const OrderProfile = ({
         <p>
           <strong>Edad: </strong>
           <span>{birth}</span>
+        </p>
+        <p>
+          <strong>Descuento: </strong>
+          <span>{discount}</span>
         </p>
         <p>
           <strong>A Cuenta:</strong>

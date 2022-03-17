@@ -1,4 +1,3 @@
-import { OrderProfile } from 'components/OrderProfile'
 import { PDFComponent } from 'components/PDF'
 import { useSession } from 'next-auth/react'
 import { toast } from 'react-toastify'
@@ -23,15 +22,6 @@ export default function Display () {
     GeneratePDF({ id: 'pdf', data: data?.data[0], lab: session?.data?.token.user.lab })
   }
 
-  // <OrderProfile
-  //  fullName
-  //  total
-  //  birth
-  //  onIndebtChangee
-  //  ci
-  //  indebt
-  // > */
-
   return (
     <>
       <div>
@@ -41,7 +31,7 @@ export default function Display () {
             : <>
               <button onClick={handleClic}>DESCARGAR!</button>
               <PDFComponent pdf id='pdf' data={data?.data[0]} register={register} lab={session?.data?.token.user.lab} />
-            </>
+              </>
         }
       </div>
       <style jsx>{`

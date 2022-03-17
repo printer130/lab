@@ -49,7 +49,7 @@ export default function RegisterNewCI ({ order = '' }) {
     e.preventDefault()
     setVerify(false)
     setLoading(true)
-    saveReceipt({ filteredBox, total, indebt, change, find: order.ci })
+    saveReceipt({ filteredBox, total, indebt, change, find: order.ci, discount: percentage })
       .then(res => {
         if (!res.ok) {
           toast.error('Ups algo salió mal')
@@ -160,6 +160,7 @@ export default function RegisterNewCI ({ order = '' }) {
           onIndebtChange={handleChange}
           indebt={indebt}
           total={total}
+          discount={percentage}
           ci={order.ci}
           onPercentage={handlePercentage}
         />

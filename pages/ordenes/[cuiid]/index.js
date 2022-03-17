@@ -15,6 +15,7 @@ export default function OrderToEdit ({ result }) {
     cuiid,
     id,
     total,
+    discount,
     indebtList
   } = result
   const [newIndebtList, setNewIndebtList] = useState(indebtList)
@@ -22,6 +23,7 @@ export default function OrderToEdit ({ result }) {
   const [loading, setLoading] = useState(false)
   // const [isCompleted, setIsCompleted] = useState(false)
   let isCompleted = false
+  const percentage = discount === 0 ? 0 : (total * (+discount / 100))
 
   const handleSubmit = e => {
     setLoading(true)
@@ -61,6 +63,7 @@ export default function OrderToEdit ({ result }) {
         </h4>
         <h4>Medico: {doctor}</h4>
         <h4>Edad: {getAge(birth)} años</h4>
+        <h4>Descuento: {discount} %</h4>
         <h4>Total: {total} Bs.</h4>
       </header>
       <form onSubmit={handleSubmit}>
@@ -71,7 +74,8 @@ export default function OrderToEdit ({ result }) {
               <th className='w-[185px] text-center'>Debe</th>
             </tr>
             {newIndebtList.map(({ indebt }, index) => {
-              const res = total - reducir(index)
+              const res = total - reducir(index) - percentage
+
               if (res <= 0) {
                 isCompleted = true
               }
