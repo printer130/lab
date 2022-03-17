@@ -4,7 +4,8 @@ export const OrderProfile = ({
   birth,
   onIndebtChange,
   ci,
-  indebt
+  indebt,
+  onPercentage
 }) => {
   return (
     <fieldset className='mb-7 mt-5'>
@@ -36,6 +37,17 @@ export const OrderProfile = ({
         </p>
         <p>
           <strong>Saldo: </strong> {indebt} Bs.
+        </p>
+        <p>
+          <strong>Descuento:  </strong>
+          <input
+            min={0}
+            max={100}
+            className='items-center h-8 w-[186px] max-w-[169px] border-solid border border-[#252525] bg-[#f5f5f5] rounded-lg py-[.35rem] px-[.75rem]'
+            type='number'
+            placeholder='%'
+            onChange={onPercentage}
+          />
         </p>
       </div>
       <style jsx>

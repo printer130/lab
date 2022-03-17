@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form'
 import { useState } from 'react'
 import Head from 'next/head'
 import { zodResolver } from '@hookform/resolvers/zod/dist/zod'
-import { DEFAULT_REGISTER_VALUES } from 'const/register_default_values'
+import { DEFAULT_REGISTER_VALUES, SEARCHBYNUMBER } from 'const/register_default_values'
 import { registerSchema } from 'helpers/zod/RegisterSchema'
 import { useRouter } from 'next/router'
 import { Form } from 'components/Form'
@@ -36,7 +36,7 @@ export default function Registro () {
   const debouncedSearch = useDebounce({ search, delay: 3000 })
 
   const { data } = useSWR(() =>
-    (debouncedSearch !== null) & (search.length > 3)
+    (debouncedSearch !== null) & (search.length > SEARCHBYNUMBER)
       ? `/api/getBySearchVal/${search}`
       : null
   )
@@ -93,6 +93,11 @@ export default function Registro () {
       })
   }
 
+  const handleCloseMenu = () => {
+    setSearch('')
+    setDisable(false)
+  }
+
   return (
     <>
       <Head>
@@ -122,6 +127,7 @@ export default function Registro () {
           onFill={setSearch}
           handleSubmit={handleSubmit}
           onSubmit={onSubmit}
+          onClose={handleCloseMenu}
           loading={loading}
           errors={errors}
           isDirty={isDirty}
