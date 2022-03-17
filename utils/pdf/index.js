@@ -1,5 +1,4 @@
 import { getAge } from 'hooks/dateTime/getAge'
-import { usePDF } from 'hooks/usePDF'
 import JsPDF from 'jspdf'
 import { toast } from 'react-toastify'
 import { unique } from 'utils/unique'
@@ -12,7 +11,6 @@ export const GeneratePDF = ({ id, data, lab, onLoading, onModal }) => {
     unit: 'px',
     format: [612, 793]
   })
-
   const pageWidth = doc.internal.pageSize.getWidth()
   const sex = data.owner.sex === 'male' ? 'Masculino' : 'Femenino'
   doc.setFontSize(10)
@@ -25,7 +23,7 @@ export const GeneratePDF = ({ id, data, lab, onLoading, onModal }) => {
       for (let i = 1; i <= pageCount; i++) {
         doc.setPage(i)
         // HEADER
-        doc.addImage(lab.image, 'PNG', 0, 0, 150, 0)
+        doc.addImage(lab.image, 'JPEG', 0, 0, 150, 0)
         // doc.addImage('/, 'PNG', 0, 0, 150, 0)
         doc.text(166, 25, 'Paciente: ' + data.owner.fullName)
         doc.text(166, 55, 'Edad: ' + getAge(data.owner.birth))
@@ -40,7 +38,7 @@ export const GeneratePDF = ({ id, data, lab, onLoading, onModal }) => {
         doc.text(320, 85, 'Fécha toma de muestra: ' + data.createdAt.slice(0, 10))
         doc.text(320, 115, 'Fécha de impresión: ' + new Date().toLocaleDateString().split('T')[0])
         // FOOTER
-        doc.text(pageWidth / 2, 720, 'c. Urpila S/N Frente al Hospital del Nortes', { align: 'center' })
+        doc.text(pageWidth / 2, 720, lab?.address || '', { align: 'center' })
         doc.text(271, 740, '72730216 - 68518882', { align: 'center' })
         doc.text(270, 760, 'Cochabamba - Bolivia', { align: 'center' })
         // Page
