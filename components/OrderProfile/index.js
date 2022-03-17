@@ -23,7 +23,7 @@ export const OrderProfile = ({
         </p>
         <p>
           <strong>Descuento: </strong>
-          <span>{discount}</span>
+          <span>{discount} %</span>
         </p>
         <p>
           <strong>A Cuenta:</strong>
