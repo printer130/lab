@@ -79,7 +79,7 @@ export function LazyBio ({ name, register, values, pdf, reagents }) {
 
   return (
     <Suspense fallback='Cargando...'>
-      <div className={`w-[auto] pr-4 mt-6 ${pdf && 'text-sm'}`}>
+      <div className={`w-[auto] pr-4 mt-[25px] ${pdf && 'text-sm'}`}>
         <LazyComponent
           reagents={reagents}
           register={register}
