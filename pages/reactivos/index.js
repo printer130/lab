@@ -1,7 +1,7 @@
 import { Search } from 'components/Search'
 import { useSession } from 'next-auth/react'
 import { useCallback, useMemo, useState } from 'react'
-import novavid from 'reagents/novavid.json'
+import novavid from '../../reagents/novavid.json'
 
 export default function Reactivos () {
   const [value, setValue] = useState('')
