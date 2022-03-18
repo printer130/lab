@@ -24,6 +24,7 @@ export const PDFComponent = ({ id, data, register, loading, pdf }) => {
               pdf={pdf}
               key={json.name + String(i)}
               name={json.name}
+              reagents
               register={register}
               values={json.values}
             />

@@ -1,3 +1,5 @@
+import { ReferenceValue } from 'components/ReferenceValue'
+import { useReferenceValue } from 'hooks/useReferenceValue'
 import { Input } from '../Input'
 
 export default function LactDeshHidrogenas ({
@@ -5,12 +7,22 @@ export default function LactDeshHidrogenas ({
   values,
   onChange,
   register,
-  pdf
+  pdf,
+  reagents
 }) {
+  const { data: { measurement, reference, brand } } = useReferenceValue({ value: 'lact_desh_hidrogenasa_simple' })
+
   return (
     <>
       <section>
         <h3>Lact. Desh Hidrogenasa</h3>
+        {
+        reagents && <ReferenceValue
+          measurement={measurement}
+          reference={reference}
+          brand={brand}
+                    />
+}
         <Input
           pdf={pdf}
           value={!values ? value : values}

@@ -1,10 +1,22 @@
+import { ReferenceValue } from 'components/ReferenceValue'
+import { useReferenceValue } from 'hooks/useReferenceValue'
 import { Input } from '../Input'
 
-export default function UreaBUN ({ value, pdf, values, onChange, register }) {
+export default function UreaBUN ({ reagents, value, pdf, values, onChange, register }) {
+  const { data: { measurement, reference, brand } } = useReferenceValue({ value: 'urea_bun_simple' })
+
   return (
     <>
       <section>
         <h3>Urea/BUN</h3>
+        {
+      reagents &&
+        <ReferenceValue
+          measurement={measurement}
+          brand={brand}
+          reference={reference}
+        />
+    }
         <Input
           pdf={pdf}
           value={!values ? value : values}

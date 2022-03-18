@@ -72,7 +72,7 @@ export default function Bio () {
             apiResponse?.data[0].json.map(({ name, values = null }) => {
               return (
                 <div key={name}>
-                  <LazyBio name={name} values={values} register={register} />
+                  <LazyBio reagents name={name} values={values} register={register} />
                 </div>
               )
             })}

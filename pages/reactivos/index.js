@@ -1,7 +1,7 @@
 import { Search } from 'components/Search'
 import { useSession } from 'next-auth/react'
 import { useCallback, useMemo, useState } from 'react'
-import reagentsJson from '../../reagents.json'
+import novavid from 'reagents/novavid.json'
 
 export default function Reactivos () {
   const [value, setValue] = useState('')
@@ -11,10 +11,10 @@ export default function Reactivos () {
     setValue(e.target.value)
   }, [value])
 
-  const filteredJson = reagentsJson.filter(reagent => {
+  const filteredJson = novavid.filter(reagent => {
     return reagent.name.toLowerCase().includes(value.toLowerCase()) ||
-    reagent.brand.toLowerCase().includes(value.toLowerCase()) ||
-    reagent.method.toLowerCase().includes(value.toLowerCase())
+    reagent.reagent_brand.toLowerCase().includes(value.toLowerCase()) ||
+    reagent?.method?.toLowerCase().includes(value.toLowerCase())
   })
 
   const reagents = useMemo(() => filteredJson, [value])
@@ -42,7 +42,7 @@ export default function Reactivos () {
         reagents.map(regeant => {
           return (
             <main key={regeant.name}>
-              <p>{regeant.brand}</p>
+              <p>{regeant.reagent_brand}</p>
               <p>{regeant.name}</p>
               <p>{regeant.method} | {regeant.technique}</p>
             </main>
@@ -51,6 +51,10 @@ export default function Reactivos () {
        }
       </div>
       <style jsx>{`
+      p {
+        font-size: 16px;
+        padding: 8px 4px;
+      }
       header {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;

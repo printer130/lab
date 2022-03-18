@@ -25,8 +25,8 @@ export default async function (req, res) {
   const { cuiid, saldo, indebtList, sal } = receiptData
 
   // return res.status(200).json({})
+  const reducedITotal = indebtList.reduce((acc, cur) => acc + cur.indebt, 0)
   indebtList.push({ indebt: +sal })
-
   try {
     const receiptUpdated = await prisma.receipts.update({
       where: {
@@ -35,7 +35,7 @@ export default async function (req, res) {
       data: {
         indebtList: indebtList,
         saldo: saldo - sal,
-        itotal: indebtList.reduce((acc, cur) => acc + cur.indebt, 0)
+        itotal: reducedITotal
       }
     })
 

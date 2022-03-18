@@ -12,17 +12,18 @@ export default async function (req, res) {
   if (!session) {
     return res.status(401).json({ message: 'No session', data: null })
   }
-  const { labId } = session.token.user
+  const { labId } = session?.token?.user
 
   const data = JSON.parse(req.body)
   console.log('data', data)
+  console.log('SESSION:', session?.token)
   const { filteredBox, total, indebt, change, find, discount } = data
 
   const receipt = {
     json: filteredBox,
     total: +total,
     itotal: +change,
-    saldo: +indebt,
+    saldo: +indebt.toFixed(2),
     indebtList: { indebt: +change },
     labName: labId,
     discount: +discount,
@@ -35,8 +36,9 @@ export default async function (req, res) {
   if (!labId) {
     return res
       .status(500)
-      .json({ message: 'Ups algo salio mal T', data: null, error: false })
+      .json({ message: 'Ups algo salio mal la', data: null, error: false })
   }
+  console.log('trey', receipt)
   try {
     const savedReceipt = await prisma.receipts.create({ data: receipt })
 
@@ -44,6 +46,6 @@ export default async function (req, res) {
   } catch (error) {
     return res
       .status(500)
-      .json({ message: 'Ups algo salio mal', data: null, error: true, ok: false })
+      .json({ message: 'Ups algo salio mal 5', data: null, error: true, ok: false })
   }
 }

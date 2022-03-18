@@ -9,7 +9,6 @@ import { toast } from 'react-toastify'
 export default function OrderToEdit ({ result }) {
   const {
     owner: { doctor, fullName, birth },
-    saldo,
     labName,
     ownerCi,
     cuiid,
@@ -37,7 +36,7 @@ export default function OrderToEdit ({ result }) {
       .then(res => {
         if (!res.data) return null
         setLoading(false)
-        toast.success('Pago actualizada.')
+        toast.success('Pago actualizado.')
         const data = res.data
         setSal('')
         setNewIndebtList(data.indebtList)
@@ -92,6 +91,7 @@ export default function OrderToEdit ({ result }) {
               <td>
                 <input
                   autoFocus
+                  step='.01'
                   type='number'
                   value={sal}
                   disabled={loading || isCompleted}
@@ -194,6 +194,7 @@ export async function getServerSideProps ({ params, req }) {
 
   const orderNormalized = {
     ...orderToEdit,
+    saldo: +orderToEdit.saldo,
     createdAt: +new Date(orderToEdit.createdAt),
     updatedAt: +new Date(orderToEdit.updatedAt),
     owner: {
@@ -202,7 +203,6 @@ export async function getServerSideProps ({ params, req }) {
       birth: +new Date(orderToEdit.owner.birth)
     }
   }
-
   return {
     props: { result: orderNormalized }
   }

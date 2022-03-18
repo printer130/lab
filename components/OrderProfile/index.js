@@ -41,7 +41,7 @@ export const OrderProfile = ({
           <span>{total} Bs.</span>
         </p>
         <p>
-          <strong>Saldo: </strong> {indebt} Bs.
+          <strong>Saldo: </strong> {indebt.toFixed(2)} Bs.
         </p>
         <p>
           <strong>Descuento:  </strong>

@@ -1,3 +1,5 @@
+import { ReferenceValue } from 'components/ReferenceValue'
+import { useReferenceValue } from 'hooks/useReferenceValue'
 import { Input } from '../Input'
 
 export default function PCRCuantitativo ({
@@ -5,12 +7,23 @@ export default function PCRCuantitativo ({
   values,
   onChange,
   register,
-  pdf
+  pdf,
+  reagents
 }) {
+  const { data: { measurement, reference, brand } } = useReferenceValue({ value: 'pcr_cuantitativo_simple' })
+
   return (
     <>
       <section>
         <h3>PCR Cuantitativo</h3>
+        {
+          reagents &&
+            <ReferenceValue
+              measurement={measurement}
+              reference={reference}
+              brand={brand}
+            />
+        }
         <Input
           pdf={pdf}
           value={!values ? value : values}

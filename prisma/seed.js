@@ -48,7 +48,7 @@ async function main () {
   // ckyk88ad10416tg9ngaw318lu -> HEMOSTASIA
   // Arqueo
 
-  const res = await prisma.receipts.findMany({
+  /* const res = await prisma.receipts.findMany({
     where: {
       labName: labId,
       createdAt: {
@@ -56,7 +56,7 @@ async function main () {
       }
     }
   })
-
+ */
   // res.map(item => {
   //   return console.log(item.json)
   // })
@@ -95,21 +95,22 @@ async function main () {
   //   }
   // })
   // FIND USER
-  // const res = await prisma.receipts.create({
-  //  data: {
-  //    json: [
-  //      { name: 'chagas_elisa_simple', isChecked: true, price: 80 },
-  //      { name: 'grupo_y_rh', isChecked: true, price: 25 },
-  //      { name: 'reticulocitos', isChecked: true, price: 50 }
-  //    ],
-  //    total: 155,
-  //    itotal: 150,
-  //    saldo: 5,
-  //    indebtList: { indebt: 150 },
-  //    labName: 'labo0',
-  //    owner: { connect: { ci: '333333' } }
-  //  }
-  // })
+  const res = await prisma.receipts.create({
+    data: {
+      json: [
+        { name: 'chagas_elisa_simple', isChecked: true, price: 80 },
+        { name: 'grupo_y_rh', isChecked: true, price: 25 },
+        { name: 'reticulocitos', isChecked: true, price: 50 }
+      ],
+      total: 155,
+      itotal: 150,
+      saldo: 5.5,
+      discount: 7,
+      indebtList: { indebt: 150 },
+      labName: 'labo0',
+      owner: { connect: { ci: '333333' } }
+    }
+  })
 
   // FIND ORDER
   // const res = await prisma[`receipt${labId}`].findMany({

@@ -6,8 +6,8 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: Roboto,
+     Cantarell, Fira Sans, Helvetica Neue;
 }
 
 a {
@@ -40,6 +40,13 @@ h3 {
 h5 {
   font-size: 14px;
   font-weight: bold;
+}
+
+.reference_value {
+  display: flex;
+}
+.reference_value > p {
+  padding-right: 6px;
 }
 
 .section {

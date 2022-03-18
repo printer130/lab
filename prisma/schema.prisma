@@ -57,7 +57,7 @@ model Receipts {
   id         Int      @default(autoincrement())
   json       Json     @db.Json
   createdAt  DateTime @default(now())
-  saldo      Int
+  saldo      Decimal? @db.Decimal(10, 2)
   itotal     Int      @default(0)
   total      Int
   discount   Int @default(0)
