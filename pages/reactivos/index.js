@@ -1,7 +1,7 @@
 import { Search } from 'components/Search'
 import { useSession } from 'next-auth/react'
 import { useCallback, useMemo, useState } from 'react'
-import novavid from '../../reagents/novavid.json'
+import novavid from '../../reagents/novavidList.json'
 
 export default function Reactivos () {
   const [value, setValue] = useState('')
@@ -11,7 +11,7 @@ export default function Reactivos () {
     setValue(e.target.value)
   }, [value])
 
-  const filteredJson = novavid.filter(reagent => {
+  const filteredJson = novavid?.filter(reagent => {
     return reagent.name.toLowerCase().includes(value.toLowerCase()) ||
     reagent.reagent_brand.toLowerCase().includes(value.toLowerCase()) ||
     reagent?.method?.toLowerCase().includes(value.toLowerCase())
