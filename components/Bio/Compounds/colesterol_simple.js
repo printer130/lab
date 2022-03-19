@@ -2,8 +2,8 @@ import { ReferenceValue } from 'components/ReferenceValue'
 import { useReferenceValue } from 'hooks/useReferenceValue'
 import { Input } from '../Input'
 
-export default function Colesterol ({ reagents, value, values, onChange, pdf, register }) {
-  const { data: { measurement, reference, brand } } = useReferenceValue({ value: 'colesterol_simple' })
+export default function Colesterol ({ sex, reagents, value, values, onChange, pdf, register }) {
+  const { data: { measurement, reference, brand } } = useReferenceValue({ sex, value: 'colesterol_simple' })
 
   return (
     <section>

@@ -2,7 +2,7 @@
 import dynamic from 'next/dynamic'
 import { Suspense } from 'react'
 
-export function LazyBio ({ name, register, values, pdf, reagents }) {
+export function LazyBio ({ name, register, sex, values, pdf, reagents }) {
   if (
     name === 'l_k_m_1' ||
     name === 'asma' ||
@@ -81,6 +81,7 @@ export function LazyBio ({ name, register, values, pdf, reagents }) {
     <Suspense fallback='Cargando...'>
       <div className={`w-[auto] pr-4 mt-[25px] ${pdf && 'text-sm'}`}>
         <LazyComponent
+          sex={sex}
           reagents={reagents}
           register={register}
           name={name}

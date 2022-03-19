@@ -2,8 +2,8 @@ import { ReferenceValue } from 'components/ReferenceValue'
 import { useReferenceValue } from 'hooks/useReferenceValue'
 import { Input } from '../Input'
 
-export default function AmilasaEnOrina ({ values, pdf, value, onChange, register, reagents }) {
-  const { data: { measurement, reference, brand } } = useReferenceValue({ value: 'amilasa_en_orina_simple' })
+export default function AmilasaEnOrina ({ values, pdf, sex, value, onChange, register, reagents }) {
+  const { data: { measurement, reference, brand } } = useReferenceValue({ value: 'amilasa_en_orina_simple', sex })
   return (
     <>
       <section>

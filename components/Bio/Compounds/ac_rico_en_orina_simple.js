@@ -2,8 +2,8 @@ import { Input } from '../Input'
 import { ReferenceValue } from 'components/ReferenceValue'
 import { useReferenceValue } from 'hooks/useReferenceValue'
 
-export default function AcUricoEnOrina ({ values, pdf, value, onChange, register, reagents }) {
-  const { data: { measurement, reference, brand } } = useReferenceValue({ value: 'ac_rico_en_orina_simple' })
+export default function AcUricoEnOrina ({ sex, values, pdf, value, onChange, register, reagents }) {
+  const { data: { measurement, reference, brand } } = useReferenceValue({ sex, value: 'ac_rico_en_orina_simple' })
 
   return (
     <>

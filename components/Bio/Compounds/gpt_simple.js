@@ -2,8 +2,8 @@ import { ReferenceValue } from 'components/ReferenceValue'
 import { useReferenceValue } from 'hooks/useReferenceValue'
 import { Input } from '../Input'
 
-export default function GPT ({ reagents, value, values, pdf, onChange, register }) {
-  const { data: { measurement, reference, brand } } = useReferenceValue({ value: 'gpt_simple' })
+export default function GPT ({ sex, reagents, value, values, pdf, onChange, register }) {
+  const { data: { measurement, reference, brand } } = useReferenceValue({ sex, value: 'gpt_simple' })
 
   return (
     <>

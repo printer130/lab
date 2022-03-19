@@ -2,8 +2,8 @@ import { ReferenceValue } from 'components/ReferenceValue'
 import { useReferenceValue } from 'hooks/useReferenceValue'
 import { Input } from '../Input'
 
-export default function Trigliceridos ({ reagents, value, pdf, onChange, values, register }) {
-  const { data: { measurement, reference, brand } } = useReferenceValue({ value: 'triglic_ridos_simple' })
+export default function Trigliceridos ({ sex, reagents, value, pdf, onChange, values, register }) {
+  const { data: { measurement, reference, brand } } = useReferenceValue({ sex, value: 'triglic_ridos_simple' })
 
   return (
     <>

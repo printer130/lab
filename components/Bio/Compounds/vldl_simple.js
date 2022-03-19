@@ -2,8 +2,8 @@ import { ReferenceValue } from 'components/ReferenceValue'
 import { useReferenceValue } from 'hooks/useReferenceValue'
 import { Input } from '../Input'
 
-export default function VLDL ({ reagents, value, values, onChange, register, pdf }) {
-  const { data: { measurement, reference, brand } } = useReferenceValue({ value: 'vldl_simple' })
+export default function VLDL ({ sex, reagents, value, values, onChange, register, pdf }) {
+  const { data: { measurement, reference, brand } } = useReferenceValue({ sex, value: 'vldl_simple' })
 
   return (
     <>

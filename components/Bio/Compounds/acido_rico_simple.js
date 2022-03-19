@@ -2,8 +2,8 @@ import { ReferenceValue } from 'components/ReferenceValue'
 import { useReferenceValue } from 'hooks/useReferenceValue'
 import { Input } from '../Input'
 
-export default function AcidoUrico ({ reagents, values, pdf, value, onChange, register }) {
-  const { data: { measurement, reference, brand } } = useReferenceValue({ value: 'acido_rico_simple' })
+export default function AcidoUrico ({ sex, reagents, values, pdf, value, onChange, register }) {
+  const { data: { measurement, reference, brand } } = useReferenceValue({ sex, value: 'acido_rico_simple' })
 
   return (
     <>

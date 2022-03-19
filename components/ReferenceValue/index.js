@@ -7,7 +7,7 @@ export function ReferenceValue ({ measurement, reference, brand }) {
       {reference &&
         <div>
           <p>
-            <strong>- Valor: </strong>
+            <strong>- Valor de Referencia: </strong>
             {reference}
           </p>
         </div>}

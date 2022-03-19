@@ -6,12 +6,13 @@ import { Remarks } from '../Remarks'
 export default function HemoglobinaGlicosilada1 ({
   onChange,
   value,
+  sex,
   values,
   register,
   pdf,
   reagents
 }) {
-  const { data: { measurement, reference, brand } } = useReferenceValue({ value: 'hb_glicosilada_a_1' })
+  const { data: { measurement, reference, brand } } = useReferenceValue({ sex, value: 'hb_glicosilada_a_1' })
 
   return (
     <>

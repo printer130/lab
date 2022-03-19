@@ -97,6 +97,7 @@ export default function Ordenes () {
   }, [PDFCuiid])
 
   if (!session?.data) return <div />
+
   return (
     <>
       <ToastContainer

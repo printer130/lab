@@ -8,9 +8,10 @@ export default function ASTOCuantitativo ({
   onChange,
   register,
   reagents,
+  sex,
   pdf
 }) {
-  const { data: { measurement, reference, brand } } = useReferenceValue({ value: 'asto_cuantitativo_simple' })
+  const { data: { measurement, reference, brand } } = useReferenceValue({ value: 'asto_cuantitativo_simple', sex })
 
   return (
     <>

@@ -2,8 +2,8 @@ import { ReferenceValue } from 'components/ReferenceValue'
 import { useReferenceValue } from 'hooks/useReferenceValue'
 import { Input } from '../Input'
 
-export default function GOT ({ reagents, value, pdf, values, onChange, register }) {
-  const { data: { measurement, reference, brand } } = useReferenceValue({ value: 'got_simple' })
+export default function GOT ({ sex, reagents, value, pdf, values, onChange, register }) {
+  const { data: { measurement, reference, brand } } = useReferenceValue({ sex, value: 'got_simple' })
 
   return (
     <>

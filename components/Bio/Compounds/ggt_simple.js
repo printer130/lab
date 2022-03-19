@@ -2,8 +2,8 @@ import { ReferenceValue } from 'components/ReferenceValue'
 import { useReferenceValue } from 'hooks/useReferenceValue'
 import { Input } from '../Input'
 
-export default function GGT ({ reagents, value, pdf, onChange, register, values }) {
-  const { data: { measurement, reference, brand } } = useReferenceValue({ value: 'ggt_simple' })
+export default function GGT ({ reagents, value, pdf, onChange, register, sex, values }) {
+  const { data: { measurement, reference, brand } } = useReferenceValue({ sex, value: 'ggt_simple' })
 
   return (
     <>

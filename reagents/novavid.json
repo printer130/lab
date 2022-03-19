@@ -8,7 +8,7 @@
         "reference_value": {
             "male": "",
             "female": "",
-            "default": "≤ 460"
+            "default": "hasta 460"
         }
     },
     "ac_rico_en_orina_simple": {
@@ -140,7 +140,7 @@
         "reference_value": {
             "male": "",
             "female": "",
-            "default": "≤ 190"
+            "default": "hasta 190"
         }
     },
     "colesterol_hdl_simple": {
@@ -174,7 +174,7 @@
         "reagent_brand": "human",
         "reagent_measurement": "mg/dl",
         "reference_value": {
-            "male": "≤150",
+            "male": "hasta 150",
             "female": "",
             "default": ""
         }
@@ -199,7 +199,7 @@
         "reagent_measurement": "U/l",
         "reference_value": {
             "male": "225 - 450",
-            "female": "<500 (menores 1 año)",
+            "female": "hasta 500 (menores 1 año)",
             "default": ""
         }
     },

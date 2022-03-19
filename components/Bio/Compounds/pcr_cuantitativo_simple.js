@@ -5,12 +5,13 @@ import { Input } from '../Input'
 export default function PCRCuantitativo ({
   value,
   values,
+  sex,
   onChange,
   register,
   pdf,
   reagents
 }) {
-  const { data: { measurement, reference, brand } } = useReferenceValue({ value: 'pcr_cuantitativo_simple' })
+  const { data: { measurement, reference, brand } } = useReferenceValue({ sex, value: 'pcr_cuantitativo_simple' })
 
   return (
     <>

@@ -5,11 +5,12 @@ export default function FosfatasaAlcaline ({
   value,
   onChange,
   values,
+  sex,
   register,
   pdf,
   reagents
 }) {
-  const { data: { measurement, reference, brand } } = useReferenceValue({ value: 'fosfatasa_alcalina_simple' })
+  const { data: { measurement, reference, brand } } = useReferenceValue({ sex, value: 'fosfatasa_alcalina_simple' })
   return (
 
     <>

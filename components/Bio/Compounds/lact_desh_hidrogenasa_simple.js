@@ -8,9 +8,10 @@ export default function LactDeshHidrogenas ({
   onChange,
   register,
   pdf,
+  sex,
   reagents
 }) {
-  const { data: { measurement, reference, brand } } = useReferenceValue({ value: 'lact_desh_hidrogenasa_simple' })
+  const { data: { measurement, reference, brand } } = useReferenceValue({ sex, value: 'lact_desh_hidrogenasa_simple' })
 
   return (
     <>

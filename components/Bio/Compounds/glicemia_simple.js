@@ -2,8 +2,8 @@ import { ReferenceValue } from 'components/ReferenceValue'
 import { useReferenceValue } from 'hooks/useReferenceValue'
 import { Input } from '../Input'
 
-export default function Glicemia ({ value, pdf, values, onChange, register, reagents }) {
-  const { data: { measurement, reference, brand } } = useReferenceValue({ value: 'glicemia_simple' })
+export default function Glicemia ({ value, sex, pdf, values, onChange, register, reagents }) {
+  const { data: { measurement, reference, brand } } = useReferenceValue({ sex, value: 'glicemia_simple' })
 
   return (
     <>

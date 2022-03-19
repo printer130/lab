@@ -36,6 +36,8 @@ export default function Bio () {
     setLoading(false)
   }
 
+  console.log('apiResponse', apiResponse)
+
   return (
     <>
       <section>
@@ -72,7 +74,13 @@ export default function Bio () {
             apiResponse?.data[0].json.map(({ name, values = null }) => {
               return (
                 <div key={name}>
-                  <LazyBio reagents name={name} values={values} register={register} />
+                  <LazyBio
+                    reagents
+                    sex={apiResponse?.data[0]?.owner?.sex}
+                    name={name}
+                    values={values}
+                    register={register}
+                  />
                 </div>
               )
             })}
