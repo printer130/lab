@@ -23,9 +23,6 @@ export default function Display () {
     GeneratePDF({ id: 'pdf', data: data?.data[0], lab: session?.data?.token.user.lab })
   }
 
-  console.log('[data]', data?.data[0])
-  console.log('[session]', session?.data?.token.user.lab)
-
   // <OrderProfile
   //  fullName
   //  total
@@ -34,8 +31,6 @@ export default function Display () {
   //  ci
   //  indebt
   // > */
-  console.log('[error]', error)
-  console.log('[isValidating]', isValidating)
 
   return (
     <>

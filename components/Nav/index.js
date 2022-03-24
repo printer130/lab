@@ -25,7 +25,6 @@ export const Nav = () => {
     setChecked(!checked)
   }
 
-  console.log('session?.data?.user?.role', session)
   return (
     <>
       <input
