@@ -21,6 +21,7 @@ export const PDFComponent = ({ id, data, register, loading, pdf }) => {
         {data.json.map((json, i) => {
           return (
             <LazyBio
+              sex={data?.owner?.sex}
               pdf={pdf}
               key={json.name + String(i)}
               name={json.name}

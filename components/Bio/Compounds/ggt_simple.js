@@ -4,17 +4,16 @@ import { Input } from '../Input'
 
 export default function GGT ({ reagents, value, pdf, onChange, register, sex, values }) {
   const { data: { measurement, reference, brand } } = useReferenceValue({ sex, value: 'ggt_simple' })
-
   return (
     <>
       <section>
         <h3>GGT</h3>
         {
-        reagents && <ReferenceValue
+        reagents === true && <ReferenceValue
           measurement={measurement}
           reference={reference}
           brand={brand}
-                    />
+                             />
 }
         <Input
           value={!values ? value : values}

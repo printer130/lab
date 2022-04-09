@@ -79,7 +79,6 @@ export default function Registro () {
     e.preventDefault()
     saveOrder(filed, disable)
       .then(res => {
-        toast.success('Seguir')
         if (!res.ok) return new Error('No se pudo guardar la orden')
         setLoading(false)
         router.push(`/registro/${filed.ci}`)

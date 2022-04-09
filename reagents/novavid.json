@@ -6,8 +6,8 @@
         "reagent_brand": "human",
         "reagent_measurement": "U/l",
         "reference_value": {
-            "male": "",
-            "female": "",
+            "male": null,
+            "female": null,
             "default": "hasta 460"
         }
     },
@@ -18,8 +18,8 @@
         "reagent_brand": "human",
         "reagent_measurement": "mg/24h",
         "reference_value": {
-            "male": "",
-            "female": "",
+            "male": null,
+            "female": null,
             "default": "250 - 750"
         }
     },
@@ -30,8 +30,8 @@
         "reagent_brand": "human",
         "reagent_measurement": "g/24h",
         "reference_value": {
-            "male": "",
-            "female": "",
+            "male": null,
+            "female": null,
             "default": "20 - 35"
         }
     },
@@ -43,8 +43,8 @@
         "reagent_measurement": "mg/l",
         "reference_value": {
             "male": "6",
-            "female": "",
-            "default": ""
+            "female": null,
+            "default": null
         }
     },
     "asto_cuantitativo_simple": {
@@ -55,8 +55,8 @@
         "reagent_measurement": "mg/l",
         "reference_value": {
             "male": "200",
-            "female": "",
-            "default": ""
+            "female": null,
+            "default": null
         }
     },
     "rf_cuantitativo_simple": {
@@ -67,8 +67,8 @@
         "reagent_measurement": "mg/l",
         "reference_value": {
             "male": "20",
-            "female": "",
-            "default": ""
+            "female": null,
+            "default": null
         }
     },
     "glicemia_simple": {
@@ -79,8 +79,8 @@
         "reagent_measurement": "mg/dL",
         "reference_value": {
             "male": "75 - 115",
-            "female": "",
-            "default": ""
+            "female": null,
+            "default": null
         }
     },
     "hb_glicosilada_a_1": {
@@ -88,11 +88,11 @@
         "name": "Hb Glicosilada A1",
         "reagent_name": "hb_glicosilada_a_1",
         "reagent_brand": "human",
-        "reagent_measurement": "",
+        "reagent_measurement": null,
         "reference_value": {
             "male": "4,5 - 7,0",
-            "female": "",
-            "default": ""
+            "female": null,
+            "default": null
         }
     },
     "urea_bun_simple": {
@@ -103,8 +103,8 @@
         "reagent_measurement": "mg/dl",
         "reference_value": {
             "male": "10 - 50",
-            "female": "",
-            "default": ""
+            "female": null,
+            "default": null
         }
     },
     "creatinina_simple": {
@@ -116,7 +116,7 @@
         "reference_value": {
             "male": "0,6 - 1,2",
             "female": "0,8 - 1,3",
-            "default": ""
+            "default": null
         }
     },
     "acido_rico_simple": {
@@ -128,7 +128,7 @@
         "reference_value": {
             "male": "2,4 a 5,7",
             "female": "3,4 - 7,0",
-            "default": ""
+            "default": null
         }
     },
     "colesterol_simple": {
@@ -138,8 +138,8 @@
         "reagent_brand": "human",
         "reagent_measurement": "mg/dl",
         "reference_value": {
-            "male": "",
-            "female": "",
+            "male": null,
+            "female": null,
             "default": "hasta 190"
         }
     },
@@ -152,7 +152,7 @@
         "reference_value": {
             "male": "35 - 55",
             "female": "45 - 65",
-            "default": ""
+            "default": null
         }
     },
     "colesterol_ldl_simple": {
@@ -164,7 +164,7 @@
         "reference_value": {
             "male": "50,0 - 140,0",
             "female": "66 - 178",
-            "default": ""
+            "default": null
         }
     },
     "triglic_ridos_simple": {
@@ -175,8 +175,8 @@
         "reagent_measurement": "mg/dl",
         "reference_value": {
             "male": "hasta 150",
-            "female": "",
-            "default": ""
+            "female": null,
+            "default": null
         }
     },
     "vldl_simple": {
@@ -188,7 +188,7 @@
         "reference_value": {
             "male": "5,0 - 40,0",
             "female": "15 - 45",
-            "default": ""
+            "default": null
         }
     },
     "lact_desh_hidrogenasa_simple": {
@@ -200,7 +200,7 @@
         "reference_value": {
             "male": "225 - 450",
             "female": "hasta 500 (menores 1 año)",
-            "default": ""
+            "default": null
         }
     },
     "amilasa_simple": {
@@ -211,8 +211,8 @@
         "reagent_measurement": "U/l",
         "reference_value": {
             "male": "30 - 90",
-            "female": "",
-            "default": ""
+            "female": null,
+            "default": null
         }
     },
     "got_simple": {
@@ -224,7 +224,7 @@
         "reference_value": {
             "male": "37",
             "female": "31",
-            "default": ""
+            "default": null
         }
     },
     "gpt_simple": {
@@ -236,7 +236,7 @@
         "reference_value": {
             "male": "42",
             "female": "32",
-            "default": ""
+            "default": null
         }
     },
     "ggt_simple": {
@@ -248,7 +248,7 @@
         "reference_value": {
             "male": "11 - 61",
             "female": "9 - 39",
-            "default": ""
+            "default": null
         }
     },
     "fosfatasa_alcalina_simple": {
@@ -260,7 +260,7 @@
         "reference_value": {
             "male": "80 - 306",
             "female": "64 - 306",
-            "default": ""
+            "default": null
         }
     },
     "albumina_simple": {
@@ -271,8 +271,8 @@
         "reagent_measurement": "g/dl",
         "reference_value": {
             "male": "3,5 a 5,0",
-            "female": "",
-            "default": ""
+            "female": null,
+            "default": null
         }
     }
 }

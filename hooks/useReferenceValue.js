@@ -1,4 +1,3 @@
-import useSWR from 'swr'
 import novavid from 'reagents/novavid.json'
 
 export const useReferenceValue = ({ value, sex }) => {
@@ -7,7 +6,7 @@ export const useReferenceValue = ({ value, sex }) => {
   const normalized = {
     name: novavid[value]?.reagent_name,
     measurement: novavid[value]?.reagent_measurement,
-    reference: novavid[value]?.reference_value[sex],
+    reference: novavid[value]?.reference_value[sex] ?? novavid[value]?.reference_value.default,
     brand: novavid[value]?.reagent_brand
   }
 
