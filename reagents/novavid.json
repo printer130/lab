@@ -44,7 +44,7 @@
         "reference_value": {
             "male": "6",
             "female": null,
-            "default": null
+            "default": "6"
         }
     },
     "asto_cuantitativo_simple": {
@@ -56,7 +56,7 @@
         "reference_value": {
             "male": "200",
             "female": null,
-            "default": null
+            "default": "200"
         }
     },
     "rf_cuantitativo_simple": {
@@ -68,7 +68,7 @@
         "reference_value": {
             "male": "20",
             "female": null,
-            "default": null
+            "default": "20"
         }
     },
     "glicemia_simple": {
@@ -80,7 +80,7 @@
         "reference_value": {
             "male": "75 - 115",
             "female": null,
-            "default": null
+            "default": "75 - 115"
         }
     },
     "hb_glicosilada_a_1": {
@@ -92,7 +92,7 @@
         "reference_value": {
             "male": "4,5 - 7,0",
             "female": null,
-            "default": null
+            "default": "4,5 - 7,0"
         }
     },
     "urea_bun_simple": {
@@ -104,7 +104,7 @@
         "reference_value": {
             "male": "10 - 50",
             "female": null,
-            "default": null
+            "default": "10 - 50"
         }
     },
     "creatinina_simple": {
@@ -176,7 +176,7 @@
         "reference_value": {
             "male": "hasta 150",
             "female": null,
-            "default": null
+            "default": "hasta 150"
         }
     },
     "vldl_simple": {
@@ -212,7 +212,7 @@
         "reference_value": {
             "male": "30 - 90",
             "female": null,
-            "default": null
+            "default": "30 - 90"
         }
     },
     "got_simple": {
@@ -272,7 +272,7 @@
         "reference_value": {
             "male": "3,5 a 5,0",
             "female": null,
-            "default": null
+            "default": "3,5 a 5,0"
         }
     }
 }
