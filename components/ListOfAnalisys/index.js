@@ -5,11 +5,13 @@ export const ListOfAnalisys = ({ list, onChange, title }) => {
     <>
       <div>
         <strong className='text-xl'> {title} </strong>
-        {list.map(({ value, price, map }) => (
+        {list.map(({ value, price, map, identifier }) => (
           <Input
+            identifier={identifier}
             price={price}
             name={map}
             key={value}
+            fullName={value}
             onChange={onChange}
             type='checkbox'
           >

@@ -18,7 +18,7 @@ export const PDFComponent = ({ id, data, register, loading, pdf }) => {
   return (
     <Layout id={id} loading={loading}>
       <div className='px-4 flex flex-row flex-wrap'>
-        {data.json.map((json, i) => {
+        {/* {data.json.map((json, i) => {
           return (
             <LazyBio
               sex={data?.owner?.sex}
@@ -30,7 +30,7 @@ export const PDFComponent = ({ id, data, register, loading, pdf }) => {
               values={json.values}
             />
           )
-        })}
+        })} */}
       </div>
     </Layout>
   )

@@ -69,19 +69,21 @@ export default function RegisterNewCI ({ order = '' }) {
     toast.info('Continuar!')
     setVerify(true)
   }
-
   const handleCheckbox = useCallback(
     ({ target }) => {
       const checked = target.checked
       const name = target.name
       const dataPrice = +target.attributes['data-price'].value
-
+      const dataIdentifier = target.attributes['data-identifier'].value
+      const dataFullName = target.attributes['data-fullname'].value
       setCheckboxes({
         ...checkboxes,
         [name]: {
           name: name,
           isChecked: checked,
-          price: dataPrice
+          price: dataPrice,
+          identifier: dataIdentifier,
+          fullName: dataFullName
         }
       })
       setTotal(total + dataPrice)

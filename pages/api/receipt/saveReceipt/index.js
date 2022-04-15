@@ -15,8 +15,6 @@ export default async function (req, res) {
   const { labId } = session?.token?.user
 
   const data = JSON.parse(req.body)
-  console.log('data', data)
-  console.log('SESSION:', session?.token)
   const { filteredBox, total, indebt, change, find, discount } = data
 
   const receipt = {

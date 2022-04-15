@@ -9,6 +9,7 @@ export const Input = forwardRef(
       v,
       name,
       checked,
+      identifier,
       price,
       image,
       autoComplete,
@@ -19,7 +20,8 @@ export const Input = forwardRef(
       max,
       errorHeight,
       children,
-      order
+      order,
+      fullName
     },
     ref
   ) => {
@@ -28,7 +30,9 @@ export const Input = forwardRef(
         <label>
           <strong> {children} </strong>
           <input
+            data-identifier={identifier}
             data-price={price}
+            data-fullname={fullName}
             min={min}
             onChange={onChange}
             name={name}

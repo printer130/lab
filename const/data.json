@@ -3,102 +3,119 @@
     "title": "HEMATOLOGÍA",
     "list": [
       {
+        "identifier":"HEMATOLOGÍA",
         "value": "Hemograma",
         "values": null,
         "price": 35,
         "map": "hemograma"
       },
       {
+        "identifier":"HEMATOLOGÍA",
         "value": "VES",
         "values": null,
         "price": 20,
         "map": "ves"
       },
       {
+        "identifier":"HEMATOLOGÍA",
         "value": "Reticulocitos",
         "values": null,
         "price": 50,
         "map": "reticulocitos"
       },
       {
+        "identifier":"HEMATOLOGÍA",
         "value": "Grupo y Rh",
         "values": null,
         "price": 25,
         "map": "grupo_y_rh"
       },
       {
+        "identifier":"HEMATOLOGÍA",
         "value": "Gota Gruesa",
         "values": null,
         "price": 40,
         "map": "gota_gruesa"
       },
       {
+        "identifier":"HEMATOLOGÍA",
         "value": "Resistencia Osmotica",
         "values": null,
         "price": 234,
         "map": "resistencia_osmotica"
       },
       {
+        "identifier":"HEMATOLOGÍA",
         "value": "COOMBS Directo",
         "values": null,
         "price": 60,
         "map": "coombs_directo_simple"
       },
       {
+        "identifier":"HEMATOLOGÍA",
         "value": "COOMBS Indirecto",
         "values": null,
         "price": 60,
         "map": "coombs_indirecto_simple"
       },
       {
+        "identifier":"HEMATOLOGÍA",
         "value": "Fe Sérico",
         "values": null,
         "price": 50,
         "map": "fe_s_rico_simple"
       },
       {
+        "identifier":"HEMATOLOGÍA",
         "value": "TIBC",
         "values": null,
         "price": 50,
         "map": "tibc_simple"
       },
       {
+        "identifier":"HEMATOLOGÍA",
         "value": "Ferritina",
         "values": null,
         "price": 100,
         "map": "ferritina_simple"
       },
       {
+        "identifier":"HEMATOLOGÍA",
         "value": "Transferrina",
         "values": null,
         "price": 50,
         "map": "transferrina_simple"
       },
       {
+        "identifier":"HEMATOLOGÍA",
         "value": "Inv. T. Cruzi",
         "values": null,
         "price": 234,
         "map": "inv_t_cruzi"
       },
       {
+        "identifier":"HEMATOLOGÍA",
         "value": "Crioglobulina",
         "values": null,
         "price": 234,
         "map": "crioglobulina_simple"
       },
       {
+        "identifier":"HEMATOLOGÍA",
         "value": "Plasma Rico en Plaq.",
         "values": null,
         "price": 234,
         "map": "plasma_rico_en_plaq"
       },
       {
+        "identifier":"HEMATOLOGÍA",
         "value": "Micrométodo Chagas",
         "values": null,
         "price": 234,
         "map": "microm_todo_chagas"
       },
       {
+        "identifier":"HEMATOLOGÍA",
         "value": "HLB",
         "values": null,
         "price": 234,
@@ -110,78 +127,91 @@
     "title": "HEMOSTASIA",
     "list": [
       {
+        "identifier":"HEMOSTASIA",
         "value": "TP-INR",
         "values": null,
         "price": 40,
         "map": "tp_inr"
       },
       {
+        "identifier":"HEMOSTASIA",
         "value": "APTT",
         "values": null,
         "price": 50,
         "map": "aptt"
       },
       {
+        "identifier":"HEMOSTASIA",
         "value": "T. Trombina",
         "values": null,
         "price": 234,
         "map": "t_trombina"
       },
       {
+        "identifier":"HEMOSTASIA",
         "value": "T. Coagulación",
         "values": null,
         "price": 20,
         "map": "t_coagulaci_n_simple"
       },
       {
+        "identifier":"HEMOSTASIA",
         "value": "T. Sangría",
         "values": null,
         "price": 20,
         "map": "t_sangr_a_simple"
       },
       {
+        "identifier":"HEMOSTASIA",
         "value": "Fibrinógeno",
         "values": null,
         "price": 90,
         "map": "fibrin_geno"
       },
       {
+        "identifier":"HEMOSTASIA",
         "value": "Dos. Factor Intriseco",
         "values": null,
         "price": 5,
         "map": "dos_factor_intriseco"
       },
       {
+        "identifier":"HEMOSTASIA",
         "value": "Dos. Factor Extrinseco",
         "values": null,
         "price": 5,
         "map": "dos_factor_extrinseco"
       },
       {
+        "identifier":"HEMOSTASIA",
         "value": "Factor XIII",
         "values": null,
         "price": 5,
         "map": "factor_xiii"
       },
       {
+        "identifier":"HEMOSTASIA",
         "value": "Inhibidor Lúpidico",
         "values": null,
         "price": 5,
         "map": "inhibidor_l_pidico"
       },
       {
+        "identifier":"HEMOSTASIA",
         "value": "Dímeros D",
         "values": null,
         "price": 250,
         "map": "d_meros_d"
       },
       {
+        "identifier":"HEMOSTASIA",
         "value": "Anti Factor Xa",
         "values": null,
         "price": 5,
         "map": "anti_factor_xa"
       },
       {
+        "identifier":"HEMOSTASIA",
         "value": "Prueba de Lazo",
         "values": null,
         "price": 5,
@@ -193,168 +223,196 @@
     "title": "ORINAS",
     "list": [
       {
+        "identifier":"ORINAS",
         "value": "General de Orina",
         "values": null,
         "price": 25,
         "map": "general_de_orina"
       },
       {
+        "identifier":"ORINAS",
         "value": "Depuración de Creatinina",
         "values": null,
         "price": 60,
         "map": "depuraci_n_de_creatinina_simple"
       },
       {
+        "identifier":"ORINAS",
         "value": "Proteinuria de 24 hrs.",
         "values": null,
         "price": 60,
         "map": "proteinuria_de_24_hrs_simple"
       },
       {
+        "identifier":"ORINAS",
         "value": "Na en Orina",
         "values": null,
         "price": 45,
         "map": "na_en_orina_simple"
       },
       {
+        "identifier":"ORINAS",
         "value": "K en Orina",
         "values": null,
         "price": 45,
         "map": "k_en_orina_simple"
       },
       {
+        "identifier":"ORINAS",
         "value": "Ca en Orina",
         "values": null,
         "price": 45,
         "map": "ca_en_orina_simple"
       },
       {
+        "identifier":"ORINAS",
         "value": "CI en Orina",
         "values": null,
         "price": 45,
         "map": "ci_en_orina_simple"
       },
       {
+        "identifier":"ORINAS",
         "value": "Catecolaminas de 24 hrs.",
         "values": null,
         "price": 234,
         "map": "catecolaminas_de_24_hrs_simple"
       },
       {
+        "identifier":"ORINAS",
         "value": "Microalbuminuria",
         "values": null,
         "price": 90,
         "map": "microalbuminuria_simple"
       },
       {
+        "identifier":"ORINAS",
         "value": "Proteinuria Matinal",
         "values": null,
         "price": 30,
         "map": "proteinuria_matinal_simple"
       },
       {
+        "identifier":"ORINAS",
         "value": "Creatinuria Matinal",
         "values": null,
         "price": 30,
         "map": "creatinuria_matinal_simple"
       },
       {
+        "identifier":"ORINAS",
         "value": "Chlamydia en Orina",
         "values": null,
         "price": 234,
         "map": "chlamydia_en_orina_simple"
       },
       {
+        "identifier":"ORINAS",
         "value": "Amilasa en Orina",
         "values": null,
         "price": 234,
         "map": "amilasa_en_orina_simple"
       },
       {
+        "identifier":"ORINAS",
         "value": "Proteína de Bence-Jonce",
         "values": null,
         "price": 60,
         "map": "prote_na_de_bence_jonce_simple"
       },
       {
+        "identifier":"ORINAS",
         "value": "Cortisol en Orina",
         "values": null,
         "price": 234,
         "map": "cortisol_en_orina_simple"
       },
       {
+        "identifier":"ORINAS",
         "value": "P en Orina",
         "values": null,
         "price": 45,
         "map": "p_en_orina_simple"
       },
       {
+        "identifier":"ORINAS",
         "value": "Mg en Orina",
         "values": null,
         "price": 45,
         "map": "mg_en_orina_simple"
       },
       {
+        "identifier":"ORINAS",
         "value": "Ac. Úrico en Orina",
         "values": null,
         "price": 234,
         "map": "ac_rico_en_orina_simple"
       },
       {
+        "identifier":"ORINAS",
         "value": "Creatinuria de 24 hrs.",
         "values": null,
         "price": 234,
         "map": "creatinuria_de_24_hrs_simple"
       },
       {
+        "identifier":"ORINAS",
         "value": "pH de 24 hrs.",
         "values": null,
         "price": 234,
         "map": "p_h_de_24_hrs_simple"
       },
       {
+        "identifier":"ORINAS",
         "value": "Urea en Orina",
         "values": null,
         "price": 40,
         "map": "urea_en_orina_simple"
       },
       {
+        "identifier":"ORINAS",
         "value": "Li en Orina",
         "values": null,
         "price": 234,
         "map": "li_en_orina_simple"
       },
       {
+        "identifier":"ORINAS",
         "value": "B2 Microalb.",
         "values": null,
         "price": 234,
         "map": "b_2_microalb_simple"
       },
       {
+        "identifier":"ORINAS",
         "value": "Test Indicam",
         "values": null,
         "price": 234,
         "map": "test_indicam"
       },
       {
+        "identifier":"ORINAS",
         "value": "Vitamina C",
         "values": null,
         "price": 234,
         "map": "vitamina_c_simple"
       },
       {
+        "identifier":"ORINAS",
         "value": "Epinefrina",
         "values": null,
         "price": 234,
         "map": "epinefrina_simple"
       },
       {
+        "identifier":"ORINAS",
         "value": "Norepinefrina",
         "values": null,
         "price": 234,
         "map": "norepinefrina_simple"
       },
       {
+        "identifier":"ORINAS",
         "value": "Vitamina D",
         "values": null,
         "price": 234,
@@ -366,48 +424,56 @@
     "title": "COPROLOGÍA",
     "list": [
       {
+        "identifier":"COPROLOGÍA",
         "value": "Coproparasitológico x1",
         "values": null,
         "price": 25,
         "map": "coproparasitol_gico_x1"
       },
       {
+        "identifier":"COPROLOGÍA",
         "value": "Coproparasitológico x2",
         "values": null,
         "price": 234,
         "map": "coproparasitol_gico_x2"
       },
       {
+        "identifier":"COPROLOGÍA",
         "value": "Coproparasitológico x3",
         "values": null,
         "price": 70,
         "map": "coproparasitol_gico_x3"
       },
       {
+        "identifier":"COPROLOGÍA",
         "value": "Parasitológico Concentrado",
         "values": null,
         "price": 50,
         "map": "parasitol_gico_concentrado"
       },
       {
+        "identifier":"COPROLOGÍA",
         "value": "Oxiuros",
         "values": null,
         "price": 50,
         "map": "oxiuros"
       },
       {
+        "identifier":"COPROLOGÍA",
         "value": "Lientería",
         "values": null,
         "price": 234,
         "map": "lienter_a"
       },
       {
+        "identifier":"COPROLOGÍA",
         "value": "Moco Fecal",
         "values": null,
         "price": 234,
         "map": "moco_fecal"
       },
       {
+        "identifier":"COPROLOGÍA",
         "value": "Calprotectina",
         "values": null,
         "price": 234,
@@ -419,24 +485,28 @@
     "title": "EMBARAZO",
     "list": [
       {
+        "identifier":"EMBARAZO",
         "value": "BHCG Cualitativa",
         "values": null,
         "price": 30,
         "map": "bhcg_cualitativa_simple"
       },
       {
+        "identifier":"EMBARAZO",
         "value": "BHCG Cuantitativa",
         "values": null,
         "price": 100,
         "map": "bhcg_cuantitativa_simple"
       },
       {
+        "identifier":"EMBARAZO",
         "value": "PAPP-A",
         "values": null,
         "price": 234,
         "map": "papp_a_simple"
       },
       {
+        "identifier":"EMBARAZO",
         "value": "HCG Beta Libre",
         "values": null,
         "price": 234,
@@ -448,54 +518,63 @@
     "title": "MARCADORES TUMORALES",
     "list": [
       {
+        "identifier":"MARCADORES TUMORALES",
         "value": "CEA",
         "values": null,
         "price": 150,
         "map": "cea_simple"
       },
       {
+        "identifier":"MARCADORES TUMORALES",
         "value": "AFP",
         "values": null,
         "price": 150,
         "map": "afp_simple"
       },
       {
+        "identifier":"MARCADORES TUMORALES",
         "value": "CA - 19.9",
         "values": null,
         "price": 150,
         "map": "ca_19_9_simple"
       },
       {
+        "identifier":"MARCADORES TUMORALES",
         "value": "CA - 125",
         "values": null,
         "price": 150,
         "map": "ca_125_simple"
       },
       {
+        "identifier":"MARCADORES TUMORALES",
         "value": "CA - 15.3",
         "values": null,
         "price": 150,
         "map": "ca_15_3_simple"
       },
       {
+        "identifier":"MARCADORES TUMORALES",
         "value": "PSA Total",
         "values": null,
         "price": 100,
         "map": "psa_total_simple"
       },
       {
+        "identifier":"MARCADORES TUMORALES",
         "value": "PSA Libre",
         "values": null,
         "price": 100,
         "map": "psa_libre_simple"
       },
       {
+        "identifier":"MARCADORES TUMORALES",
         "value": "Beta 2 MicroAlb",
         "values": null,
         "price": 200,
         "map": "beta_2_micro_alb_simple"
       },
       {
+        "identifier":"MARCADORES TUMORALES",
         "value": "BHCG Cuantitativo",
         "values": null,
         "price": 100,
@@ -507,66 +586,77 @@
     "title": "ENSAYO EN HECES",
     "list": [
       {
+        "identifier":"ENSAYO EN HECES",
         "value": "ELISA AMEBAS",
         "values": null,
         "price": 80,
         "map": "elisa_amebas_simple"
       },
       {
+        "identifier":"ENSAYO EN HECES",
         "value": "ELISA Giardia",
         "values": null,
         "price": 80,
         "map": "elisa_giardia_simple"
       },
       {
+        "identifier":"ENSAYO EN HECES",
         "value": "Azucares Reductores",
         "values": null,
         "price": 60,
         "map": "azucares_reductores_simple"
       },
       {
+        "identifier":"ENSAYO EN HECES",
         "value": "Rotavirus",
         "values": null,
         "price": 70,
         "map": "rotavirus_simple"
       },
       {
+        "identifier":"ENSAYO EN HECES",
         "value": "Adenovirus",
         "values": null,
         "price": 80,
         "map": "adenovirus_simple"
       },
       {
+        "identifier":"ENSAYO EN HECES",
         "value": "Sangre Oculta",
         "values": null,
         "price": 70,
         "map": "sangre_oculta_simple"
       },
       {
+        "identifier":"ENSAYO EN HECES",
         "value": "H. Pylori Ag.",
         "values": null,
         "price": 80,
         "map": "h_pylori_ag_simple"
       },
       {
+        "identifier":"ENSAYO EN HECES",
         "value": "Verotoxina + E.Coli 0157",
         "values": null,
         "price": 234,
         "map": "verotoxina_e_coli_0157"
       },
       {
+        "identifier":"ENSAYO EN HECES",
         "value": "Sudam III",
         "values": null,
         "price": 80,
         "map": "sudam_iii"
       },
       {
+        "identifier":"ENSAYO EN HECES",
         "value": "Clostridium Difficile Tox. A y B",
         "values": null,
         "price": 250,
         "map": "clostridium_difficile_tox_a_y_b"
       },
       {
+        "identifier":"ENSAYO EN HECES",
         "value": "Cryptosporidium Parvum",
         "values": null,
         "price": 80,
@@ -578,18 +668,21 @@
     "title": "PANEL DE ALERGIAS",
     "list": [
       {
+        "identifier":"PANEL DE ALERGIAS",
         "value": "Respiratorio",
         "values": null,
         "price": 700,
         "map": "respiratorio"
       },
       {
+        "identifier":"PANEL DE ALERGIAS",
         "value": "Alimenticio",
         "values": null,
         "price": 700,
         "map": "alimenticio"
       },
       {
+        "identifier":"PANEL DE ALERGIAS",
         "value": "Pediátrico",
         "values": null,
         "price": 700,
@@ -601,6 +694,7 @@
     "title":"BIOLOGIA MOLECULAR",
     "list": [
       {
+        "identifier":"BIOLOGIA MOLECULAR",
         "value": "RT_PCR",
         "values":null,
         "price":234,
@@ -612,102 +706,119 @@
     "title": "MICROBIOLOGÍA",
     "list": [
       {
+        "identifier":"MICROBIOLOGÍA",
         "value": "Urocultivo",
         "values": null,
         "price": 100,
         "map": "urocultivo"
       },
       {
+        "identifier":"MICROBIOLOGÍA",
         "value": "Coprocultivo",
         "values": null,
         "price": 100,
         "map": "coprocultivo"
       },
       {
+        "identifier":"MICROBIOLOGÍA",
         "value": "Cultivo de Secrecion",
         "values": null,
         "price": 150,
         "map": "cultivo_de_secrecion"
       },
       {
+        "identifier":"MICROBIOLOGÍA",
         "value": "Hemocultivo x1",
         "values": null,
         "price": 100,
         "map": "hemocultivo_x1"
       },
       {
+        "identifier":"MICROBIOLOGÍA",
         "value": "Hemocultivo x2",
         "values": null,
         "price": 300,
         "map": "hemocultivo_x2"
       },
       {
+        "identifier":"MICROBIOLOGÍA",
         "value": "Hemocultivo x3",
         "values": null,
         "price": 450,
         "map": "hemocultivo_x3"
       },
       {
+        "identifier":"MICROBIOLOGÍA",
         "value": "Cultivo de Hongos",
         "values": null,
         "price": 234,
         "map": "cultivo_de_hongos"
       },
       {
+        "identifier":"MICROBIOLOGÍA",
         "value": "BK Simple",
         "values": null,
         "price": 234,
         "map": "bk_simple"
       },
       {
+        "identifier":"MICROBIOLOGÍA",
         "value": "BK Seriado",
         "values": null,
         "price": 90,
         "map": "bk_seriado"
       },
       {
+        "identifier":"MICROBIOLOGÍA",
         "value": "Estudio Directo",
         "values": null,
         "price": 234,
         "map": "estudio_directo"
       },
       {
+        "identifier":"MICROBIOLOGÍA",
         "value": "Tinción de Gram",
         "values": null,
         "price": 50,
         "map": "tinci_n_de_gram"
       },
       {
+        "identifier":"MICROBIOLOGÍA",
         "value": "Tinción de Zhiel Neelsen",
         "values": null,
         "price": 60,
         "map": "tinci_n_de_zhiel_neelsen"
       },
       {
+        "identifier":"MICROBIOLOGÍA",
         "value": "Cultivo de Esputo",
         "values": null,
         "price": 234,
         "map": "cultivo_de_esputo"
       },
       {
+        "identifier":"MICROBIOLOGÍA",
         "value": "Cultivo de Sec. Vaginal",
         "values": null,
         "price": 100,
         "map": "cultivo_de_sec_vaginal"
       },
       {
+        "identifier":"MICROBIOLOGÍA",
         "value": "Espermocultivo",
         "values": null,
         "price": 234,
         "map": "espermocultivo"
       },
       {
+        "identifier":"MICROBIOLOGÍA",
         "value": "Tinta China",
         "values": null,
         "price": 120,
         "map": "tinta_china"
       },
       {
+        "identifier":"MICROBIOLOGÍA",
         "value": "Cultivo Sec. Faríngea o Traqueal",
         "values": null,
         "price": 234,
@@ -719,348 +830,406 @@
     "title": "INMUNOLOGÍA",
     "list": [
       {
+        "identifier":"INMUNOLOGÍA",
         "value": "Toxoplasmosis IgG",
         "values": null,
         "price": 80,
         "map": "toxoplasmosis_ig_g_simple"
       },
       {
+        "identifier":"INMUNOLOGÍA",
         "value": "Toxoplasmosis IgM",
         "values": null,
         "price": 80,
         "map": "toxoplasmosis_ig_m_simple"
       },
       {
+        "identifier":"INMUNOLOGÍA",
         "value": "Toxoplasmosis HAI",
         "values": null,
         "price": 234,
         "map": "toxoplasmosis_hai_simple"
       },
       {
+        "identifier":"INMUNOLOGÍA",
         "value": "Chagas ELISA",
         "values": null,
         "price": 80,
         "map": "chagas_elisa_simple"
       },
       {
+        "identifier":"INMUNOLOGÍA",
         "value": "Chagas HAI",
         "values": null,
         "price": 50,
         "map": "chagas_hai"
       },
       {
+        "identifier":"INMUNOLOGÍA",
         "value": "Chagas IF",
         "values": null,
         "price": 234,
         "map": "chagas_ifi"
       },
       {
+        "identifier":"INMUNOLOGÍA",
         "value": "Chlamydia Trachomatis IgG",
         "values": null,
         "price": 80,
         "map": "chlamydia_trachomatis_ig_g_simple"
       },
       {
+        "identifier":"INMUNOLOGÍA",
         "value": "Chlamydia Trachomatis IgM",
         "values": null,
         "price": 80,
         "map": "chlamydia_trachomatis_ig_m_simple"
       },
       {
+        "identifier":"INMUNOLOGÍA",
         "value": "Cisticercosis Elisa",
         "values": null,
         "price": 234,
         "map": "cisticercosis_elisa_simple"
       },
       {
+        "identifier":"INMUNOLOGÍA",
         "value": "Cisticercosis Western Blot",
         "values": null,
         "price": 234,
         "map": "cisticercosis_western_blot_simple"
       },
       {
+        "identifier":"INMUNOLOGÍA",
         "value": "Citomegalovirus - IgG",
         "values": null,
         "price": 80,
         "map": "citomegalovirus_ig_g_simple"
       },
       {
+        "identifier":"INMUNOLOGÍA",
         "value": "Citomegalovirus - IgM",
         "values": null,
         "price": 80,
         "map": "citomegalovirus_ig_m_simple"
       },
       {
+        "identifier":"INMUNOLOGÍA",
         "value": "Herpes tipo 1 (HSV1) - IgG",
         "values": null,
         "price": 100,
         "map": "herpes_tipo_1_h_s_v_1_ig_g_simple"
       },
       {
+        "identifier":"INMUNOLOGÍA",
         "value": "Herpes tipo 1 (HSV1) - IgM",
         "values": null,
         "price": 100,
         "map": "herpes_tipo_1_h_s_v_1_ig_m_simple"
       },
       {
+        "identifier":"INMUNOLOGÍA",
         "value": "Herpes tipo 2 (HSV2) - IgG",
         "values": null,
         "price": 100,
         "map": "herpes_tipo_2_h_s_v_2_ig_g_simple"
       },
       {
+        "identifier":"INMUNOLOGÍA",
         "value": "Herpes tipo 2 (HSV2) - IgM",
         "values": null,
         "price": 100,
         "map": "herpes_tipo_2_h_s_v_2_ig_m_simple"
       },
       {
+        "identifier":"INMUNOLOGÍA",
         "value": "Epstein Baar Virus - IgG",
         "values": null,
         "price": 234,
         "map": "epstein_baar_virus_ig_g_simple"
       },
       {
+        "identifier":"INMUNOLOGÍA",
         "value": "Epstein Baar Virus - IgM",
         "values": null,
         "price": 234,
         "map": "epstein_baar_virus_ig_m_simple"
       },
       {
+        "identifier":"INMUNOLOGÍA",
         "value": "Rubeola - IgG",
         "values": null,
         "price": 80,
         "map": "rubeola_ig_g_simple"
       },
       {
+        "identifier":"INMUNOLOGÍA",
         "value": "Rubeola - IgM",
         "values": null,
         "price": 80,
         "map": "rubeola_ig_m"
       },
       {
+        "identifier":"INMUNOLOGÍA",
         "value": "Hepatitis A (HAV) - IgG",
         "values": null,
         "price": 234,
         "map": "hepatitis_a_hav_ig_g_simple"
       },
       {
+        "identifier":"INMUNOLOGÍA",
         "value": "Hepatitis A (HAV) - IgM",
         "values": null,
         "price": 234,
         "map": "hepatitis_a_hav_ig_m_simple"
       },
       {
+        "identifier":"INMUNOLOGÍA",
         "value": "Hepatitis B (HBs Ag)",
         "values": null,
         "price": 100,
         "map": "hepatitis_b_h_bs_ag_simple"
       },
       {
+        "identifier":"INMUNOLOGÍA",
         "value": "Hepatitis B (HBs Ac) Anti HBs",
         "values": null,
         "price": 234,
         "map": "hepatitis_b_h_bs_ac_anti_h_bs_simple"
       },
       {
+        "identifier":"INMUNOLOGÍA",
         "value": "Hepatitis B (HBc Ac) Anticore",
         "values": null,
         "price": 234,
         "map": "hepatitis_b_h_bc_ac_anticore_simple"
       },
       {
+        "identifier":"INMUNOLOGÍA",
         "value": "Hepatitis B (HBc Ag) IgG",
         "values": null,
         "price": 100,
         "map": "hepatitis_b_h_bc_ag_ig_g_simple"
       },
       {
+        "identifier":"INMUNOLOGÍA",
         "value": "Hepatitis B (HBc Ag) IgM",
         "values": null,
         "price": 100,
         "map": "hepatitis_b_h_bc_ag_ig_m_simple"
       },
       {
+        "identifier":"INMUNOLOGÍA",
         "value": "Hepatitis B (HBe Ag) AG E",
         "values": null,
         "price": 234,
         "map": "hepatitis_b_h_be_ag_ag_e_simple"
       },
       {
+        "identifier":"INMUNOLOGÍA",
         "value": "Hepatitis B (HBe Ag) Anti HBe",
         "values": null,
         "price": 234,
         "map": "hepatitis_b_h_be_ag_anti_h_be_simple"
       },
       {
+        "identifier":"INMUNOLOGÍA",
         "value": "Hepatitis C (HCV) West. Blot",
         "values": null,
         "price": 234,
         "map": "hepatitis_c_hcv_west_blot_simple"
       },
       {
+        "identifier":"INMUNOLOGÍA",
         "value": "Hepatitis C (HCV) ELISA",
         "values": null,
         "price": 234,
         "map": "hepatitis_c_hcv_elisa_simple"
       },
       {
+        "identifier":"INMUNOLOGÍA",
         "value": "HIV Ac 1-2",
         "values": null,
         "price": 234,
         "map": "hiv_ac_1_2_simple"
       },
       {
+        "identifier":"INMUNOLOGÍA",
         "value": "HIV ELISA",
         "values": null,
         "price": 234,
         "map": "hiv_elisa_simple"
       },
       {
+        "identifier":"INMUNOLOGÍA",
         "value": "HIV Ag P24",
         "values": null,
         "price": 234,
         "map": "hiv_ag_p_24_simple"
       },
       {
+        "identifier":"INMUNOLOGÍA",
         "value": "HIV West. Blot",
         "values": null,
         "price": 234,
         "map": "hiv_west_blot_simple"
       },
       {
+        "identifier":"INMUNOLOGÍA",
         "value": "H. Pylori IgG",
         "values": null,
         "price": 90,
         "map": "h_pylori_ig_g_simple"
       },
       {
+        "identifier":"INMUNOLOGÍA",
         "value": "H. Pylori IgA",
         "values": null,
         "price": 90,
         "map": "h_pylori_ig_a_simple"
       },
       {
+        "identifier":"INMUNOLOGÍA",
         "value": "H. Pylori IgM",
         "values": null,
         "price": 90,
         "map": "h_pylori_ig_m_simple"
       },
       {
+        "identifier":"INMUNOLOGÍA",
         "value": "IgA",
         "values": null,
         "price": 100,
         "map": "ig_a_simple"
       },
       {
+        "identifier":"INMUNOLOGÍA",
         "value": "IgG",
         "values": null,
         "price": 150,
         "map": "ig_g_simple"
       },
       {
+        "identifier":"INMUNOLOGÍA",
         "value": "IgM",
         "values": null,
         "price": 150,
         "map": "ig_m_simple"
       },
       {
+        "identifier":"INMUNOLOGÍA",
         "value": "IgE",
         "values": null,
         "price": 150,
         "map": "ig_e_simple"
       },
       {
+        "identifier":"INMUNOLOGÍA",
         "value": "Dengue - IgG (ELISA)",
         "values": null,
         "price": 234,
         "map": "dengue_ig_g_elisa_simple"
       },
       {
+        "identifier":"INMUNOLOGÍA",
         "value": "Dengue - IgM (ELISA)",
         "values": null,
         "price": 234,
         "map": "dengue_ig_m_elisa_simple"
       },
       {
+        "identifier":"INMUNOLOGÍA",
         "value": "FTA-ABS (Sifilis) - IgG",
         "values": null,
         "price": 234,
         "map": "fta_abs_sifilis_ig_g_simple"
       },
       {
+        "identifier":"INMUNOLOGÍA",
         "value": "FTA-ABS (Sifilis) - IgM",
         "values": null,
         "price": 234,
         "map": "fta_abs_sifilis_ig_m_simple"
       },
       {
+        "identifier":"INMUNOLOGÍA",
         "value": "Hidatidosis Elisa",
         "values": null,
         "price": 234,
         "map": "hidatidosis_elisa_simple"
       },
       {
+        "identifier":"INMUNOLOGÍA",
         "value": "Hidatidosis Western Blot",
         "values": null,
         "price": 234,
         "map": "hidatidosis_western_blot"
       },
       {
+        "identifier":"INMUNOLOGÍA",
         "value": "Influenza A+B",
         "values": null,
         "price": 234,
         "map": "influenza_a_b"
       },
       {
+        "identifier":"INMUNOLOGÍA",
         "value": "Micoplasma - IgG",
         "values": null,
         "price": 234,
         "map": "micoplasma_ig_g_simple"
       },
       {
+        "identifier":"INMUNOLOGÍA",
         "value": "Micoplasma - IgM",
         "values": null,
         "price": 234,
         "map": "micoplasma_ig_m_simple"
       },
       {
+        "identifier":"INMUNOLOGÍA",
         "value": "Brucellosis IgG",
         "values": null,
         "price": 234,
         "map": "brucellosis_ig_g_simple"
       },
       {
+        "identifier":"INMUNOLOGÍA",
         "value": "Brucellosis IgM",
         "values": null,
         "price": 234,
         "map": "brucellosis_ig_m_simple"
       },
       {
+        "identifier":"INMUNOLOGÍA",
         "value": "COVID 19 (Flujo lateral)",
         "values": null,
         "price": 150,
         "map": "covid_19_flujo_lateral_simple"
       },
       {
+        "identifier":"INMUNOLOGÍA",
         "value": "COVID 19 (ELISA)",
         "values": null,
         "price": 250,
         "map": "covid_19_elisa_simple"
       },
       {
+        "identifier":"INMUNOLOGÍA",
         "value": "COVID 19 (Ac. Neutralizantes)",
         "values": null,
         "price": 234,
         "map": "covid_19_ac_neutralizantes_simple"
       },
       {
+        "identifier":"INMUNOLOGÍA",
         "value": "COVID 19 (Ag. Nasal)",
         "values": null,
         "price": 180,
         "map": "covid_19_ag_nasal_simple"
       },
       {
+        "identifier":"INMUNOLOGÍA",
         "value": "IL - 6",
         "values": null,
         "price": 234,
@@ -1072,204 +1241,238 @@
     "title": "AUTOINMUNIDAD",
     "list": [
       {
+        "identifier":"AUTOINMUNIDAD",
         "value": "Anti ds DNA",
         "values": null,
         "price": 150,
         "map": "anti_ds_dna"
       },
       {
+        "identifier":"AUTOINMUNIDAD",
         "value": "ANA (ELISA)",
         "values": null,
         "price": 350,
         "map": "ana_elisa"
       },
       {
+        "identifier":"AUTOINMUNIDAD",
         "value": "ANA IF",
         "values": null,
         "price": 234,
         "map": "ana_if"
       },
       {
+        "identifier":"AUTOINMUNIDAD",
         "value": "Células LE",
         "values": null,
         "price": 70,
         "map": "c_lulas_le"
       },
       {
+        "identifier":"AUTOINMUNIDAD",
         "value": "Anca-P (ELISA)",
         "values": null,
         "price": 150,
         "map": "anca_p_elisa"
       },
       {
+        "identifier":"AUTOINMUNIDAD",
         "value": "Anca-C (ELISA)",
         "values": null,
         "price": 150,
         "map": "anca_c_elisa"
       },
       {
+        "identifier":"AUTOINMUNIDAD",
         "value": "ASMA",
         "values": null,
         "price": 150,
         "map": "asma"
       },
       {
+        "identifier":"AUTOINMUNIDAD",
         "value": "AMA",
         "values": null,
         "price": 150,
         "map": "ama"
       },
       {
+        "identifier":"AUTOINMUNIDAD",
         "value": "LKM1",
         "values": null,
         "price": 150,
         "map": "l_k_m_1"
       },
       {
+        "identifier":"AUTOINMUNIDAD",
         "value": "C3",
         "values": null,
         "price": 150,
         "map": "c_3_simple"
       },
       {
+        "identifier":"AUTOINMUNIDAD",
         "value": "C4",
         "values": null,
         "price": 150,
         "map": "c_4_simple"
       },
       {
+        "identifier":"AUTOINMUNIDAD",
         "value": "Ac. Anticitrulina",
         "values": null,
         "price": 150,
         "map": "ac_anticitrulina"
       },
       {
+        "identifier":"AUTOINMUNIDAD",
         "value": "Ac. Antivimetina",
         "values": null,
         "price": 234,
         "map": "ac_antivimetina"
       },
       {
+        "identifier":"AUTOINMUNIDAD",
         "value": "ENA Profile",
         "values": null,
         "price": 500,
         "map": "ena_profile"
       },
       {
+        "identifier":"AUTOINMUNIDAD",
         "value": "Panel Digestivo",
         "values": null,
         "price": 600,
         "map": "panel_digestivo"
       },
       {
+        "identifier":"AUTOINMUNIDAD",
         "value": "Panel Hepático Autoinmune",
         "values": null,
         "price": 450,
         "map": "panel_hep_tico_autoinmune"
       },
       {
+        "identifier":"AUTOINMUNIDAD",
         "value": "Anticardiolipina screening",
         "values": null,
         "price": 234,
         "map": "anticardiolipina_screening"
       },
       {
+        "identifier":"AUTOINMUNIDAD",
         "value": "Anticardiolipina IgG",
         "values": null,
         "price": 234,
         "map": "anticardiolipina_ig_g"
       },
       {
+        "identifier":"AUTOINMUNIDAD",
         "value": "Anticardiolipina IgM",
         "values": null,
         "price": 234,
         "map": "anticardiolipina_ig_m"
       },
       {
+        "identifier":"AUTOINMUNIDAD",
         "value": "Ac. Antifosfolípidos - IgG",
         "values": null,
         "price": 234,
         "map": "ac_antifosfol_pidos_ig_g"
       },
       {
+        "identifier":"AUTOINMUNIDAD",
         "value": "Ac. Antifosfolípidos - IgM",
         "values": null,
         "price": 234,
         "map": "ac_antifosfol_pidos_ig_m"
       },
       {
+        "identifier":"AUTOINMUNIDAD",
         "value": "Anti DNP",
         "values": null,
         "price": 234,
         "map": "anti_dnp"
       },
       {
+        "identifier":"AUTOINMUNIDAD",
         "value": "Anti Endomisio IgA (IF)",
         "values": null,
         "price": 200,
         "map": "anti_endomisio_ig_a_if"
       },
       {
+        "identifier":"AUTOINMUNIDAD",
         "value": "Anti Transglutaminasa IgA",
         "values": null,
         "price": 200,
         "map": "anti_transglutaminasa_ig_a"
       },
       {
+        "identifier":"AUTOINMUNIDAD",
         "value": "Anti Gliadina IgA (Elisa)",
         "values": null,
         "price": 200,
         "map": "anti_gliadina_ig_a_elisa"
       },
       {
+        "identifier":"AUTOINMUNIDAD",
         "value": "ANCA 3 LINE",
         "values": null,
         "price": 234,
         "map": "anca_3_line"
       },
       {
+        "identifier":"AUTOINMUNIDAD",
         "value": "B2-Glicoproteína I",
         "values": null,
         "price": 234,
         "map": "b_2_glicoprote_na_i"
       },
       {
+        "identifier":"AUTOINMUNIDAD",
         "value": "B2-Glicoproteína IgG",
         "values": null,
         "price": 234,
         "map": "b_2_glicoprote_na_ig_g"
       },
       {
+        "identifier":"AUTOINMUNIDAD",
         "value": "B2-Glicoproteína IgM",
         "values": null,
         "price": 234,
         "map": "b_2_glicoprote_na_ig_m"
       },
       {
+        "identifier":"AUTOINMUNIDAD",
         "value": "Anti dsDNA IFI",
         "values": null,
         "price": 234,
         "map": "anti_ds_dna_ifi"
       },
       {
+        "identifier":"AUTOINMUNIDAD",
         "value": "Anti-DPG IgG",
         "values": null,
         "price": 234,
         "map": "anti_dpg_ig_g"
       },
       {
+        "identifier":"AUTOINMUNIDAD",
         "value": "Anti Endomisio IgG (IF)",
         "values": null,
         "price": 234,
         "map": "anti_endomisio_ig_g_if"
       },
       {
+        "identifier":"AUTOINMUNIDAD",
         "value": "Anti Gliadina IgG (Elisa)",
         "values": null,
         "price": 234,
         "map": "anti_gliadina_ig_g_elisa"
       },
       {
+        "identifier":"AUTOINMUNIDAD",
         "value": "Anti Transglutaminasa IgG",
         "values": null,
         "price": 234,
@@ -1281,54 +1484,63 @@
     "title": "LÍQUIDOS BIOLÓGICOS",
     "list": [
       {
+        "identifier":"LÍQUIDOS BIOLÓGICOS",
         "value": "Citoqui. LCR",
         "values": null,
         "price": 200,
         "map": "citoqui_lcr"
       },
       {
+        "identifier":"LÍQUIDOS BIOLÓGICOS",
         "value": "Citoqui. Liq. Pleural",
         "values": null,
         "price": 230,
         "map": "citoqui_liq_pleural"
       },
       {
+        "identifier":"LÍQUIDOS BIOLÓGICOS",
         "value": "Citoqui. Liq. Ascitico",
         "values": null,
         "price": 230,
         "map": "citoqui_liq_ascitico"
       },
       {
+        "identifier":"LÍQUIDOS BIOLÓGICOS",
         "value": "Citoqui. Liq. Sinovial",
         "values": null,
         "price": 230,
         "map": "citoqui_liq_sinovial"
       },
       {
+        "identifier":"LÍQUIDOS BIOLÓGICOS",
         "value": "Citoqui. Liq. Pericardio",
         "values": null,
         "price": 230,
         "map": "citoqui_liq_pericardio"
       },
       {
+        "identifier":"LÍQUIDOS BIOLÓGICOS",
         "value": "Citoqui. Liq. Peritoneal",
         "values": null,
         "price": 230,
         "map": "citoqui_liq_peritoneal"
       },
       {
+        "identifier":"LÍQUIDOS BIOLÓGICOS",
         "value": "ADA",
         "values": null,
         "price": 250,
         "map": "ada"
       },
       {
+        "identifier":"LÍQUIDOS BIOLÓGICOS",
         "value": "Amonio LCR",
         "values": null,
         "price": 234,
         "map": "amonio_lcr"
       },
       {
+        "identifier":"LÍQUIDOS BIOLÓGICOS",
         "value": "Espermograma",
         "values": null,
         "price": 200,
@@ -1340,42 +1552,49 @@
     "title": "SEROLOGÍA",
     "list": [
       {
+        "identifier":"SEROLOGÍA",
         "value": "PCR Cuantitativo",
         "values": null,
         "price": 50,
         "map": "pcr_cuantitativo_simple"
       },
       {
+        "identifier":"SEROLOGÍA",
         "value": "ASTO Cuantitativo",
         "values": null,
         "price": 50,
         "map": "asto_cuantitativo_simple"
       },
       {
+        "identifier":"SEROLOGÍA",
         "value": "RF Cuantitativo",
         "values": null,
         "price": 50,
         "map": "rf_cuantitativo_simple"
       },
       {
+        "identifier":"SEROLOGÍA",
         "value": "RPR",
         "values": null,
         "price": 40,
         "map": "rpr"
       },
       {
+        "identifier":"SEROLOGÍA",
         "value": "Reacción Widal",
         "values": null,
         "price": 40,
         "map": "reacci_n_widal"
       },
       {
+        "identifier":"SEROLOGÍA",
         "value": "Mononucleosis",
         "values": null,
         "price": 150,
         "map": "mononucleosis"
       },
       {
+        "identifier":"SEROLOGÍA",
         "value": "Brucelosis",
         "values": null,
         "price": 234,
@@ -1387,18 +1606,21 @@
     "title": "DROGAS DE ABUSO",
     "list": [
       {
+        "identifier":"DROGAS DE ABUSO",
         "value": "Cocaína",
         "values": null,
         "price": 234,
         "map": "coca_na_simple"
       },
       {
+        "identifier":"DROGAS DE ABUSO",
         "value": "THC",
         "values": null,
         "price": 234,
         "map": "thc_simple"
       },
       {
+        "identifier":"DROGAS DE ABUSO",
         "value": "Benzodiazepinas",
         "values": null,
         "price": 234,
@@ -1410,252 +1632,294 @@
     "title": "QUÍMICA METABÓLICA",
     "list": [
       {
+        "identifier":"QUÍMICA METABÓLICA",
         "value": "Glicemia",
         "values": null,
         "price": 25,
         "map": "glicemia_simple"
       },
       {
+        "identifier":"QUÍMICA METABÓLICA",
         "value": "Glicemia Post Estimulo",
         "values": null,
         "price": 25,
         "map": "glicemia_post_estimulo_simple"
       },
       {
+        "identifier":"QUÍMICA METABÓLICA",
         "value": "Tolerancia a la Glucosa",
         "values": null,
         "price": 100,
         "map": "tolerancia_a_la_glucosa"
       },
       {
+        "identifier":"QUÍMICA METABÓLICA",
         "value": "Hb Glicosilada A1",
         "values": null,
         "price": 80,
         "map": "hb_glicosilada_a_1"
       },
       {
+        "identifier":"QUÍMICA METABÓLICA",
         "value": "Hb Glicosilada A1C",
         "values": null,
         "price": 234,
         "map": "hb_glicosilada_a_1_c"
       },
       {
+        "identifier":"QUÍMICA METABÓLICA",
         "value": "Urea/BUN",
         "values": null,
         "price": 30,
         "map": "urea_bun_simple"
       },
       {
+        "identifier":"QUÍMICA METABÓLICA",
         "value": "Creatinina",
         "values": null,
         "price": 30,
         "map": "creatinina_simple"
       },
       {
+        "identifier":"QUÍMICA METABÓLICA",
         "value": "Acido Úrico",
         "values": null,
         "price": 30,
         "map": "acido_rico_simple"
       },
       {
+        "identifier":"QUÍMICA METABÓLICA",
         "value": "Colesterol",
         "values": null,
         "price": 25,
         "map": "colesterol_simple"
       },
       {
+        "identifier":"QUÍMICA METABÓLICA",
         "value": "Colesterol HDL",
         "values": null,
         "price": 25,
         "map": "colesterol_hdl_simple"
       },
       {
+        "identifier":"QUÍMICA METABÓLICA",
         "value": "Colesterol LDL",
         "values": null,
         "price": 25,
         "map": "colesterol_ldl_simple"
       },
       {
+        "identifier":"QUÍMICA METABÓLICA",
         "value": "Triglicéridos",
         "values": null,
         "price": 25,
         "map": "triglic_ridos_simple"
       },
       {
+        "identifier":"QUÍMICA METABÓLICA",
         "value": "Lípidos Totales",
         "values": null,
         "price": 100,
         "map": "l_pidos_totales_simple"
       },
       {
+        "identifier":"QUÍMICA METABÓLICA",
         "value": "VLDL",
         "values": null,
         "price": 25,
         "map": "vldl_simple"
       },
       {
+        "identifier":"QUÍMICA METABÓLICA",
         "value": "CPK",
         "values": null,
         "price": 80,
         "map": "cpk_simple"
       },
       {
+        "identifier":"QUÍMICA METABÓLICA",
         "value": "CPK MB",
         "values": null,
         "price": 80,
         "map": "cpk_mb_simple"
       },
       {
+        "identifier":"QUÍMICA METABÓLICA",
         "value": "CK MM",
         "values": null,
         "price": 2,
         "map": "ck_mm_simple"
       },
       {
+        "identifier":"QUÍMICA METABÓLICA",
         "value": "Lact. Desh Hidrogenasa",
         "values": null,
         "price": 80,
         "map": "lact_desh_hidrogenasa_simple"
       },
       {
+        "identifier":"QUÍMICA METABÓLICA",
         "value": "Troponina I",
         "values": null,
         "price": 100,
         "map": "troponina_i_simple"
       },
       {
+        "identifier":"QUÍMICA METABÓLICA",
         "value": "Amilasa",
         "values": null,
         "price": 50,
         "map": "amilasa_simple"
       },
       {
+        "identifier":"QUÍMICA METABÓLICA",
         "value": "Lipasa",
         "values": null,
         "price": 100,
         "map": "lipasa_simple"
       },
       {
+        "identifier":"QUÍMICA METABÓLICA",
         "value": "Amonio",
         "values": null,
         "price": 200,
         "map": "amonio_simple"
       },
       {
+        "identifier":"QUÍMICA METABÓLICA",
         "value": "Lactato",
         "values": null,
         "price": 234,
         "map": "lactato_simple"
       },
       {
+        "identifier":"QUÍMICA METABÓLICA",
         "value": "Fenilalanina",
         "values": null,
         "price": 234,
         "map": "fenilalanina_simple"
       },
       {
+        "identifier":"QUÍMICA METABÓLICA",
         "value": "Homocisteína",
         "values": null,
         "price": 234,
         "map": "homociste_na_simple"
       },
       {
+        "identifier":"QUÍMICA METABÓLICA",
         "value": "Vitamina B12",
         "values": null,
         "price": 250,
         "map": "vitamina_b_12_simple"
       },
       {
+        "identifier":"QUÍMICA METABÓLICA",
         "value": "Acido Fólico",
         "values": null,
         "price": 234,
         "map": "acido_f_lico_simple"
       },
       {
+        "identifier":"QUÍMICA METABÓLICA",
         "value": "Péptido B Natriurético",
         "values": null,
         "price": 234,
         "map": "p_ptido_b_natriur_tico_simple"
       },
       {
+        "identifier":"QUÍMICA METABÓLICA",
         "value": "Procalcitonina",
         "values": null,
         "price": 200,
         "map": "procalcitonina_simple"
       },
       {
+        "identifier":"QUÍMICA METABÓLICA",
         "value": "Serotonina",
         "values": null,
         "price": 234,
         "map": "serotonina_simple"
       },
       {
+        "identifier":"QUÍMICA METABÓLICA",
         "value": "Dopamina",
         "values": null,
         "price": 234,
         "map": "dopamina_simple"
       },
       {
+        "identifier":"QUÍMICA METABÓLICA",
         "value": "Bilirrubinas D. T. I.",
         "values": null,
         "price": 40,
         "map": "bilirrubinas_d_t_i"
       },
       {
+        "identifier":"QUÍMICA METABÓLICA",
         "value": "GOT",
         "values": null,
         "price": 25,
         "map": "got_simple"
       },
       {
+        "identifier":"QUÍMICA METABÓLICA",
         "value": "GPT",
         "values": null,
         "price": 25,
         "map": "gpt_simple"
       },
       {
+        "identifier":"QUÍMICA METABÓLICA",
         "value": "GGT",
         "values": null,
         "price": 50,
         "map": "ggt_simple"
       },
       {
+        "identifier":"QUÍMICA METABÓLICA",
         "value": "Fosfatasa Alcalina",
         "values": null,
         "price": 40,
         "map": "fosfatasa_alcalina_simple"
       },
       {
+        "identifier":"QUÍMICA METABÓLICA",
         "value": "Fosfatasa Acida",
         "values": null,
         "price": 100,
         "map": "fosfatasa_acida_simple"
       },
       {
+        "identifier":"QUÍMICA METABÓLICA",
         "value": "Fosfatasa Acida Prostática",
         "values": null,
         "price": 100,
         "map": "fosfatasa_acida_prost_tica_simple"
       },
       {
+        "identifier":"QUÍMICA METABÓLICA",
         "value": "Proteínas Totales",
         "values": null,
         "price": 30,
         "map": "prote_nas_totales_simple"
       },
       {
+        "identifier":"QUÍMICA METABÓLICA",
         "value": "Albumina",
         "values": null,
         "price": 30,
         "map": "albumina_simple"
       },
       {
+        "identifier":"QUÍMICA METABÓLICA",
         "value": "Globulina",
         "values": null,
         "price": 30,
         "map": "globulina_simple"
       },
       {
+        "identifier":"QUÍMICA METABÓLICA",
         "value": "Electroforesis de Proteínas",
         "values": null,
         "price": 20,
@@ -1667,48 +1931,56 @@
     "title": "ELECTROLITOS",
     "list": [
       {
+        "identifier":"ELECTROLITOS",
         "value": "Sodio Na",
         "values": null,
         "price": 40,
         "map": "sodio_na_simple"
       },
       {
+        "identifier":"ELECTROLITOS",
         "value": "Potasio K",
         "values": null,
         "price": 40,
         "map": "potasio_k_simple"
       },
       {
+        "identifier":"ELECTROLITOS",
         "value": "Cloro Cl",
         "values": null,
         "price": 40,
         "map": "cloro_cl_simple"
       },
       {
+        "identifier":"ELECTROLITOS",
         "value": "Calcio Ca",
         "values": null,
         "price": 40,
         "map": "calcio_ca_simple"
       },
       {
+        "identifier":"ELECTROLITOS",
         "value": "Calcio Iónico Ca++",
         "values": null,
         "price": 50,
         "map": "calcio_i_nico_ca_simple"
       },
       {
+        "identifier":"ELECTROLITOS",
         "value": "Magnesio Mg",
         "values": null,
         "price": 40,
         "map": "magnesio_mg_simple"
       },
       {
+        "identifier":"ELECTROLITOS",
         "value": "Fosforo P",
         "values": null,
         "price": 40,
         "map": "fosforo_p_simple"
       },
       {
+        "identifier":"ELECTROLITOS",
         "value": "Litio Li",
         "values": null,
         "price": 234,
@@ -1720,324 +1992,378 @@
     "title": "ENDOCRINOLOGÍA",
     "list": [
       {
+        "identifier":"ENDOCRINOLOGÍA",
         "value": "Estradiol",
         "values": null,
         "price": 234,
         "map": "estradiol_simple"
       },
       {
+        "identifier":"ENDOCRINOLOGÍA",
         "value": "FSH",
         "values": null,
         "price": 90,
         "map": "fsh_simple"
       },
       {
+        "identifier":"ENDOCRINOLOGÍA",
         "value": "LH",
         "values": null,
         "price": 90,
         "map": "lh_simple"
       },
       {
+        "identifier":"ENDOCRINOLOGÍA",
         "value": "Progesterona",
         "values": null,
         "price": 100,
         "map": "progesterona_simple"
       },
       {
+        "identifier":"ENDOCRINOLOGÍA",
         "value": "Prolactina",
         "values": null,
         "price": 234,
         "map": "prolactina_simple"
       },
       {
+        "identifier":"ENDOCRINOLOGÍA",
         "value": "T3",
         "values": null,
         "price": 80,
         "map": "t_3_simple"
       },
       {
+        "identifier":"ENDOCRINOLOGÍA",
         "value": "T4",
         "values": null,
         "price": 80,
         "map": "t_4_simple"
       },
       {
+        "identifier":"ENDOCRINOLOGÍA",
         "value": "T4 Libre",
         "values": null,
         "price": 80,
         "map": "t_4_libre_simple"
       },
       {
+        "identifier":"ENDOCRINOLOGÍA",
         "value": "TSH",
         "values": null,
         "price": 80,
         "map": "tsh_simple"
       },
       {
+        "identifier":"ENDOCRINOLOGÍA",
         "value": "TG",
         "values": null,
         "price": 180,
         "map": "tg_simple"
       },
       {
+        "identifier":"ENDOCRINOLOGÍA",
         "value": "a-TG",
         "values": null,
         "price": 150,
         "map": "a_tg_simple"
       },
       {
+        "identifier":"ENDOCRINOLOGÍA",
         "value": "a-TPO",
         "values": null,
         "price": 150,
         "map": "a_tpo_simple"
       },
       {
+        "identifier":"ENDOCRINOLOGÍA",
         "value": "Testosterona",
         "values": null,
         "price": 100,
         "map": "testosterona_simple"
       },
       {
+        "identifier":"ENDOCRINOLOGÍA",
         "value": "Testosterona Libre",
         "values": null,
         "price": 100,
         "map": "testosterona_libre_simple"
       },
       {
+        "identifier":"ENDOCRINOLOGÍA",
         "value": "Insulina Basal",
         "values": null,
         "price": 100,
         "map": "insulina_basal_simple"
       },
       {
+        "identifier":"ENDOCRINOLOGÍA",
         "value": "Insulina 30 min",
         "values": null,
         "price": 234,
         "map": "insulina_30_min_simple"
       },
       {
+        "identifier":"ENDOCRINOLOGÍA",
         "value": "Insulina 60 min",
         "values": null,
         "price": 234,
         "map": "insulina_60_min_simple"
       },
       {
+        "identifier":"ENDOCRINOLOGÍA",
         "value": "Insulina 90 min",
         "values": null,
         "price": 234,
         "map": "insulina_90_min_simple"
       },
       {
+        "identifier":"ENDOCRINOLOGÍA",
         "value": "Insulina 120 min",
         "values": null,
         "price": 200,
         "map": "insulina_120_min_simple"
       },
       {
+        "identifier":"ENDOCRINOLOGÍA",
         "value": "Cortisol AM",
         "values": null,
         "price": 90,
         "map": "cortisol_am_simple"
       },
       {
+        "identifier":"ENDOCRINOLOGÍA",
         "value": "cortisol PM",
         "values": null,
         "price": 90,
         "map": "cortisol_pm_simple"
       },
       {
+        "identifier":"ENDOCRINOLOGÍA",
         "value": "PTH 2a Generación",
         "values": null,
         "price": 230,
         "map": "pth_2_a_generaci_n_simple"
       },
       {
+        "identifier":"ENDOCRINOLOGÍA",
         "value": "ACTH",
         "values": null,
         "price": 350,
         "map": "acth_simple"
       },
       {
+        "identifier":"ENDOCRINOLOGÍA",
         "value": "ACTH AM - PM",
         "values": null,
         "price": 234,
         "map": "acth_am_pm_simple"
       },
       {
+        "identifier":"ENDOCRINOLOGÍA",
         "value": "Horm. de crecimiento (HGH)",
         "values": null,
         "price": 150,
         "map": "horm_de_crecimiento_hgh_simple"
       },
       {
+        "identifier":"ENDOCRINOLOGÍA",
         "value": "HGH Post Estimulo",
         "values": null,
         "price": 234,
         "map": "hgh_post_estimulo_simple"
       },
       {
+        "identifier":"ENDOCRINOLOGÍA",
         "value": "HGH de 4 Tiempos",
         "values": null,
         "price": 234,
         "map": "hgh_de_4_tiempos_simple"
       },
       {
+        "identifier":"ENDOCRINOLOGÍA",
         "value": "Delta 4-Androstenediona",
         "values": null,
         "price": 234,
         "map": "delta_4_androstenediona_simple"
       },
       {
+        "identifier":"ENDOCRINOLOGÍA",
         "value": "DHEAS",
         "values": null,
         "price": 234,
         "map": "dheas_simple"
       },
       {
+        "identifier":"ENDOCRINOLOGÍA",
         "value": "17-OH Progesterona",
         "values": null,
         "price": 234,
         "map": "17_oh_progesterona_simple"
       },
       {
+        "identifier":"ENDOCRINOLOGÍA",
         "value": "Calcitonina",
         "values": null,
         "price": 234,
         "map": "calcitonina_simple"
       },
       {
+        "identifier":"ENDOCRINOLOGÍA",
         "value": "Osteocalcina",
         "values": null,
         "price": 234,
         "map": "osteocalcina_simple"
       },
       {
+        "identifier":"ENDOCRINOLOGÍA",
         "value": "Cross Lap",
         "values": null,
         "price": 234,
         "map": "cross_lap_simple"
       },
       {
+        "identifier":"ENDOCRINOLOGÍA",
         "value": "Perfil Metabólico Neonatal",
         "values": null,
         "price": 234,
         "map": "perfil_metab_lico_neonatal"
       },
       {
+        "identifier":"ENDOCRINOLOGÍA",
         "value": "Renina",
         "values": null,
         "price": 234,
         "map": "renina_simple"
       },
       {
+        "identifier":"ENDOCRINOLOGÍA",
         "value": "Aldosterona",
         "values": null,
         "price": 234,
         "map": "aldosterona_simple"
       },
       {
+        "identifier":"ENDOCRINOLOGÍA",
         "value": "Prueba de Reserva Testicular",
         "values": null,
         "price": 234,
         "map": "prueba_de_reserva_testicular"
       },
       {
+        "identifier":"ENDOCRINOLOGÍA",
         "value": "Péptido C",
         "values": null,
         "price": 150,
         "map": "p_ptido_c_simple"
       },
       {
+        "identifier":"ENDOCRINOLOGÍA",
         "value": "Índice HOMA",
         "values": null,
         "price": 200,
         "map": "ndice_homa_simple"
       },
       {
+        "identifier":"ENDOCRINOLOGÍA",
         "value": "IGF - 1",
         "values": null,
         "price": 234,
         "map": "igf_1_simple"
       },
       {
+        "identifier":"ENDOCRINOLOGÍA",
         "value": "Vitamina D 25(OH)",
         "values": null,
         "price": 250,
         "map": "vitamina_d_25_oh_simple"
       },
       {
+        "identifier":"ENDOCRINOLOGÍA",
         "value": "Hormona Antimulleriana",
         "values": null,
         "price": 700,
         "map": "hormona_antimulleriana_simple"
       },
       {
+        "identifier":"ENDOCRINOLOGÍA",
         "value": "T3 libre",
         "values": null,
         "price": 234,
         "map": "t_3_libre_simple"
       },
       {
+        "identifier":"ENDOCRINOLOGÍA",
         "value": "Anti r-TSH",
         "values": null,
         "price": 234,
         "map": "anti_r_tsh_simple"
       },
       {
+        "identifier":"ENDOCRINOLOGÍA",
         "value": "DHT",
         "values": null,
         "price": 234,
         "map": "dht_simple"
       },
       {
+        "identifier":"ENDOCRINOLOGÍA",
         "value": "Eritropoyetina",
         "values": null,
         "price": 234,
         "map": "eritropoyetina_simple"
       },
       {
+        "identifier":"ENDOCRINOLOGÍA",
         "value": "Anticuerpos ICA",
         "values": null,
         "price": 234,
         "map": "anticuerpos_ica_simple"
       },
       {
+        "identifier":"ENDOCRINOLOGÍA",
         "value": "Anticuerpos GAD",
         "values": null,
         "price": 234,
         "map": "anticuerpos_gad_simple"
       },
       {
+        "identifier":"ENDOCRINOLOGÍA",
         "value": "Índice de Tiroxina Libre",
         "values": null,
         "price": 234,
         "map": "ndice_de_tiroxina_libre_simple"
       },
       {
+        "identifier":"ENDOCRINOLOGÍA",
         "value": "SHBG",
         "values": null,
         "price": 234,
         "map": "shbg_simple"
       },
       {
+        "identifier":"ENDOCRINOLOGÍA",
         "value": "SHBG (Glob. Fijadora)",
         "values": null,
         "price": 234,
         "map": "shbg_glob_fijadora_simple"
       },
       {
+        "identifier":"ENDOCRINOLOGÍA",
         "value": "Estrona",
         "values": null,
         "price": 234,
         "map": "estrona_simple"
       },
       {
+        "identifier":"ENDOCRINOLOGÍA",
         "value": "Anti M.B.G.",
         "values": null,
         "price": 234,
         "map": "anti_m_b_g_simple"
       },
       {
+        "identifier":"ENDOCRINOLOGÍA",
         "value": "IGFBP-3",
         "values": null,
         "price": 234,
@@ -2049,24 +2375,28 @@
     "title": "MEDIO INTERNO",
     "list": [
       {
+        "identifier":"MEDIO INTERNO",
         "value": "Gasometría",
         "values": null,
         "price": 234,
         "map": "gasometr_a"
       },
       {
+        "identifier":"MEDIO INTERNO",
         "value": "Osmolaridad Urinaria",
         "values": null,
         "price": 234,
         "map": "osmolaridad_urinaria"
       },
       {
+        "identifier":"MEDIO INTERNO",
         "value": "Osmolaridad Plasmática",
         "values": null,
         "price": 234,
         "map": "osmolaridad_plasm_tica"
       },
       {
+        "identifier":"MEDIO INTERNO",
         "value": "Oximetría",
         "values": null,
         "price": 234,
