@@ -84,14 +84,6 @@ export default function Ordenes () {
   function closeModal () {
     setIsOpen(false)
   }
-  /*
-  function handlePDFGenerated () {
-    // setIsModalPDF(!isModalPDF)
-    setLoadingPDF(true)
-    if (isModalPDF) {
-      setLoadingPDF(false)
-    }
-  } */
 
   function toggleModalPDF ({ cuiid }) {
     toast.info('Generando PDF...')
@@ -113,7 +105,6 @@ export default function Ordenes () {
   }
 
   if (!session?.data) return <div />
-
   return (
     <>
       <ToastContainer
@@ -126,20 +117,6 @@ export default function Ordenes () {
         draggable={false}
         progress={undefined}
       />
-      {/*  {isModalPDF & (onePDF?.data !== undefined)
-        ? (
-          <OnPDF
-            onPDFGenerated={handlePDFGenerated}
-            loading={loadingOnDownload}
-            onLoading={setLoadingOnDownload}
-            lab={lab}
-            stateModal={isModalPDF}
-            onModal={toggleModalPDF}
-            data={onePDF?.data[0]}
-          />
-          )
-          // Cero annoying
-        : null} */}
       <OnDelete
         elDelete={elDelete?.fullname}
         onDelete={handleDelete}
@@ -165,26 +142,24 @@ export default function Ordenes () {
             <strong>Saldo</strong>
           </nav>
           {data.length === 0 && <div>No pudimos encontrar esa busqueda.</div>}
-          {
-               data
-                 ? <ListOfOrders
-                     onPDF={toggleModalPDF}
-                     data={data}
-                     onDelete={handleDelete}
-                   />
-                 : <>
-                   <PlaceholderListOrders />
-                   <PlaceholderListOrders />
-                   <PlaceholderListOrders />
-                   <PlaceholderListOrders />
-                   <PlaceholderListOrders />
-                   <PlaceholderListOrders />
-                   <PlaceholderListOrders />
-                   <PlaceholderListOrders />
-                   <PlaceholderListOrders />
-                   <PlaceholderListOrders />
-                 </>
-            }
+          {data
+            ? <ListOfOrders
+                onPDF={toggleModalPDF}
+                data={data}
+                onDelete={handleDelete}
+              />
+            : <>
+              <PlaceholderListOrders />
+              <PlaceholderListOrders />
+              <PlaceholderListOrders />
+              <PlaceholderListOrders />
+              <PlaceholderListOrders />
+              <PlaceholderListOrders />
+              <PlaceholderListOrders />
+              <PlaceholderListOrders />
+              <PlaceholderListOrders />
+              <PlaceholderListOrders />
+            </>}
         </main>
       </section>
       <style jsx>

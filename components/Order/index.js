@@ -18,9 +18,15 @@ export function Order ({
   discount
 }) {
   const session = useSession()
+  const acumulator = 0
   const { role } = session?.data?.token?.user
+  const totalDiscount = total * (discount / 100)
 
-  const diff = discount === 0 ? total - itotal : total - itotal - (total * (discount / 100))
+  for (const j of acuenta) {
+    acumulator = acumulator + j.indebt
+  }
+
+  const diff = Number(saldo) <= 0 ? 0 : discount === 0 ? total - itotal : total - acumulator - totalDiscount
 
   return (
     <>
@@ -29,8 +35,8 @@ export function Order ({
         <p>{id}</p>
         <p>{fullname}</p>
         <p>{total} </p>
-        <p>{itotal}</p>
-        <p>{diff <= 0 ? '✅' : diff}</p>
+        <p>{acumulator + totalDiscount}</p>
+        <p>{diff <= 0 ? '✅' : diff.toFixed(2)}</p>
         {role && role === ROLE_TYPE_BIOCHEMICAL && (
           <Link href={`/bio/${cuiid}`}>
             <a title='Bio' />

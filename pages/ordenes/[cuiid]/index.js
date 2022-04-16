@@ -21,10 +21,8 @@ export default function OrderToEdit ({ result }) {
   const [newIndebtList, setNewIndebtList] = useState(indebtList)
   const [sal, setSal] = useState('')
   const [loading, setLoading] = useState(false)
-  // const [isCompleted, setIsCompleted] = useState(false)
   let isCompleted = false
   const percentage = discount === 0 ? 0 : (total * (+discount / 100))
-
   const handleSubmit = e => {
     setLoading(true)
     e.preventDefault()
@@ -54,7 +52,6 @@ export default function OrderToEdit ({ result }) {
       .slice(0, indece + 1)
       .reduce((acc, cur) => acc + +cur.indebt, 0)
   }
-
   return (
     <>
       <header>
@@ -83,7 +80,7 @@ export default function OrderToEdit ({ result }) {
               }
               return (
                 <tr key={index}>
-                  <td className='w-[185px]'> {indebt} Bs.</td>
+                  <td className='w-[185px]'> {indebt.toFixed(2)} Bs.</td>
                   <td className='w-[185px]'>
                     {res <= 0 ? <span>¡Saldo completado!</span> : res + ' Bs.'}
                   </td>
