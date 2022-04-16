@@ -5,6 +5,7 @@ import { getAge } from 'hooks/dateTime/getAge'
 import { unique } from 'utils/unique'
 import Link from 'next/link'
 import { toast } from 'react-toastify'
+import { GoBack } from 'components/GoBack'
 
 export default function OrderToEdit ({ result }) {
   const {
@@ -53,10 +54,12 @@ export default function OrderToEdit ({ result }) {
       .slice(0, indece + 1)
       .reduce((acc, cur) => acc + +cur.indebt, 0)
   }
+
   return (
     <>
       <header>
-        <h1>Nombre: {fullName}</h1>
+        <GoBack url='/ordenes' />
+        <h1>Nombre: <strong>{fullName}</strong></h1>
         <h4>
           Código: <strong>{unique({ id, cuiid, labName, ownerCi })}</strong>
         </h4>
@@ -114,6 +117,11 @@ export default function OrderToEdit ({ result }) {
             max-width: 900px;
             margin: 0 auto;
             min-width: 220px;
+          }
+
+          img {
+            width: 27px;
+            padding: 1rem 0;
           }
 
           tr:last-of-type {

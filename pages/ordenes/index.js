@@ -9,6 +9,8 @@ import { useApiCallback } from 'hooks/useApiCallback'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { deleteOrder } from 'lib/db'
 import { toast, ToastContainer } from 'react-toastify'
+import useSWR from 'swr'
+import { fetcher } from 'lib/fetcher'
 
 const ROLE_TYPE_BIOCHEMICAL = 'BIOCHEMICAL'
 
@@ -30,7 +32,12 @@ export default function Ordenes () {
   const token = session?.data?.token
   const lab = token?.user?.lab
 
-  const { apiResponse } = useApiCallback({ endpoint: '/api/receipt/getAll' })
+  const { data: swrData, error, mutate } = useSWR('/api/receipt/getAll', fetcher, {
+    revalidateIfStale: true,
+    revalidateOnFocus: true,
+    revalidateOnReconnect: true
+  })
+  // const { apiResponse } = useApiCallback({ endpoint: '/api/receipt/getAll' })
   const handleChange = useCallback(
     e => {
       setValue(e.target.value)
@@ -40,8 +47,8 @@ export default function Ordenes () {
   const v = String(value.toLowerCase())
 
   const resFiltered =
-    apiResponse?.data?.length > 0 &&
-    apiResponse.data.filter(({ fullName, unique }) => {
+    swrData?.data?.length > 0 &&
+    swrData.data.filter(({ fullName, unique }) => {
       return (
         fullName.toLowerCase().includes(v) || unique.toLowerCase().includes(v)
       )
@@ -52,16 +59,18 @@ export default function Ordenes () {
   }, [resFiltered])
 
   const handleDelete = ({ cuiid, fullname }) => {
+    setLoadingPDF(true)
     if (isOpen) {
       deleteOrder({ cuiid: elDelete.cuiid }).then(itemDeleted => {
         if (itemDeleted) {
-          toast.success('Orden eliminada, por favor recargue la página')
+          mutate({ ...swrData })
+          setLoadingPDF(false)
           setElDelete({ cuiid: '', fullname: '' })
           setIsOpen(false)
         } else {
+          setLoadingPDF(false)
           toast.error('No se pudo eliminar la orden')
         }
-        // Cant delete the last order
       })
     }
 
@@ -69,6 +78,7 @@ export default function Ordenes () {
       setIsOpen(true)
       setElDelete({ fullname, cuiid })
     }
+    setLoadingPDF(false)
   }
 
   function closeModal () {
