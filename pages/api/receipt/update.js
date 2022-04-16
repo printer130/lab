@@ -35,7 +35,7 @@ export default async function (req, res) {
       data: {
         indebtList: indebtList,
         saldo: saldo - sal,
-        itotal: reducedITotal
+        itotal: +reducedITotal.toFixed(2)
       }
     })
 

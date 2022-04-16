@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { getAge } from 'hooks/dateTime/getAge'
 import { unique } from 'utils/unique'
 import Link from 'next/link'
-import { toast } from 'react-toastify'
+import { toast, ToastContainer } from 'react-toastify'
 import { GoBack } from 'components/GoBack'
 
 export default function OrderToEdit ({ result }) {
@@ -21,7 +21,8 @@ export default function OrderToEdit ({ result }) {
   const [newIndebtList, setNewIndebtList] = useState(indebtList)
   const [sal, setSal] = useState('')
   const [loading, setLoading] = useState(false)
-  let isCompleted = false
+  const [isCompleted, setIsCompleted] = useState(false)
+  // let isCompleted = false
   const percentage = discount === 0 ? 0 : (total * (+discount / 100))
   const handleSubmit = e => {
     setLoading(true)
@@ -33,9 +34,9 @@ export default function OrderToEdit ({ result }) {
       })
       .then(res => res.json())
       .then(res => {
-        if (!res.data) return null
         setLoading(false)
         toast.success('Pago actualizado.')
+        setIsCompleted(true)
         const data = res.data
         setSal('')
         setNewIndebtList(data.indebtList)
@@ -54,6 +55,16 @@ export default function OrderToEdit ({ result }) {
   }
   return (
     <>
+      <ToastContainer
+        position='top-center'
+        autoClose={3000}
+        hideProgressBar={false}
+        closeOnClick
+        pauseOnFocusLoss={false}
+        pauseOnHover={false}
+        draggable={false}
+        progress={undefined}
+      />
       <header>
         <GoBack url='/ordenes' />
         <h1>Nombre: <strong>{fullName}</strong></h1>
@@ -74,9 +85,8 @@ export default function OrderToEdit ({ result }) {
             </tr>
             {newIndebtList.map(({ indebt }, index) => {
               const res = total - reducir(index) - percentage
-
               if (res <= 0) {
-                isCompleted = true
+                setIsCompleted(true)
               }
               return (
                 <tr key={index}>
