@@ -1,6 +1,3 @@
-import { LazyBio } from 'components/LazyBio'
-
-const PDF_HEIGHT = 792
 
 const Layout = ({ children, id, loading }) => {
   return (

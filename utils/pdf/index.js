@@ -135,9 +135,7 @@ const header = ({ doc, data, lab, sex }) => {
   doc.text(320, 115, 'Fécha de impresión:  ' + new Date().toLocaleDateString().split('T')[0])
 }
 
-export const GeneratePDF = ({ id, data, lab, on1Loading, onModal }) => {
-  // onLoading(true)
-  // const el = window.document.querySelector('#' + id)
+export const GeneratePDF = ({ id, data, lab, onModal }) => {
   const obj = {}
   const doc = new JsPDF({
     orientation: 'portrait',
@@ -229,7 +227,6 @@ export const GeneratePDF = ({ id, data, lab, on1Loading, onModal }) => {
   doc.setPage(pageCount)
 
   toast.success('PDF generado.')
-  // onLoading(false)
   // onModal()
   doc.save(`${unique({
             id: data.id,

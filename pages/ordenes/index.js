@@ -11,6 +11,7 @@ import { deleteOrder } from 'lib/db'
 import { toast, ToastContainer } from 'react-toastify'
 import useSWR from 'swr'
 import { fetcher } from 'lib/fetcher'
+import { GeneratePDF } from 'utils/pdf'
 
 const ROLE_TYPE_BIOCHEMICAL = 'BIOCHEMICAL'
 
@@ -22,11 +23,10 @@ export default function Ordenes () {
   const [isOpen, setIsOpen] = useState(false)
   const [elDelete, setElDelete] = useState({ cuiid: '', fullname: '' })
   const [value, setValue] = useState('')
-  const [onePDF, setOnePDF] = useState()
+  // const [onePDF, setOnePDF] = useState()
   const [loadingPDF, setLoadingPDF] = useState(false)
-  const [loadingOnDownload, setLoadingOnDownload] = useState(false)
-  const [PDFCuiid, setPDFCuiid] = useState()
-  const [isModalPDF, setIsModalPDF] = useState(false)
+  // const [loadingOnDownload, setLoadingOnDownload] = useState(false)
+  // const [isModalPDF, setIsModalPDF] = useState(false)
 
   const session = useSession()
   const token = session?.data?.token
@@ -84,27 +84,33 @@ export default function Ordenes () {
   function closeModal () {
     setIsOpen(false)
   }
-
+  /*
   function handlePDFGenerated () {
-    setIsModalPDF(!isModalPDF)
+    // setIsModalPDF(!isModalPDF)
     setLoadingPDF(true)
     if (isModalPDF) {
       setLoadingPDF(false)
     }
-  }
+  } */
 
   function toggleModalPDF ({ cuiid }) {
+    toast.info('Generando PDF...')
     setLoadingPDF(true)
-    setIsModalPDF(!isModalPDF)
-    setPDFCuiid(cuiid)
-    if (isModalPDF) {
-      setLoadingPDF(false)
-    }
+    getOne({ cuiid })
+      .then((oneData) => {
+        if (!oneData?.data[0]) {
+          setLoadingPDF(false)
+          return toast.error('Vuelve a intentarlo.')
+        }
+        GeneratePDF({
+          id: 'pdf',
+          data: oneData?.data[0],
+          lab,
+          onPDFGenerated: toggleModalPDF
+        })
+        setLoadingPDF(false)
+      })
   }
-
-  useEffect(() => {
-    PDFCuiid && getOne({ cuiid: PDFCuiid }).then(setOnePDF)
-  }, [PDFCuiid])
 
   if (!session?.data) return <div />
 
@@ -120,7 +126,7 @@ export default function Ordenes () {
         draggable={false}
         progress={undefined}
       />
-      {isModalPDF & (onePDF?.data !== undefined)
+      {/*  {isModalPDF & (onePDF?.data !== undefined)
         ? (
           <OnPDF
             onPDFGenerated={handlePDFGenerated}
@@ -133,7 +139,7 @@ export default function Ordenes () {
           />
           )
           // Cero annoying
-        : null}
+        : null} */}
       <OnDelete
         elDelete={elDelete?.fullname}
         onDelete={handleDelete}
