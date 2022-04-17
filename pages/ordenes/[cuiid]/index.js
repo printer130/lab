@@ -22,7 +22,7 @@ export default function OrderToEdit ({ result }) {
   const [sal, setSal] = useState('')
   const [loading, setLoading] = useState(false)
   const [isCompleted, setIsCompleted] = useState(false)
-  // let isCompleted = false
+  let isRendered = false
   const percentage = discount === 0 ? 0 : (total * (+discount / 100))
   const handleSubmit = e => {
     setLoading(true)
@@ -35,7 +35,7 @@ export default function OrderToEdit ({ result }) {
       .then(res => res.json())
       .then(res => {
         setLoading(false)
-        toast.success('Pago actualizado.')
+        toast.success('Pago Realizado')
         setIsCompleted(true)
         const data = res.data
         setSal('')
@@ -53,6 +53,16 @@ export default function OrderToEdit ({ result }) {
       .slice(0, indece + 1)
       .reduce((acc, cur) => acc + +cur.indebt, 0)
   }
+
+  function handleReducePercentage ({ index }) {
+    const res = total - reducir(index) - percentage
+    if (res <= 0) {
+      // setIsCompleted(true)
+      isRendered = true
+    }
+    return res
+  }
+
   return (
     <>
       <ToastContainer
@@ -84,10 +94,7 @@ export default function OrderToEdit ({ result }) {
               <th className='w-[185px] text-center'>Debe</th>
             </tr>
             {newIndebtList.map(({ indebt }, index) => {
-              const res = total - reducir(index) - percentage
-              if (res <= 0) {
-                setIsCompleted(true)
-              }
+              const res = handleReducePercentage({ index })
               return (
                 <tr key={index}>
                   <td className='w-[185px]'> {indebt.toFixed(2)} Bs.</td>
@@ -99,22 +106,26 @@ export default function OrderToEdit ({ result }) {
             })}
             <tr className='pagar'>
               <td>
-                <input
-                  autoFocus
-                  step='.01'
-                  type='number'
-                  value={sal}
-                  disabled={loading || isCompleted}
-                  max={total}
-                  maxLength={total.toString().length}
-                  onChange={handleChange}
-                  name='indebt'
-                />
+                {
+                  !isCompleted & !isRendered
+                    ? <input
+                        autoFocus
+                        step='.01'
+                        type='number'
+                        value={sal}
+                        disabled={loading || isCompleted}
+                        max={total}
+                        maxLength={total.toString().length}
+                        onChange={handleChange}
+                        name='indebt'
+                      />
+                    : null
+                }
               </td>
             </tr>
           </tbody>
         </table>
-        {!isCompleted ? <button>{loading ? 'Guardando...' : 'Guardar'}</button> : <Link href='/ordenes'><a>Regresar</a></Link>}
+        {!isCompleted & !isRendered ? <button>{loading ? 'Guardando...' : 'Guardar'}</button> : null}
       </form>
       <style jsx>
         {`
