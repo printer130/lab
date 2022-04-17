@@ -107,67 +107,75 @@ export default function Ordenes () {
   if (!session?.data) return <div />
   return (
     <>
-      <ToastContainer
-        position='top-center'
-        autoClose={3000}
-        hideProgressBar={false}
-        closeOnClick
-        pauseOnFocusLoss={false}
-        pauseOnHover={false}
-        draggable={false}
-        progress={undefined}
-      />
-      <OnDelete
-        elDelete={elDelete?.fullname}
-        onDelete={handleDelete}
-        isOpen={isOpen}
-        onClose={closeModal}
-      />
-      <header>
-        <strong className='block text-2xl mb-4'>Lista de Ordenes</strong>
-        <Search
-          value={value}
-          onChange={handleChange}
-          placeholder='Buscar por: nombre - número de orden'
+      <section className='container'>
+        <ToastContainer
+          position='top-center'
+          autoClose={3000}
+          hideProgressBar={false}
+          closeOnClick
+          pauseOnFocusLoss={false}
+          pauseOnHover={false}
+          draggable={false}
+          progress={undefined}
         />
-      </header>
-      <section className='w-full my-0 mx-[auto] overflow-x-scroll md:overflow-x-visible'>
-        <main>
-          <nav>
-            <strong>Creado</strong>
-            <strong>Codigo</strong>
-            <strong>Nombre</strong>
-            <strong>Total</strong>
-            <strong>A cuenta</strong>
-            <strong>Saldo</strong>
-          </nav>
-          {data.length === 0 && <div>No pudimos encontrar esa busqueda.</div>}
-          {data
-            ? <ListOfOrders
-                onPDF={toggleModalPDF}
-                data={data}
-                onDelete={handleDelete}
-              />
-            : <>
-              <PlaceholderListOrders />
-              <PlaceholderListOrders />
-              <PlaceholderListOrders />
-              <PlaceholderListOrders />
-              <PlaceholderListOrders />
-              <PlaceholderListOrders />
-              <PlaceholderListOrders />
-              <PlaceholderListOrders />
-              <PlaceholderListOrders />
-              <PlaceholderListOrders />
-            </>}
-        </main>
+        <OnDelete
+          elDelete={elDelete?.fullname}
+          onDelete={handleDelete}
+          isOpen={isOpen}
+          onClose={closeModal}
+        />
+        <header>
+          <strong className='block text-2xl mb-4'>Lista de Ordenes</strong>
+          <Search
+            value={value}
+            onChange={handleChange}
+            placeholder='Buscar... (Nombre - Número de Orden)'
+          />
+        </header>
+        <section className='w-full my-0 mx-[auto] overflow-x-scroll md:overflow-x-visible'>
+          <main>
+            <nav>
+              <strong>Creado</strong>
+              <strong>Codigo</strong>
+              <strong>Nombre</strong>
+              <strong>Total</strong>
+              <strong>A cuenta</strong>
+              <strong>Saldo</strong>
+            </nav>
+            {data.length === 0 && <div>No pudimos encontrar esa busqueda.</div>}
+            {data
+              ? <ListOfOrders
+                  onPDF={toggleModalPDF}
+                  data={data}
+                  onDelete={handleDelete}
+                />
+              : <>
+                <PlaceholderListOrders />
+                <PlaceholderListOrders />
+                <PlaceholderListOrders />
+                <PlaceholderListOrders />
+                <PlaceholderListOrders />
+                <PlaceholderListOrders />
+                <PlaceholderListOrders />
+                <PlaceholderListOrders />
+                <PlaceholderListOrders />
+                <PlaceholderListOrders />
+              </>}
+          </main>
+        </section>
       </section>
+
       <style jsx>
         {`
+          .container {
+            pointer-events: ${loadingPDF ? 'none' : 'auto'};
+            opacity: ${loadingPDF ? '0.5' : '1'};
+          }
+
           section {
             scroll-behavior: smooth;
             pointer-events: ${loadingPDF ? 'none' : 'auto'};
-            opacity: ${loadingPDF ? '0.75' : '1'};
+            opacity: ${loadingPDF ? '0.5' : '1'};
           }
 
           nav {
