@@ -1,12 +1,10 @@
 /* eslint-disable react/jsx-closing-tag-location */
 import { ListOfOrders } from 'components/ListOrders'
 import { OnDelete } from 'components/OnDelete'
-import { OnPDF } from 'components/OnPDF'
 import { PlaceholderListOrders } from 'components/Placeholders/ListOfOrders'
 import { Search } from 'components/Search'
 import { useSession } from 'next-auth/react'
-import { useApiCallback } from 'hooks/useApiCallback'
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 import { deleteOrder } from 'lib/db'
 import { toast, ToastContainer } from 'react-toastify'
 import useSWR from 'swr'

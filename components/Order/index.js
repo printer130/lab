@@ -18,7 +18,8 @@ export function Order ({
   discount
 }) {
   const session = useSession()
-  const acumulator = 0
+  let acumulator = 0
+  let diff = 0
   const { role } = session?.data?.token?.user
   const totalDiscount = total * (discount / 100)
 
@@ -26,7 +27,15 @@ export function Order ({
     acumulator = acumulator + j.indebt
   }
 
-  const diff = Number(saldo) <= 0 ? 0 : discount === 0 ? total - itotal : total - acumulator - totalDiscount
+  if (discount === 0) {
+    diff = total - itotal
+  }
+
+  if (discount >= 0) {
+    diff = total - acumulator - totalDiscount
+  }
+
+  // const diff = Number(saldo) <= 0 ? 0 : discount === 0 ? total - itotal : total - acumulator - totalDiscount
 
   return (
     <>

@@ -3,7 +3,6 @@ import { getSession } from 'next-auth/react'
 import { useState } from 'react'
 import { getAge } from 'hooks/dateTime/getAge'
 import { unique } from 'utils/unique'
-import Link from 'next/link'
 import { toast, ToastContainer } from 'react-toastify'
 import { GoBack } from 'components/GoBack'
 
