@@ -103,6 +103,7 @@ export default function Ordenes () {
   }
 
   if (!session?.data) return <div />
+  if (error) return <div>Ups algo salío mal, refresque la página.</div>
   return (
     <>
       <section className='container'>

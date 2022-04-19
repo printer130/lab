@@ -18,6 +18,14 @@ model Lab {
   address String?
 
   User User[]
+  tel0 Int @default(0)
+  tel1 Int @default(0)
+  tel2 Int @default(0)
+  tel3 Int @default(0)
+  cel0 Int @default(0)
+  cel1 Int @default(0)
+  cel2 Int @default(0)
+  cel3 Int @default(0)
 }
 
 model User {

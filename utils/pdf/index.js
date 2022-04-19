@@ -95,9 +95,9 @@ const header = ({ doc, data, lab, sex }) => {
   doc.roundedRect(197, 75, 120, heightBox, rounded, rounded, 'D')
   // Medico
   // fill
-  doc.roundedRect(162, 105, 33, heightBox, rounded, rounded, 'F')
+  doc.roundedRect(162, 105, 32, heightBox, rounded, rounded, 'F')
   // rectangle
-  doc.roundedRect(192, 105, 120, heightBox, rounded, rounded, 'D')
+  doc.roundedRect(193, 105, 120, heightBox, rounded, rounded, 'D')
 
   // codigo // RIGHT
   // fill
@@ -106,14 +106,14 @@ const header = ({ doc, data, lab, sex }) => {
   doc.roundedRect(348, 45, 75, heightBox, rounded, rounded, 'D')
   // date // RIGHT
   // fill
-  doc.roundedRect(319, 75, 90, heightBox, rounded, rounded, 'F')
+  doc.roundedRect(319, 75, 88, heightBox, rounded, rounded, 'F')
   // rectangle
-  doc.roundedRect(405, 75, 60, heightBox, rounded, rounded, 'D')
+  doc.roundedRect(402, 75, 60, heightBox, rounded, rounded, 'D')
   // impresion // RIGHT
   // fill
-  doc.roundedRect(323, 105, 69, heightBox, rounded, rounded, 'F')
+  doc.roundedRect(319, 105, 67, heightBox, rounded, rounded, 'F')
   // rectangle
-  doc.roundedRect(393, 105, 60, heightBox, rounded, rounded, 'D')
+  doc.roundedRect(391, 105, 60, heightBox, rounded, rounded, 'D')
   // LINE SEPARATOR
   doc.setLineWidth(2)
   doc.line(0, 150, 615, 150)
@@ -161,12 +161,7 @@ export const GeneratePDF = ({ id, data, lab, onModal }) => {
       simple.push(data.json[i])
     }
   })
-
   doc.setFontSize(10)
-
-  console.log('data', data)
-  console.log('simple', simple)
-  console.log('complex', complex)
 
   simple.forEach((item, i) => {
     if (!obj[item.identifier]) {
@@ -192,8 +187,8 @@ export const GeneratePDF = ({ id, data, lab, onModal }) => {
         header({ doc, data, lab, sex })
         // FOOTER
         doc.text(pageWidth / 2, 720, lab?.address ?? '', { align: 'center' })
-        doc.text(271, 740, '72730216 - 68518882', { align: 'center' })
-        doc.text(270, 760, 'Cochabamba - Bolivia', { align: 'center' })
+        doc.text(pageWidth / 2, 740, 'Tel.: ' + lab?.tel0 + ' Cel.: ' + lab?.cel0 + ' - ' + lab?.cel1 + ' - ' + lab?.cel2 + ' Cochabamba - Bolivia', { align: 'center' })
+        // doc.text(270, 760, 'Cochabamba - Bolivia', { align: 'center' })
         // Page
         doc.text(530, 760, 'Página ' + doc.internal.getCurrentPageInfo().pageNumber + ' de ' + pageCount)
       }

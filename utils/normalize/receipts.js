@@ -1,7 +1,7 @@
 import { unique } from 'utils/unique'
 
-export const normalizedReceipts = ({ receipts }) =>
-  receipts.map(item => {
+export const normalizedReceipts = ({ receipts }) => {
+  return receipts.map(item => {
     return {
       cuiid: item.cuiid,
       id: item.id,
@@ -29,3 +29,4 @@ export const normalizedReceipts = ({ receipts }) =>
       doctor: item.owner.doctor
     }
   })
+}

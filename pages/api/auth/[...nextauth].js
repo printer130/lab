@@ -32,6 +32,15 @@ export default NextAuth({
                 select: {
                   image: true,
                   name: true,
+                  address: true,
+                  tel0: true,
+                  tel1: true,
+                  tel2: true,
+                  tel3: true,
+                  cel0: true,
+                  cel1: true,
+                  cel2: true,
+                  cel3: true,
                   User: false,
                   id: false
                 }
