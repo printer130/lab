@@ -4,4 +4,4 @@
 Patient disease recorder
 
 
-[![Video Resume](https://res.cloudinary.com/djc1umong/video/upload/v1663283636/lab_vnmroo.webm)]
+[(https://res.cloudinary.com/djc1umong/video/upload/v1663283636/lab_vnmroo.webm)]
